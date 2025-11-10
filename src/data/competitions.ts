@@ -48,7 +48,7 @@ export const allCompetitions: Competition[] = [
   {
     date: "Julio 27",
     event: "Fecha límite Primera Instancia Olimpíada Nacional",
-    status: "upcoming",
+    status: "finished",
     targetDate: new Date('2025-07-27T00:00:00')
   },
   {
@@ -70,7 +70,7 @@ export const allCompetitions: Competition[] = [
   },
   {
     date: "Setiembre 22 al 29",
-    event: "40a Olimpíada Iberoamericana de Matemática (Temuco, Chile)",
+    event: "40a Olimpíada Iberoamericana de Matemática (Tarija, Bolivia)",
     status: "finished",
     targetDate: new Date('2025-09-22T00:00:00')
   },

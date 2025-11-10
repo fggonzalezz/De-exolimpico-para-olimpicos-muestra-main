@@ -293,7 +293,7 @@ export default function MascotaPage() {
                     imageSrc="/images/Gauchito_primero_borrosa.JPG"
                     name="Gauchito I"
                     subtitle="Mascota de la IMO 2024"
-                    description="A pesar de haber acompañado a una sola delegación, su aparición fue tan icónica que su reemplazo no fue más que una versión agrandada de él mismo."
+                    description="A pesar de haber acompañado a una sola delegación, él fue tan icónico que su reemplazo no fue más que una versión agrandada de él mismo."
                   />
                 </div>
                 <div className="flex-shrink-0 w-[600px]">

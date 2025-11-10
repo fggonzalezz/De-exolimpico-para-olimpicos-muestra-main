@@ -46,6 +46,8 @@ export default function MobileMenu() {
       id: "materiales",
       label: "Materiales",
       items: [
+        { title: "Cómo son los Selectivos", href: "/como-son-los-selectivos" },
+        { title: "Libro Nacional 2018-2019", href: "/libro-nacional-2018-2019" },
         { title: "Seminarios de Exolímpicos", href: "/seminarios-exolimpicos" },
         { title: "Pruebas Anteriores", href: "/pruebas-anteriores" },
         { title: "Material de Estudio", href: "https://drive.google.com/drive/u/1/folders/18PJVLK11IXBHp_1ddrH8T5itxmDZpSOj" },

@@ -5,7 +5,7 @@ import { Card, CardContent } from '@/components/ui/card';
 import Link from 'next/link';
 
 export default function ResultadosPage() {
-  // Results data for past competitions
+  // Results data for past competitions (2024-2025)
   const resultados = [
     {
       year: 2025,
@@ -20,8 +20,7 @@ export default function ResultadosPage() {
             { name: "Federico Méndez", award: null },
             { name: "Alfonso Ramos", award: null },
             { name: "Rafael Trápani", award: null }
-          ],
-          leaders: ["Por confirmar"]
+          ]
         },
         {
           name: "40ª Olimpíada Iberoamericana de Matemática",
@@ -32,8 +31,7 @@ export default function ResultadosPage() {
             { name: "Juan Martín González", award: "Medalla de Bronce" },
             { name: "Alfonso Ramos", award: "Medalla de Bronce" },
             { name: "Rafael Trápani", award: "Medalla de Bronce" }
-          ],
-          leaders: ["Por confirmar"]
+          ]
         },
         {
           name: "36ª Olimpíada Matemática de Países del Conosur",
@@ -44,8 +42,7 @@ export default function ResultadosPage() {
             { name: "Luca Fischbein", award: "Mención Honorífica" },
             { name: "Julia Murguía", award: "Mención Honorífica" },
             { name: "Lautaro Rivarola", award: null }
-          ],
-          leaders: ["Por confirmar"]
+          ]
         },
         {
           name: "5ª Olimpíada PAGMO",
@@ -56,8 +53,7 @@ export default function ResultadosPage() {
             { name: "Emilia Muxi", award: null },
             { name: "Emma Stilman", award: null },
             { name: "Valentina Veiga", award: null }
-          ],
-          leaders: ["Por confirmar"]
+          ]
         }
       ]
     },
@@ -76,8 +72,7 @@ export default function ResultadosPage() {
             { name: "Alfonso Ramos", award: "Mención Honorífica" },
             { name: "Diego Correa", award: "Mención Honorífica" },
             { name: "Federico Méndez", award: "Mención Honorífica" }
-          ],
-          leaders: ["Tobías Rodriguez", "Facundo Méndez"]
+          ]
         },
         {
           name: "4ª Olimpiada Panamericana Femenina de Matemática (PAGMO)",
@@ -88,8 +83,7 @@ export default function ResultadosPage() {
             { name: "María Capone", award: null },
             { name: "Anette Kunnin", award: null },
             { name: "Emma Stilman", award: null }
-          ],
-          leaders: ["Florencia Sapriza", "Prof. Natalia Colino"]
+          ]
         },
         {
           name: "39ª Olimpíada Iberoamericana de Matemática",
@@ -100,8 +94,7 @@ export default function ResultadosPage() {
             { name: "Rafael Trapani", award: "Medalla de Bronce" },
             { name: "Juan Martín González", award: "Medalla de Bronce" },
             { name: "Federico Méndez", award: "Mención Honorífica" }
-          ],
-          leaders: ["Facundo Méndez", "Vladimir Silva"]
+          ]
         },
         {
           name: "65ª Olimpíada Internacional de Matemática (IMO)",
@@ -114,8 +107,7 @@ export default function ResultadosPage() {
             { name: "Agustín Miraballes", award: null },
             { name: "Francisco González", award: null },
             { name: "Rafael Trapani", award: null }
-          ],
-          leaders: ["Prof. Guillermo Stok", "Prof. Nelson Chocca"]
+          ]
         },
         {
           name: "35ª Olimpíada Matemática de Países del Conosur",
@@ -126,76 +118,7 @@ export default function ResultadosPage() {
             { name: "Facundo Correa", award: "Mención Honorífica" },
             { name: "Matías Cossatti", award: null },
             { name: "Matías Martony", award: null }
-          ],
-          leaders: ["Prof. Nelson Chocca", "Facundo Méndez"]
-        }
-      ]
-    },
-    {
-      year: 2023,
-      competitions: [
-        {
-          name: "IV Olimpiada Internacional de Matemática para Primaria (OLIMPRI)",
-          location: "Virtual - Lima, Perú",
-          date: "Diciembre 2023",
-          team: [
-            { name: "Juan Roade Bernaola", award: null },
-            { name: "Valentín González Roland", award: null },
-            { name: "Santiago Kriz Yimalkovski", award: null },
-            { name: "José Ignacio Platero", award: null },
-            { name: "Manuel Harteneck Pereira das Neves", award: null },
-            { name: "Federico Stemphelet Vence", award: null },
-            { name: "Santiago Tanco Vanrell", award: null },
-            { name: "Mateo Bidegain Martínez", award: null }
-          ],
-          leaders: ["Por confirmar"]
-        },
-        {
-          name: "38ª Olimpíada Iberoamericana de Matemática",
-          location: "Río de Janeiro, Brasil",
-          date: "Setiembre 2023",
-          team: [
-            { name: "Florencia Sapriza", award: "Medalla de Bronce" },
-            { name: "Renato De Paula", award: null },
-            { name: "Mateo Domenech", award: null },
-            { name: "Agustín Miraballes", award: null }
-          ],
-          leaders: ["Prof. Nelson Chocca", "Prof. Federico Fornesi"]
-        },
-        {
-          name: "34ª Olimpíada de Matemática de Países del Conosur",
-          location: "Buenos Aires, Argentina",
-          date: "Agosto 2023",
-          team: [
-            { name: "Rafael Trápani", award: "Medalla de Bronce" },
-            { name: "Renato De Paula", award: null },
-            { name: "Juan Martín González", award: null },
-            { name: "Francisco Rodríguez", award: null }
-          ],
-          leaders: ["Prof. Nelson Chocca", "Vladimir Silva"]
-        },
-        {
-          name: "3ª Olimpíada de Matemática PAGMO",
-          location: "Costa Rica",
-          date: "Agosto 6-12, 2023",
-          team: [
-            { name: "Florencia Broggi", award: null },
-            { name: "María Capone", award: null },
-            { name: "Alina Dávila", award: null },
-            { name: "Anette Kunin", award: null }
-          ],
-          leaders: ["Por confirmar"]
-        },
-        {
-          name: "64ª Olimpiada Internacional de Matemática (IMO)",
-          location: "Chiba, Japón",
-          date: "Julio 2023",
-          team: [
-            { name: "Mauro Akerman", award: "Mención Honorífica" },
-            { name: "Facundo Méndez", award: "Mención Honorífica" },
-            { name: "Tobías Rodríguez", award: "Mención Honorífica" }
-          ],
-          leaders: ["Hernán Puschiasis"]
+          ]
         }
       ]
     }
@@ -301,11 +224,6 @@ export default function ResultadosPage() {
                             </div>
                           ))}
                         </div>
-
-                        <div className="mt-4 text-sm text-gray-600 bg-gray-50 p-3 rounded-md">
-                          <span className="font-medium">👥 Líderes del equipo:</span>{" "}
-                          {competition.leaders?.join(", ")}
-                        </div>
                       </CardContent>
                     </Card>
                   ))}
@@ -321,22 +239,47 @@ export default function ResultadosPage() {
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
                   </svg>
                 </div>
-                <div className="text-center md:text-left">
+                <div className="text-center md:text-left flex-1">
                   <h3 className="text-xl font-bold text-yellow-700 mb-3">Historia olímpica uruguaya</h3>
                   <p className="mb-4 text-gray-700">
                     Uruguay participa en la Olimpíada Internacional de Matemática desde 1997, y ha
-                    obtenido hasta el momento <span className="font-medium text-amber-700">2 medallas de bronce</span> y
-                    <span className="font-medium text-sky-600"> 36 menciones honoríficas</span>.
+                    obtenido hasta el momento <span className="font-medium text-amber-700">3 medallas de bronce</span> y
+                    <span className="font-medium text-sky-600"> 12 menciones honoríficas</span>.
                   </p>
-                  <Link
-                    href="/contacto"
-                    className="inline-flex items-center text-yellow-600 hover:text-yellow-800 font-medium transition-colors"
-                  >
-                    ¿Tienes información histórica que quieras compartir? Contáctanos
-                    <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 ml-1" viewBox="0 0 20 20" fill="currentColor">
-                      <path fillRule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clipRule="evenodd" />
-                    </svg>
-                  </Link>
+                  <p className="mb-4 text-gray-700">
+                    En esta página mostramos los resultados más recientes (2024-2025). Para consultar 
+                    resultados de años anteriores, puedes visitar:
+                  </p>
+                  <div className="flex flex-col sm:flex-row gap-3 justify-center md:justify-start">
+                    <a
+                      href="https://iberoofficial.vercel.app/paises/URY?section=estadisticas"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center px-4 py-2 bg-sky-600 text-white rounded-lg hover:bg-sky-700 transition-colors font-medium"
+                    >
+                      <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                      </svg>
+                      Resultados Iberoamericana
+                      <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                      </svg>
+                    </a>
+                    <a
+                      href="https://www.imo-official.org/country_info.aspx?code=URY"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center px-4 py-2 bg-yellow-600 text-white rounded-lg hover:bg-yellow-700 transition-colors font-medium"
+                    >
+                      <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" />
+                      </svg>
+                      Resultados IMO
+                      <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                      </svg>
+                    </a>
+                  </div>
                 </div>
               </div>
             </div>
