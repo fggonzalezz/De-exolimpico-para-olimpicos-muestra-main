@@ -51,7 +51,7 @@ export default function Header() {
   const materialesItems = [
     { title: "Cómo son los Selectivos", href: "/como-son-los-selectivos" },
     { title: "Libro Nacional 2018-2019", href: "/libro-nacional-2018-2019" },
-    { title: "Material de Estudio", href: "https://drive.google.com/drive/u/1/folders/18PJVLK11IXBHp_1ddrH8T5itxmDZpSOj" },
+    { title: "Material de Estudio", href: "/material-de-estudio" },
     { title: "Nacional", href: "/nacional" },
     { title: "Paginas recomendadas", href: "/paginas-recomendadas" },
   ];
