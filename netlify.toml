@@ -1,0 +1,14 @@
+[images]
+  remote_images = ["https://source.unsplash.com/.*", "https://images.unsplash.com/.*", "https://ext.same-assets.com/.*", "https://ugc.same-assets.com/.*"]
+
+[build]
+  command = "NEXT_IGNORE_TYPECHECK=1 NEXT_IGNORE_ESLINT=1 npm run build"
+  publish = ".next"
+
+[build.environment]
+  NODE_VERSION = "20"
+  NEXT_IGNORE_TYPECHECK = "1"
+  NEXT_IGNORE_ESLINT = "1"
+
+[[plugins]]
+  package = "@netlify/plugin-nextjs"

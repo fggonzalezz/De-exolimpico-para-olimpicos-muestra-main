@@ -1,0 +1,278 @@
+/* Font imports */
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+
+    --primary: 221 83% 53%;
+    --primary-foreground: 210 40% 98%;
+
+    --secondary: 210 40% 96.1%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
+
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+
+    --accent: 210 40% 96.1%;
+    --accent-foreground: 222.2 47.4% 11.2%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 221 83% 53%;
+
+    --radius: 0.5rem;
+
+    /* Custom brand colors */
+    --mate-blue: 221 83% 53%;
+    --mate-green: 120 100% 40%;
+    --mate-white: 0 0% 100%;
+    --mate-light-gray: 0 0% 93%;
+  }
+
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 217.2 91.2% 59.8%;
+    --primary-foreground: 222.2 47.4% 11.2%;
+
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 224.3 76.3% 48%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+/* Custom global styles */
+.container-mate {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.bg-mate-blue {
+  background-color: hsl(221, 83%, 53%);
+}
+
+.bg-mate-green {
+  background-color: hsl(120, 100%, 40%);
+}
+
+.text-mate-blue {
+  color: hsl(221, 83%, 53%);
+}
+
+.text-mate-green {
+  color: hsl(120, 100%, 40%);
+}
+
+/* Link button styles */
+.link-button {
+  display: inline-block;
+  background-color: hsl(221, 83%, 53%);
+  color: white;
+  border-radius: 0.5rem;
+  font-weight: 500;
+  text-align: center;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+.link-button:hover {
+  background-color: hsl(221, 83%, 45%);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+
+.link-button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: 0.5s;
+  z-index: 1;
+}
+
+.link-button:hover::before {
+  left: 100%;
+}
+
+/* Override background color for links with their own bg color classes */
+.link-button.bg-yellow-500:hover {
+  background-color: #d97706; /* yellow-600 */
+}
+
+/* Font classes */
+.font-oswald {
+  font-family: 'Oswald', sans-serif;
+}
+
+.font-roboto {
+  font-family: 'Roboto', sans-serif;
+}
+
+.font-inter {
+  font-family: 'Inter', sans-serif;
+}
+.container2 {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 30px;
+  padding-bottom: 20px;
+}
+
+.h1 {
+  font-family: 'Oswald', sans-serif;
+  font-size: 36px;
+  font-weight: 700;
+  color: #434d50;
+  margin-bottom: 20px;
+  text-align: center;
+  position: relative;
+  letter-spacing: 1px;
+}
+
+.h1::after {
+  content: '';
+  display: block;
+  width: 360px;
+  height: 2px;
+  background-color: #40ccdd;
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.section {
+  margin-bottom: 40px;
+}
+
+.h2 {
+  font-family: 'Oswald', sans-serif;
+  font-size: 24px;
+  padding: 12px 15px;
+  background-color: #5c8a9c;
+  color: white;
+  margin-bottom: 20px;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.final-escolar h2 {
+  background-color: #5c8a9c;
+}
+
+.final-liceal h2 {
+  background-color: #5c8a9c;
+}
+
+.nivel {
+  margin-bottom: 30px;
+  background-color: #f5f5f5;
+  padding: 15px;
+  border-radius: 3px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.h3 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 18px;
+  padding: 10px 15px;
+  background-color: #f0f0f0;
+  margin-bottom: 20px;
+  color: #434d50;
+  text-transform: uppercase;
+  font-weight: 700;
+  border-left: 3px solid #5c8a9c;
+}
+
+.puesto {
+  margin-bottom: 25px;
+  padding-left: 15px;
+}
+
+.h4 {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  margin-bottom: 12px;
+  color: #434d50;
+  border-bottom: 1px solid #eaeaea;
+  padding-bottom: 5px;
+  display: inline-block;
+}
+
+.ul {
+  list-style-type: none;
+  padding-left: 20px;
+}
+
+.li {
+  margin-bottom: 8px;
+  font-size: 14px;
+  position: relative;
+  padding-left: 15px;
+  line-height: 1.5;
+}
+
+.li::before {
+  content: '•';
+  position: absolute;
+  left: 0;
+  color: #5c8a9c;
+}
