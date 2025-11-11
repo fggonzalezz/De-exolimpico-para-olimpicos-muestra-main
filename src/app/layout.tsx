@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import { Analytics } from '@vercel/analytics/next';
 import { Inter } from "next/font/google";
 import StagewiseDevToolbar from "@/components/StagewiseDevToolbar";
 
@@ -18,8 +19,11 @@ export default function RootLayout({
   return (
     <html lang="es">
       <body className={`${inter.variable} font-roboto`}>
+        <StagewiseDevToolbar />
         {children}
+        <Analytics />
       </body>
     </html>
   );
 }
+
