@@ -141,6 +141,59 @@ export default function TeamPage() {
               </Card>
             </section>
 
+            {/* Conosur Team */}
+            <section className="mb-12">
+              <Card className="border-t-4 border-green-500 shadow-md">
+                <CardContent className="p-6">
+                  <div className="flex items-center mb-4">
+                    <div className="bg-green-500 rounded-full p-2 mr-4">
+                      <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+                      </svg>
+                    </div>
+                    <h2 className="text-2xl font-semibold">Olimpíada de Matemática de Países del Cono Sur 2025</h2>
+                  </div>
+
+                  <div className="mb-4">
+                    <p className="mb-2">
+                      Los alumnos clasificados para representar a Uruguay en la 36ª Olimpíada de Matemática de Países del Cono Sur 
+                      a desarrollarse en Minas, Uruguay, entre el 4 y el 9 de junio de 2025 son (en orden alfabético):
+                    </p>
+                  </div>
+
+                  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mt-6">
+                    <div className="bg-gray-50 p-4 rounded-lg">
+                      <div className="text-center">
+                        <h3 className="font-bold">Facundo Correa</h3>
+                        <p className="text-sm text-gray-600">Liceo San Ignacio</p>
+                      </div>
+                    </div>
+
+                    <div className="bg-gray-50 p-4 rounded-lg">
+                      <div className="text-center">
+                        <h3 className="font-bold">Luca Fischbein</h3>
+                        <p className="text-sm text-gray-600">Uruguayan American School</p>
+                      </div>
+                    </div>
+
+                    <div className="bg-gray-50 p-4 rounded-lg">
+                      <div className="text-center">
+                        <h3 className="font-bold">Julia Murguía</h3>
+                        <p className="text-sm text-gray-600">Uruguayan American School</p>
+                      </div>
+                    </div>
+
+                    <div className="bg-gray-50 p-4 rounded-lg">
+                      <div className="text-center">
+                        <h3 className="font-bold">Lautaro Rivarola</h3>
+                        <p className="text-sm text-gray-600">San Miguel, Mercedes, Soriano</p>
+                      </div>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+            </section>
+
             {/* PAGMO Team */}
             <section className="mb-12">
               <Card className="border-t-4 border-purple-500 shadow-md">

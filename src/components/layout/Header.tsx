@@ -15,7 +15,7 @@ const NavDropdown = ({
 }) => {
   return (
     <DropdownMenu>
-      <DropdownMenuTrigger className="font-inter text-base font-medium text-gray-900 dark:text-white hover:text-sky-600 flex items-center gap-1">
+      <DropdownMenuTrigger className="font-inter text-base font-medium text-gray-900 dark:text-white hover:text-sky-600 flex items-center gap-1 outline-none focus:outline-none">
         {label}
         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
           <path d="m6 9 6 6 6-6" />
@@ -67,9 +67,9 @@ export default function Header() {
         <div className="flex justify-between items-center py-3 md:py-4">
           {/* Logo and Title */}
           <Link href="/" className="flex items-center">
-            <div className={`relative h-14 w-14 sm:h-16 sm:w-16 mr-3 transition-all duration-700 ease-out bg-white rounded-full p-1 shadow-sm ${logoVisible ? 'opacity-100 scale-100' : 'opacity-0 scale-75'}`}>
+            <div className={`relative h-14 w-14 sm:h-16 sm:w-16 mr-3 transition-all duration-700 ease-out bg-white dark:bg-white rounded-full p-2 shadow-md ring-2 ring-gray-100 dark:ring-gray-200 ${logoVisible ? 'opacity-100 scale-100' : 'opacity-0 scale-75'}`}>
               {/* Use an embedded image that matches the logo you provided */}
-              <Image src="/images/CPM.png" alt="Logo" fill className="object-contain" />
+              <Image src="/images/CPM.png" alt="Logo" fill className="object-contain p-0.5" />
             </div>
           </Link>
 

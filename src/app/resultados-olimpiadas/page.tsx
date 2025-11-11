@@ -15,8 +15,8 @@ export default function ResultadosPage() {
           location: "Sunshine Coast, Australia",
           date: "Julio 10-20, 2025",
           team: [
-            { name: "Diego Correa", award: null },
-            { name: "Juan Martín González", award: null },
+            { name: "Diego Correa", award: "Mención Honorífica" },
+            { name: "Juan Martín González", award: "Mención Honorífica" },
             { name: "Federico Méndez", award: null },
             { name: "Alfonso Ramos", award: null },
             { name: "Rafael Trápani", award: null }

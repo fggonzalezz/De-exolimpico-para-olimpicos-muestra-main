@@ -162,7 +162,15 @@ export const finishedCompetitions = allCompetitions.filter(
   competition => competition.status?.includes('finished')
 );
 
-export const nextSixCompetitions = upcomingCompetitions.slice(0, 6);
+// Filtro para competencias realmente futuras (basado en la fecha actual)
+export const trulyUpcomingCompetitions = allCompetitions.filter(competition => {
+  if (!competition.targetDate) return false;
+  const today = new Date();
+  today.setHours(0, 0, 0, 0);
+  return competition.targetDate >= today && (competition.status?.includes('upcoming') || competition.status === 'upcoming-next');
+});
+
+export const nextSixCompetitions = trulyUpcomingCompetitions.slice(0, 6);
 
 export const featuredCompetition = allCompetitions.find(
   competition => competition.status === 'upcoming-next' || competition.highlight
@@ -175,5 +183,5 @@ export function getCompetitionsByStatus(status: Competition['status']) {
 
 // Función helper para obtener las próximas N competencias
 export function getNextCompetitions(count: number = 5) {
-  return upcomingCompetitions.slice(0, count);
+  return trulyUpcomingCompetitions.slice(0, count);
 }
