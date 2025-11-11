@@ -3,6 +3,7 @@ import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
 import { Card, CardContent } from '@/components/ui/card';
 import Link from 'next/link';
+import InstagramEmbed from '@/components/InstagramEmbed';
 
 export default function LibroNacionalPage() {
   return (
@@ -155,53 +156,18 @@ export default function LibroNacionalPage() {
                   </a>
                 </div>
 
-                {/* Embedded Instagram Post */}
+                {/* Embedded Instagram Post - carga bajo demanda */}
                 <div className="bg-gray-50 p-3 sm:p-4 md:p-6 rounded-lg border border-gray-200 mb-4 md:mb-6 overflow-hidden">
                   <h4 className="text-base sm:text-lg font-bold text-gray-800 mb-3 md:mb-4 text-center px-2">
                     📢 Anuncio sobre el Libro Nacional
                   </h4>
-                  <div className="flex justify-center w-full overflow-hidden">
-                    <div className="w-full max-w-md">
-                      <blockquote 
-                        className="instagram-media" 
-                        data-instgrm-captioned 
-                        data-instgrm-permalink="https://www.instagram.com/p/DQxEhOSkd6U/" 
-                        data-instgrm-version="14"
-                        style={{
-                          background: '#FFF',
-                          border: 0,
-                          borderRadius: '3px',
-                          boxShadow: '0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15)',
-                          margin: '0 auto',
-                          maxWidth: '540px',
-                          minWidth: '0',
-                          padding: 0,
-                          width: '100%'
-                        }}
-                      >
-                        <div style={{ padding: '16px' }}>
-                          <a 
-                            href="https://www.instagram.com/p/DQxEhOSkd6U/" 
-                            style={{ 
-                              background: '#FFFFFF',
-                              lineHeight: 0,
-                              padding: '0 0',
-                              textAlign: 'center',
-                              textDecoration: 'none',
-                              width: '100%'
-                            }}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                          >
-                            Ver esta publicación en Instagram
-                          </a>
-                        </div>
-                      </blockquote>
-                      <script async src="//www.instagram.com/embed.js"></script>
-                    </div>
-                  </div>
+                  <InstagramEmbed
+                    permalink="https://www.instagram.com/p/DQxEhOSkd6U/"
+                    caption="Información del Libro Nacional 2018-2019"
+                    loadMode="auto"
+                  />
                   <p className="text-center text-xs sm:text-sm text-gray-600 mt-3 md:mt-4 px-2">
-                    Consulta la publicación completa para más detalles sobre cómo obtener el libro
+                    Consejo: si lo prefieres, abre directamente en Instagram para la experiencia más rápida.
                   </p>
                 </div>
 

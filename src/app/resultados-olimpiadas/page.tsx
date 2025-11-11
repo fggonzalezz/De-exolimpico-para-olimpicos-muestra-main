@@ -1,4 +1,5 @@
 import React from 'react';
+import type { Metadata } from 'next';
 import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
 import { Card, CardContent } from '@/components/ui/card';
@@ -115,7 +116,7 @@ export default function ResultadosPage() {
           date: "Mayo 2024",
           team: [
             { name: "Diego Correa", award: "Medalla de Bronce" },
-            { name: "Facundo Correa", award: "Mención Honorífica" },
+            { name: "Facundo Correa", award: null },
             { name: "Matías Cossatti", award: null },
             { name: "Matías Martony", award: null }
           ]
@@ -198,14 +199,17 @@ export default function ResultadosPage() {
 
             {/* Results by year */}
             {resultados.map((yearData) => (
-              <div key={yearData.year} className="mb-10">
-                <h2 className="text-2xl font-bold mb-6 pb-2 border-b-2 border-sky-500 inline-block text-sky-800">
+              <section key={yearData.year} className="mb-10" aria-labelledby={`heading-${yearData.year}`}>
+                <h2
+                  id={`heading-${yearData.year}`}
+                  className="text-2xl font-bold mb-6 pb-2 border-b-2 border-sky-500 inline-block text-sky-800"
+                >
                   Resultados {yearData.year}
                 </h2>
 
                 <div className="space-y-6">
-                  {yearData.competitions.map((competition, index) => (
-                    <Card key={index} className="shadow-md hover:shadow-lg transition-shadow">
+                  {yearData.competitions.map((competition) => (
+                    <Card key={`${yearData.year}-${competition.name}`} className="shadow-md hover:shadow-lg transition-shadow">
                       <CardContent className="p-6">
                         <h3 className="text-xl font-bold text-sky-700 mb-2">{competition.name}</h3>
                         <div className="flex flex-col sm:flex-row sm:justify-between text-sm text-gray-600 mb-4">
@@ -215,8 +219,8 @@ export default function ResultadosPage() {
 
                         <h4 className="font-medium mt-4 mb-3">Equipo uruguayo:</h4>
                         <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-4">
-                          {competition.team.map((member, i) => (
-                            <div key={i} className="bg-gray-50 p-4 rounded-lg border border-gray-200">
+                          {competition.team.map((member) => (
+                            <div key={`${competition.name}-${member.name}`} className="bg-gray-50 p-4 rounded-lg border border-gray-200">
                               <div className="flex items-center justify-between">
                                 <h5 className="font-bold text-gray-800">{member.name}</h5>
                                 {member.award && (
@@ -250,7 +254,7 @@ export default function ResultadosPage() {
                     </Card>
                   ))}
                 </div>
-              </div>
+              </section>
             ))}
 
             {/* Historical note */}
@@ -265,19 +269,19 @@ export default function ResultadosPage() {
                   <h3 className="text-xl font-bold text-yellow-700 mb-3">Historia olímpica uruguaya</h3>
                   <p className="mb-4 text-gray-700">
                     Uruguay participa en la Olimpíada Internacional de Matemática desde 1997, y ha
-                    obtenido hasta el momento <span className="font-medium text-amber-700">3 medallas de bronce</span> y
-                    <span className="font-medium text-sky-600"> 12 menciones honoríficas</span>.
+                    obtenido hasta el momento <span className="font-medium text-amber-700">2 medallas de bronce</span> y
+                    <span className="font-medium text-sky-600"> 36 menciones honoríficas</span>.
                   </p>
                   <p className="mb-4 text-gray-700">
                     En esta página mostramos los resultados más recientes (2024-2025). Para consultar 
                     resultados de años anteriores, puedes visitar:
                   </p>
-                  <div className="flex flex-col sm:flex-row gap-3 justify-center md:justify-start">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                     <a
                       href="https://iberoofficial.vercel.app/paises/URY?section=estadisticas"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center px-4 py-2 bg-sky-600 text-white rounded-lg hover:bg-sky-700 transition-colors font-medium"
+                      className="inline-flex items-center px-4 py-2 bg-sky-600 text-white rounded-lg hover:bg-sky-700 transition-colors font-medium text-sm sm:text-base"
                     >
                       <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
@@ -288,10 +292,24 @@ export default function ResultadosPage() {
                       </svg>
                     </a>
                     <a
+                      href="https://www.oma.org.ar/contents/paginas/rio.html"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center px-4 py-2 bg-purple-600 text-white rounded-lg hover:bg-purple-700 transition-colors font-medium text-sm sm:text-base"
+                    >
+                      <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                      </svg>
+                      Resultados Rioplatense
+                      <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                      </svg>
+                    </a>
+                    <a
                       href="https://www.imo-official.org/country_info.aspx?code=URY"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center px-4 py-2 bg-yellow-600 text-white rounded-lg hover:bg-yellow-700 transition-colors font-medium"
+                      className="inline-flex items-center px-4 py-2 bg-yellow-600 text-white rounded-lg hover:bg-yellow-700 transition-colors font-medium text-sm sm:text-base sm:col-span-2 sm:justify-self-center"
                     >
                       <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" />
@@ -313,3 +331,24 @@ export default function ResultadosPage() {
     </div>
   );
 }
+
+export const metadata: Metadata = {
+  title: 'Resultados de Olimpiadas Internacionales | Uruguay',
+  description:
+    'Resultados recientes de los equipos uruguayos en competencias matemáticas internacionales como IMO, Iberoamericana y Cono Sur (2024-2025).',
+  keywords: ['Uruguay', 'Olimpíada de Matemática', 'IMO', 'Iberoamericana', 'Cono Sur', 'resultados', 'olimpiadas'],
+  alternates: { canonical: '/resultados-olimpiadas' },
+  openGraph: {
+    title: 'Resultados de Olimpiadas Internacionales | Uruguay',
+    description:
+      'Resultados de Uruguay en IMO, Iberoamericana y Cono Sur. Medallas y menciones honoríficas de 2024 y 2025.',
+    url: '/resultados-olimpiadas',
+    siteName: 'De Exolímpicos para Olímpicos',
+    locale: 'es_UY',
+    type: 'website',
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
+};

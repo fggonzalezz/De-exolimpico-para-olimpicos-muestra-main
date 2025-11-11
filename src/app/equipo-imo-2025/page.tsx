@@ -14,14 +14,14 @@ export default function IMOTeamPage() {
       image: "/images/Personas/Diego_Correa_Foto.jpg",
       school: "San Pablo",
       achievements: ["Mencíon Honorífica en Olimpíada Rioplatense 2024", "Medalla de Bronce en Olimpíada del Conosur 2024"],
-      bio: "Diego ha participado en olimpiadas matemáticas desde 2022. Su enfoque principal es el álgebra y la combinatoria."
+      bio: "Diego ha participado en olimpiadas matemáticas desde 2023. Su enfoque principal es la geometría."
     },
     {
       id: "URU2",
       name: "Juan Martín González",
       image: "/images/Personas/Juan_Martín_González_Foto.jpg",
       school: "Liceo N° 1, Carmelo",
-      achievements: [ "Mención Honorífica en Olimpíada Iberoamericana 2024", "Multiples participaciones en olimpaida Conosur y Rio"],
+      achievements: [ "Medalla de Bronce en Olimpíada Iberoamericana 2024", "Multiples participaciones en olimpiada Conosur y Rio"],
       bio: "Juan Martín contagia al grupo con su alegría y buen humor. Es su primera participación en la IMO."
     },
     {
@@ -37,8 +37,8 @@ export default function IMOTeamPage() {
       name: "Alfonso Ramos",
       image: "/images/Personas/Alfonso_Ramos_Foto.jpg",
       school: "PRE/U",
-      achievements: ["Medalla de Plata en Olimpíada Nacional 2024", "Mención Honorífica en Olimpíada Iberoamericana 2024"],
-      bio: "Alfonso se destaca por su capacidad para resolver problemas geométricos y su habilidad para enseñar a otros."
+      achievements: ["Medalla de Plata en Olimpíada Nacional 2024", "Mención Honorífica en Olimpíada Rioplatense 2024"],
+      bio: 'Alfonso, conocido como "Brocito", se destaca por su capacidad para resolver problemas geométricos y su habilidad para enseñar a otros.'
     },
     {
       id: "URU5",
