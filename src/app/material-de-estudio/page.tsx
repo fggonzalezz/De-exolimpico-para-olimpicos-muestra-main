@@ -14,7 +14,7 @@ export default function MaterialEstudioPage() {
         <div className="container mx-auto px-3 sm:px-4">
           <div className="max-w-4xl mx-auto">
             {/* Header Section */}
-            <div className="text-center mb-8 md:mb-12 px-2">
+            <div className="text-center mb-8 md:mb-12 px-2" style={{ minHeight: '140px' }}>
               <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-sky-700 mb-3 md:mb-4">
                 Material de Estudio
               </h1>
@@ -25,13 +25,13 @@ export default function MaterialEstudioPage() {
 
             {/* Info Cards */}
             <div className="grid md:grid-cols-2 gap-4 md:gap-6 mb-8 md:mb-12">
-              <Card className="border-t-4 border-sky-500 min-h-[168px]">
-                <CardContent className="p-4 sm:p-5 md:p-6">
+              <Card className="border-t-4 border-sky-500">
+                <CardContent className="p-4 sm:p-5 md:p-6" style={{ minHeight: '136px' }}>
                   <div className="flex items-start gap-3 sm:gap-4">
-                    <div className="bg-sky-100 rounded-lg p-2 sm:p-3 flex-shrink-0">
+                    <div className="bg-sky-100 rounded-lg p-2 sm:p-3 flex-shrink-0" style={{ width: '44px', height: '44px' }}>
                       <BookOpen className="h-5 w-5 sm:h-6 sm:w-6 text-sky-600" />
                     </div>
-                    <div>
+                    <div className="flex-1 min-w-0">
                       <h3 className="font-semibold text-base sm:text-lg mb-1 sm:mb-2">Libros y Apuntes</h3>
                       <p className="text-gray-600 text-xs sm:text-sm">
                         Material teórico completo sobre álgebra, geometría, teoría de números y combinatoria
@@ -41,13 +41,13 @@ export default function MaterialEstudioPage() {
                 </CardContent>
               </Card>
 
-              <Card className="border-t-4 border-green-500 min-h-[168px]">
-                <CardContent className="p-4 sm:p-5 md:p-6">
+              <Card className="border-t-4 border-green-500">
+                <CardContent className="p-4 sm:p-5 md:p-6" style={{ minHeight: '136px' }}>
                   <div className="flex items-start gap-3 sm:gap-4">
-                    <div className="bg-green-100 rounded-lg p-2 sm:p-3 flex-shrink-0">
+                    <div className="bg-green-100 rounded-lg p-2 sm:p-3 flex-shrink-0" style={{ width: '44px', height: '44px' }}>
                       <FileText className="h-5 w-5 sm:h-6 sm:w-6 text-green-600" />
                     </div>
-                    <div>
+                    <div className="flex-1 min-w-0">
                       <h3 className="font-semibold text-base sm:text-lg mb-1 sm:mb-2">Problemas Resueltos</h3>
                       <p className="text-gray-600 text-xs sm:text-sm">
                         Colección de problemas con soluciones detalladas de olimpiadas anteriores
@@ -57,13 +57,13 @@ export default function MaterialEstudioPage() {
                 </CardContent>
               </Card>
 
-              <Card className="border-t-4 border-purple-500 min-h-[168px]">
-                <CardContent className="p-4 sm:p-5 md:p-6">
+              <Card className="border-t-4 border-purple-500">
+                <CardContent className="p-4 sm:p-5 md:p-6" style={{ minHeight: '136px' }}>
                   <div className="flex items-start gap-3 sm:gap-4">
-                    <div className="bg-purple-100 rounded-lg p-2 sm:p-3 flex-shrink-0">
+                    <div className="bg-purple-100 rounded-lg p-2 sm:p-3 flex-shrink-0" style={{ width: '44px', height: '44px' }}>
                       <Brain className="h-5 w-5 sm:h-6 sm:w-6 text-purple-600" />
                     </div>
-                    <div>
+                    <div className="flex-1 min-w-0">
                       <h3 className="font-semibold text-base sm:text-lg mb-1 sm:mb-2">Estrategias y Técnicas</h3>
                       <p className="text-gray-600 text-xs sm:text-sm">
                         Guías sobre técnicas de resolución y estrategias para competencias
@@ -73,13 +73,13 @@ export default function MaterialEstudioPage() {
                 </CardContent>
               </Card>
 
-              <Card className="border-t-4 border-amber-500 min-h-[168px]">
-                <CardContent className="p-4 sm:p-5 md:p-6">
+              <Card className="border-t-4 border-amber-500">
+                <CardContent className="p-4 sm:p-5 md:p-6" style={{ minHeight: '136px' }}>
                   <div className="flex items-start gap-3 sm:gap-4">
-                    <div className="bg-amber-100 rounded-lg p-2 sm:p-3 flex-shrink-0">
+                    <div className="bg-amber-100 rounded-lg p-2 sm:p-3 flex-shrink-0" style={{ width: '44px', height: '44px' }}>
                       <Calculator className="h-5 w-5 sm:h-6 sm:w-6 text-amber-600" />
                     </div>
-                    <div>
+                    <div className="flex-1 min-w-0">
                       <h3 className="font-semibold text-base sm:text-lg mb-1 sm:mb-2">Pruebas de Práctica</h3>
                       <p className="text-gray-600 text-xs sm:text-sm">
                         Exámenes de práctica y simulacros de competencias nacionales e internacionales
@@ -91,12 +91,14 @@ export default function MaterialEstudioPage() {
             </div>
 
             {/* Main CTA Card */}
-            <Card className="bg-gradient-to-br from-sky-50 to-blue-100 border-2 border-sky-300 shadow-lg min-h-[420px]">
-              <CardContent className="p-4 sm:p-6 md:p-8 text-center">
+            <Card className="bg-gradient-to-br from-sky-50 to-blue-100 border-2 border-sky-300 shadow-lg">
+              <CardContent className="p-4 sm:p-6 md:p-8 text-center" style={{ minHeight: '400px' }}>
                 <div className="max-w-2xl mx-auto">
-                  <div className="bg-white rounded-full w-16 h-16 sm:w-20 sm:h-20 flex items-center justify-center mx-auto mb-4 sm:mb-6 shadow-md">
+                  <div className="bg-white rounded-full flex items-center justify-center mx-auto mb-4 sm:mb-6 shadow-md" style={{ width: '64px', height: '64px' }}>
                     <svg 
-                      className="w-8 h-8 sm:w-10 sm:h-10 text-sky-600" 
+                      className="text-sky-600" 
+                      width="40"
+                      height="40"
                       viewBox="0 0 24 24" 
                       fill="currentColor"
                     >
@@ -121,10 +123,11 @@ export default function MaterialEstudioPage() {
                   >
                     <Button 
                       size="lg" 
-                      className="bg-sky-600 hover:bg-sky-700 text-white shadow-lg w-full sm:w-auto px-4 sm:px-6 md:px-8 py-4 sm:py-5 md:py-6 text-sm sm:text-base md:text-lg font-semibold transition-all duration-200 hover:scale-105"
+                      className="bg-sky-600 hover:bg-sky-700 text-white shadow-lg w-full sm:w-auto text-sm sm:text-base md:text-lg font-semibold transition-colors duration-200"
+                      style={{ height: '56px', paddingLeft: '2rem', paddingRight: '2rem' }}
                     >
                       <span className="truncate">Abrir Material en Google Drive</span>
-                      <ExternalLink className="ml-2 h-4 w-4 sm:h-5 sm:w-5 flex-shrink-0" />
+                      <ExternalLink className="ml-2 flex-shrink-0" style={{ width: '20px', height: '20px' }} />
                     </Button>
                   </a>
                   
