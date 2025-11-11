@@ -35,15 +35,14 @@ export default function Home() {
           <div className="container mx-auto px-4 relative z-10">
             <div className="max-w-3xl mx-auto text-center">
               <h1 className="font-inter text-4xl md:text-5xl font-bold mb-4 [text-shadow:-0.5px_-0.5px_0_#000,0_-0.5px_0_#000,0.5px_-0.5px_0_#000,-0.5px_0_0_#000,0.5px_0_0_#000,-0.5px_0.5px_0_#000,0_0.5px_0_#000,0.5px_0.5px_0_#000]">
-                <span >Com-Partida</span> de Matemática del Uruguay
+                <span>Olimpiada Matemática Uruguay</span> - Com-Partida de Matemática
               </h1>
               <h2 className="text-xl md:text-2xl font-bold mb-6 [text-shadow:-0.5px_-0.5px_0_#000,0_-0.5px_0_#000,0.5px_-0.5px_0_#000,-0.5px_0_0_#000,0.5px_0_0_#000,-0.5px_0.5px_0_#000,0_0.5px_0_#000,0.5px_0.5px_0_#000]">
-                Fomentando el talento matemático desde 1992
+                Material de estudio y entrenamiento para olimpiadas matemáticas desde 1992
               </h2>
               <p className="text-lg font-bold mb-8 [text-shadow:-0.5px_-0.5px_0_#000,0_-0.5px_0_#000,0.5px_-0.5px_0_#000,-0.5px_0_0_#000,0.5px_0_0_#000,-0.5px_0.5px_0_#000,0_0.5px_0_#000,0.5px_0.5px_0_#000]">
-                Un proyecto educativo surgido por iniciativa de profesores de matemática,
-                que consideran a la resolución de problemas como la herramienta más
-                importante para el aprendizaje de la asignatura.
+                Preparación para IMO, Olimpiada Iberoamericana, Cono Sur y Olimpiada Nacional de Uruguay. 
+                Recursos, problemas y material de estudio creado por ex-olímpicos uruguayos.
               </p>
               <div className="flex flex-wrap gap-4 justify-center">
                 <Link href="/sobre-nosotros" className="bg-sky-700 text-white hover:bg-sky-800 px-6 py-3 rounded-md font-medium transition-colors">

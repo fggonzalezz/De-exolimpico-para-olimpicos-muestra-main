@@ -1,9 +1,34 @@
 import React from 'react';
+import type { Metadata } from 'next';
 import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
 import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { ExternalLink, BookOpen, FileText, Brain, Calculator } from 'lucide-react';
+
+export const metadata: Metadata = {
+  title: 'Material de Estudio para Olimpiadas Matemáticas Uruguay',
+  description: 'Material de estudio completo para olimpiadas matemáticas en Uruguay: libros, problemas resueltos, estrategias y pruebas de práctica. Preparación para olimpiada nacional, IMO, Iberoamericana y Cono Sur.',
+  keywords: [
+    'material olimpiada matemática uruguay',
+    'material estudio matemática olimpiada',
+    'problemas olimpiadas matemáticas uruguay',
+    'libros olimpiadas matemáticas',
+    'preparación olimpiadas matemáticas',
+    'compartida matemática material',
+    'recursos matemática uruguay',
+    'ejercicios olimpiadas matemáticas',
+    'olimpiada matemática nacional uruguay material'
+  ],
+  openGraph: {
+    title: 'Material de Estudio Olimpiadas Matemáticas Uruguay',
+    description: 'Accede a material completo para prepararte para olimpiadas matemáticas: libros, problemas resueltos y pruebas de práctica.',
+    type: 'website',
+  },
+  alternates: {
+    canonical: '/material-de-estudio'
+  }
+};
 
 export default function MaterialEstudioPage() {
   return (
