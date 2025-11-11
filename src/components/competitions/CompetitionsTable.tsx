@@ -57,7 +57,7 @@ function Countdown({ targetDate, onExpired }: { targetDate: Date; onExpired?: ()
   }, [targetDate, hasExpired, onExpired]);
 
   return (
-    <span className="text-yellow-700 font-medium text-sm">
+    <span className="text-yellow-700 font-medium text-xs sm:text-sm break-words">
       {hasExpired ? '¡Evento finalizado!' : `Faltan ${timeLeft.days} días, ${timeLeft.hours}h ${timeLeft.minutes}m ${timeLeft.seconds}s`}
     </span>
   );
@@ -90,7 +90,7 @@ function CountdownDays({ targetDate, onExpired }: { targetDate: Date; onExpired?
   }, [targetDate, hasExpired, onExpired]);
 
   return (
-    <span className="block text-sm text-yellow-600 mt-1">
+    <span className="block text-xs sm:text-sm text-yellow-600 mt-1">
       {hasExpired ? '¡Evento finalizado!' : `Faltan ${days} días`}
     </span>
   );
@@ -200,19 +200,19 @@ export default function CompetitionsTable({
   // Variante compacta para la página principal
   if (variant === 'compact') {
     return (
-      <section className="py-12 bg-gray-50">
-        <div className="container mx-auto px-4">
-          <h2 className="text-2xl md:text-3xl font-inter font-semibold text-center mb-8">
+      <section className="py-8 md:py-12 bg-gray-50">
+        <div className="container mx-auto px-3 sm:px-4">
+          <h2 className="text-xl sm:text-2xl md:text-3xl font-inter font-semibold text-center mb-6 md:mb-8">
             {title}
           </h2>
           <div className="max-w-3xl mx-auto">
             <div className="bg-white shadow-md rounded-lg overflow-hidden">
               <div className="overflow-x-auto">
-                <table className="w-full">
+                <table className="w-full text-sm sm:text-base">
                   <thead className="bg-sky-600 text-white">
                     <tr>
-                      <th className="py-3 px-4 text-left font-medium">Fecha</th>
-                      <th className="py-3 px-4 text-left font-medium">Evento</th>
+                      <th className="py-2 sm:py-3 px-2 sm:px-4 text-left font-medium text-xs sm:text-base w-24 sm:w-auto">Fecha</th>
+                      <th className="py-2 sm:py-3 px-2 sm:px-4 text-left font-medium text-xs sm:text-base">Evento</th>
                     </tr>
                   </thead>
                   <tbody className="divide-y divide-gray-200">
@@ -221,10 +221,12 @@ export default function CompetitionsTable({
                       const competitionId = competition.id || `competition-${index}`;
                       return (
                         <tr key={index} className="hover:bg-sky-50">
-                          <td className="py-3 px-4 font-medium">{competition.date}</td>
-                          <td className="py-3 px-4">
+                          <td className="py-2 sm:py-3 px-2 sm:px-4 font-medium text-xs sm:text-base align-top w-24 sm:w-auto">
+                            <span className="block whitespace-nowrap">{competition.date}</span>
+                          </td>
+                          <td className="py-2 sm:py-3 px-2 sm:px-4">
                             <div className="flex flex-col gap-1">
-                              <span>{competition.event}</span>
+                              <span className="text-xs sm:text-base break-words">{competition.event}</span>
                               {showCountdown && competition.targetDate && (
                                 <CountdownDays
                                   targetDate={competition.targetDate}
@@ -240,8 +242,8 @@ export default function CompetitionsTable({
                 </table>
               </div>
               {footerLink && (
-                <div className="text-center py-4">
-                  <Link href={footerLink.href} className="text-sky-600 hover:text-sky-800 font-medium">
+                <div className="text-center py-3 sm:py-4">
+                  <Link href={footerLink.href} className="text-sm sm:text-base text-sky-600 hover:text-sky-800 font-medium">
                     {footerLink.text} →
                   </Link>
                 </div>
@@ -257,15 +259,15 @@ export default function CompetitionsTable({
   return (
     <div className="w-full">
       {title && (
-        <h1 className="text-3xl md:text-4xl font-inter font-bold text-center mb-8">
+        <h1 className="text-2xl sm:text-3xl md:text-4xl font-inter font-bold text-center mb-6 md:mb-8 px-2">
           {title}
         </h1>
       )}
 
       {showLegend && (
-        <div className="mb-10 bg-gradient-to-br from-sky-50 to-white p-7 rounded-2xl border border-sky-100 shadow flex flex-col gap-4">
-          <h2 className="text-xl font-semibold mb-2 text-sky-800">Leyenda</h2>
-          <div className="flex flex-wrap gap-4">
+        <div className="mb-6 md:mb-10 bg-gradient-to-br from-sky-50 to-white p-4 sm:p-6 md:p-7 rounded-xl md:rounded-2xl border border-sky-100 shadow flex flex-col gap-3 md:gap-4">
+          <h2 className="text-lg sm:text-xl font-semibold mb-1 md:mb-2 text-sky-800">Leyenda</h2>
+          <div className="flex flex-wrap gap-2 sm:gap-3 md:gap-4 text-xs sm:text-sm md:text-base">
             <div className="flex items-center gap-2">{getStatusBadge('finished')}<span className="text-gray-700">Eventos ya realizados</span></div>
             <div className="flex items-center gap-2">{getStatusBadge('finished-recent')}<span className="text-gray-700">Eventos recientes</span></div>
             <div className="flex items-center gap-2">{getStatusBadge('upcoming-next')}<span className="text-gray-700">Próximo evento</span></div>
@@ -276,13 +278,13 @@ export default function CompetitionsTable({
 
       <div className="bg-white shadow-lg border-2 border-sky-100 rounded-xl overflow-hidden">
         <div className="overflow-x-auto">
-          <table className="w-full text-base">
+          <table className="w-full text-sm sm:text-base">
             <thead className="bg-gradient-to-r from-sky-700 to-sky-500 text-white">
               <tr>
-                <th className="py-4 px-4 text-left font-semibold tracking-wide">Fecha</th>
-                <th className="py-4 px-4 text-left font-semibold tracking-wide">Evento</th>
+                <th className="py-3 sm:py-4 px-2 sm:px-4 text-left font-semibold tracking-wide text-xs sm:text-base w-24 sm:w-auto">Fecha</th>
+                <th className="py-3 sm:py-4 px-2 sm:px-4 text-left font-semibold tracking-wide text-xs sm:text-base">Evento</th>
                 {variant === 'full' && (
-                  <th className="py-4 px-4 text-left font-semibold tracking-wide">Estado</th>
+                  <th className="py-3 sm:py-4 px-2 sm:px-4 text-left font-semibold tracking-wide text-xs sm:text-base hidden sm:table-cell">Estado</th>
                 )}
               </tr>
             </thead>
@@ -299,20 +301,28 @@ export default function CompetitionsTable({
                       currentStatus === 'upcoming-next' || competition.highlight ? 'bg-yellow-50/80' : ''
                     }`}
                   >
-                    <td className="py-4 px-4 font-semibold whitespace-nowrap">{competition.date}</td>
-                    <td className="py-4 px-4">
+                    <td className="py-3 sm:py-4 px-2 sm:px-4 font-semibold text-xs sm:text-base align-top w-24 sm:w-auto">
+                      <span className="block whitespace-nowrap">{competition.date}</span>
+                    </td>
+                    <td className="py-3 sm:py-4 px-2 sm:px-4">
                       <div className="flex flex-col gap-1">
-                        <span>{competition.event}</span>
+                        <span className="text-xs sm:text-base break-words">{competition.event}</span>
                         {showCountdown && competition.targetDate && (
                           <Countdown
                             targetDate={competition.targetDate}
                             onExpired={() => handleCompetitionExpired(competitionId)}
                           />
                         )}
+                        {/* Mostrar estado en móvil inline */}
+                        {variant === 'full' && (
+                          <span className="sm:hidden mt-1">
+                            {currentStatus ? getStatusBadge(currentStatus) : getStatusBadge('default')}
+                          </span>
+                        )}
                       </div>
                     </td>
                     {variant === 'full' && (
-                      <td className="py-4 px-4">
+                      <td className="py-3 sm:py-4 px-2 sm:px-4 hidden sm:table-cell align-top">
                         {currentStatus ? getStatusBadge(currentStatus) : getStatusBadge('default')}
                       </td>
                     )}

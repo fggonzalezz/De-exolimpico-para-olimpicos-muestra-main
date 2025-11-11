@@ -10,30 +10,30 @@ export default function MaterialEstudioPage() {
     <div className="flex min-h-screen flex-col">
       <Header />
 
-      <main className="flex-1 py-12">
-        <div className="container mx-auto px-4">
+      <main className="flex-1 py-6 md:py-12">
+        <div className="container mx-auto px-3 sm:px-4">
           <div className="max-w-4xl mx-auto">
             {/* Header Section */}
-            <div className="text-center mb-12">
-              <h1 className="text-4xl md:text-5xl font-bold text-sky-700 mb-4">
+            <div className="text-center mb-8 md:mb-12 px-2">
+              <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-sky-700 mb-3 md:mb-4">
                 Material de Estudio
               </h1>
-              <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+              <p className="text-sm sm:text-base md:text-lg text-gray-600 max-w-2xl mx-auto">
                 Accede a nuestra colección completa de recursos, problemas y material educativo para prepararte para las olimpiadas de matemática
               </p>
             </div>
 
             {/* Info Cards */}
-            <div className="grid md:grid-cols-2 gap-6 mb-12">
+            <div className="grid md:grid-cols-2 gap-4 md:gap-6 mb-8 md:mb-12">
               <Card className="border-t-4 border-sky-500">
-                <CardContent className="p-6">
-                  <div className="flex items-start gap-4">
-                    <div className="bg-sky-100 rounded-lg p-3">
-                      <BookOpen className="h-6 w-6 text-sky-600" />
+                <CardContent className="p-4 sm:p-5 md:p-6">
+                  <div className="flex items-start gap-3 sm:gap-4">
+                    <div className="bg-sky-100 rounded-lg p-2 sm:p-3 flex-shrink-0">
+                      <BookOpen className="h-5 w-5 sm:h-6 sm:w-6 text-sky-600" />
                     </div>
                     <div>
-                      <h3 className="font-semibold text-lg mb-2">Libros y Apuntes</h3>
-                      <p className="text-gray-600 text-sm">
+                      <h3 className="font-semibold text-base sm:text-lg mb-1 sm:mb-2">Libros y Apuntes</h3>
+                      <p className="text-gray-600 text-xs sm:text-sm">
                         Material teórico completo sobre álgebra, geometría, teoría de números y combinatoria
                       </p>
                     </div>
@@ -42,14 +42,14 @@ export default function MaterialEstudioPage() {
               </Card>
 
               <Card className="border-t-4 border-green-500">
-                <CardContent className="p-6">
-                  <div className="flex items-start gap-4">
-                    <div className="bg-green-100 rounded-lg p-3">
-                      <FileText className="h-6 w-6 text-green-600" />
+                <CardContent className="p-4 sm:p-5 md:p-6">
+                  <div className="flex items-start gap-3 sm:gap-4">
+                    <div className="bg-green-100 rounded-lg p-2 sm:p-3 flex-shrink-0">
+                      <FileText className="h-5 w-5 sm:h-6 sm:w-6 text-green-600" />
                     </div>
                     <div>
-                      <h3 className="font-semibold text-lg mb-2">Problemas Resueltos</h3>
-                      <p className="text-gray-600 text-sm">
+                      <h3 className="font-semibold text-base sm:text-lg mb-1 sm:mb-2">Problemas Resueltos</h3>
+                      <p className="text-gray-600 text-xs sm:text-sm">
                         Colección de problemas con soluciones detalladas de olimpiadas anteriores
                       </p>
                     </div>
@@ -58,14 +58,14 @@ export default function MaterialEstudioPage() {
               </Card>
 
               <Card className="border-t-4 border-purple-500">
-                <CardContent className="p-6">
-                  <div className="flex items-start gap-4">
-                    <div className="bg-purple-100 rounded-lg p-3">
-                      <Brain className="h-6 w-6 text-purple-600" />
+                <CardContent className="p-4 sm:p-5 md:p-6">
+                  <div className="flex items-start gap-3 sm:gap-4">
+                    <div className="bg-purple-100 rounded-lg p-2 sm:p-3 flex-shrink-0">
+                      <Brain className="h-5 w-5 sm:h-6 sm:w-6 text-purple-600" />
                     </div>
                     <div>
-                      <h3 className="font-semibold text-lg mb-2">Estrategias y Técnicas</h3>
-                      <p className="text-gray-600 text-sm">
+                      <h3 className="font-semibold text-base sm:text-lg mb-1 sm:mb-2">Estrategias y Técnicas</h3>
+                      <p className="text-gray-600 text-xs sm:text-sm">
                         Guías sobre técnicas de resolución y estrategias para competencias
                       </p>
                     </div>
@@ -74,14 +74,14 @@ export default function MaterialEstudioPage() {
               </Card>
 
               <Card className="border-t-4 border-amber-500">
-                <CardContent className="p-6">
-                  <div className="flex items-start gap-4">
-                    <div className="bg-amber-100 rounded-lg p-3">
-                      <Calculator className="h-6 w-6 text-amber-600" />
+                <CardContent className="p-4 sm:p-5 md:p-6">
+                  <div className="flex items-start gap-3 sm:gap-4">
+                    <div className="bg-amber-100 rounded-lg p-2 sm:p-3 flex-shrink-0">
+                      <Calculator className="h-5 w-5 sm:h-6 sm:w-6 text-amber-600" />
                     </div>
                     <div>
-                      <h3 className="font-semibold text-lg mb-2">Pruebas de Práctica</h3>
-                      <p className="text-gray-600 text-sm">
+                      <h3 className="font-semibold text-base sm:text-lg mb-1 sm:mb-2">Pruebas de Práctica</h3>
+                      <p className="text-gray-600 text-xs sm:text-sm">
                         Exámenes de práctica y simulacros de competencias nacionales e internacionales
                       </p>
                     </div>
@@ -92,11 +92,11 @@ export default function MaterialEstudioPage() {
 
             {/* Main CTA Card */}
             <Card className="bg-gradient-to-br from-sky-50 to-blue-100 border-2 border-sky-300 shadow-lg">
-              <CardContent className="p-8 text-center">
+              <CardContent className="p-4 sm:p-6 md:p-8 text-center">
                 <div className="max-w-2xl mx-auto">
-                  <div className="bg-white rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-6 shadow-md">
+                  <div className="bg-white rounded-full w-16 h-16 sm:w-20 sm:h-20 flex items-center justify-center mx-auto mb-4 sm:mb-6 shadow-md">
                     <svg 
-                      className="w-10 h-10 text-sky-600" 
+                      className="w-8 h-8 sm:w-10 sm:h-10 text-sky-600" 
                       viewBox="0 0 24 24" 
                       fill="currentColor"
                     >
@@ -104,11 +104,11 @@ export default function MaterialEstudioPage() {
                     </svg>
                   </div>
                   
-                  <h2 className="text-2xl md:text-3xl font-bold text-gray-800 mb-4">
+                  <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-gray-800 mb-3 md:mb-4 px-2">
                     Accede a Google Drive
                   </h2>
                   
-                  <p className="text-gray-700 mb-8 text-base md:text-lg">
+                  <p className="text-gray-700 mb-6 sm:mb-8 text-sm sm:text-base md:text-lg px-2">
                     Todo nuestro material de estudio está organizado en Google Drive. 
                     Haz clic en el botón para acceder (se abrirá en una nueva pestaña).
                   </p>
@@ -117,17 +117,18 @@ export default function MaterialEstudioPage() {
                     href="https://drive.google.com/drive/u/1/folders/18PJVLK11IXBHp_1ddrH8T5itxmDZpSOj" 
                     target="_blank" 
                     rel="noopener noreferrer"
+                    className="inline-block w-full sm:w-auto"
                   >
                     <Button 
                       size="lg" 
-                      className="bg-sky-600 hover:bg-sky-700 text-white shadow-lg px-8 py-6 text-lg font-semibold transition-all duration-200 hover:scale-105"
+                      className="bg-sky-600 hover:bg-sky-700 text-white shadow-lg w-full sm:w-auto px-4 sm:px-6 md:px-8 py-4 sm:py-5 md:py-6 text-sm sm:text-base md:text-lg font-semibold transition-all duration-200 hover:scale-105"
                     >
-                      Abrir Material en Google Drive
-                      <ExternalLink className="ml-2 h-5 w-5" />
+                      <span className="truncate">Abrir Material en Google Drive</span>
+                      <ExternalLink className="ml-2 h-4 w-4 sm:h-5 sm:w-5 flex-shrink-0" />
                     </Button>
                   </a>
                   
-                  <p className="text-sm text-gray-500 mt-4">
+                  <p className="text-xs sm:text-sm text-gray-500 mt-3 sm:mt-4 px-2">
                     💡 Tip: Puedes agregar el enlace a tus favoritos para acceder más rápido
                   </p>
                 </div>
@@ -135,13 +136,13 @@ export default function MaterialEstudioPage() {
             </Card>
 
             {/* Additional Info */}
-            <div className="mt-8 text-center">
-              <p className="text-gray-600 mb-4">
+            <div className="mt-6 md:mt-8 text-center px-2">
+              <p className="text-sm sm:text-base text-gray-600 mb-3 md:mb-4">
                 ¿Tienes dudas sobre el material o necesitas ayuda?
               </p>
               <a 
                 href="/contacto" 
-                className="text-sky-600 hover:text-sky-800 font-medium underline"
+                className="text-sky-600 hover:text-sky-800 font-medium underline text-sm sm:text-base"
               >
                 Contáctanos aquí
               </a>
