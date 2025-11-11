@@ -1,8 +1,3 @@
-/* Font imports */
-@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -83,10 +78,10 @@
   }
   body {
     @apply bg-background text-foreground;
-    font-family: var(--font-roboto), 'Roboto', sans-serif;
+    font-family: var(--font-roboto), system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   }
   h1, h2, h3, h4, h5, h6 {
-    font-family: var(--font-montserrat), 'Montserrat', sans-serif;
+    font-family: var(--font-montserrat), system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   }
 }
 
@@ -156,19 +151,19 @@
 
 /* Font classes */
 .font-oswald {
-  font-family: 'Oswald', sans-serif;
+  font-family: var(--font-oswald), system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
 }
 
 .font-roboto {
-  font-family: var(--font-roboto), 'Roboto', sans-serif;
+  font-family: var(--font-roboto), system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
 }
 
 .font-inter {
-  font-family: 'Inter', sans-serif;
+  font-family: var(--font-inter), system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
 }
 
 .font-montserrat {
-  font-family: var(--font-montserrat), 'Montserrat', sans-serif;
+  font-family: var(--font-montserrat), system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
 }
 .container2 {
   max-width: 1200px;

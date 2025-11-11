@@ -18,6 +18,8 @@ type InstagramEmbedProps = {
   className?: string;
 };
 
+const INSTAGRAM_EMBED_MIN_HEIGHT = 520;
+
 export default function InstagramEmbed({
   permalink,
   caption,
@@ -42,7 +44,10 @@ export default function InstagramEmbed({
   return (
     <div className={className}>
       {!loaded ? (
-        <div className="w-full max-w-md mx-auto bg-white rounded-lg border border-gray-200 p-4 sm:p-5 md:p-6 text-center shadow-sm">
+        <div
+          className="w-full max-w-md mx-auto bg-white rounded-lg border border-gray-200 p-4 sm:p-5 md:p-6 text-center shadow-sm"
+          style={{ minHeight: INSTAGRAM_EMBED_MIN_HEIGHT }}
+        >
           <div className="flex flex-col items-center">
             <div className="bg-gradient-to-tr from-pink-500 via-purple-500 to-yellow-500 rounded-full p-3 mb-3">
               <svg
@@ -81,7 +86,7 @@ export default function InstagramEmbed({
           </div>
         </div>
       ) : (
-        <div className="w-full max-w-md mx-auto">
+        <div className="w-full max-w-md mx-auto" style={{ minHeight: INSTAGRAM_EMBED_MIN_HEIGHT }}>
           <Script
             src="https://www.instagram.com/embed.js"
             strategy="lazyOnload"
@@ -103,6 +108,7 @@ export default function InstagramEmbed({
               maxWidth: "540px",
               minWidth: "0",
               padding: 0,
+              minHeight: `${INSTAGRAM_EMBED_MIN_HEIGHT}px`,
               width: "100%",
             }}
           >

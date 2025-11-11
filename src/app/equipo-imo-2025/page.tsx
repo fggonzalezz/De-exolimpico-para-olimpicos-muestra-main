@@ -75,6 +75,8 @@ export default function IMOTeamPage() {
                         <img 
                           src="/images/logo_IMO_2025.png" 
                           alt="IMO Logo" 
+                          width={160}
+                          height={96}
                           className="max-w-full max-h-full object-contain"
                         />
                       </div>
@@ -144,6 +146,8 @@ export default function IMOTeamPage() {
                               <img 
                                 src={member.image} 
                                 alt={`Foto de ${member.name}`}
+                                width={128}
+                                height={128}
                                 className="w-full h-full object-cover"
                               />
                             ) : (
@@ -186,6 +190,8 @@ export default function IMOTeamPage() {
                         <img 
                           src="/images/Personas/Valdimir_Silva_Foto.jpeg" 
                           alt="Vladimir Silva" 
+                          width={160}
+                          height={160}
                           className="w-full h-full object-cover"
                         />
                       </div>
@@ -203,6 +209,8 @@ export default function IMOTeamPage() {
                         <img 
                           src="/images/Personas/Facundo_Méndez_Foto.jpg" 
                           alt="Facundo Méndez" 
+                          width={160}
+                          height={160}
                           className="w-full h-full object-cover"
                         />
                       </div>
