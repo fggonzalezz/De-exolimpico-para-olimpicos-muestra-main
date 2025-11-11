@@ -21,7 +21,7 @@ export default function Home() {
 
       <main className="flex-1">
         {/* Hero section */}
-        <section className="relative bg-[#daf3ff] py-16 text-white">
+  <section className="relative bg-[#daf3ff] py-14 sm:py-20 text-white">
           <div className="absolute inset-0 z-0 opacity-70">
             {/* Replace with a real image of students solving math problems */}
             <Image
@@ -34,13 +34,13 @@ export default function Home() {
           </div>
           <div className="container mx-auto px-4 relative z-10">
             <div className="max-w-3xl mx-auto text-center">
-              <h1 className="font-inter text-4xl md:text-5xl font-bold mb-4 [text-shadow:-0.5px_-0.5px_0_#000,0_-0.5px_0_#000,0.5px_-0.5px_0_#000,-0.5px_0_0_#000,0.5px_0_0_#000,-0.5px_0.5px_0_#000,0_0.5px_0_#000,0.5px_0.5px_0_#000]">
+              <h1 className="font-inter text-3xl sm:text-4xl md:text-5xl font-bold mb-3 sm:mb-4 [text-shadow:-0.5px_-0.5px_0_#000,0_-0.5px_0_#000,0.5px_-0.5px_0_#000,-0.5px_0_0_#000,0.5px_0_0_#000,-0.5px_0.5px_0_#000,0_0.5px_0_#000,0.5px_0.5px_0_#000]">
                 <span>Olimpiada Matemática Uruguay</span> - Com-Partida de Matemática
               </h1>
-              <h2 className="text-xl md:text-2xl font-bold mb-6 [text-shadow:-0.5px_-0.5px_0_#000,0_-0.5px_0_#000,0.5px_-0.5px_0_#000,-0.5px_0_0_#000,0.5px_0_0_#000,-0.5px_0.5px_0_#000,0_0.5px_0_#000,0.5px_0.5px_0_#000]">
+              <h2 className="text-lg sm:text-xl md:text-2xl font-bold mb-5 sm:mb-6 [text-shadow:-0.5px_-0.5px_0_#000,0_-0.5px_0_#000,0.5px_-0.5px_0_#000,-0.5px_0_0_#000,0.5px_0_0_#000,-0.5px_0.5px_0_#000,0_0.5px_0_#000,0.5px_0.5px_0_#000]">
                 Material de estudio y entrenamiento para olimpiadas matemáticas desde 1992
               </h2>
-              <p className="text-lg font-bold mb-8 [text-shadow:-0.5px_-0.5px_0_#000,0_-0.5px_0_#000,0.5px_-0.5px_0_#000,-0.5px_0_0_#000,0.5px_0_0_#000,-0.5px_0.5px_0_#000,0_0.5px_0_#000,0.5px_0.5px_0_#000]">
+              <p className="text-base sm:text-lg font-semibold mb-7 sm:mb-8 [text-shadow:-0.5px_-0.5px_0_#000,0_-0.5px_0_#000,0.5px_-0.5px_0_#000,-0.5px_0_0_#000,0.5px_0_0_#000,-0.5px_0.5px_0_#000,0_0.5px_0_#000,0.5px_0.5px_0_#000]">
                 Preparación para IMO, Olimpiada Iberoamericana, Cono Sur y Olimpiada Nacional de Uruguay. 
                 Recursos, problemas y material de estudio creado por ex-olímpicos uruguayos.
               </p>

@@ -139,7 +139,7 @@ export default function RootLayout({
   const showStagewiseToolbar = process.env.NODE_ENV !== "production";
 
   return (
-    <html lang="es">
+  <html lang="es" className="light" suppressHydrationWarning>
       <head>
         {/* Speed up first click to Instagram by warming DNS/TLS */}
         <link rel="preconnect" href="https://www.instagram.com" crossOrigin="anonymous" />
