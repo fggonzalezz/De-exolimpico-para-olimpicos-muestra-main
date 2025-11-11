@@ -25,7 +25,7 @@ export default function MaterialEstudioPage() {
 
             {/* Info Cards */}
             <div className="grid md:grid-cols-2 gap-4 md:gap-6 mb-8 md:mb-12">
-              <Card className="border-t-4 border-sky-500">
+              <Card className="border-t-4 border-sky-500 min-h-[168px]">
                 <CardContent className="p-4 sm:p-5 md:p-6">
                   <div className="flex items-start gap-3 sm:gap-4">
                     <div className="bg-sky-100 rounded-lg p-2 sm:p-3 flex-shrink-0">
@@ -41,7 +41,7 @@ export default function MaterialEstudioPage() {
                 </CardContent>
               </Card>
 
-              <Card className="border-t-4 border-green-500">
+              <Card className="border-t-4 border-green-500 min-h-[168px]">
                 <CardContent className="p-4 sm:p-5 md:p-6">
                   <div className="flex items-start gap-3 sm:gap-4">
                     <div className="bg-green-100 rounded-lg p-2 sm:p-3 flex-shrink-0">
@@ -57,7 +57,7 @@ export default function MaterialEstudioPage() {
                 </CardContent>
               </Card>
 
-              <Card className="border-t-4 border-purple-500">
+              <Card className="border-t-4 border-purple-500 min-h-[168px]">
                 <CardContent className="p-4 sm:p-5 md:p-6">
                   <div className="flex items-start gap-3 sm:gap-4">
                     <div className="bg-purple-100 rounded-lg p-2 sm:p-3 flex-shrink-0">
@@ -73,7 +73,7 @@ export default function MaterialEstudioPage() {
                 </CardContent>
               </Card>
 
-              <Card className="border-t-4 border-amber-500">
+              <Card className="border-t-4 border-amber-500 min-h-[168px]">
                 <CardContent className="p-4 sm:p-5 md:p-6">
                   <div className="flex items-start gap-3 sm:gap-4">
                     <div className="bg-amber-100 rounded-lg p-2 sm:p-3 flex-shrink-0">
@@ -91,7 +91,7 @@ export default function MaterialEstudioPage() {
             </div>
 
             {/* Main CTA Card */}
-            <Card className="bg-gradient-to-br from-sky-50 to-blue-100 border-2 border-sky-300 shadow-lg">
+            <Card className="bg-gradient-to-br from-sky-50 to-blue-100 border-2 border-sky-300 shadow-lg min-h-[420px]">
               <CardContent className="p-4 sm:p-6 md:p-8 text-center">
                 <div className="max-w-2xl mx-auto">
                   <div className="bg-white rounded-full w-16 h-16 sm:w-20 sm:h-20 flex items-center justify-center mx-auto mb-4 sm:mb-6 shadow-md">

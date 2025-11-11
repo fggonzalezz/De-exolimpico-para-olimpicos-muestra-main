@@ -1,5 +1,5 @@
 "use client"
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "@/components/ui/dropdown-menu";
@@ -56,18 +56,13 @@ export default function Header() {
     { title: "Paginas recomendadas", href: "/paginas-recomendadas" },
   ];
 
-  const [logoVisible, setLogoVisible] = useState(false);
-  useEffect(() => {
-    setLogoVisible(true);
-  }, []);
-
   return (
     <header className="sticky top-0 z-50 w-full bg-white dark:bg-gray-900 shadow-sm">
       <div className="container mx-auto px-6 lg:px-8">
         <div className="flex justify-between items-center py-3 md:py-4">
           {/* Logo and Title */}
           <Link href="/" className="flex items-center">
-            <div className={`relative h-14 w-14 sm:h-16 sm:w-16 mr-3 transition-all duration-700 ease-out bg-white dark:bg-white rounded-full p-2 shadow-md ring-2 ring-gray-100 dark:ring-gray-200 ${logoVisible ? 'opacity-100 scale-100' : 'opacity-0 scale-75'}`}>
+            <div className="relative h-14 w-14 sm:h-16 sm:w-16 mr-3 transition-transform duration-500 ease-out bg-white dark:bg-white rounded-full p-2 shadow-md ring-2 ring-gray-100 dark:ring-gray-200">
               <Image
                 src="/images/CPM.png"
                 alt="Com-Partida de Matemática del Uruguay"
