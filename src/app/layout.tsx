@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import { Analytics } from '@vercel/analytics/next';
+import { SpeedInsights } from '@vercel/speed-insights/next';
 import { Inter } from "next/font/google";
 import StagewiseDevToolbar from "@/components/StagewiseDevToolbar";
 
@@ -22,6 +23,7 @@ export default function RootLayout({
         <StagewiseDevToolbar />
         {children}
         <Analytics />
+        <SpeedInsights />
       </body>
     </html>
   );
