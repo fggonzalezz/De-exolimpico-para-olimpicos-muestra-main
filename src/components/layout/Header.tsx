@@ -15,7 +15,7 @@ const NavDropdown = ({
 }) => {
   return (
     <DropdownMenu>
-      <DropdownMenuTrigger className="font-inter text-base font-medium hover:text-sky-600 flex items-center gap-1">
+      <DropdownMenuTrigger className="font-inter text-base font-medium text-gray-900 dark:text-white hover:text-sky-600 flex items-center gap-1">
         {label}
         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
           <path d="m6 9 6 6 6-6" />
@@ -23,8 +23,8 @@ const NavDropdown = ({
       </DropdownMenuTrigger>
       <DropdownMenuContent>
         {items.map((item) => (
-          <DropdownMenuItem key={item.href}>
-            <Link href={item.href} className="w-full">
+          <DropdownMenuItem key={item.href} asChild>
+            <Link href={item.href}>
               {item.title}
             </Link>
           </DropdownMenuItem>
@@ -62,20 +62,20 @@ export default function Header() {
   }, []);
 
   return (
-    <header className="sticky top-0 z-50 w-full bg-white shadow-sm">
+    <header className="sticky top-0 z-50 w-full bg-white dark:bg-gray-900 shadow-sm">
       <div className="container mx-auto px-6 lg:px-8">
         <div className="flex justify-between items-center py-3 md:py-4">
           {/* Logo and Title */}
           <Link href="/" className="flex items-center">
-            <div className={`relative h-14 w-14 sm:h-16 sm:w-16 mr-3 transition-all duration-700 ease-out ${logoVisible ? 'opacity-100 scale-100' : 'opacity-0 scale-75'}`}>
+            <div className={`relative h-14 w-14 sm:h-16 sm:w-16 mr-3 transition-all duration-700 ease-out bg-white rounded-full p-1 shadow-sm ${logoVisible ? 'opacity-100 scale-100' : 'opacity-0 scale-75'}`}>
               {/* Use an embedded image that matches the logo you provided */}
-              <Image src="/images/CPM.png" alt="Logo" fill />
+              <Image src="/images/CPM.png" alt="Logo" fill className="object-contain" />
             </div>
           </Link>
 
           {/* Navigation */}
           <nav className="hidden md:flex items-center space-x-6">
-            <Link href="/" className="font-inter text-base font-medium hover:text-sky-600">
+            <Link href="/" className="font-inter text-base font-medium text-gray-900 dark:text-white hover:text-sky-600">
               Inicio
             </Link>
             <NavDropdown label="Sobre Nosotros" items={[
@@ -85,7 +85,7 @@ export default function Header() {
             <NavDropdown label="Calendario 2025" items={calendarioItems} />
             <NavDropdown label="Equipos" items={equiposItems} />
             <NavDropdown label="Materiales" items={materialesItems} />
-            <Link href="/contacto" className="font-inter text-base font-medium hover:text-sky-600">
+            <Link href="/contacto" className="font-inter text-base font-medium text-gray-900 dark:text-white hover:text-sky-600">
               Contacto
             </Link>
             <Link href="https://com-partidauruguay.weebly.com/" target="_blank" rel="noopener noreferrer" className="bg-yellow-500 text-white font-medium px-5 py-2.5 rounded-full hover:bg-yellow-600 transition-colors">

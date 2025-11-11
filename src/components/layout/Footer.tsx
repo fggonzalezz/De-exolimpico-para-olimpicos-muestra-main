@@ -6,23 +6,25 @@ export default function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="w-full bg-gray-50">
+    <footer className="w-full bg-gray-50 dark:bg-gray-900">
       {/* Main Footer with Quick Links */}
-      <div className="border-t border-gray-200">
+      <div className="border-t border-gray-200 dark:border-gray-700">
         <div className="container mx-auto px-4 py-12">
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
             {/* Organization Info */}
             <div className="col-span-1">
               <div className="flex items-center mb-4">
-                <Image
-                  src="/images/CPM.png"
-                  alt="Com-Partida de Matemática del Uruguay Logo"
-                  width={50}
-                  height={50}
-                  className="h-12 w-auto mr-3"
-                />
+                <div className="bg-white rounded-full p-1">
+                  <Image
+                    src="/images/CPM.png"
+                    alt="Com-Partida de Matemática del Uruguay Logo"
+                    width={50}
+                    height={50}
+                    className="h-12 w-auto"
+                  />
+                </div>
               </div>
-              <p className="text-sm text-gray-600 mb-4">
+              <p className="text-sm text-gray-600 dark:text-gray-300 mb-4">
                 Información compartida matemática: Un proyecto educativo que se construye con todos desde 1992.
               </p>
               <div className="flex space-x-3">
@@ -54,20 +56,20 @@ export default function Footer() {
 
             {/* Quick Links - First Column */}
             <div>
-              <h4 className="font-inter font-semibold text-gray-800 mb-4 text-md">Conocenos</h4>
+              <h4 className="font-inter font-semibold text-gray-800 dark:text-white mb-4 text-md">Conocenos</h4>
               <ul className="space-y-2 text-sm">
                 <li>
-                  <Link href="/" className="text-gray-600 hover:text-sky-700 transition-colors">
+                  <Link href="/" className="text-gray-600 dark:text-gray-300 hover:text-sky-700 dark:hover:text-sky-400 transition-colors">
                     Inicio
                   </Link>
                 </li>
                 <li>
-                  <Link href="/sobre-nosotros" className="text-gray-600 hover:text-sky-700 transition-colors">
+                  <Link href="/sobre-nosotros" className="text-gray-600 dark:text-gray-300 hover:text-sky-700 dark:hover:text-sky-400 transition-colors">
                     Sobre Nosotros
                   </Link>
                 </li>
                 <li>
-                  <Link href="/contacto" className="text-gray-600 hover:text-sky-700 transition-colors">
+                  <Link href="/contacto" className="text-gray-600 dark:text-gray-300 hover:text-sky-700 dark:hover:text-sky-400 transition-colors">
                     Contacto
                   </Link>
                 </li>
@@ -76,7 +78,7 @@ export default function Footer() {
                     href="https://com-partidauruguay.weebly.com/"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-gray-600 hover:text-sky-700 transition-colors flex items-center"
+                    className="text-gray-600 dark:text-gray-300 hover:text-sky-700 dark:hover:text-sky-400 transition-colors flex items-center"
                   >
                     Sitio Oficial
                     <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="ml-1">
@@ -91,30 +93,30 @@ export default function Footer() {
 
             {/* Quick Links - Second Column */}
             <div>
-              <h4 className="font-inter font-semibold text-gray-800 mb-4 text-md">Calendario y Equipos</h4>
+              <h4 className="font-inter font-semibold text-gray-800 dark:text-white mb-4 text-md">Calendario y Equipos</h4>
               <ul className="space-y-2 text-sm">
                 <li>
-                  <Link href="/calendario-2025" className="text-gray-600 hover:text-sky-700 transition-colors">
+                  <Link href="/calendario-2025" className="text-gray-600 dark:text-gray-300 hover:text-sky-700 dark:hover:text-sky-400 transition-colors">
                     Calendario Completo
                   </Link>
                 </li>
                 <li>
-                  <Link href="/proximas-competencias" className="text-gray-600 hover:text-sky-700 transition-colors">
+                  <Link href="/proximas-competencias" className="text-gray-600 dark:text-gray-300 hover:text-sky-700 dark:hover:text-sky-400 transition-colors">
                     Próximas Competencias
                   </Link>
                 </li>
                 <li>
-                  <Link href="/equipos-2025" className="text-gray-600 hover:text-sky-700 transition-colors">
+                  <Link href="/equipos-2025" className="text-gray-600 dark:text-gray-300 hover:text-sky-700 dark:hover:text-sky-400 transition-colors">
                     Equipos Uruguayos
                   </Link>
                 </li>
                 <li>
-                  <Link href="/equipo-imo-2025" className="text-gray-600 hover:text-sky-700 transition-colors">
+                  <Link href="/equipo-imo-2025" className="text-gray-600 dark:text-gray-300 hover:text-sky-700 dark:hover:text-sky-400 transition-colors">
                     Equipo IMO
                   </Link>
                 </li>
                 <li>
-                  <Link href="/resultados-olimpiadas" className="text-gray-600 hover:text-sky-700 transition-colors">
+                  <Link href="/resultados-olimpiadas" className="text-gray-600 dark:text-gray-300 hover:text-sky-700 dark:hover:text-sky-400 transition-colors">
                     Resultados
                   </Link>
                 </li>
@@ -123,15 +125,15 @@ export default function Footer() {
 
             {/* Quick Links - Third Column */}
             <div>
-              <h4 className="font-inter font-semibold text-gray-800 mb-4 text-md">Materiales</h4>
+              <h4 className="font-inter font-semibold text-gray-800 dark:text-white mb-4 text-md">Materiales</h4>
               <ul className="space-y-2 text-sm">
                 <li>
-                  <Link href="/nacional" className="text-gray-600 hover:text-sky-700 transition-colors">
+                  <Link href="/nacional" className="text-gray-600 dark:text-gray-300 hover:text-sky-700 dark:hover:text-sky-400 transition-colors">
                     Olimpiadas Nacionales
                   </Link>
                 </li>
                 <li>
-                  <Link href="/paginas-recomendadas" className="text-gray-600 hover:text-sky-700 transition-colors">
+                  <Link href="/paginas-recomendadas" className="text-gray-600 dark:text-gray-300 hover:text-sky-700 dark:hover:text-sky-400 transition-colors">
                     Paginas Recomendadas
                   </Link>
                 </li>
@@ -140,7 +142,7 @@ export default function Footer() {
                     href="https://drive.google.com/drive/u/1/folders/18PJVLK11IXBHp_1ddrH8T5itxmDZpSOj"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-gray-600 hover:text-sky-700 transition-colors flex items-center"
+                    className="text-gray-600 dark:text-gray-300 hover:text-sky-700 dark:hover:text-sky-400 transition-colors flex items-center"
                   >
                     Material de Estudio
                     <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="ml-1">

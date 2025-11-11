@@ -54,7 +54,7 @@ export const allCompetitions: Competition[] = [
   {
     date: "Agosto 17",
     event: "Fecha límite Segunda Instancia Olimpíada Nacional",
-    status: "upcoming",
+    status: "finished",
     targetDate: new Date('2025-08-17T00:00:00')
   },
   {

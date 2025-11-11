@@ -15,8 +15,8 @@ export default function ResultadosPage() {
           location: "Sunshine Coast, Australia",
           date: "Julio 10-20, 2025",
           team: [
-            { name: "Diego Correa", award: null },
-            { name: "Juan Martín González", award: null },
+            { name: "Diego Correa", award: "Mención Honorífica" },
+            { name: "Juan Martín González", award: "Mención Honorífica" },
             { name: "Federico Méndez", award: null },
             { name: "Alfonso Ramos", award: null },
             { name: "Rafael Trápani", award: null }
@@ -242,9 +242,9 @@ export default function ResultadosPage() {
                 <div className="text-center md:text-left flex-1">
                   <h3 className="text-xl font-bold text-yellow-700 mb-3">Historia olímpica uruguaya</h3>
                   <p className="mb-4 text-gray-700">
-                    Uruguay participa en la Olimpíada Internacional de Matemática desde 1997, y ha
-                    obtenido hasta el momento <span className="font-medium text-amber-700">3 medallas de bronce</span> y
-                    <span className="font-medium text-sky-600"> 12 menciones honoríficas</span>.
+                    Uruguay participa en la Olimpíada Internacional de Matemática desde 1987, y ha
+                    obtenido hasta el momento <span className="font-medium text-amber-700">2 medallas de bronce</span> y
+                    <span className="font-medium text-sky-600"> 36 menciones honoríficas</span>.
                   </p>
                   <p className="mb-4 text-gray-700">
                     En esta página mostramos los resultados más recientes (2024-2025). Para consultar 
