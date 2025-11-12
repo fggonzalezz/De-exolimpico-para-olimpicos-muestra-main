@@ -58,20 +58,28 @@ function ImageModal({ isOpen, onClose, currentIndex, images, onNext, onPrev }: I
       }
     };
 
+    const htmlElement = document.documentElement;
+    const previousScrollbarGutter = htmlElement.style.getPropertyValue('scrollbar-gutter');
+
     if (isOpen) {
       document.addEventListener('keydown', handleKeyDown);
-      // Prevenir scroll sin causar línea blanca
       const scrollbarWidth = window.innerWidth - document.documentElement.clientWidth;
       document.body.style.overflow = 'hidden';
       if (scrollbarWidth > 0) {
         document.body.style.paddingRight = `${scrollbarWidth}px`;
       }
+      htmlElement.style.setProperty('scrollbar-gutter', 'auto');
     }
 
     return () => {
       document.removeEventListener('keydown', handleKeyDown);
       document.body.style.overflow = '';
       document.body.style.paddingRight = '';
+      if (previousScrollbarGutter) {
+        htmlElement.style.setProperty('scrollbar-gutter', previousScrollbarGutter);
+      } else {
+        htmlElement.style.removeProperty('scrollbar-gutter');
+      }
     };
   }, [isOpen, onClose, onNext, onPrev]);
 
@@ -83,19 +91,9 @@ function ImageModal({ isOpen, onClose, currentIndex, images, onNext, onPrev }: I
 
   return (
     <div
-      className="fixed inset-0 z-[60] flex items-center justify-center"
-      onClick={(event) => {
-        if (event.target === event.currentTarget) {
-          onClose();
-        }
-      }}
+      className="fixed inset-0 z-[60] flex items-center justify-center bg-black/90"
+      onClick={onClose}
     >
-      {/* Overlay */}
-      <div
-        className="absolute inset-0 bg-black/90"
-        onClick={onClose}
-      />
-
       <div
         className="relative z-[70] flex h-full w-full items-center justify-center px-6"
         onClick={(event) => event.stopPropagation()}
