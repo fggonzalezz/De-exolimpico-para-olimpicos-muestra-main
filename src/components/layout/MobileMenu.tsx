@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import {
@@ -22,6 +22,27 @@ export default function MobileMenu() {
   const router = useRouter();
   const [open, setOpen] = useState(false);
   const [activeSection, setActiveSection] = useState<string | null>(null);
+
+  // Close menu on resize to desktop size
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth >= 768 && open) {
+        setOpen(false);
+        // Ensure body overflow is restored
+        document.body.style.overflow = '';
+      }
+    };
+
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, [open]);
+
+  // Cleanup body overflow when component unmounts
+  useEffect(() => {
+    return () => {
+      document.body.style.overflow = '';
+    };
+  }, []);
 
   // Menu data - same structure as in Header component
   const menuSections = [
@@ -67,7 +88,7 @@ export default function MobileMenu() {
   };
 
   return (
-    <Sheet open={open} onOpenChange={setOpen}>
+    <Sheet open={open} onOpenChange={setOpen} modal={true}>
       <SheetTrigger asChild>
         <button
           className="md:hidden relative z-20 p-2 focus:outline-none focus:ring-2 focus:ring-sky-500 rounded-md hover:bg-gray-100 transition-all"
