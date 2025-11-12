@@ -88,7 +88,8 @@ export default function MobileMenu() {
   };
 
   return (
-    <Sheet open={open} onOpenChange={setOpen} modal={true}>
+    // Set modal={false} to avoid Radix scroll lock on body in desktop contexts
+    <Sheet open={open} onOpenChange={setOpen} modal={false}>
       <SheetTrigger asChild>
         <button
           className="md:hidden relative z-20 p-2 focus:outline-none focus:ring-2 focus:ring-sky-500 rounded-md hover:bg-gray-100 transition-all"

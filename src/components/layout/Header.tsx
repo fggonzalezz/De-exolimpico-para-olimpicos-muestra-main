@@ -14,7 +14,7 @@ const NavDropdown = ({
   items: { title: string; href: string }[]
 }) => {
   return (
-    <DropdownMenu>
+    <DropdownMenu modal={false}>
   <DropdownMenuTrigger className="font-inter text-base font-medium text-gray-900 hover:text-sky-600 flex items-center gap-1 outline-none focus:outline-none">
         {label}
         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
