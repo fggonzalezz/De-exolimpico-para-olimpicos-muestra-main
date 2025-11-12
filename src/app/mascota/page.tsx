@@ -40,64 +40,114 @@ function MascotaCard({ imageSrc, name, subtitle, description }: MascotaCardProps
 interface ImageModalProps {
   isOpen: boolean;
   onClose: () => void;
-  imageSrc: string;
-  imageAlt: string;
+  currentIndex: number;
+  images: { src: string; alt: string }[];
+  onNext: () => void;
+  onPrev: () => void;
 }
 
-function ImageModal({ isOpen, onClose, imageSrc, imageAlt }: ImageModalProps) {
+function ImageModal({ isOpen, onClose, currentIndex, images, onNext, onPrev }: ImageModalProps) {
   useEffect(() => {
-    const handleEscape = (e: KeyboardEvent) => {
+    const handleKeyDown = (e: KeyboardEvent) => {
       if (e.key === 'Escape') {
         onClose();
+      } else if (e.key === 'ArrowRight') {
+        onNext();
+      } else if (e.key === 'ArrowLeft') {
+        onPrev();
       }
     };
 
     if (isOpen) {
-      document.addEventListener('keydown', handleEscape);
+      document.addEventListener('keydown', handleKeyDown);
+      // Prevenir scroll sin causar línea blanca
+      const scrollbarWidth = window.innerWidth - document.documentElement.clientWidth;
       document.body.style.overflow = 'hidden';
+      if (scrollbarWidth > 0) {
+        document.body.style.paddingRight = `${scrollbarWidth}px`;
+      }
     }
 
     return () => {
-      document.removeEventListener('keydown', handleEscape);
-      document.body.style.overflow = 'unset';
+      document.removeEventListener('keydown', handleKeyDown);
+      document.body.style.overflow = '';
+      document.body.style.paddingRight = '';
     };
-  }, [isOpen, onClose]);
-
-  // Handler para cerrar al hacer clic fuera de la imagen
-  const handleBackdropClick = (e: React.MouseEvent<HTMLDivElement>) => {
-    // Solo cerrar si el clic fue en el backdrop (overlay), no en la imagen
-    if (e.target === e.currentTarget) {
-      onClose();
-    }
-  };
-
-  // Handler para prevenir que el clic en la imagen cierre el modal
-  const handleImageClick = (e: React.MouseEvent) => {
-    e.stopPropagation();
-  };
+  }, [isOpen, onClose, onNext, onPrev]);
 
   if (!isOpen) return null;
 
+  const currentImage = images[currentIndex];
+  const canGoPrev = currentIndex > 0;
+  const canGoNext = currentIndex < images.length - 1;
+
   return (
-    <div 
-      className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-75 p-4 cursor-pointer"
-      onClick={handleBackdropClick}
+    <div
+      className="fixed inset-0 z-[60] flex items-center justify-center"
+      onClick={(event) => {
+        if (event.target === event.currentTarget) {
+          onClose();
+        }
+      }}
     >
-      <div className="relative max-w-4xl max-h-full cursor-default" onClick={handleImageClick}>
+      {/* Overlay */}
+      <div
+        className="absolute inset-0 bg-black/90"
+        onClick={onClose}
+      />
+
+      <div
+        className="relative z-[70] flex h-full w-full items-center justify-center px-6"
+        onClick={(event) => event.stopPropagation()}
+      >
+        {/* Botón cerrar */}
         <button
           onClick={onClose}
-          className="absolute -top-10 right-0 text-white hover:text-sky-300 z-10 transition-colors duration-200"
+          type="button"
+          className="absolute top-6 right-8 z-[80] text-white hover:text-sky-300 transition-colors duration-200 p-2 hover:bg-white/10 rounded-full"
+          aria-label="Cerrar"
         >
           <X size={32} />
         </button>
-        <div className="relative max-h-[80vh] max-w-full">
+
+        {/* Botón anterior */}
+        {canGoPrev && (
+          <button
+            onClick={onPrev}
+            type="button"
+            className="absolute left-8 top-1/2 z-[80] -translate-y-1/2 text-white hover:text-sky-300 transition-all duration-200 p-3 hover:bg-white/20 rounded-full"
+            aria-label="Imagen anterior"
+          >
+            <ChevronLeft size={40} />
+          </button>
+        )}
+
+        {/* Botón siguiente */}
+        {canGoNext && (
+          <button
+            onClick={onNext}
+            type="button"
+            className="absolute right-8 top-1/2 z-[80] -translate-y-1/2 text-white hover:text-sky-300 transition-all duration-200 p-3 hover:bg-white/20 rounded-full"
+            aria-label="Imagen siguiente"
+          >
+            <ChevronRight size={40} />
+          </button>
+        )}
+
+        {/* Imagen */}
+        <div className="relative max-w-5xl max-h-[90vh] flex items-center justify-center">
           <Image
-            src={imageSrc}
-            alt={imageAlt}
-            width={800}
-            height={600}
-            className="object-contain max-h-[80vh] w-auto rounded-lg shadow-2xl"
+            src={currentImage.src}
+            alt={currentImage.alt}
+            width={1200}
+            height={900}
+            className="object-contain max-h-[90vh] w-auto rounded-lg shadow-2xl"
+            priority
           />
+          {/* Contador de imágenes */}
+          <div className="absolute bottom-4 left-1/2 -translate-x-1/2 bg-black/60 text-white px-4 py-2 rounded-full text-sm">
+            {currentIndex + 1} / {images.length}
+          </div>
         </div>
       </div>
     </div>
@@ -114,7 +164,8 @@ export default function MascotaPage() {
   const [isDragging, setIsDragging] = useState(false);
   const [startX, setStartX] = useState(0);
   const [scrollLeft, setScrollLeft] = useState(0);
-  const [modalImage, setModalImage] = useState<{src: string, alt: string} | null>(null);
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   const galleryImages = [
     { src: "/images/Momento_Gauchito_Segundo_000.jpg", alt: "Momento con Gauchito II" },
@@ -218,12 +269,25 @@ export default function MascotaPage() {
     setTimeout(checkGalleryScrollButtons, 100);
   };
 
-  const openModal = (src: string, alt: string) => {
-    setModalImage({ src, alt });
+  const openModal = (index: number) => {
+    setCurrentImageIndex(index);
+    setIsModalOpen(true);
   };
 
   const closeModal = () => {
-    setModalImage(null);
+    setIsModalOpen(false);
+  };
+
+  const nextImage = () => {
+    setCurrentImageIndex((prev) => 
+      prev < galleryImages.length - 1 ? prev + 1 : prev
+    );
+  };
+
+  const prevImage = () => {
+    setCurrentImageIndex((prev) => 
+      prev > 0 ? prev - 1 : prev
+    );
   };
 
   useEffect(() => {
@@ -354,7 +418,11 @@ export default function MascotaPage() {
                 onScroll={checkGalleryScrollButtons}
               >
                 {galleryImages.map((image, index) => (
-                  <div key={index} className="flex-shrink-0 w-80 h-60 rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-all duration-300 group relative">
+                  <div 
+                    key={index} 
+                    className="flex-shrink-0 w-80 h-60 rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-all duration-300 group relative cursor-pointer"
+                    onClick={() => openModal(index)}
+                  >
                     <Image
                       src={image.src}
                       alt={image.alt}
@@ -363,13 +431,10 @@ export default function MascotaPage() {
                       className="object-cover w-full h-full group-hover:scale-105 transition-transform duration-300"
                       draggable={false}
                     />
-                    <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-30 transition-all duration-300 flex items-center justify-center">
-                      <button
-                        onClick={() => openModal(image.src, image.alt)}
-                        className="opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-white rounded-full p-3 shadow-lg hover:bg-sky-50"
-                      >
+                    <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-30 transition-all duration-300 flex items-center justify-center pointer-events-none">
+                      <div className="opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-white rounded-full p-3 shadow-lg">
                         <ZoomIn className="text-sky-600" size={24} />
-                      </button>
+                      </div>
                     </div>
                   </div>
                 ))}
@@ -381,14 +446,14 @@ export default function MascotaPage() {
       <Footer />
 
       {/* Modal para imágenes */}
-      {modalImage && (
-        <ImageModal
-          isOpen={!!modalImage}
-          onClose={closeModal}
-          imageSrc={modalImage.src}
-          imageAlt={modalImage.alt}
-        />
-      )}
+      <ImageModal
+        isOpen={isModalOpen}
+        onClose={closeModal}
+        currentIndex={currentImageIndex}
+        images={galleryImages}
+        onNext={nextImage}
+        onPrev={prevImage}
+      />
     </div>
   );
 }

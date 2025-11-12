@@ -1,1 +1,20 @@
-[]
+[
+		{
+			"id": 1,
+			"title": "Diagnosticar modal mascotas",
+			"description": "Reproducir el modal de la galería, verificar cierre involuntario y fallas de navegación",
+			"status": "completed"
+		},
+		{
+			"id": 2,
+			"title": "Arreglar controles del modal",
+			"description": "Ajustar eventos y estilos para botones de cerrar y flechas, evitando flicker o bloqueos",
+			"status": "in-progress"
+		},
+		{
+			"id": 3,
+			"title": "Verificar línea blanca y scroll",
+			"description": "Asegurar que al abrir el modal no aparezca separación lateral y el scroll se restaure",
+			"status": "pending"
+		}
+]

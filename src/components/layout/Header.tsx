@@ -1,5 +1,5 @@
 "use client"
-import React from 'react';
+import React, { useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "@/components/ui/dropdown-menu";
@@ -8,13 +8,17 @@ import MobileMenu from './MobileMenu';
 // Component for all dropdown menus
 const NavDropdown = ({
   label,
-  items
+  items,
+  isOpen,
+  onOpenChange,
 }: {
   label: string;
-  items: { title: string; href: string }[]
+  items: { title: string; href: string }[];
+  isOpen: boolean;
+  onOpenChange: (isOpen: boolean) => void;
 }) => {
   return (
-    <DropdownMenu modal={false}>
+    <DropdownMenu modal={false} open={isOpen} onOpenChange={onOpenChange}>
   <DropdownMenuTrigger className="font-inter text-base font-medium text-gray-900 hover:text-sky-600 flex items-center gap-1 outline-none focus:outline-none">
         {label}
         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -36,6 +40,8 @@ const NavDropdown = ({
 
 // Header component
 export default function Header() {
+  const [openDropdown, setOpenDropdown] = useState<string | null>(null);
+
   // Dropdown menu data
   const calendarioItems = [
     { title: "Calendario Completo 2025", href: "/calendario-2025" },
@@ -82,10 +88,10 @@ export default function Header() {
             <NavDropdown label="Sobre Nosotros" items={[
               { title: "Sobre Nosotros", href: "/sobre-nosotros" },
               { title: "Mascota", href: "/mascota" }
-            ]} />
-            <NavDropdown label="Calendario 2025" items={calendarioItems} />
-            <NavDropdown label="Equipos" items={equiposItems} />
-            <NavDropdown label="Materiales" items={materialesItems} />
+            ]} isOpen={openDropdown === "Sobre Nosotros"} onOpenChange={(isOpen) => setOpenDropdown(isOpen ? "Sobre Nosotros" : null)} />
+            <NavDropdown label="Calendario 2025" items={calendarioItems} isOpen={openDropdown === "Calendario 2025"} onOpenChange={(isOpen) => setOpenDropdown(isOpen ? "Calendario 2025" : null)} />
+            <NavDropdown label="Equipos" items={equiposItems} isOpen={openDropdown === "Equipos"} onOpenChange={(isOpen) => setOpenDropdown(isOpen ? "Equipos" : null)} />
+            <NavDropdown label="Materiales" items={materialesItems} isOpen={openDropdown === "Materiales"} onOpenChange={(isOpen) => setOpenDropdown(isOpen ? "Materiales" : null)} />
             <Link href="/contacto" className="font-inter text-base font-medium text-gray-900 hover:text-sky-600">
               Contacto
             </Link>
