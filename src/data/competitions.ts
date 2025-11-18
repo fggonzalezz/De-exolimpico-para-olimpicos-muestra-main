@@ -58,9 +58,10 @@ export const allCompetitions: Competition[] = [
     targetDate: new Date('2025-08-17T00:00:00')
   },
   {
-    date: "Agosto (fecha y sede a confirmar)",
+    date: "Octubre 26 al Noviembre 1",
     event: "5a Olimpíada PAGMO",
-    status: "upcoming"
+    status: "finished",
+    targetDate: new Date('2025-10-26T00:00:00')
   },
   {
     date: "Setiembre 7",
