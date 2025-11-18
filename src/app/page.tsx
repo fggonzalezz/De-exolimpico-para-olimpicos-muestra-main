@@ -6,15 +6,10 @@ import Footer from '@/components/layout/Footer';
 import { Card, CardContent } from '@/components/ui/card';
 import CompetitionsTable from '@/components/competitions/CompetitionsTable';
 import { nextSixCompetitions } from '@/data/competitions';
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 
 export default function Home() {
   
-  const [mascotVisible, setMascotVisible] = useState(false);
-  useEffect(() => {
-    setMascotVisible(true);
-  }, []);
-
   return (
     <div className="flex min-h-screen flex-col">
       <Header />
@@ -34,13 +29,13 @@ export default function Home() {
           </div>
           <div className="container mx-auto px-4 relative z-10">
             <div className="max-w-3xl mx-auto text-center">
-              <h1 className="font-inter text-3xl sm:text-4xl md:text-5xl font-bold mb-3 sm:mb-4 [text-shadow:-0.5px_-0.5px_0_#000,0_-0.5px_0_#000,0.5px_-0.5px_0_#000,-0.5px_0_0_#000,0.5px_0_0_#000,-0.5px_0.5px_0_#000,0_0.5px_0_#000,0.5px_0.5px_0_#000]">
+              <h1 className="font-inter text-3xl sm:text-4xl md:text-5xl font-bold mb-3 sm:mb-4 text-shadow-outline">
                 <span>Olimpiada Matemática Uruguay</span> - Com-Partida de Matemática
               </h1>
-              <h2 className="text-lg sm:text-xl md:text-2xl font-bold mb-5 sm:mb-6 [text-shadow:-0.5px_-0.5px_0_#000,0_-0.5px_0_#000,0.5px_-0.5px_0_#000,-0.5px_0_0_#000,0.5px_0_0_#000,-0.5px_0.5px_0_#000,0_0.5px_0_#000,0.5px_0.5px_0_#000]">
+              <h2 className="text-lg sm:text-xl md:text-2xl font-bold mb-5 sm:mb-6 text-shadow-outline">
                 Material de estudio y entrenamiento para olimpiadas matemáticas desde 1992
               </h2>
-              <p className="text-base sm:text-lg font-semibold mb-7 sm:mb-8 [text-shadow:-0.5px_-0.5px_0_#000,0_-0.5px_0_#000,0.5px_-0.5px_0_#000,-0.5px_0_0_#000,0.5px_0_0_#000,-0.5px_0.5px_0_#000,0_0.5px_0_#000,0.5px_0.5px_0_#000]">
+              <p className="text-base sm:text-lg font-semibold mb-7 sm:mb-8 text-shadow-outline">
                 Preparación para IMO, Olimpiada Iberoamericana, Cono Sur y Olimpiada Nacional de Uruguay. 
                 Recursos, problemas y material de estudio creado por ex-olímpicos uruguayos.
               </p>
@@ -243,7 +238,7 @@ export default function Home() {
             <div className="max-w-4xl mx-auto flex flex-col md:flex-row items-center bg-white rounded-lg shadow-md overflow-hidden">
               <div className="md:w-1/3 bg-white p-8 flex items-center justify-center">
                 {/* Placeholder for mascot image */}
-                <div className={`w-40 h-40 bg-yellow-400 rounded-full flex items-center justify-center overflow-hidden transition-all duration-700 ease-out ${mascotVisible ? 'opacity-100 scale-100' : 'opacity-0 scale-75'}`}>
+                <div className="w-40 h-40 bg-yellow-400 rounded-full flex items-center justify-center overflow-hidden animate-fade-in">
                   <Image
                     src="/images/Eulerito.jpg"
                     alt="Foto de la mascota Eulerito"
