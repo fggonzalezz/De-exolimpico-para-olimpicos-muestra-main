@@ -26,6 +26,7 @@ export const materialesItems: MenuItem[] = [
   { title: "Material de Estudio", href: "/material-de-estudio" },
   { title: "Nacional", href: "/nacional" },
   { title: "Paginas recomendadas", href: "/paginas-recomendadas" },
+  { title: "Seminarios Ex-Olímpicos", href: "/seminarios-exolimpicos" },
 ];
 
 export const sobreNosotrosItems: MenuItem[] = [
