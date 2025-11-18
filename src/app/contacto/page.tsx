@@ -1,9 +1,37 @@
-import React from 'react';
+'use client';
+
+import React, { useState } from 'react';
 import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
 import { Card, CardContent } from '@/components/ui/card';
 
 export default function ContactPage() {
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [isSuccess, setIsSuccess] = useState(false);
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+
+    const formData = new FormData(e.currentTarget);
+    
+    try {
+      await fetch("https://formsubmit.co/ajax/fg188707@gmail.com", {
+        method: "POST",
+        headers: { 
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
+        },
+        body: JSON.stringify(Object.fromEntries(formData)),
+      });
+      setIsSuccess(true);
+    } catch (error) {
+      console.error("Error submitting form:", error);
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
   return (
     <div className="flex min-h-screen flex-col">
       <Header />
@@ -109,70 +137,105 @@ export default function ContactPage() {
                     </p>
                   </div>
 
-                  <form 
-                    action="https://formsubmit.co/fg188707@gmail.com" 
-                    method="POST"
-                    className="max-w-2xl mx-auto space-y-6"
-                  >
-                    {/* Configuration for FormSubmit */}
-                    <input type="hidden" name="_subject" value="Nueva sugerencia de mejora - Web Ex-Olímpicos" />
-                    <input type="hidden" name="_captcha" value="false" />
-                    <input type="hidden" name="_next" value="https://de-exolimpico-para-olimpicos-muestra.netlify.app/contacto?success=true" />
-                    <input type="hidden" name="_template" value="table" />
-
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                      <div className="space-y-2">
-                        <label htmlFor="name" className="text-sm font-medium text-gray-700">
-                          Nombre (Opcional)
-                        </label>
-                        <input
-                          type="text"
-                          id="name"
-                          name="name"
-                          className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-green-500 focus:border-transparent outline-none transition-all"
-                          placeholder="Tu nombre"
-                        />
-                      </div>
-                      <div className="space-y-2">
-                        <label htmlFor="email" className="text-sm font-medium text-gray-700">
-                          Email (Opcional)
-                        </label>
-                        <input
-                          type="email"
-                          id="email"
-                          name="email"
-                          className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-green-500 focus:border-transparent outline-none transition-all"
-                          placeholder="tu@email.com"
-                        />
-                      </div>
-                    </div>
-
-                    <div className="space-y-2">
-                      <label htmlFor="suggestion" className="text-sm font-medium text-gray-700">
-                        ¿Qué sugerencia tienes? <span className="text-red-500">*</span>
-                      </label>
-                      <textarea
-                        id="suggestion"
-                        name="suggestion"
-                        required
-                        rows={4}
-                        className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-green-500 focus:border-transparent outline-none transition-all resize-none"
-                        placeholder="Me gustaría que agregaran..."
-                      ></textarea>
-                    </div>
-
-                    <div className="text-center pt-2">
-                      <button
-                        type="submit"
-                        className="inline-flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-white bg-green-600 hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500 transition-colors shadow-md hover:shadow-lg"
-                      >
-                        <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8" />
+                  {isSuccess ? (
+                    <div className="bg-green-50 border border-green-200 rounded-lg p-8 text-center animate-in fade-in duration-500">
+                      <div className="inline-flex items-center justify-center w-16 h-16 bg-green-100 rounded-full mb-4">
+                        <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 text-green-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                         </svg>
-                        Enviar Sugerencia
+                      </div>
+                      <h3 className="text-xl font-bold text-green-800 mb-2">¡Gracias por tu sugerencia!</h3>
+                      <p className="text-green-700 mb-6">
+                        Hemos recibido tu mensaje correctamente. Agradecemos tu tiempo para ayudarnos a mejorar.
+                      </p>
+                      <button 
+                        onClick={() => setIsSuccess(false)}
+                        className="text-green-600 hover:text-green-800 font-medium underline"
+                      >
+                        Enviar otra sugerencia
                       </button>
                     </div>
-                  </form>
+                  ) : (
+                    <form 
+                      onSubmit={handleSubmit}
+                      className="max-w-2xl mx-auto space-y-6"
+                    >
+                      {/* Configuration for FormSubmit */}
+                      <input type="hidden" name="_subject" value="Nueva sugerencia de mejora - Web Ex-Olímpicos" />
+                      <input type="hidden" name="_captcha" value="false" />
+                      <input type="hidden" name="_template" value="table" />
+
+                      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div className="space-y-2">
+                          <label htmlFor="name" className="text-sm font-medium text-gray-700">
+                            Nombre (Opcional)
+                          </label>
+                          <input
+                            type="text"
+                            id="name"
+                            name="name"
+                            className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-green-500 focus:border-transparent outline-none transition-all"
+                            placeholder="Tu nombre"
+                          />
+                        </div>
+                        <div className="space-y-2">
+                          <label htmlFor="email" className="text-sm font-medium text-gray-700">
+                            Email (Opcional)
+                          </label>
+                          <input
+                            type="email"
+                            id="email"
+                            name="email"
+                            className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-green-500 focus:border-transparent outline-none transition-all"
+                            placeholder="tu@email.com"
+                          />
+                        </div>
+                      </div>
+
+                      <div className="space-y-2">
+                        <label htmlFor="suggestion" className="text-sm font-medium text-gray-700">
+                          ¿Qué sugerencia tienes? <span className="text-red-500">*</span>
+                        </label>
+                        <textarea
+                          id="suggestion"
+                          name="suggestion"
+                          required
+                          rows={4}
+                          className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-green-500 focus:border-transparent outline-none transition-all resize-none"
+                          placeholder="Me gustaría que agregaran..."
+                        ></textarea>
+                      </div>
+
+                      <div className="text-center pt-2">
+                        <button
+                          type="submit"
+                          disabled={isSubmitting}
+                          className={`inline-flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-white transition-colors shadow-md hover:shadow-lg ${
+                            isSubmitting 
+                              ? 'bg-green-400 cursor-not-allowed' 
+                              : 'bg-green-600 hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500'
+                          }`}
+                        >
+                          {isSubmitting ? (
+                            <>
+                              <svg className="animate-spin -ml-1 mr-3 h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                                <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+                                <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                              </svg>
+                              Enviando...
+                            </>
+                          ) : (
+                            <>
+                              <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8" />
+                              </svg>
+                              Enviar Sugerencia
+                            </>
+                          )}
+                        </button>
+                      </div>
+                    </form>
+                  )}
                 </CardContent>
               </Card>
             </section>
