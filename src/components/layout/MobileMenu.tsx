@@ -17,6 +17,7 @@ import {
   AccordionItem,
   AccordionTrigger
 } from "@/components/ui/accordion";
+import { menuSections } from '@/data/menu';
 
 export default function MobileMenu() {
   const router = useRouter();
@@ -43,38 +44,6 @@ export default function MobileMenu() {
       document.body.style.overflow = '';
     };
   }, []);
-
-  // Menu data - same structure as in Header component
-  const menuSections = [
-    {
-      id: "calendario",
-      label: "Calendario 2025",
-      items: [
-        { title: "Calendario Completo 2025", href: "/calendario-2025" },
-        { title: "Próximas Competencias", href: "/proximas-competencias" },
-      ]
-    },
-    {
-      id: "equipos",
-      label: "Equipos",
-      items: [
-        { title: "Equipos Uruguayos 2025", href: "/equipos-2025" },
-        { title: "Equipo IMO 2025", href: "/equipo-imo-2025" },
-        { title: "Resultados", href: "/resultados-olimpiadas" },
-      ]
-    },
-    {
-      id: "materiales",
-      label: "Materiales",
-      items: [
-        { title: "Cómo son los Selectivos", href: "/como-son-los-selectivos" },
-        { title: "Libro Nacional 2018-2019", href: "/libro-nacional-2018-2019" },
-        { title: "Material de Estudio", href: "/material-de-estudio" },
-        { title: "Nacional", href: "/nacional" },
-        { title: "Páginas recomendadas", href: "/paginas-recomendadas" },
-      ]
-    }
-  ];
 
   // Handle navigation and close the menu
   const handleNavigation = (href: string) => {

@@ -4,6 +4,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "@/components/ui/dropdown-menu";
 import MobileMenu from './MobileMenu';
+import { calendarioItems, equiposItems, materialesItems, sobreNosotrosItems } from '@/data/menu';
 
 // Component for all dropdown menus
 const NavDropdown = ({
@@ -42,26 +43,6 @@ const NavDropdown = ({
 export default function Header() {
   const [openDropdown, setOpenDropdown] = useState<string | null>(null);
 
-  // Dropdown menu data
-  const calendarioItems = [
-    { title: "Calendario Completo 2025", href: "/calendario-2025" },
-    { title: "Próximas Competencias", href: "/proximas-competencias" },
-  ];
-
-  const equiposItems = [
-    { title: "Equipos Uruguayos 2025", href: "/equipos-2025" },
-    { title: "Equipo IMO 2025", href: "/equipo-imo-2025" },
-    { title: "Resultados", href: "/resultados-olimpiadas" },
-  ];
-
-  const materialesItems = [
-    { title: "Cómo son los Selectivos", href: "/como-son-los-selectivos" },
-    { title: "Libro Nacional 2018-2019", href: "/libro-nacional-2018-2019" },
-    { title: "Material de Estudio", href: "/material-de-estudio" },
-    { title: "Nacional", href: "/nacional" },
-    { title: "Paginas recomendadas", href: "/paginas-recomendadas" },
-  ];
-
   return (
   <header className="sticky top-0 z-50 w-full bg-white shadow-sm">
       <div className="container mx-auto px-6 lg:px-8">
@@ -85,10 +66,7 @@ export default function Header() {
             <Link href="/" className="font-inter text-base font-medium text-gray-900 hover:text-sky-600">
               Inicio
             </Link>
-            <NavDropdown label="Sobre Nosotros" items={[
-              { title: "Sobre Nosotros", href: "/sobre-nosotros" },
-              { title: "Mascota", href: "/mascota" }
-            ]} isOpen={openDropdown === "Sobre Nosotros"} onOpenChange={(isOpen) => setOpenDropdown(isOpen ? "Sobre Nosotros" : null)} />
+            <NavDropdown label="Sobre Nosotros" items={sobreNosotrosItems} isOpen={openDropdown === "Sobre Nosotros"} onOpenChange={(isOpen) => setOpenDropdown(isOpen ? "Sobre Nosotros" : null)} />
             <NavDropdown label="Calendario 2025" items={calendarioItems} isOpen={openDropdown === "Calendario 2025"} onOpenChange={(isOpen) => setOpenDropdown(isOpen ? "Calendario 2025" : null)} />
             <NavDropdown label="Equipos" items={equiposItems} isOpen={openDropdown === "Equipos"} onOpenChange={(isOpen) => setOpenDropdown(isOpen ? "Equipos" : null)} />
             <NavDropdown label="Materiales" items={materialesItems} isOpen={openDropdown === "Materiales"} onOpenChange={(isOpen) => setOpenDropdown(isOpen ? "Materiales" : null)} />
