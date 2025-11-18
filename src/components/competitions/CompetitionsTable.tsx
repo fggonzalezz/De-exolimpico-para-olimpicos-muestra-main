@@ -114,6 +114,13 @@ const getStatusBadge = (status: string) => {
   }
 };
 
+// Helper para generar un ID estable para la competencia
+const getCompetitionId = (competition: Competition) => {
+  if (competition.id) return competition.id;
+  // Generar un ID basado en fecha y evento para evitar colisiones cuando cambia el orden
+  return `${competition.date}-${competition.event}`.replace(/[^a-z0-9]/gi, '-').toLowerCase();
+};
+
 export default function CompetitionsTable({
   competitions,
   title = "Competencias",
@@ -143,8 +150,8 @@ export default function CompetitionsTable({
   };
 
   // Función para obtener el status actual (dinámico o estático)
-  const getCurrentStatus = (competition: Competition, index: number): Competition['status'] => {
-    const id = competition.id || `competition-${index}`;
+  const getCurrentStatus = (competition: Competition): Competition['status'] => {
+    const id = getCompetitionId(competition);
     const dynamicStatus = dynamicStatuses[id];
     const staticStatus = competition.status;
     const finalStatus = dynamicStatus || staticStatus;
@@ -162,8 +169,8 @@ export default function CompetitionsTable({
     };
 
     return [...comps].sort((a, b) => {
-      const statusA = getCurrentStatus(a, comps.indexOf(a));
-      const statusB = getCurrentStatus(b, comps.indexOf(b));
+      const statusA = getCurrentStatus(a);
+      const statusB = getCurrentStatus(b);
 
       // Primero ordenar por status según la jerarquía especificada
       const orderA = statusOrder[statusA || 'finished'] || 5;
@@ -217,10 +224,10 @@ export default function CompetitionsTable({
                   </thead>
                   <tbody className="divide-y divide-gray-200">
                     {displayedCompetitions.map((competition, index) => {
-                      const currentStatus = getCurrentStatus(competition, index);
-                      const competitionId = competition.id || `competition-${index}`;
+                      const currentStatus = getCurrentStatus(competition);
+                      const competitionId = getCompetitionId(competition);
                       return (
-                        <tr key={index} className="hover:bg-sky-50">
+                        <tr key={competitionId} className="hover:bg-sky-50">
                           <td className="py-2 sm:py-3 px-2 sm:px-4 font-medium text-xs sm:text-base align-top w-24 sm:w-auto">
                             <span className="block whitespace-nowrap">{competition.date}</span>
                           </td>
@@ -290,11 +297,11 @@ export default function CompetitionsTable({
             </thead>
             <tbody className="divide-y divide-gray-100">
               {displayedCompetitions.map((competition, index) => {
-                const currentStatus = getCurrentStatus(competition, index);
-                const competitionId = competition.id || `competition-${index}`;
+                const currentStatus = getCurrentStatus(competition);
+                const competitionId = getCompetitionId(competition);
                 return (
                   <tr
-                    key={index}
+                    key={competitionId}
                     className={`transition-all duration-200 hover:bg-sky-50/70 ${
                       currentStatus === 'finished' ? 'opacity-60' : ''
                     } ${

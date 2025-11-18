@@ -6,7 +6,7 @@ export const allCompetitions: Competition[] = [
   {
     date: "Noviembre 16",
     event: "Cuarta Instancia Olimpíada Nacional Primaria (Final)",
-    status: "upcoming-next",
+    status: "finished",
     targetDate: new Date('2025-11-16T00:00:00')
   },
   {
