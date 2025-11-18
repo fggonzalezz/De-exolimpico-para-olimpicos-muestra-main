@@ -16,8 +16,8 @@ export default function Home() {
 
       <main className="flex-1">
         {/* Hero section */}
-  <section className="relative bg-[#daf3ff] py-14 sm:py-20 text-white">
-          <div className="absolute inset-0 z-0 opacity-70">
+        <section className="relative bg-sky-900 min-h-[65vh] flex flex-col justify-center py-20 text-white overflow-hidden">
+          <div className="absolute inset-0 z-0">
             {/* Replace with a real image of students solving math problems */}
             <Image
               src="/images/Equipo_Ibero_2024_000.png"
@@ -26,24 +26,31 @@ export default function Home() {
               className="object-cover"
               priority
             />
+            {/* Gradient overlay for better text contrast */}
+            <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/50 to-black/70"></div>
           </div>
           <div className="container mx-auto px-4 relative z-10">
-            <div className="max-w-3xl mx-auto text-center">
-              <h1 className="font-inter text-3xl sm:text-4xl md:text-5xl font-bold mb-3 sm:mb-4 text-shadow-outline">
-                <span>Olimpiada Matemática Uruguay</span> - Com-Partida de Matemática
+            <div className="max-w-4xl mx-auto text-center">
+              <h1 className="font-inter font-bold mb-6 text-shadow-outline flex flex-col gap-3">
+                <span className="text-3xl sm:text-5xl md:text-6xl leading-tight">
+                  Olimpiada Matemática Uruguay
+                </span>
+                <span className="text-xl sm:text-3xl md:text-4xl font-medium text-sky-100">
+                  Com-Partida de Matemática
+                </span>
               </h1>
-              <h2 className="text-lg sm:text-xl md:text-2xl font-bold mb-5 sm:mb-6 text-shadow-outline">
+              <h2 className="text-lg sm:text-xl md:text-2xl font-medium mb-8 text-shadow-outline text-gray-100 max-w-2xl mx-auto">
                 Material de estudio y entrenamiento para olimpiadas matemáticas desde 1992
               </h2>
-              <p className="text-base sm:text-lg font-semibold mb-7 sm:mb-8 text-shadow-outline">
+              <p className="text-base sm:text-lg font-medium mb-10 text-shadow-outline max-w-3xl mx-auto text-gray-200">
                 Preparación para IMO, Olimpiada Iberoamericana, Cono Sur y Olimpiada Nacional de Uruguay. 
                 Recursos, problemas y material de estudio creado por ex-olímpicos uruguayos.
               </p>
-              <div className="flex flex-wrap gap-4 justify-center">
-                <Link href="/sobre-nosotros" className="bg-sky-700 text-white hover:bg-sky-800 px-6 py-3 rounded-md font-medium transition-colors">
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                <Link href="/sobre-nosotros" className="bg-sky-600 text-white hover:bg-sky-700 px-8 py-4 rounded-lg font-bold text-lg transition-all shadow-lg hover:shadow-xl hover:-translate-y-1">
                   Conoce más
                 </Link>
-                <Link href="/calendario-2025" className="bg-yellow-500 hover:bg-yellow-600 text-white px-6 py-3 rounded-md font-medium transition-colors">
+                <Link href="/calendario-2025" className="bg-yellow-500 hover:bg-yellow-600 text-white px-8 py-4 rounded-lg font-bold text-lg transition-all shadow-lg hover:shadow-xl hover:-translate-y-1">
                   Calendario 2025
                 </Link>
               </div>

@@ -35,6 +35,11 @@ export const sobreNosotrosItems: MenuItem[] = [
 
 export const menuSections: MenuSection[] = [
   {
+    id: "sobre-nosotros",
+    label: "Sobre Nosotros",
+    items: sobreNosotrosItems
+  },
+  {
     id: "calendario",
     label: "Calendario 2025",
     items: calendarioItems

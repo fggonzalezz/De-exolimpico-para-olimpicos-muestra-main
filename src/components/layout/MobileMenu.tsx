@@ -123,19 +123,6 @@ export default function MobileMenu() {
             Inicio
           </button>
 
-          <button
-            onClick={() => handleNavigation('/sobre-nosotros')}
-            className="flex items-center py-3 px-6 hover:bg-gray-50 transition-colors text-left font-inter text-base font-medium"
-          >
-            <span className="mr-2">
-              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                <circle cx="12" cy="7" r="4"/>
-                <path d="M5 21v-2a7 7 0 0 1 14 0v2"/>
-              </svg>
-            </span>
-            Sobre Nosotros
-          </button>
-
           <div className="py-1">
             <Accordion
               type="single"
@@ -155,6 +142,12 @@ export default function MobileMenu() {
                   >
                     <div className="flex items-center">
                       <span className="mr-2">
+                        {section.id === "sobre-nosotros" && (
+                          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                            <circle cx="12" cy="7" r="4"/>
+                            <path d="M5 21v-2a7 7 0 0 1 14 0v2"/>
+                          </svg>
+                        )}
                         {section.id === "calendario" && (
                           <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                             <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
