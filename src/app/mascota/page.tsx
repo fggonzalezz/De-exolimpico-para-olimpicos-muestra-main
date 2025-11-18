@@ -96,11 +96,14 @@ function ImageModal({ isOpen, onClose, currentIndex, images, onNext, onPrev }: I
     >
       <div
         className="relative z-[70] flex h-full w-full items-center justify-center px-6"
-        onClick={(event) => event.stopPropagation()}
+        onClick={onClose}
       >
         {/* Botón cerrar */}
         <button
-          onClick={onClose}
+          onClick={(e) => {
+            e.stopPropagation();
+            onClose();
+          }}
           type="button"
           className="absolute top-6 right-8 z-[80] text-white hover:text-sky-300 transition-colors duration-200 p-2 hover:bg-white/10 rounded-full"
           aria-label="Cerrar"
@@ -111,7 +114,10 @@ function ImageModal({ isOpen, onClose, currentIndex, images, onNext, onPrev }: I
         {/* Botón anterior */}
         {canGoPrev && (
           <button
-            onClick={onPrev}
+            onClick={(e) => {
+              e.stopPropagation();
+              onPrev();
+            }}
             type="button"
             className="absolute left-8 top-1/2 z-[80] -translate-y-1/2 text-white hover:text-sky-300 transition-all duration-200 p-3 hover:bg-white/20 rounded-full"
             aria-label="Imagen anterior"
@@ -123,7 +129,10 @@ function ImageModal({ isOpen, onClose, currentIndex, images, onNext, onPrev }: I
         {/* Botón siguiente */}
         {canGoNext && (
           <button
-            onClick={onNext}
+            onClick={(e) => {
+              e.stopPropagation();
+              onNext();
+            }}
             type="button"
             className="absolute right-8 top-1/2 z-[80] -translate-y-1/2 text-white hover:text-sky-300 transition-all duration-200 p-3 hover:bg-white/20 rounded-full"
             aria-label="Imagen siguiente"
@@ -133,7 +142,10 @@ function ImageModal({ isOpen, onClose, currentIndex, images, onNext, onPrev }: I
         )}
 
         {/* Imagen */}
-        <div className="relative max-w-5xl max-h-[90vh] flex items-center justify-center">
+        <div 
+          className="relative max-w-5xl max-h-[90vh] flex items-center justify-center"
+          onClick={(e) => e.stopPropagation()}
+        >
           <Image
             src={currentImage.src}
             alt={currentImage.alt}
