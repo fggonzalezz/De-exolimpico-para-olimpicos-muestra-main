@@ -78,7 +78,7 @@ export default function ContactPage() {
             </div>
 
             {/* FAQ Section */}
-            <section className="mt-12">
+            <section className="mt-12 mb-12">
               <h2 className="text-2xl font-semibold mb-6 text-center">Preguntas frecuentes</h2>
               <div className="space-y-4">
                 <div className="bg-white p-4 rounded-lg shadow-sm">
@@ -96,6 +96,85 @@ export default function ContactPage() {
                   </p>
                 </div>
               </div>
+            </section>
+
+            {/* Suggestions Form */}
+            <section className="mt-12 mb-8">
+              <Card className="shadow-lg border-t-4 border-green-500">
+                <CardContent className="p-8">
+                  <div className="text-center mb-8">
+                    <h2 className="text-2xl font-semibold text-green-700 mb-2">¿Tienes sugerencias de mejora?</h2>
+                    <p className="text-gray-600">
+                      Tu opinión es muy importante para nosotros. Cuéntanos qué te gustaría ver en la web o qué podríamos mejorar.
+                    </p>
+                  </div>
+
+                  <form 
+                    action="https://formsubmit.co/fg188707@gmail.com" 
+                    method="POST"
+                    className="max-w-2xl mx-auto space-y-6"
+                  >
+                    {/* Configuration for FormSubmit */}
+                    <input type="hidden" name="_subject" value="Nueva sugerencia de mejora - Web Ex-Olímpicos" />
+                    <input type="hidden" name="_captcha" value="false" />
+                    <input type="hidden" name="_next" value="https://de-exolimpico-para-olimpicos-muestra.netlify.app/contacto?success=true" />
+                    <input type="hidden" name="_template" value="table" />
+
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                      <div className="space-y-2">
+                        <label htmlFor="name" className="text-sm font-medium text-gray-700">
+                          Nombre (Opcional)
+                        </label>
+                        <input
+                          type="text"
+                          id="name"
+                          name="name"
+                          className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-green-500 focus:border-transparent outline-none transition-all"
+                          placeholder="Tu nombre"
+                        />
+                      </div>
+                      <div className="space-y-2">
+                        <label htmlFor="email" className="text-sm font-medium text-gray-700">
+                          Email (Opcional)
+                        </label>
+                        <input
+                          type="email"
+                          id="email"
+                          name="email"
+                          className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-green-500 focus:border-transparent outline-none transition-all"
+                          placeholder="tu@email.com"
+                        />
+                      </div>
+                    </div>
+
+                    <div className="space-y-2">
+                      <label htmlFor="suggestion" className="text-sm font-medium text-gray-700">
+                        ¿Qué sugerencia tienes? <span className="text-red-500">*</span>
+                      </label>
+                      <textarea
+                        id="suggestion"
+                        name="suggestion"
+                        required
+                        rows={4}
+                        className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-green-500 focus:border-transparent outline-none transition-all resize-none"
+                        placeholder="Me gustaría que agregaran..."
+                      ></textarea>
+                    </div>
+
+                    <div className="text-center pt-2">
+                      <button
+                        type="submit"
+                        className="inline-flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-white bg-green-600 hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500 transition-colors shadow-md hover:shadow-lg"
+                      >
+                        <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8" />
+                        </svg>
+                        Enviar Sugerencia
+                      </button>
+                    </div>
+                  </form>
+                </CardContent>
+              </Card>
             </section>
           </div>
         </div>

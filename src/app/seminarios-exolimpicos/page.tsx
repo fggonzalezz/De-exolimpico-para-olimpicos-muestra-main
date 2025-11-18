@@ -20,7 +20,7 @@ export default function SeminariosPage() {
     },
     {
       id: 2,
-      title: "Entrenamiento General",
+      title: "Combinatoria Conosur",
       presenter: "Ex-Olímpicos",
       role: "Entrenamiento",
       date: "2021",
