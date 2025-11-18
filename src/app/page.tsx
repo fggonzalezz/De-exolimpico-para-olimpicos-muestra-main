@@ -256,9 +256,17 @@ export default function Home() {
                   Te presentamos a nuestra alegre compañero que nos inspira en cada desafío matemático. 
                   ¡El representa la curiosidad, la perseverancia y la diversión de aprender matemáticas en Uruguay!
                 </p>
-                <div className="flex justify-end mt-6">
-                  <div className="italic text-yellow-600 font-medium border-t border-yellow-300 pt-2">
-                    ¡Nos vemos en las olimpiadas!
+                <div className="flex flex-col sm:flex-row gap-4 mt-6">
+                  <Link 
+                    href="/mascota" 
+                    className="inline-flex items-center justify-center px-6 py-3 bg-sky-600 text-white font-medium rounded-lg hover:bg-sky-700 transition-colors shadow-md hover:shadow-lg"
+                  >
+                    Conoce a Gauchito
+                  </Link>
+                  <div className="flex items-center justify-end flex-1">
+                    <div className="italic text-yellow-600 font-medium border-t border-yellow-300 pt-2">
+                      ¡Nos vemos en las olimpiadas!
+                    </div>
                   </div>
                 </div>
               </div>

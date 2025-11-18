@@ -98,9 +98,18 @@ export default function AboutPage() {
               <div>
                 <h2 className="text-2xl font-bold font-inter mb-2 text-sky-700">Gauchito</h2>
                 <p className="text-gray-600 mb-2 font-medium">Mascota oficial desde 2024</p>
-                <p className="text-gray-700 text-base">
+                <p className="text-gray-700 text-base mb-4">
                   Gauchito ha acompañado a la Com-Partida desde 2024, inspirando a estudiantes con su simpatía y amor por las matemáticas. Siempre presente en eventos y competencias, se ha convertido en un símbolo de alegría, compañerismo y pasión por el aprendizaje.
                 </p>
+                <Link 
+                  href="/mascota" 
+                  className="inline-flex items-center text-sky-600 font-medium hover:text-sky-800 transition-colors group"
+                >
+                  Ver galería de fotos
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 ml-1 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                  </svg>
+                </Link>
               </div>
             </div>
           </div>

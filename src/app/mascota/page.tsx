@@ -15,9 +15,9 @@ interface MascotaCardProps {
 
 function MascotaCard({ imageSrc, name, subtitle, description }: MascotaCardProps) {
   return (
-    <div className="max-w-2xl mx-auto flex flex-col md:flex-row items-center bg-sky-50 rounded-xl shadow-lg p-8 gap-8">
+    <div className="max-w-2xl mx-auto flex flex-col md:flex-row items-center bg-sky-50 rounded-xl shadow-lg p-6 md:p-8 gap-6 md:gap-8">
       <div className="flex-shrink-0">
-        <div className="w-40 h-40 rounded-full overflow-hidden border-4 border-sky-200 shadow-md">
+        <div className="w-32 h-32 md:w-40 md:h-40 rounded-full overflow-hidden border-4 border-sky-200 shadow-md">
           <Image
             src={imageSrc}
             alt={`Foto de ${name}`}
@@ -27,10 +27,10 @@ function MascotaCard({ imageSrc, name, subtitle, description }: MascotaCardProps
           />
         </div>
       </div>
-      <div>
-        <h1 className="text-3xl font-bold font-inter mb-2 text-sky-700">{name}</h1>
-        <p className="text-gray-600 mb-2 font-medium">{subtitle}</p>
-        <p className="text-gray-700 text-base">{description}</p>
+      <div className="text-center md:text-left">
+        <h1 className="text-2xl md:text-3xl font-bold font-inter mb-2 text-sky-700">{name}</h1>
+        <p className="text-gray-600 mb-2 font-medium text-sm md:text-base">{subtitle}</p>
+        <p className="text-gray-700 text-sm md:text-base">{description}</p>
       </div>
     </div>
   );
@@ -105,7 +105,7 @@ function ImageModal({ isOpen, onClose, currentIndex, images, onNext, onPrev }: I
             onClose();
           }}
           type="button"
-          className="absolute top-6 right-8 z-[80] text-white hover:text-sky-300 transition-colors duration-200 p-2 hover:bg-white/10 rounded-full"
+          className="absolute top-4 right-4 md:top-6 md:right-8 z-[80] text-white hover:text-sky-300 transition-colors duration-200 p-2 hover:bg-white/10 rounded-full"
           aria-label="Cerrar"
         >
           <X size={32} />
@@ -119,10 +119,10 @@ function ImageModal({ isOpen, onClose, currentIndex, images, onNext, onPrev }: I
               onPrev();
             }}
             type="button"
-            className="absolute left-8 top-1/2 z-[80] -translate-y-1/2 text-white hover:text-sky-300 transition-all duration-200 p-3 hover:bg-white/20 rounded-full"
+            className="absolute left-2 md:left-8 top-1/2 z-[80] -translate-y-1/2 text-white hover:text-sky-300 transition-all duration-200 p-2 md:p-3 hover:bg-white/20 rounded-full"
             aria-label="Imagen anterior"
           >
-            <ChevronLeft size={40} />
+            <ChevronLeft size={32} className="md:w-10 md:h-10" />
           </button>
         )}
 
@@ -134,10 +134,10 @@ function ImageModal({ isOpen, onClose, currentIndex, images, onNext, onPrev }: I
               onNext();
             }}
             type="button"
-            className="absolute right-8 top-1/2 z-[80] -translate-y-1/2 text-white hover:text-sky-300 transition-all duration-200 p-3 hover:bg-white/20 rounded-full"
+            className="absolute right-2 md:right-8 top-1/2 z-[80] -translate-y-1/2 text-white hover:text-sky-300 transition-all duration-200 p-2 md:p-3 hover:bg-white/20 rounded-full"
             aria-label="Imagen siguiente"
           >
-            <ChevronRight size={40} />
+            <ChevronRight size={32} className="md:w-10 md:h-10" />
           </button>
         )}
 
@@ -351,10 +351,10 @@ export default function MascotaPage() {
 
               <div 
                 ref={scrollRef}
-                className="flex gap-8 overflow-x-auto py-4 px-12 [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]"
+                className="flex gap-4 md:gap-8 overflow-x-auto py-4 px-4 md:px-12 [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]"
                 onScroll={checkScrollButtons}
               >
-                <div className="flex-shrink-0 w-[600px]">
+                <div className="flex-shrink-0 w-[85vw] md:w-[600px]">
                   <MascotaCard
                     imageSrc="/images/Eulerito.jpg"
                     name="Gauchito II"
@@ -362,7 +362,7 @@ export default function MascotaPage() {
                     description="Este carpincho, digno sucesor del original, ha acompañado con orgullo a las delegaciones de Ibero y Río 2024, viendo nacer a potenciales leyendas."
                   />
                 </div>
-                <div className="flex-shrink-0 w-[600px]">
+                <div className="flex-shrink-0 w-[85vw] md:w-[600px]">
                   <MascotaCard
                     imageSrc="/images/Gauchito_primero_borrosa.JPG"
                     name="Gauchito I"
@@ -370,7 +370,7 @@ export default function MascotaPage() {
                     description="A pesar de haber acompañado a una sola delegación, él fue tan icónico que su reemplazo no fue más que una versión agrandada de él mismo."
                   />
                 </div>
-                <div className="flex-shrink-0 w-[600px]">
+                <div className="flex-shrink-0 w-[85vw] md:w-[600px]">
                   <MascotaCard
                     imageSrc="/images/Gauchito_primero_borrosa.JPG"
                     name="Fuffy"
