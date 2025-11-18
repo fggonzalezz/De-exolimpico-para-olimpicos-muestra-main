@@ -16,21 +16,25 @@ export default function Home() {
 
       <main className="flex-1">
         {/* Hero section */}
-        <section className="relative bg-sky-900 min-h-[65vh] flex flex-col justify-center py-20 text-white overflow-hidden">
-          <div className="absolute inset-0 z-0">
-            {/* Replace with a real image of students solving math problems */}
+        <section className="relative bg-sky-900 flex flex-col md:block md:min-h-[65vh] text-white overflow-hidden">
+          {/* Image Container */}
+          <div className="relative w-full h-[40vh] md:absolute md:inset-0 md:h-full z-0">
             <Image
               src="/images/Equipo_Ibero_2024_000.png"
               alt="Jóvenes participando en olimpiadas"
               fill
-              className="object-cover"
+              className="object-cover object-center"
               priority
             />
-            {/* Gradient overlay for better text contrast */}
-            <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/50 to-black/70"></div>
+            {/* Mobile Gradient: Fade to blue at bottom */}
+            <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-transparent to-sky-900 md:hidden"></div>
+            {/* Desktop Overlay: Darken whole image */}
+            <div className="hidden md:block absolute inset-0 bg-gradient-to-b from-black/70 via-black/50 to-black/70"></div>
           </div>
-          <div className="container mx-auto px-4 relative z-10">
-            <div className="max-w-4xl mx-auto text-center">
+
+          {/* Content Container */}
+          <div className="container mx-auto px-4 relative z-10 flex flex-col justify-center py-8 md:py-20 md:min-h-[65vh]">
+            <div className="max-w-4xl mx-auto text-center -mt-6 md:mt-0">
               <h1 className="font-inter font-bold mb-6 text-shadow-outline flex flex-col gap-3">
                 <span className="text-3xl sm:text-5xl md:text-6xl leading-tight">
                   Olimpiada Matemática Uruguay
