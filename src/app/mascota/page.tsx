@@ -11,11 +11,12 @@ interface MascotaCardProps {
   name: string;
   subtitle: string;
   description: string;
+  className?: string;
 }
 
-function MascotaCard({ imageSrc, name, subtitle, description }: MascotaCardProps) {
+function MascotaCard({ imageSrc, name, subtitle, description, className = "" }: MascotaCardProps) {
   return (
-    <div className="max-w-2xl mx-auto flex flex-col md:flex-row items-center bg-sky-50 rounded-xl shadow-lg p-6 md:p-8 gap-6 md:gap-8">
+    <div className={`max-w-2xl mx-auto flex flex-col md:flex-row items-center bg-sky-50 rounded-xl shadow-lg p-6 md:p-8 gap-6 md:gap-8 ${className}`}>
       <div className="flex-shrink-0">
         <div className="w-32 h-32 md:w-40 md:h-40 rounded-full overflow-hidden border-4 border-sky-200 shadow-md">
           <Image
@@ -354,28 +355,31 @@ export default function MascotaPage() {
                 className="flex gap-4 md:gap-8 overflow-x-auto py-4 px-4 md:px-12 [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]"
                 onScroll={checkScrollButtons}
               >
-                <div className="flex-shrink-0 w-[85vw] md:w-[600px]">
+                <div className="flex-shrink-0 w-[85vw] md:w-[600px] flex">
                   <MascotaCard
                     imageSrc="/images/Eulerito.jpg"
                     name="Gauchito II"
                     subtitle="Mascota actual, desde la Ibero 2024"
                     description="Este carpincho, digno sucesor del original, ha acompañado con orgullo a las delegaciones de Ibero y Río 2024, viendo nacer a potenciales leyendas."
+                    className="w-full h-full"
                   />
                 </div>
-                <div className="flex-shrink-0 w-[85vw] md:w-[600px]">
+                <div className="flex-shrink-0 w-[85vw] md:w-[600px] flex">
                   <MascotaCard
                     imageSrc="/images/Gauchito_primero_borrosa.JPG"
                     name="Gauchito I"
                     subtitle="Mascota de la IMO 2024"
                     description="A pesar de haber acompañado a una sola delegación, él fue tan icónico que su reemplazo no fue más que una versión agrandada de él mismo."
+                    className="w-full h-full"
                   />
                 </div>
-                <div className="flex-shrink-0 w-[85vw] md:w-[600px]">
+                <div className="flex-shrink-0 w-[85vw] md:w-[600px] flex">
                   <MascotaCard
                     imageSrc="/images/fuffy.jpg"
                     name="Fuffy"
                     subtitle="Mascota desde la IMO 2018"
                     description="Su simpática forma y la satisfacción de apretarlo cautivaron a la delegación de la IMO 2018. Sin embargo, se rumorea que el nombre correcto de Fuffy debería ser Muffy, pues solo trajo desgracia."
+                    className="w-full h-full"
                   />
                 </div>
               </div>
