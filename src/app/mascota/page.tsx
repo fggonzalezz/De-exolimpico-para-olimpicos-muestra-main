@@ -372,7 +372,7 @@ export default function MascotaPage() {
                 </div>
                 <div className="flex-shrink-0 w-[85vw] md:w-[600px]">
                   <MascotaCard
-                    imageSrc="/images/Gauchito_primero_borrosa.JPG"
+                    imageSrc="/images/fuffy.jpg"
                     name="Fuffy"
                     subtitle="Mascota desde la IMO 2018"
                     description="Su simpática forma y la satisfacción de apretarlo cautivaron a la delegación de la IMO 2018. Sin embargo, se rumorea que el nombre correcto de Fuffy debería ser Muffy, pues solo trajo desgracia."

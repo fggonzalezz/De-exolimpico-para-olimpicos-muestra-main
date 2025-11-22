@@ -168,24 +168,26 @@ export default function ContactPage() {
                       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                         <div className="space-y-2">
                           <label htmlFor="name" className="text-sm font-medium text-gray-700">
-                            Nombre (Opcional)
+                            Nombre <span className="text-red-500">*</span>
                           </label>
                           <input
                             type="text"
                             id="name"
                             name="name"
+                            required
                             className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-green-500 focus:border-transparent outline-none transition-all"
                             placeholder="Tu nombre"
                           />
                         </div>
                         <div className="space-y-2">
                           <label htmlFor="email" className="text-sm font-medium text-gray-700">
-                            Email (Opcional)
+                            Email <span className="text-red-500">*</span>
                           </label>
                           <input
                             type="email"
                             id="email"
                             name="email"
+                            required
                             className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-green-500 focus:border-transparent outline-none transition-all"
                             placeholder="tu@email.com"
                           />
