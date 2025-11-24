@@ -6,6 +6,54 @@ import Link from 'next/link';
 import GoogleDrivePDFViewer from '@/components/GoogleDrivePDFViewer';
 
 export default function SeminariosPage() {
+  const uyMathVideos = [
+    {
+      category: "Álgebra",
+      videos: [
+        { title: "Manipulaciones algebraicas", url: "https://www.youtube.com/embed/fnC_gL0dA5w", description: "En este video, hablamos un poco sobre qué es la matemática, qué es el álgebra y aprendemos las normas algebraicas más relevantes para la olimpiada" },
+        { title: "Sumatoria y suma de gauss", url: "https://www.youtube.com/embed/SIL7aKuJbtQ", description: "En este video hablaremos de la popular \"suma de gauss\", y hablaremos de las sumatorias en general" }
+      ]
+    },
+    {
+      category: "Combinatoria",
+      videos: [
+        { title: "Combinaciones, permutaciones y arreglos", url: "https://www.youtube.com/embed/vCDpK-XdWcI", description: "En este video vamos a estar viendo conceptos básicos de combinatoria como los son las permutaciones, arreglos y combinaciones, así como resolviendo problemas con lo aprendido." },
+        { title: "Principio del mínimo y de palomar", url: "https://www.youtube.com/embed/dI80b-dhuJA", description: "En este video se van a presentar dos principios muy importantes, en especial el del palomar, y resolverán problemas con ellos." },
+        { title: "Juegos y estrategia ganadora", url: "https://www.youtube.com/embed/oxfDsxpNuPc", description: "En este video estaremos viendo estrategias para resolver problemas de juegos en olimpiadas." },
+        { title: "Coloraciones", url: "https://www.youtube.com/embed/pxa8cU5vXp4", description: "En este video estaremos dando las nociones básicas de colorear como estrategia para resolver problemas." },
+        { title: "Invariantes", url: "https://www.youtube.com/embed/zaqojx28Rvg", description: "¿Que son las invariantes? En este video estaremos viendo algunos problemas con ellas" },
+        { title: "Principio inclusión-exclusión", url: "https://www.youtube.com/embed/cqhlgVXesjQ", description: "¿Que es este principio? en este video daremos una explicacion teórica, y también lo explicaremos mediante problemas" }
+      ]
+    },
+    {
+      category: "Geometría",
+      videos: [
+        { title: "Paralelas y congruencias", url: "https://www.youtube.com/embed/yqdpQ3usBHU", description: "En este video estaremos viendo paralelas, paralelogramos y congruencias de triángulos y resolviendo problemas con las herramientas aprendidas." },
+        { title: "Thales, semejanza y pitágoras", url: "https://www.youtube.com/embed/MMtTqg5w6C4", description: "en este video veremos los criterios de semejanza de triangulo, que es la paralela media y los teoremas de thales y pitagoras" },
+        { title: "Angulos en la circunferencia", url: "https://www.youtube.com/embed/wpcNv3KbHQE", description: "En este video estaremos demostrando propiedades de ángulos en circunferencias y resolviendo problemas." },
+        { title: "Puntos notables del triángulo", url: "https://www.youtube.com/embed/_yeCR6UJBz8", description: "En este video estaremos viendo algunas propiedades importantes de los centros del triángulo." },
+        { title: "Lemas del incentro", url: "https://www.youtube.com/embed/9L_jRASaZ4E", description: "En este video estaremos viendo el lemas relacionados con el incentro." }
+      ]
+    },
+    {
+      category: "Teoría de Números",
+      videos: [
+        { title: "Teorema fundamental de la aritmetica", url: "https://www.youtube.com/embed/vK0U4yza4bM", description: "En este video vamos a aprender los criterios de divisibilidad de muchos numeros, el Teorema Fundemental de la Aritmética y de como usarlos para resolver problemas." },
+        { title: "MCM, mcd y euclides", url: "https://www.youtube.com/embed/i5tUT_0Z2mM", description: "En este video hablamos de el mínimo común múltiplo, el máximo común divisor, y del algortimo de Euclides para hallar MCD, al igual que otras identidades como la de Bezout." },
+        { title: "Divisibilidad y congruencias", url: "https://www.youtube.com/embed/8bO6L4tmPW8", description: "En este video vamos a estar viendo las nociones básicas de divisibilidad y congruencias." },
+        { title: "Bases numéricas", url: "https://www.youtube.com/embed/Rfq6tt5f7M0", description: "En este video estaremos introduciendo el tema de bases numéricas, como pueden ser la base 10 o la base binaria por ejemplo." }
+      ]
+    },
+    {
+      category: "Estrategias",
+      videos: [
+        { title: "Lógica, pruebas y matemáticas", url: "https://www.youtube.com/embed/RCOTZqc71fQ", description: "En este video hablaremos de qué significa probar algo matemáticamente y distintos métodos para hacerlo" },
+        { title: "Inducción matemática", url: "https://www.youtube.com/embed/lIj72ZSiQTs", description: "En este video estaremos introduciendo a una de las herramientas más potentes: Inducción." },
+        { title: "Teorema del binomio", url: "https://www.youtube.com/embed/cGi-hsR_63s", description: "En este video estaremos introduciendo el Teorema del Binomio." }
+      ]
+    }
+  ];
+
   // Sample seminars data
   const seminarios = [
     {
@@ -125,7 +173,57 @@ export default function SeminariosPage() {
               </p>
             </div>
 
+            {/* UyMath Videos */}
+            <div className="mb-16">
+              <h2 className="text-2xl md:text-3xl font-bold text-sky-800 mb-8 border-b-2 border-sky-200 pb-2">
+                Videos de UyMath!
+              </h2>
+              
+              <div className="space-y-12">
+                {uyMathVideos.map((category, idx) => (
+                  <div key={idx} className="bg-white rounded-xl shadow-md overflow-hidden">
+                    <div className="bg-sky-600 text-white p-4">
+                      <h3 className="text-xl font-bold">{category.category}</h3>
+                    </div>
+                    <div className="p-6 grid grid-cols-1 md:grid-cols-2 gap-8">
+                      {category.videos.map((video, vIdx) => (
+                        <div key={vIdx} className="flex flex-col h-full">
+                          <div className="aspect-video rounded-lg overflow-hidden shadow-md bg-black mb-4">
+                            <iframe 
+                              width="100%" 
+                              height="100%" 
+                              src={video.url} 
+                              title={video.title}
+                              frameBorder="0" 
+                              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                              allowFullScreen
+                            ></iframe>
+                          </div>
+                          <h4 className="font-bold text-lg text-gray-800 mb-2">{video.title}</h4>
+                          <p className="text-gray-600 text-sm flex-grow">{video.description}</p>
+                          <a 
+                            href={video.url.replace('embed/', 'watch?v=')} 
+                            target="_blank" 
+                            rel="noopener noreferrer"
+                            className="mt-3 text-sm text-sky-600 hover:text-sky-800 font-medium flex items-center"
+                          >
+                            Ver en YouTube
+                            <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                            </svg>
+                          </a>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
             {/* Seminars List */}
+            <h2 className="text-2xl md:text-3xl font-bold text-sky-800 mb-8 border-b-2 border-sky-200 pb-2">
+              Seminarios Cono Sur
+            </h2>
             <div className="space-y-16">
               {seminarios.map((seminario) => (
                 <div key={seminario.id} className="bg-white rounded-xl shadow-lg overflow-hidden">

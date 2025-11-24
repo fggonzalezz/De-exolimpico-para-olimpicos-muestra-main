@@ -51,7 +51,6 @@ export default function Nacional() {
             </div>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
               <CardItem href="/nacional/2021" img="https://ext.same-assets.com/1728315765/512160776.png" alt="2021" title="2021" />
-              <CardItem href="/nacional/2020/" img="https://ext.same-assets.com/1728315765/3350069791.png" alt="2020" title="2020" />
 
               <CardItem href="/nacional/anteriores" img="https://ext.same-assets.com/1728315765/2391142948.png" alt="Años anteriores" title="Años anteriores" />
             </div>
