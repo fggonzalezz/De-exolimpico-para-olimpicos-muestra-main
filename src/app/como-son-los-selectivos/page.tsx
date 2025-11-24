@@ -132,23 +132,11 @@ export default function SelectivosPage() {
                       </div>
                       <h3 className="text-xl font-bold text-slate-800">Condiciones de Participación</h3>
                     </div>
-                    <p className="text-gray-700 mb-4">
+                    <p className="text-gray-700">
                       Para participar en los selectivos, existen ciertas condiciones y requisitos que deben cumplirse. 
-                      Estas normativas son establecidas y publicadas oficialmente por la Com-Partida de Matemática del Uruguay.
+                      Estas normativas son establecidas y publicadas oficialmente por la Com-Partida de Matemática del Uruguay previo a los selectivos.
+                      Te recomendamos consultar los requisitos en el sitio oficial.
                     </p>
-                    <div className="flex flex-col sm:flex-row items-center justify-between gap-4 mt-4">
-                        <a 
-                            href="https://com-partidauruguay.weebly.com/" 
-                            target="_blank" 
-                            rel="noopener noreferrer"
-                            className="inline-flex items-center px-4 py-2 bg-slate-600 text-white rounded-lg hover:bg-slate-700 transition-colors font-medium whitespace-nowrap"
-                        >
-                            Ver Requisitos Oficiales
-                            <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-                            </svg>
-                        </a>
-                    </div>
                   </div>
                 </div>
               </CardContent>
