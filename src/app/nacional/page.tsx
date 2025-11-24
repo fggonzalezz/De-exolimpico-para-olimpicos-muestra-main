@@ -55,6 +55,7 @@ export default function Nacional() {
                   <p className="text-gray-500 text-sm">Botón de prueba sin foto</p>
                 </div>
               </Link>
+            </div>
           </div>
         </section>
       </main>
