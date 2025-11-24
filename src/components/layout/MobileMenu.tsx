@@ -61,7 +61,7 @@ export default function MobileMenu() {
     <Sheet open={open} onOpenChange={setOpen} modal={false}>
       <SheetTrigger asChild>
         <button
-          className="md:hidden relative z-20 p-2 focus:outline-none focus:ring-2 focus:ring-sky-500 rounded-md hover:bg-gray-100 transition-all"
+          className="md:hidden relative z-20 p-2 focus:outline-none focus:ring-2 focus:ring-sky-500 rounded-md hover:bg-gray-100 dark:hover:bg-gray-100 transition-all bg-white/0"
           aria-label="Open menu"
         >
           <svg
@@ -74,7 +74,7 @@ export default function MobileMenu() {
             strokeWidth="2"
             strokeLinecap="round"
             strokeLinejoin="round"
-            className="text-gray-700"
+            className="text-gray-700 dark:text-gray-800"
           >
             <line x1="3" y1="12" x2="21" y2="12" />
             <line x1="3" y1="6" x2="21" y2="6" />

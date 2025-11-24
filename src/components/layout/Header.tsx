@@ -44,7 +44,7 @@ export default function Header() {
   const [openDropdown, setOpenDropdown] = useState<string | null>(null);
 
   return (
-  <header className="sticky top-0 z-50 w-full bg-white shadow-sm">
+  <header className="sticky top-0 z-50 w-full bg-white dark:bg-white shadow-sm">
       <div className="container mx-auto px-6 lg:px-8">
         <div className="flex justify-between items-center py-3 md:py-4">
           {/* Logo and Title */}
@@ -63,14 +63,14 @@ export default function Header() {
 
           {/* Navigation */}
           <nav className="hidden md:flex items-center space-x-6">
-            <Link href="/" className="font-inter text-base font-medium text-gray-900 hover:text-sky-600">
+            <Link href="/" className="font-inter text-base font-medium text-gray-900 dark:text-gray-900 hover:text-sky-600">
               Inicio
             </Link>
             <NavDropdown label="Sobre Nosotros" items={sobreNosotrosItems} isOpen={openDropdown === "Sobre Nosotros"} onOpenChange={(isOpen) => setOpenDropdown(isOpen ? "Sobre Nosotros" : null)} />
             <NavDropdown label="Calendario 2025" items={calendarioItems} isOpen={openDropdown === "Calendario 2025"} onOpenChange={(isOpen) => setOpenDropdown(isOpen ? "Calendario 2025" : null)} />
             <NavDropdown label="Equipos" items={equiposItems} isOpen={openDropdown === "Equipos"} onOpenChange={(isOpen) => setOpenDropdown(isOpen ? "Equipos" : null)} />
             <NavDropdown label="Materiales" items={materialesItems} isOpen={openDropdown === "Materiales"} onOpenChange={(isOpen) => setOpenDropdown(isOpen ? "Materiales" : null)} />
-            <Link href="/contacto" className="font-inter text-base font-medium text-gray-900 hover:text-sky-600">
+            <Link href="/contacto" className="font-inter text-base font-medium text-gray-900 dark:text-gray-900 hover:text-sky-600">
               Contacto
             </Link>
             <Link
