@@ -28,7 +28,7 @@ export default function AboutPage() {
         </section>
 
         {/* Nuestra Historia */}
-        <section className="py-12">
+        <section className="py-12 bg-gray-50">
           <div className="container mx-auto px-4">
             <div className="max-w-3xl mx-auto">
               <h2 className="text-2xl md:text-3xl font-inter font-semibold mb-6 text-center">
@@ -68,7 +68,7 @@ export default function AboutPage() {
         </section>
 
         {/* Sección Mascota */}
-        <section id="mascota" className="py-12 bg-white">
+        <section id="mascota" className="py-12">
           <div className="container mx-auto px-4">
             <div className="max-w-2xl mx-auto flex flex-col md:flex-row items-center bg-sky-50 rounded-xl shadow-lg p-8 gap-8">
               <div className="flex-shrink-0">
@@ -197,81 +197,81 @@ export default function AboutPage() {
         </section>
 
         {/* Colaboradores */}
-        <section className="py-20 bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-50">
-  <div className="container mx-auto px-4">
-    <div className="max-w-6xl mx-auto">
-      <div className="text-center mb-16">
-        <h2 className="text-4xl md:text-5xl font-inter font-bold bg-gradient-to-r from-gray-800 to-blue-600 bg-clip-text text-transparent mb-4">
-          Nuestros Colaboradores
-        </h2>
-        <div className="w-24 h-1 bg-gradient-to-r from-blue-500 to-indigo-600 mx-auto rounded-full"></div>
-      </div>
-      
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12">
-        {/* Francisco González */}
-        <div className="group relative">
-          <div className="bg-white/80 backdrop-blur-sm p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 border border-white/20 hover:scale-105 hover:-translate-y-2">
-            <div className="w-28 h-28 bg-gradient-to-br from-blue-100 to-indigo-200 rounded-full mx-auto mb-6 flex items-center justify-center shadow-inner">
-              <div className="w-20 h-20 bg-gradient-to-br from-blue-400 to-indigo-500 rounded-full flex items-center justify-center text-white font-bold text-xl">
-                FG
+        <section className="py-20 bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-50 relative">
+          <div className="container mx-auto px-4">
+            <div className="max-w-6xl mx-auto">
+              <div className="text-center mb-16">
+                <h2 className="text-4xl md:text-5xl font-inter font-bold bg-gradient-to-r from-gray-800 to-blue-600 bg-clip-text text-transparent mb-4">
+                  Nuestros Colaboradores
+                </h2>
+                <div className="w-24 h-1 bg-gradient-to-r from-blue-500 to-indigo-600 mx-auto rounded-full"></div>
+              </div>
+              
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12">
+                {/* Francisco González */}
+                <div className="group relative">
+                  <div className="bg-white/80 backdrop-blur-sm p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 border border-white/20 hover:scale-105 hover:-translate-y-2">
+                    <div className="w-28 h-28 bg-gradient-to-br from-blue-100 to-indigo-200 rounded-full mx-auto mb-6 flex items-center justify-center shadow-inner">
+                      <div className="w-20 h-20 bg-gradient-to-br from-blue-400 to-indigo-500 rounded-full flex items-center justify-center text-white font-bold text-xl">
+                        FG
+                      </div>
+                    </div>
+                    <h3 className="text-xl font-bold mb-2 text-gray-800 group-hover:text-blue-600 transition-colors text-center">
+                      Francisco González
+                    </h3>
+                    <div className="w-16 h-0.5 bg-gradient-to-r from-blue-400 to-transparent mx-auto opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                  </div>
+                  
+                  {/* Efecto de resplandor */}
+                  <div className="absolute inset-0 bg-gradient-to-r from-blue-400/20 to-indigo-400/20 rounded-2xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 -z-10"></div>
+                </div>
+                
+                {/* Gastón Correa */}
+                <div className="group relative">
+                  <div className="bg-white/80 backdrop-blur-sm p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 border border-white/20 hover:scale-105 hover:-translate-y-2">
+                    <div className="w-28 h-28 bg-gradient-to-br from-emerald-100 to-teal-200 rounded-full mx-auto mb-6 flex items-center justify-center shadow-inner">
+                      <div className="w-20 h-20 bg-gradient-to-br from-emerald-400 to-teal-500 rounded-full flex items-center justify-center text-white font-bold text-xl">
+                        GC
+                      </div>
+                    </div>
+                    <h3 className="text-xl font-bold mb-2 text-gray-800 group-hover:text-emerald-600 transition-colors text-center">
+                      Gastón Correa
+                    </h3>
+                    <div className="w-16 h-0.5 bg-gradient-to-r from-emerald-400 to-transparent mx-auto opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                  </div>
+                  
+                  {/* Efecto de resplandor */}
+                  <div className="absolute inset-0 bg-gradient-to-r from-emerald-400/20 to-teal-400/20 rounded-2xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 -z-10"></div>
+                </div>
+                
+                {/* Ismael Medina */}
+                <div className="group relative">
+                  <div className="bg-white/80 backdrop-blur-sm p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 border border-white/20 hover:scale-105 hover:-translate-y-2">
+                    <div className="w-28 h-28 bg-gradient-to-br from-purple-100 to-pink-200 rounded-full mx-auto mb-6 flex items-center justify-center shadow-inner">
+                      <div className="w-20 h-20 bg-gradient-to-br from-purple-400 to-pink-500 rounded-full flex items-center justify-center text-white font-bold text-xl">
+                        IM
+                      </div>
+                    </div>
+                    <h3 className="text-xl font-bold mb-2 text-gray-800 group-hover:text-purple-600 transition-colors text-center">
+                      Ismael Medina
+                    </h3>
+                    <div className="w-16 h-0.5 bg-gradient-to-r from-purple-400 to-transparent mx-auto opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                  </div>
+                  
+                  {/* Efecto de resplandor */}
+                  <div className="absolute inset-0 bg-gradient-to-r from-purple-400/20 to-pink-400/20 rounded-2xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 -z-10"></div>
+                </div>
               </div>
             </div>
-            <h3 className="text-xl font-bold mb-2 text-gray-800 group-hover:text-blue-600 transition-colors">
-              Francisco González
-            </h3>
-            <div className="w-16 h-0.5 bg-gradient-to-r from-blue-400 to-transparent mx-auto opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
           </div>
           
-          {/* Efecto de resplandor */}
-          <div className="absolute inset-0 bg-gradient-to-r from-blue-400/20 to-indigo-400/20 rounded-2xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 -z-10"></div>
-        </div>
-        
-        {/* Gastón Correa */}
-        <div className="group relative">
-          <div className="bg-white/80 backdrop-blur-sm p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 border border-white/20 hover:scale-105 hover:-translate-y-2">
-            <div className="w-28 h-28 bg-gradient-to-br from-emerald-100 to-teal-200 rounded-full mx-auto mb-6 flex items-center justify-center shadow-inner">
-              <div className="w-20 h-20 bg-gradient-to-br from-emerald-400 to-teal-500 rounded-full flex items-center justify-center text-white font-bold text-xl">
-                GC
-              </div>
-            </div>
-            <h3 className="text-xl font-bold mb-2 text-gray-800 group-hover:text-emerald-600 transition-colors">
-              Gastón Correa
-            </h3>
-            <div className="w-16 h-0.5 bg-gradient-to-r from-emerald-400 to-transparent mx-auto opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+          {/* Elementos decorativos de fondo */}
+          <div className="absolute inset-0 overflow-hidden pointer-events-none">
+            <div className="absolute top-1/4 left-1/4 w-32 h-32 bg-blue-200/30 rounded-full blur-3xl"></div>
+            <div className="absolute bottom-1/4 right-1/4 w-40 h-40 bg-indigo-200/20 rounded-full blur-3xl"></div>
+            <div className="absolute top-3/4 left-1/3 w-24 h-24 bg-purple-200/25 rounded-full blur-2xl"></div>
           </div>
-          
-          {/* Efecto de resplandor */}
-          <div className="absolute inset-0 bg-gradient-to-r from-emerald-400/20 to-teal-400/20 rounded-2xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 -z-10"></div>
-        </div>
-        
-        {/* Ismael Medina */}
-        <div className="group relative">
-          <div className="bg-white/80 backdrop-blur-sm p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 border border-white/20 hover:scale-105 hover:-translate-y-2">
-            <div className="w-28 h-28 bg-gradient-to-br from-purple-100 to-pink-200 rounded-full mx-auto mb-6 flex items-center justify-center shadow-inner">
-              <div className="w-20 h-20 bg-gradient-to-br from-purple-400 to-pink-500 rounded-full flex items-center justify-center text-white font-bold text-xl">
-                IM
-              </div>
-            </div>
-            <h3 className="text-xl font-bold mb-2 text-gray-800 group-hover:text-purple-600 transition-colors">
-              Ismael Medina
-            </h3>
-            <div className="w-16 h-0.5 bg-gradient-to-r from-purple-400 to-transparent mx-auto opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-          </div>
-          
-          {/* Efecto de resplandor */}
-          <div className="absolute inset-0 bg-gradient-to-r from-purple-400/20 to-pink-400/20 rounded-2xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 -z-10"></div>
-        </div>
-      </div>
-    </div>
-  </div>
-  
-  {/* Elementos decorativos de fondo */}
-  <div className="absolute inset-0 overflow-hidden pointer-events-none">
-    <div className="absolute top-1/4 left-1/4 w-32 h-32 bg-blue-200/30 rounded-full blur-3xl"></div>
-    <div className="absolute bottom-1/4 right-1/4 w-40 h-40 bg-indigo-200/20 rounded-full blur-3xl"></div>
-    <div className="absolute top-3/4 left-1/3 w-24 h-24 bg-purple-200/25 rounded-full blur-2xl"></div>
-  </div>
-</section>
+        </section>
       </main>
 
       <Footer />

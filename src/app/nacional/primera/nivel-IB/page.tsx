@@ -1,5 +1,6 @@
 import React from 'react';
 import Header from '@/components/layout/Header';
+import Footer from '@/components/layout/Footer';
 import GoogleDrivePDFViewer from "@/components/GoogleDrivePDFViewer";
 import { NIVELES_PRIMERA } from '../nivelesData';
 import { buildNationalLevelMetadata } from '@/lib/seo';
@@ -10,7 +11,7 @@ export default function NivelIBPage() {
   const nivelData = NIVELES_PRIMERA['IB'];
 
   return (
-    <>
+    <div className="flex min-h-screen flex-col">
       <Header />
       <main id="main-content" className="flex-1">
         <section className="bg-sky-700 py-12 text-white">
@@ -41,6 +42,8 @@ export default function NivelIBPage() {
           </div>
         </div>
       </main>
-    </>
+
+      <Footer />
+    </div>
   );
 } 

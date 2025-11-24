@@ -1,5 +1,6 @@
 import React from 'react';
 import Header from '@/components/layout/Header';
+import Footer from '@/components/layout/Footer';
 import Link from 'next/link';
 import { buildStaticPageMetadata } from '@/lib/seo';
 
@@ -7,7 +8,7 @@ export const metadata = buildStaticPageMetadata('/nacional/primera');
 
 export default function PrimeraInstanciaPage() {
   return (
-    <>
+    <div className="flex min-h-screen flex-col">
       <Header />
       <main id="main-content" className="flex-1">
         <section className="bg-sky-700 py-12 text-white">
@@ -65,6 +66,8 @@ export default function PrimeraInstanciaPage() {
           </div>
         </div>
       </main>
-    </>
+
+      <Footer />
+    </div>
   );
 } 
