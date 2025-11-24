@@ -65,7 +65,7 @@ export default function AboutPage() {
           <div className="container mx-auto px-4">
             <ol className="flex items-center space-x-2 text-sm text-gray-600">
               <li>
-                <Link href="/" className="hover:text-sky-600 transition-colors">
+                <Link href="/" className="hover:text-sky-600 transition-colors focus:outline-none focus:ring-2 focus:ring-sky-500 focus:ring-offset-2 rounded">
                   Inicio
                 </Link>
               </li>
@@ -107,7 +107,7 @@ export default function AboutPage() {
               <div className="relative w-full h-64 mb-8 rounded-xl overflow-hidden">
                 <Image 
                   src="/images/Historia.jpg" 
-                  alt="Estudiantes y profesores de la Com-Partida de Matemática del Uruguay en un evento de olimpiadas matemáticas" 
+                  alt="Historia de la Com-Partida de Matemática del Uruguay" 
                   fill 
                   className="object-cover"
                   sizes="(max-width: 768px) 100vw, 768px"
@@ -162,10 +162,10 @@ export default function AboutPage() {
                 </p>
                 <Link 
                   href="/mascota" 
-                  className="inline-flex items-center text-sky-600 font-medium hover:text-sky-800 transition-colors group"
+                  className="inline-flex items-center text-sky-600 font-medium hover:text-sky-800 transition-colors group focus:outline-none focus:ring-2 focus:ring-sky-500 focus:ring-offset-2 rounded"
                 >
                   Ver galería de fotos
-                  <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 ml-1 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 ml-1 motion-safe:group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
                   </svg>
                 </Link>
@@ -282,7 +282,7 @@ export default function AboutPage() {
               <div className="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12">
                 {/* Francisco González */}
                 <article className="group relative">
-                  <div className="bg-white/80 backdrop-blur-sm p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 border border-white/20 hover:scale-105 hover:-translate-y-2">
+                  <div className="bg-white/80 backdrop-blur-sm p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 border border-white/20 motion-safe:hover:scale-105 motion-safe:hover:-translate-y-2">
                     <div className="w-28 h-28 bg-gradient-to-br from-blue-100 to-indigo-200 rounded-full mx-auto mb-6 flex items-center justify-center shadow-inner" role="img" aria-label="Avatar de Francisco González">
                       <div className="w-20 h-20 bg-gradient-to-br from-blue-400 to-indigo-500 rounded-full flex items-center justify-center text-white font-bold text-xl" aria-hidden="true">
                         FG
@@ -300,7 +300,7 @@ export default function AboutPage() {
                 
                 {/* Gastón Correa */}
                 <article className="group relative">
-                  <div className="bg-white/80 backdrop-blur-sm p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 border border-white/20 hover:scale-105 hover:-translate-y-2">
+                  <div className="bg-white/80 backdrop-blur-sm p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 border border-white/20 motion-safe:hover:scale-105 motion-safe:hover:-translate-y-2">
                     <div className="w-28 h-28 bg-gradient-to-br from-emerald-100 to-teal-200 rounded-full mx-auto mb-6 flex items-center justify-center shadow-inner" role="img" aria-label="Avatar de Gastón Correa">
                       <div className="w-20 h-20 bg-gradient-to-br from-emerald-400 to-teal-500 rounded-full flex items-center justify-center text-white font-bold text-xl" aria-hidden="true">
                         GC
@@ -318,7 +318,7 @@ export default function AboutPage() {
                 
                 {/* Ismael Medina */}
                 <article className="group relative">
-                  <div className="bg-white/80 backdrop-blur-sm p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 border border-white/20 hover:scale-105 hover:-translate-y-2">
+                  <div className="bg-white/80 backdrop-blur-sm p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 border border-white/20 motion-safe:hover:scale-105 motion-safe:hover:-translate-y-2">
                     <div className="w-28 h-28 bg-gradient-to-br from-purple-100 to-pink-200 rounded-full mx-auto mb-6 flex items-center justify-center shadow-inner" role="img" aria-label="Avatar de Ismael Medina">
                       <div className="w-20 h-20 bg-gradient-to-br from-purple-400 to-pink-500 rounded-full flex items-center justify-center text-white font-bold text-xl" aria-hidden="true">
                         IM
