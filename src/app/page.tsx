@@ -146,7 +146,7 @@ export default function Home() {
               <div className="grid gap-6 md:grid-cols-3">
                 {/* La Diaria */}
                 <Link 
-                  href="https://ladiaria.com.uy/usuarios/entrar/?article=122406"
+                  href="https://ladiaria.com.uy/educacion/articulo/2024/5/luego-de-superar-distintas-instancias-nacionales-una-delegacion-de-estudiantes-se-prepara-para-las-olimpiadas-internacionales-de-matematica/"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="group h-full"

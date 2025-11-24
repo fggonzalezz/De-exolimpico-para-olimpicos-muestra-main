@@ -16,13 +16,13 @@ export const allCompetitions: Competition[] = [
     targetDate: new Date('2025-12-04T00:00:00')
   },
   {
-    date: "Diciembre 18",
+    date: "Diciembre 4",
     event: "5a Olimpíada OLIMPRI",
     status: "upcoming-next",
-    targetDate: new Date('2025-12-18T00:00:00')
+    targetDate: new Date('2025-12-04T00:00:00')
   },
 
-  // Otras competencias futuras
+  
   {
     date: "Junio 4 al 9",
     event: "36a Olimpíada Matemática de Países del Conosur (Minas, Uruguay)",
@@ -31,7 +31,7 @@ export const allCompetitions: Competition[] = [
     targetDate: new Date('2025-06-04T00:00:00'),
     id: "olimpiada-conosur-2025"
   },
-  // Competencia de prueba con fecha pasada para testing
+
   {
     date: "Enero 1",
     event: "Competencia de Prueba (Fecha Pasada)",

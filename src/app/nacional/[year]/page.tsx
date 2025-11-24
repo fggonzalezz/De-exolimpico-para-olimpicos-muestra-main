@@ -45,15 +45,17 @@ export default async function YearPage({ params }) {
         {/* First Resolution Section */}
         <section className="py-10">
           <div className="container mx-auto px-4">
-            <div className="flex flex-col md:flex-row items-center gap-8 bg-white rounded-2xl shadow-lg p-8 mb-8">
-              <Image src={TEACHER_ICON} alt="Teacher Icon" width={80} height={80} className="mb-4 md:mb-0" />
-              <div className="flex-1">
-                <h2 className="text-2xl font-bold text-sky-700 mb-2">RESOLUCIÓN PRIMERA INSTANCIA</h2>
-                <Link href={`/nacional/${year}/primera`} className="inline-block bg-sky-700 text-white font-bold py-2 px-6 rounded-full hover:bg-sky-800 transition-all">
-                  Ver soluciones
-                </Link>
+            {year !== '2020' && (
+              <div className="flex flex-col md:flex-row items-center gap-8 bg-white rounded-2xl shadow-lg p-8 mb-8">
+                <Image src={TEACHER_ICON} alt="Teacher Icon" width={80} height={80} className="mb-4 md:mb-0" />
+                <div className="flex-1">
+                  <h2 className="text-2xl font-bold text-sky-700 mb-2">RESOLUCIÓN PRIMERA INSTANCIA</h2>
+                  <Link href={`/nacional/${year}/primera`} className="inline-block bg-sky-700 text-white font-bold py-2 px-6 rounded-full hover:bg-sky-800 transition-all">
+                    Ver soluciones
+                  </Link>
+                </div>
               </div>
-            </div>
+            )}
             {/* Second Resolution Section */}
             <div className="flex flex-col md:flex-row-reverse items-center gap-8 bg-[#f0f6fa] rounded-2xl shadow-lg p-8">
               <Image src={TEACHER_ICON} alt="Teacher Icon" width={80} height={80} className="mb-4 md:mb-0" />
