@@ -5,8 +5,8 @@ export const BRAND_NAME = "Com-Partida de Matemática del Uruguay";
 export const BRAND_SHORT = "Olimpiada Matemática Uruguay";
 const DEFAULT_IMAGE = {
   url: "/images/CPM.png",
-  width: 1200,
-  height: 630,
+  width: 198,
+  height: 183,
   alt: BRAND_NAME,
 };
 

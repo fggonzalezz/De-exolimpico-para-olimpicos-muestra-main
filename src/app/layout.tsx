@@ -79,8 +79,8 @@ export const metadata: Metadata = {
     images: [
       {
         url: `${siteUrl}/images/CPM.png`,
-        width: 512,
-        height: 512,
+        width: 198,
+        height: 183,
         alt: "Com-Partida de Matemática del Uruguay"
       }
     ]
