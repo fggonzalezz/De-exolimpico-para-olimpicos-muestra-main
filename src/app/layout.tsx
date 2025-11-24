@@ -10,7 +10,7 @@ const montserrat = Montserrat({ subsets: ["latin"], variable: "--font-montserrat
 const roboto = Roboto({ subsets: ["latin"], variable: "--font-roboto", weight: ["300", "400", "500", "700"], display: 'swap' });
 const oswald = Oswald({ subsets: ["latin"], variable: "--font-oswald", weight: ["400", "500", "600", "700"], display: 'swap' });
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://de-exolimpicos-para-olimpicos.vercel.app";
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://exolimpicos-lacompartida.com";
 
 const organizationJsonLd = {
   "@context": "https://schema.org",
