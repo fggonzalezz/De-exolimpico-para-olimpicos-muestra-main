@@ -193,15 +193,10 @@ export default function SeminariosPage() {
                       {category.videos.map((video, vIdx) => (
                         <div key={vIdx} className="flex flex-col h-full">
                           <div className="aspect-video rounded-lg overflow-hidden shadow-md bg-black mb-4">
-                            <iframe 
-                              width="100%" 
-                              height="100%" 
-                              src={video.url} 
+                            <YouTubeLite 
+                              videoId={video.url} 
                               title={video.title}
-                              frameBorder="0" 
-                              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                              allowFullScreen
-                            ></iframe>
+                            />
                           </div>
                           <h4 className="font-bold text-lg text-gray-800 mb-2">{video.title}</h4>
                           <p className="text-gray-600 text-sm flex-grow">{video.description}</p>
@@ -277,15 +272,10 @@ export default function SeminariosPage() {
                           Video de la Clase
                         </h4>
                         <div className="aspect-video rounded-lg overflow-hidden shadow-md bg-black">
-                          <iframe 
-                            width="100%" 
-                            height="100%" 
-                            src={seminario.video} 
+                          <YouTubeLite 
+                            videoId={seminario.video} 
                             title={`Video - ${seminario.title}`}
-                            frameBorder="0" 
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                            allowFullScreen
-                          ></iframe>
+                          />
                         </div>
                         <a 
                           href={seminario.video.replace('embed/', 'watch?v=')} 
