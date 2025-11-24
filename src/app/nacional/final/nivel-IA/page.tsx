@@ -8,7 +8,7 @@ import { NIVELES_FINAL } from "../nivelesData";
 export const metadata = buildNationalLevelMetadata("final", "nivel-IA");
 
 export default function NivelIAFinalPage() {
-  const nivelData = NIVELES_FINAL["IA"];
+  const nivelData = NIVELES_FINAL.IA;
 
   return (
     <div className="flex min-h-screen flex-col">

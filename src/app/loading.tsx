@@ -10,7 +10,7 @@ export default function Loading() {
         className="flex-1 flex items-center justify-center bg-white"
       >
         <div className="flex flex-col items-center">
-          <div className="w-16 h-16 border-4 border-sky-200 border-t-sky-600 rounded-full animate-spin mb-4"></div>
+          <div className="w-16 h-16 border-4 border-sky-200 border-t-sky-600 rounded-full animate-spin mb-4" />
           <p className="text-sky-700 font-medium animate-pulse">Cargando...</p>
         </div>
       </main>

@@ -39,7 +39,7 @@ export default function Page2020() {
                   className="w-full h-[650px]"
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                   allowFullScreen
-                ></iframe>
+                />
               </div>
             </div>
           </div>

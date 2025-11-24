@@ -324,7 +324,7 @@ export default function SeminariosPage() {
                               loading="lazy"
                               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                               allowFullScreen
-                            ></iframe>
+                            />
                           </div>
                           <h4 className="font-bold text-lg text-gray-800 mb-2">
                             {video.title}
@@ -459,7 +459,7 @@ export default function SeminariosPage() {
                             loading="lazy"
                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                             allowFullScreen
-                          ></iframe>
+                          />
                         </div>
                         <a
                           href={seminario.video.replace("embed/", "watch?v=")}

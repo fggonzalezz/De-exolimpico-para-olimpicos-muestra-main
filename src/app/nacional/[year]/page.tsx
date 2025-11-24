@@ -26,16 +26,17 @@ const assets = {
 const TEACHER_ICON = "https://ext.same-assets.com/4168015766/3169824431.png";
 
 type YearPageProps = {
-  params: { year: string };
+  params: Promise<{ year: string }>;
 };
 
-export function generateMetadata({ params }: YearPageProps) {
-  return buildNationalYearMetadata(params.year);
+export async function generateMetadata({ params }: YearPageProps) {
+  const { year } = await params;
+  return buildNationalYearMetadata(year);
 }
 
-export default function YearPage({ params }: YearPageProps) {
-  const { year } = params;
-  const asset = assets[year] || assets["2021"];
+export default async function YearPage({ params }: YearPageProps) {
+  const { year } = await params;
+  const asset = assets[year as keyof typeof assets] || assets["2021"];
   return (
     <div className="flex min-h-screen flex-col">
       <Header />

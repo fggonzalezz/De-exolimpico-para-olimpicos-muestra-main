@@ -77,14 +77,15 @@ const DATA: Record<string, Nivel[]> = {
   anteriores: [], // Segunda instancia no disponible para años anteriores
 };
 
-type SegundaPageProps = { params: Params };
+type SegundaPageProps = { params: Promise<Params> };
 
-export function generateMetadata({ params }: SegundaPageProps) {
-  return buildNationalYearStageMetadata(params.year, "segunda");
+export async function generateMetadata({ params }: SegundaPageProps) {
+  const { year } = await params;
+  return buildNationalYearStageMetadata(year, "segunda");
 }
 
-export default function SegundaInstanciaPage({ params }: SegundaPageProps) {
-  const { year } = params;
+export default async function SegundaInstanciaPage({ params }: SegundaPageProps) {
+  const { year } = await params;
   const niveles = DATA[year] || [];
 
   return (

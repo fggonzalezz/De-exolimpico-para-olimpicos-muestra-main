@@ -42,7 +42,7 @@ export default function ClientPDFSection({ niveles }: Props) {
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
               allowFullScreen
               className="rounded-lg shadow mb-4 w-full"
-            ></iframe>
+            />
           </div>
         </div>
       ))}

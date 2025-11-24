@@ -77,7 +77,7 @@ export default function PruebasSemanalesClient() {
                 matemáticas y prepararte para las olimpiadas.
               </p>
               <div className="mt-6">
-                <div className="w-16 h-1 bg-yellow-500 mx-auto rounded-full"></div>
+                <div className="w-16 h-1 bg-yellow-500 mx-auto rounded-full" />
               </div>
             </div>
           </div>

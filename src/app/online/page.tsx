@@ -81,7 +81,7 @@ export default function OnlinePage() {
                 Recursos para Participación Online
               </h1>
               <div className="flex justify-center">
-                <div className="h-1 w-24 bg-yellow-500 rounded mb-6"></div>
+                <div className="h-1 w-24 bg-yellow-500 rounded mb-6" />
               </div>
               <p className="text-lg text-gray-600 max-w-3xl mx-auto">
                 Descubre recursos y guías para participar en nuestras
@@ -102,7 +102,7 @@ export default function OnlinePage() {
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                     allowFullScreen
                     className="absolute top-0 left-0 w-full h-full"
-                  ></iframe>
+                  />
                 </div>
               </CardContent>
             </Card>
@@ -114,7 +114,7 @@ export default function OnlinePage() {
                   Preguntas Frecuentes
                 </h2>
                 <div className="flex justify-center">
-                  <div className="h-1 w-24 bg-yellow-500 rounded mb-6"></div>
+                  <div className="h-1 w-24 bg-yellow-500 rounded mb-6" />
                 </div>
               </div>
 

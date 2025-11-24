@@ -97,14 +97,15 @@ const DATA: Record<string, { primera: Nivel[]; segunda: Nivel[] }> = {
   },
 };
 
-type PrimeraPageProps = { params: Params };
+type PrimeraPageProps = { params: Promise<Params> };
 
-export function generateMetadata({ params }: PrimeraPageProps) {
-  return buildNationalYearStageMetadata(params.year, "primera");
+export async function generateMetadata({ params }: PrimeraPageProps) {
+  const { year } = await params;
+  return buildNationalYearStageMetadata(year, "primera");
 }
 
-export default function PrimeraInstanciaPage({ params }: PrimeraPageProps) {
-  const { year } = params;
+export default async function PrimeraInstanciaPage({ params }: PrimeraPageProps) {
+  const { year } = await params;
   const niveles: Nivel[] = DATA[year]?.primera || [];
   return (
     <div className="flex min-h-screen flex-col">

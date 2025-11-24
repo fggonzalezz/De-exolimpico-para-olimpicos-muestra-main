@@ -353,7 +353,7 @@ export default function AboutPage() {
                 <div
                   className="w-24 h-1 bg-gradient-to-r from-blue-500 to-indigo-600 mx-auto rounded-full"
                   aria-hidden="true"
-                ></div>
+                />
               </div>
 
               <div className="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12">
@@ -378,14 +378,14 @@ export default function AboutPage() {
                     <div
                       className="w-16 h-0.5 bg-gradient-to-r from-blue-400 to-transparent mx-auto opacity-0 group-hover:opacity-100 transition-opacity duration-300"
                       aria-hidden="true"
-                    ></div>
+                    />
                   </div>
 
                   {/* Efecto de resplandor */}
                   <div
                     className="absolute inset-0 bg-gradient-to-r from-blue-400/20 to-indigo-400/20 rounded-2xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 -z-10"
                     aria-hidden="true"
-                  ></div>
+                  />
                 </article>
 
                 {/* Gastón Correa */}
@@ -409,14 +409,14 @@ export default function AboutPage() {
                     <div
                       className="w-16 h-0.5 bg-gradient-to-r from-emerald-400 to-transparent mx-auto opacity-0 group-hover:opacity-100 transition-opacity duration-300"
                       aria-hidden="true"
-                    ></div>
+                    />
                   </div>
 
                   {/* Efecto de resplandor */}
                   <div
                     className="absolute inset-0 bg-gradient-to-r from-emerald-400/20 to-teal-400/20 rounded-2xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 -z-10"
                     aria-hidden="true"
-                  ></div>
+                  />
                 </article>
 
                 {/* Ismael Medina */}
@@ -440,14 +440,14 @@ export default function AboutPage() {
                     <div
                       className="w-16 h-0.5 bg-gradient-to-r from-purple-400 to-transparent mx-auto opacity-0 group-hover:opacity-100 transition-opacity duration-300"
                       aria-hidden="true"
-                    ></div>
+                    />
                   </div>
 
                   {/* Efecto de resplandor */}
                   <div
                     className="absolute inset-0 bg-gradient-to-r from-purple-400/20 to-pink-400/20 rounded-2xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 -z-10"
                     aria-hidden="true"
-                  ></div>
+                  />
                 </article>
               </div>
             </div>
@@ -458,9 +458,9 @@ export default function AboutPage() {
             className="absolute inset-0 overflow-hidden pointer-events-none"
             aria-hidden="true"
           >
-            <div className="absolute top-1/4 left-1/4 w-32 h-32 bg-blue-200/30 rounded-full blur-3xl"></div>
-            <div className="absolute bottom-1/4 right-1/4 w-40 h-40 bg-indigo-200/20 rounded-full blur-3xl"></div>
-            <div className="absolute top-3/4 left-1/3 w-24 h-24 bg-purple-200/25 rounded-full blur-2xl"></div>
+            <div className="absolute top-1/4 left-1/4 w-32 h-32 bg-blue-200/30 rounded-full blur-3xl" />
+            <div className="absolute bottom-1/4 right-1/4 w-40 h-40 bg-indigo-200/20 rounded-full blur-3xl" />
+            <div className="absolute top-3/4 left-1/3 w-24 h-24 bg-purple-200/25 rounded-full blur-2xl" />
           </div>
         </section>
       </main>

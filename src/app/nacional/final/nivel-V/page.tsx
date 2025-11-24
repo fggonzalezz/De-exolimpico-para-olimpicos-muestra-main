@@ -8,7 +8,7 @@ import { NIVELES_FINAL } from "../nivelesData";
 export const metadata = buildNationalLevelMetadata("final", "nivel-V");
 
 export default function NivelVFinalPage() {
-  const nivelData = NIVELES_FINAL["V"];
+  const nivelData = NIVELES_FINAL.V;
 
   return (
     <div className="flex min-h-screen flex-col">

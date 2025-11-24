@@ -47,7 +47,7 @@ export default function AnterioresPage() {
                 fill="none"
                 viewBox="0 0 24 24"
                 stroke="currentColor"
-              ></svg>
+              />
             </Link>
             <Link
               href="/nacional/final"
@@ -60,7 +60,7 @@ export default function AnterioresPage() {
                 fill="none"
                 viewBox="0 0 24 24"
                 stroke="currentColor"
-              ></svg>
+              />
             </Link>
           </div>
           <div className="mt-8">
@@ -75,7 +75,7 @@ export default function AnterioresPage() {
                 fill="none"
                 viewBox="0 0 24 24"
                 stroke="currentColor"
-              ></svg>
+              />
             </Link>
           </div>
         </div>

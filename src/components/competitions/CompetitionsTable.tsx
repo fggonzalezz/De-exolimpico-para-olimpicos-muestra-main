@@ -237,7 +237,8 @@ export default function CompetitionsTable({
 
         if (isUpcomingA && isUpcomingB) {
           return a.targetDate.getTime() - b.targetDate.getTime(); // más cercana primero
-        } else if (!isUpcomingA && !isUpcomingB) {
+        }
+        if (!isUpcomingA && !isUpcomingB) {
           return b.targetDate.getTime() - a.targetDate.getTime(); // más reciente primero
         }
       }

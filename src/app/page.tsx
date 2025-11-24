@@ -39,13 +39,14 @@ export default function Home() {
     .filter((competition) => competition.targetDate instanceof Date)
     .map((competition) => ({
       name: competition.event,
-      startDate: competition.targetDate!.toISOString(),
+      startDate: competition.targetDate?.toISOString() ?? "",
       location: "Uruguay",
       description: competition.date,
       url: competition.id
         ? `${SITE_URL}/calendario-2025#${competition.id}`
         : `${SITE_URL}/calendario-2025`,
-    }));
+    }))
+    .filter((event) => event.startDate !== "");
 
   const eventsJsonLd = eventItems.length
     ? createEventItemListJsonLd(eventItems)
@@ -84,9 +85,9 @@ export default function Home() {
               sizes="100vw"
             />
             {/* Mobile Gradient: Fade to blue at bottom */}
-            <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-transparent to-sky-900 md:hidden"></div>
+            <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-transparent to-sky-900 md:hidden" />
             {/* Desktop Overlay: Darken whole image */}
-            <div className="hidden md:block absolute inset-0 bg-gradient-to-b from-black/70 via-black/50 to-black/70"></div>
+            <div className="hidden md:block absolute inset-0 bg-gradient-to-b from-black/70 via-black/50 to-black/70" />
           </div>
 
           {/* Content Container */}

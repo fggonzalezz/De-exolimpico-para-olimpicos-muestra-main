@@ -49,7 +49,7 @@ export default function EquipoConosurPage() {
                 Equipo Conosur 2025
               </h1>
               <div className="flex justify-center">
-                <div className="h-1 w-24 bg-yellow-500 rounded mb-6"></div>
+                <div className="h-1 w-24 bg-yellow-500 rounded mb-6" />
               </div>
               <p className="text-lg text-gray-600 max-w-3xl mx-auto">
                 Estudiantes seleccionados para representar a Uruguay en la 36ª

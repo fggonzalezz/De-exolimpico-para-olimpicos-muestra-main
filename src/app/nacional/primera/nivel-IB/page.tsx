@@ -8,7 +8,7 @@ import { NIVELES_PRIMERA } from "../nivelesData";
 export const metadata = buildNationalLevelMetadata("primera", "nivel-IB");
 
 export default function NivelIBPage() {
-  const nivelData = NIVELES_PRIMERA["IB"];
+  const nivelData = NIVELES_PRIMERA.IB;
 
   return (
     <div className="flex min-h-screen flex-col">

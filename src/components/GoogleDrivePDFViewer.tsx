@@ -128,7 +128,7 @@ const GoogleDrivePDFViewer: React.FC<GoogleDrivePDFViewerProps> = ({
       {isLoading && (
         <div className="w-full h-[500px] flex items-center justify-center bg-gray-50 rounded-lg border mb-4">
           <div className="flex flex-col items-center">
-            <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-blue-600 mb-2"></div>
+            <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-blue-600 mb-2" />
             <p className="text-gray-600">Cargando PDF...</p>
           </div>
         </div>
