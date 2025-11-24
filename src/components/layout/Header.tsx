@@ -44,7 +44,7 @@ export default function Header() {
   const [openDropdown, setOpenDropdown] = useState<string | null>(null);
 
   return (
-  <header className="sticky top-0 z-50 w-full bg-white dark:bg-white shadow-sm">
+  <header className="force-light-surface sticky top-0 z-50 w-full bg-white shadow-sm">
       <div className="container mx-auto px-6 lg:px-8">
         <div className="flex justify-between items-center py-3 md:py-4">
           {/* Logo and Title */}
