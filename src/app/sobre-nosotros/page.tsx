@@ -12,7 +12,7 @@ export default function AboutPage() {
     <div className="flex min-h-screen flex-col">
       <Header />
 
-      <main className="flex-1">
+      <main id="main-content" className="flex-1">
         {/* Hero section */}
         <section className="bg-sky-700 py-12 text-white">
           <div className="container mx-auto px-4">
@@ -75,7 +75,7 @@ export default function AboutPage() {
                 <div className="w-40 h-40 rounded-full overflow-hidden border-4 border-sky-200 shadow-md">
                   <Image
                     src="/images/Eulerito.jpg"
-                    alt="Foto de la mascota Eulerito"
+                    alt="Foto de la mascota Gauchito"
                     width={160}
                     height={160}
                     className="object-cover w-full h-full"

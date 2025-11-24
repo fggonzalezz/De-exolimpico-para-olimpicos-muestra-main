@@ -61,7 +61,7 @@ export default function Home() {
       />
       <Header />
 
-      <main className="flex-1">
+      <main id="main-content" className="flex-1">
         {/* Hero section */}
         <section className="relative bg-sky-900 flex flex-col md:block md:min-h-[65vh] text-white overflow-hidden">
           {/* Image Container */}
@@ -142,7 +142,28 @@ export default function Home() {
             <h2 className="text-2xl md:text-3xl font-inter font-semibold text-center mb-8">
               Resultados Destacados 2024
             </h2>
-
+            <div className="max-w-4xl mx-auto">
+              <div className="grid gap-6 md:grid-cols-3">
+                <div className="bg-gradient-to-br from-yellow-400 to-yellow-500 rounded-xl p-6 text-center shadow-lg">
+                  <div className="text-4xl font-bold text-white mb-2">3</div>
+                  <div className="text-white font-medium">Menciones de Honor</div>
+                  <div className="text-yellow-100 text-sm mt-1">IMO 2024 - Reino Unido</div>
+                </div>
+                <div className="bg-gradient-to-br from-sky-500 to-sky-600 rounded-xl p-6 text-center shadow-lg">
+                  <div className="text-4xl font-bold text-white mb-2">Mejor</div>
+                  <div className="text-white font-medium">Puntaje desde 1987</div>
+                  <div className="text-sky-100 text-sm mt-1">Récord histórico</div>
+                </div>
+                <div className="bg-gradient-to-br from-green-500 to-green-600 rounded-xl p-6 text-center shadow-lg">
+                  <div className="text-4xl font-bold text-white mb-2">6</div>
+                  <div className="text-white font-medium">Participantes IMO</div>
+                  <div className="text-green-100 text-sm mt-1">Delegación completa</div>
+                </div>
+              </div>
+              <p className="text-center text-gray-600 mt-6">
+                La delegación uruguaya logró el mejor resultado histórico en la Olimpíada Internacional de Matemática 2024.
+              </p>
+            </div>
           </div>
         </section>
 
@@ -302,7 +323,7 @@ export default function Home() {
                 <div className="w-40 h-40 bg-yellow-400 rounded-full flex items-center justify-center overflow-hidden animate-fade-in">
                   <Image
                     src="/images/Eulerito.jpg"
-                    alt="Foto de la mascota Eulerito"
+                    alt="Foto de la mascota Gauchito"
                     width={160}
                     height={160}
                     className="object-cover w-full h-full"

@@ -31,14 +31,6 @@ export const allCompetitions: Competition[] = [
     targetDate: new Date('2025-06-04T00:00:00'),
     id: "olimpiada-conosur-2025"
   },
-
-  {
-    date: "Enero 1",
-    event: "Competencia de Prueba (Fecha Pasada)",
-    status: "upcoming",
-    targetDate: new Date('2025-01-01T00:00:00'),
-    id: "test-expired-competition"
-  },
   {
     date: "Julio 10 al 20",
     event: "66th International Mathematical Olympiad (Sunshine Coast, Australia)",

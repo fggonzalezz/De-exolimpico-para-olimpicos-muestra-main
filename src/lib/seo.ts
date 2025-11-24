@@ -221,8 +221,8 @@ export const seoStaticPages: PageSeoEntry[] = [
     path: "/mascota",
     title: "Mascota Gauchito",
     description:
-      "Historia e ilustraciones de Gauchito, la mascota oficial que inspira a la comunidad olímpica uruguaya.",
-    keywords: ["mascota olimpiada matemática", "gauchito matemática"],
+      "Conoce a Gauchito, la mascota oficial de la Olimpiada Matemática Uruguay que representa la curiosidad, perseverancia y diversión de aprender matemáticas.",
+    keywords: ["mascota olimpiada matemática", "gauchito matemática", "gauchito com-partida"],
     priority: 0.6,
     changeFrequency: "yearly",
   },

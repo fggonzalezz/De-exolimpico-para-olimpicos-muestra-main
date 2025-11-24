@@ -18,7 +18,7 @@ export default function Error({
   return (
     <div className="flex min-h-screen flex-col">
       <Header />
-      <main className="flex-1 flex items-center justify-center bg-gray-50 py-20">
+      <main id="main-content" className="flex-1 flex items-center justify-center bg-gray-50 py-20">
         <div className="container mx-auto px-4 text-center">
           <div className="max-w-md mx-auto bg-white p-8 rounded-lg shadow-md">
             <div className="w-16 h-16 bg-red-100 text-red-500 rounded-full flex items-center justify-center mx-auto mb-6">

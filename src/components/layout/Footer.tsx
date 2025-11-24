@@ -28,19 +28,19 @@ export default function Footer() {
                 Información compartida matemática: Un proyecto educativo que se construye con todos desde 1992.
               </p>
               <div className="flex space-x-3">
-                <Link href="https://www.facebook.com/olimpiadamatematicauy" aria-label="Facebook" className="bg-sky-600 text-white p-2 rounded-full hover:bg-sky-700 transition-colors">
+                <Link href="https://www.facebook.com/olimpiadamatematicauy" target="_blank" rel="noopener noreferrer" aria-label="Facebook" className="bg-sky-600 text-white p-2 rounded-full hover:bg-sky-700 transition-colors">
                   <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                     <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>
                   </svg>
                 </Link>
-                <Link href="https://www.instagram.com/olim_mat_uy/" aria-label="Instagram" className="bg-sky-600 text-white p-2 rounded-full hover:bg-sky-700 transition-colors">
+                <Link href="https://www.instagram.com/olim_mat_uy/" target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="bg-sky-600 text-white p-2 rounded-full hover:bg-sky-700 transition-colors">
                   <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                     <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
                     <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
                     <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
                   </svg>
                 </Link>
-                <Link href="https://x.com/olimpiadamat_uy" aria-label="Twitter" className="bg-sky-600 text-white p-2 rounded-full hover:bg-sky-700 transition-colors">
+                <Link href="https://x.com/olimpiadamat_uy" target="_blank" rel="noopener noreferrer" aria-label="Twitter" className="bg-sky-600 text-white p-2 rounded-full hover:bg-sky-700 transition-colors">
                   <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                     <path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"/>
                   </svg>

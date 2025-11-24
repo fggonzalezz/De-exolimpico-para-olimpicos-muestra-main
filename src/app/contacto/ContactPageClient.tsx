@@ -36,7 +36,7 @@ function ContactPageClient() {
     <div className="flex min-h-screen flex-col">
       <Header />
 
-      <main className="flex-1 py-12">
+      <main id="main-content" className="flex-1 py-12">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
             <h1 className="text-3xl md:text-4xl font-inter font-bold text-center mb-4">
