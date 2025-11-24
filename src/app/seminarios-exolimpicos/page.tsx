@@ -4,7 +4,6 @@ import Footer from '@/components/layout/Footer';
 import { Card, CardContent } from '@/components/ui/card';
 import Link from 'next/link';
 import GoogleDrivePDFViewer from '@/components/GoogleDrivePDFViewer';
-import YouTubeLite from '@/components/YouTubeLite';
 import { buildStaticPageMetadata } from '@/lib/seo';
 
 export const metadata = buildStaticPageMetadata('/seminarios-exolimpicos');
@@ -193,10 +192,16 @@ export default function SeminariosPage() {
                       {category.videos.map((video, vIdx) => (
                         <div key={vIdx} className="flex flex-col h-full">
                           <div className="aspect-video rounded-lg overflow-hidden shadow-md bg-black mb-4">
-                            <YouTubeLite 
-                              videoId={video.url} 
+                            <iframe 
+                              width="100%" 
+                              height="100%" 
+                              src={video.url} 
                               title={video.title}
-                            />
+                              frameBorder="0" 
+                              loading="lazy"
+                              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                              allowFullScreen
+                            ></iframe>
                           </div>
                           <h4 className="font-bold text-lg text-gray-800 mb-2">{video.title}</h4>
                           <p className="text-gray-600 text-sm flex-grow">{video.description}</p>
@@ -272,10 +277,16 @@ export default function SeminariosPage() {
                           Video de la Clase
                         </h4>
                         <div className="aspect-video rounded-lg overflow-hidden shadow-md bg-black">
-                          <YouTubeLite 
-                            videoId={seminario.video} 
+                          <iframe 
+                            width="100%" 
+                            height="100%" 
+                            src={seminario.video} 
                             title={`Video - ${seminario.title}`}
-                          />
+                            frameBorder="0" 
+                            loading="lazy"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                            allowFullScreen
+                          ></iframe>
                         </div>
                         <a 
                           href={seminario.video.replace('embed/', 'watch?v=')} 
