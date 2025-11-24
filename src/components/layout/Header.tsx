@@ -49,14 +49,14 @@ export default function Header() {
         <div className="flex justify-between items-center py-3 md:py-4">
           {/* Logo and Title */}
           <Link href="/" className="flex items-center">
-            <div className="relative h-14 w-14 sm:h-16 sm:w-16 mr-3 transition-transform duration-500 ease-out bg-white rounded-full p-2 shadow-md ring-2 ring-gray-100">
+            <div className="force-light-surface relative h-14 w-14 sm:h-16 sm:w-16 mr-3 transition-transform duration-500 ease-out rounded-full p-2 shadow-md ring-2 ring-gray-100">
               <Image
                 src="/images/CPM.png"
                 alt="Com-Partida de Matemática del Uruguay"
                 fill
                 priority
                 sizes="(max-width: 768px) 56px, 64px"
-                className="object-contain p-0.5"
+                className="logo-no-invert object-contain p-0.5"
               />
             </div>
           </Link>
