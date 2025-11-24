@@ -19,7 +19,7 @@ export default function FinalNacionalPage() {
         
         <div className="container mx-auto px-4 py-8">
           <div className="max-w-6xl mx-auto">
-            <h2 className="text-2xl font-semibold mb-8 text-center">Información de Final Nacional</h2>
+            <h2 className="text-2xl font-semibold mb-8 text-center">Niveles de Final Nacional (Años Anteriores)</h2>
             
             <div className="grid md:grid-cols-2 gap-10 mb-10">
               {/* Niveles de Primaria */}
