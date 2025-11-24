@@ -6,9 +6,9 @@ import { Inter, Montserrat, Roboto, Oswald } from "next/font/google";
 import StagewiseDevToolbar from "@/components/StagewiseDevToolbar";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter", display: 'swap' });
-const montserrat = Montserrat({ subsets: ["latin"], variable: "--font-montserrat", weight: ["400", "500", "600", "700"], display: 'swap' });
+const montserrat = Montserrat({ subsets: ["latin"], variable: "--font-montserrat", display: 'swap' });
 const roboto = Roboto({ subsets: ["latin"], variable: "--font-roboto", weight: ["300", "400", "500", "700"], display: 'swap' });
-const oswald = Oswald({ subsets: ["latin"], variable: "--font-oswald", weight: ["400", "500", "600", "700"], display: 'swap' });
+const oswald = Oswald({ subsets: ["latin"], variable: "--font-oswald", display: 'swap' });
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://exolimpicos-lacompartida.com";
 

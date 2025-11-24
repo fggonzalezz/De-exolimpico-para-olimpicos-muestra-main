@@ -195,6 +195,7 @@ export default function SeminariosPage() {
                               src={video.url} 
                               title={video.title}
                               frameBorder="0" 
+                              loading="lazy"
                               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
                               allowFullScreen
                             ></iframe>
@@ -279,6 +280,7 @@ export default function SeminariosPage() {
                             src={seminario.video} 
                             title={`Video - ${seminario.title}`}
                             frameBorder="0" 
+                            loading="lazy"
                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
                             allowFullScreen
                           ></iframe>

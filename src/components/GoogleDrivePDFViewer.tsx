@@ -134,6 +134,7 @@ const GoogleDrivePDFViewer: React.FC<GoogleDrivePDFViewerProps> = ({
         src={embedUrl}
         width="100%"
         height="500"
+        loading="lazy"
         onLoad={handleIframeLoad}
         onError={handleIframeError}
         // Configuración de seguridad robusta
