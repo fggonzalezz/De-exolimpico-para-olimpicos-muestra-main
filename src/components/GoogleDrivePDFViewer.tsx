@@ -75,21 +75,25 @@ const GoogleDrivePDFViewer: React.FC<GoogleDrivePDFViewerProps> = ({
 
   return (
     <div className="w-full flex flex-col items-center">
-      {/* Contenedor con aspect ratio de hoja A4 (1:1.414) para evitar barras negras */}
-      <div className="w-full max-w-[595px] relative" style={{ aspectRatio: "1 / 1.414" }}>
-        <iframe
-          src={embedUrl}
-          title={title}
-          aria-label={`Vista previa del PDF: ${title}`}
-          className="absolute inset-0 w-full h-full rounded-lg shadow-sm border border-gray-200"
-        />
-      </div>
+      <iframe
+        src={embedUrl}
+        width="100%"
+        height="500"
+        title={title}
+        aria-label={`Vista previa del PDF: ${title}`}
+        style={{
+          maxWidth: "100%",
+          border: "1px solid #e5e7eb",
+          borderRadius: "12px",
+        }}
+        className="mb-4 w-full rounded-lg shadow-sm"
+      />
 
       <a
         href={pdfUrl}
         target="_blank"
         rel="noopener noreferrer"
-        className="inline-flex items-center gap-2 text-blue-600 hover:text-blue-800 mt-4 mb-6 text-lg transition-colors"
+        className="inline-flex items-center gap-2 text-blue-600 hover:text-blue-800 mb-6 text-lg transition-colors"
       >
         <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
           <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
