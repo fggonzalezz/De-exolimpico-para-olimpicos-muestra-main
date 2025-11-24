@@ -3,21 +3,91 @@ import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
 import Image from 'next/image';
 import Link from 'next/link';
-import { buildStaticPageMetadata } from '@/lib/seo';
+import { buildStaticPageMetadata, SITE_URL, BRAND_NAME } from '@/lib/seo';
 
 export const metadata = buildStaticPageMetadata('/sobre-nosotros');
+
+// JSON-LD Schema para AboutPage
+const aboutPageJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "AboutPage",
+  name: "Sobre Nosotros - Com-Partida de Matemática del Uruguay",
+  description: "Historia, misión y valores de la Com-Partida de Matemática del Uruguay. Conoce al equipo que impulsa las olimpiadas matemáticas en el país.",
+  url: `${SITE_URL}/sobre-nosotros`,
+  mainEntity: {
+    "@type": "EducationalOrganization",
+    name: BRAND_NAME,
+    foundingDate: "1992",
+    description: "Organización educativa dedicada a fomentar el talento matemático en Uruguay a través de olimpiadas y competencias.",
+    areaServed: {
+      "@type": "Country",
+      name: "Uruguay"
+    }
+  }
+};
+
+// JSON-LD Schema para Breadcrumbs
+const breadcrumbJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    {
+      "@type": "ListItem",
+      position: 1,
+      name: "Inicio",
+      item: SITE_URL
+    },
+    {
+      "@type": "ListItem",
+      position: 2,
+      name: "Sobre Nosotros",
+      item: `${SITE_URL}/sobre-nosotros`
+    }
+  ]
+};
 
 export default function AboutPage() {
   return (
     <div className="flex min-h-screen flex-col">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(aboutPageJsonLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
+      />
       <Header />
 
       <main id="main-content" className="flex-1">
+        {/* Breadcrumb Navigation */}
+        <nav aria-label="Breadcrumb" className="bg-gray-100 py-3">
+          <div className="container mx-auto px-4">
+            <ol className="flex items-center space-x-2 text-sm text-gray-600">
+              <li>
+                <Link href="/" className="hover:text-sky-600 transition-colors">
+                  Inicio
+                </Link>
+              </li>
+              <li aria-hidden="true">
+                <svg className="h-4 w-4 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                </svg>
+              </li>
+              <li>
+                <span aria-current="page" className="text-sky-700 font-medium">
+                  Sobre Nosotros
+                </span>
+              </li>
+            </ol>
+          </div>
+        </nav>
+
         {/* Hero section */}
-        <section className="bg-sky-700 py-12 text-white">
+        <section aria-labelledby="hero-title" className="bg-sky-700 py-12 text-white">
           <div className="container mx-auto px-4">
             <div className="max-w-3xl mx-auto text-center">
-              <h1 className="text-3xl md:text-4xl font-inter font-bold mb-4">
+              <h1 id="hero-title" className="text-3xl md:text-4xl font-inter font-bold mb-4">
                 Sobre Nosotros
               </h1>
               <p className="text-xl font-light">
@@ -28,18 +98,19 @@ export default function AboutPage() {
         </section>
 
         {/* Nuestra Historia */}
-        <section className="py-12 bg-gray-50">
+        <section aria-labelledby="historia-title" className="py-12 bg-gray-50">
           <div className="container mx-auto px-4">
             <div className="max-w-3xl mx-auto">
-              <h2 className="text-2xl md:text-3xl font-inter font-semibold mb-6 text-center">
+              <h2 id="historia-title" className="text-2xl md:text-3xl font-inter font-semibold mb-6 text-center">
                 Nuestra Historia
               </h2>
               <div className="relative w-full h-64 mb-8 rounded-xl overflow-hidden">
                 <Image 
                   src="/images/Historia.jpg" 
-                  alt="Historia de Com-Partida de Matemática" 
+                  alt="Estudiantes y profesores de la Com-Partida de Matemática del Uruguay en un evento de olimpiadas matemáticas" 
                   fill 
                   className="object-cover"
+                  sizes="(max-width: 768px) 100vw, 768px"
                   priority
                 />
               </div>
@@ -68,7 +139,7 @@ export default function AboutPage() {
         </section>
 
         {/* Sección Mascota */}
-        <section id="mascota" className="py-12">
+        <section id="mascota" aria-labelledby="mascota-title" className="py-12">
           <div className="container mx-auto px-4">
             <div className="max-w-2xl mx-auto flex flex-col md:flex-row items-center bg-sky-50 rounded-xl shadow-lg p-8 gap-8">
               <div className="flex-shrink-0">
@@ -84,7 +155,7 @@ export default function AboutPage() {
                 </div>
               </div>
               <div>
-                <h2 className="text-2xl font-bold font-inter mb-2 text-sky-700">Gauchito</h2>
+                <h2 id="mascota-title" className="text-2xl font-bold font-inter mb-2 text-sky-700">Gauchito</h2>
                 <p className="text-gray-700 mb-2 font-medium">Mascota oficial desde 2024</p>
                 <p className="text-gray-700 text-base mb-4">
                   Gauchito ha acompañado a la Com-Partida desde 2024, inspirando a estudiantes con su simpatía y amor por las matemáticas. Siempre presente en eventos y competencias, se ha convertido en un símbolo de alegría, compañerismo y pasión por el aprendizaje.
@@ -104,11 +175,11 @@ export default function AboutPage() {
         </section>
 
         {/* Nuestra Misión y Visión */}
-        <section className="py-12 bg-gray-50">
+        <section aria-label="Misión y Visión de la organización" className="py-12 bg-gray-50">
           <div className="container mx-auto px-4">
             <div className="max-w-3xl mx-auto">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <div className="bg-white p-6 rounded-xl shadow-md">
+                <article className="bg-white p-6 rounded-xl shadow-md">
                   <div className="flex items-center mb-4">
                     <div className="bg-sky-600 rounded-full p-2 mr-3">
                       <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
@@ -123,9 +194,9 @@ export default function AboutPage() {
                     representar al país en competencias internacionales y crear una comunidad de aprendizaje 
                     colaborativo en todo el territorio nacional.
                   </p>
-                </div>
+                </article>
 
-                <div className="bg-white p-6 rounded-xl shadow-md">
+                <article className="bg-white p-6 rounded-xl shadow-md">
                   <div className="flex items-center mb-4">
                     <div className="bg-yellow-500 rounded-full p-2 mr-3">
                       <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
@@ -140,17 +211,17 @@ export default function AboutPage() {
                     contribuyendo al desarrollo educativo del país y posicionando a Uruguay en el 
                     panorama internacional de las olimpiadas matemáticas.
                   </p>
-                </div>
+                </article>
               </div>
             </div>
           </div>
         </section>
 
         {/* Nuestros Valores */}
-        <section className="py-12">
+        <section aria-labelledby="valores-title" className="py-12">
           <div className="container mx-auto px-4">
             <div className="max-w-3xl mx-auto">
-              <h2 className="text-2xl md:text-3xl font-inter font-semibold mb-8 text-center">
+              <h2 id="valores-title" className="text-2xl md:text-3xl font-inter font-semibold mb-8 text-center">
                 Nuestros Valores
               </h2>
               <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -198,70 +269,70 @@ export default function AboutPage() {
         </section>
 
         {/* Colaboradores */}
-        <section className="py-20 bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-50 relative">
+        <section aria-labelledby="colaboradores-title" className="py-20 bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-50 relative">
           <div className="container mx-auto px-4">
             <div className="max-w-6xl mx-auto">
               <div className="text-center mb-16">
-                <h2 className="text-4xl md:text-5xl font-inter font-bold bg-gradient-to-r from-gray-800 to-blue-600 bg-clip-text text-transparent mb-4">
+                <h2 id="colaboradores-title" className="text-4xl md:text-5xl font-inter font-bold bg-gradient-to-r from-gray-800 to-blue-600 bg-clip-text text-transparent mb-4">
                   Nuestros Colaboradores
                 </h2>
-                <div className="w-24 h-1 bg-gradient-to-r from-blue-500 to-indigo-600 mx-auto rounded-full"></div>
+                <div className="w-24 h-1 bg-gradient-to-r from-blue-500 to-indigo-600 mx-auto rounded-full" aria-hidden="true"></div>
               </div>
               
               <div className="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12">
                 {/* Francisco González */}
-                <div className="group relative">
+                <article className="group relative">
                   <div className="bg-white/80 backdrop-blur-sm p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 border border-white/20 hover:scale-105 hover:-translate-y-2">
-                    <div className="w-28 h-28 bg-gradient-to-br from-blue-100 to-indigo-200 rounded-full mx-auto mb-6 flex items-center justify-center shadow-inner">
-                      <div className="w-20 h-20 bg-gradient-to-br from-blue-400 to-indigo-500 rounded-full flex items-center justify-center text-white font-bold text-xl">
+                    <div className="w-28 h-28 bg-gradient-to-br from-blue-100 to-indigo-200 rounded-full mx-auto mb-6 flex items-center justify-center shadow-inner" role="img" aria-label="Avatar de Francisco González">
+                      <div className="w-20 h-20 bg-gradient-to-br from-blue-400 to-indigo-500 rounded-full flex items-center justify-center text-white font-bold text-xl" aria-hidden="true">
                         FG
                       </div>
                     </div>
                     <h3 className="text-xl font-bold mb-2 text-gray-800 group-hover:text-blue-600 transition-colors text-center">
                       Francisco González
                     </h3>
-                    <div className="w-16 h-0.5 bg-gradient-to-r from-blue-400 to-transparent mx-auto opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                    <div className="w-16 h-0.5 bg-gradient-to-r from-blue-400 to-transparent mx-auto opacity-0 group-hover:opacity-100 transition-opacity duration-300" aria-hidden="true"></div>
                   </div>
                   
                   {/* Efecto de resplandor */}
                   <div className="absolute inset-0 bg-gradient-to-r from-blue-400/20 to-indigo-400/20 rounded-2xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 -z-10" aria-hidden="true"></div>
-                </div>
+                </article>
                 
                 {/* Gastón Correa */}
-                <div className="group relative">
+                <article className="group relative">
                   <div className="bg-white/80 backdrop-blur-sm p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 border border-white/20 hover:scale-105 hover:-translate-y-2">
-                    <div className="w-28 h-28 bg-gradient-to-br from-emerald-100 to-teal-200 rounded-full mx-auto mb-6 flex items-center justify-center shadow-inner">
-                      <div className="w-20 h-20 bg-gradient-to-br from-emerald-400 to-teal-500 rounded-full flex items-center justify-center text-white font-bold text-xl">
+                    <div className="w-28 h-28 bg-gradient-to-br from-emerald-100 to-teal-200 rounded-full mx-auto mb-6 flex items-center justify-center shadow-inner" role="img" aria-label="Avatar de Gastón Correa">
+                      <div className="w-20 h-20 bg-gradient-to-br from-emerald-400 to-teal-500 rounded-full flex items-center justify-center text-white font-bold text-xl" aria-hidden="true">
                         GC
                       </div>
                     </div>
                     <h3 className="text-xl font-bold mb-2 text-gray-800 group-hover:text-emerald-600 transition-colors text-center">
                       Gastón Correa
                     </h3>
-                    <div className="w-16 h-0.5 bg-gradient-to-r from-emerald-400 to-transparent mx-auto opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                    <div className="w-16 h-0.5 bg-gradient-to-r from-emerald-400 to-transparent mx-auto opacity-0 group-hover:opacity-100 transition-opacity duration-300" aria-hidden="true"></div>
                   </div>
                   
                   {/* Efecto de resplandor */}
                   <div className="absolute inset-0 bg-gradient-to-r from-emerald-400/20 to-teal-400/20 rounded-2xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 -z-10" aria-hidden="true"></div>
-                </div>
+                </article>
                 
                 {/* Ismael Medina */}
-                <div className="group relative">
+                <article className="group relative">
                   <div className="bg-white/80 backdrop-blur-sm p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 border border-white/20 hover:scale-105 hover:-translate-y-2">
-                    <div className="w-28 h-28 bg-gradient-to-br from-purple-100 to-pink-200 rounded-full mx-auto mb-6 flex items-center justify-center shadow-inner">
-                      <div className="w-20 h-20 bg-gradient-to-br from-purple-400 to-pink-500 rounded-full flex items-center justify-center text-white font-bold text-xl">
+                    <div className="w-28 h-28 bg-gradient-to-br from-purple-100 to-pink-200 rounded-full mx-auto mb-6 flex items-center justify-center shadow-inner" role="img" aria-label="Avatar de Ismael Medina">
+                      <div className="w-20 h-20 bg-gradient-to-br from-purple-400 to-pink-500 rounded-full flex items-center justify-center text-white font-bold text-xl" aria-hidden="true">
                         IM
                       </div>
                     </div>
                     <h3 className="text-xl font-bold mb-2 text-gray-800 group-hover:text-purple-600 transition-colors text-center">
                       Ismael Medina
                     </h3>
-                    <div className="w-16 h-0.5 bg-gradient-to-r from-purple-400 to-transparent mx-auto opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                    <div className="w-16 h-0.5 bg-gradient-to-r from-purple-400 to-transparent mx-auto opacity-0 group-hover:opacity-100 transition-opacity duration-300" aria-hidden="true"></div>
                   </div>
                   
                   {/* Efecto de resplandor */}
                   <div className="absolute inset-0 bg-gradient-to-r from-purple-400/20 to-pink-400/20 rounded-2xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 -z-10" aria-hidden="true"></div>
-                </div>
+                </article>
               </div>
             </div>
           </div>
