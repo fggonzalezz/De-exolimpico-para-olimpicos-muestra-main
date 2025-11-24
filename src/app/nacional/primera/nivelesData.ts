@@ -21,10 +21,10 @@ export interface NivelProblemas {
  * Datos de problemas para cada nivel en la Primera Instancia
  */
 export const NIVELES_PRIMERA: Record<string, NivelProblemas> = {
-  'IA': {
-    nivel: 'IA',
-    titulo: 'Primera Instancia - Nivel IA',
-    descripcion: 'Problemas para estudiantes de primaria',
+  IA: {
+    nivel: "IA",
+    titulo: "Primera Instancia - Nivel IA",
+    descripcion: "Problemas para estudiantes de primaria",
     problemas: [
       {
         key: "nivel-IA-2018",
@@ -40,13 +40,13 @@ export const NIVELES_PRIMERA: Record<string, NivelProblemas> = {
         key: "nivel-IA-2015",
         title: "Nivel IA 2015",
         pdf: "https://drive.google.com/file/d/1u5zPzz_4fkatcuRfxi41baTXwXdR8ayq/view",
-      }
-    ]
+      },
+    ],
   },
-  'IB': {
-    nivel: 'IB',
-    titulo: 'Primera Instancia - Nivel IB',
-    descripcion: 'Problemas para estudiantes de primaria',
+  IB: {
+    nivel: "IB",
+    titulo: "Primera Instancia - Nivel IB",
+    descripcion: "Problemas para estudiantes de primaria",
     problemas: [
       {
         key: "nivel-IB-2018",
@@ -62,13 +62,13 @@ export const NIVELES_PRIMERA: Record<string, NivelProblemas> = {
         key: "nivel-IB-2015",
         title: "Nivel IB 2015",
         pdf: "https://drive.google.com/file/d/1TCFPRfI6EpKiMeC1VZnRtCYTsVcWFKpN/view",
-      }
-    ]
+      },
+    ],
   },
-  'IC': {
-    nivel: 'IC',
-    titulo: 'Primera Instancia - Nivel IC',
-    descripcion: 'Problemas para estudiantes de primaria',
+  IC: {
+    nivel: "IC",
+    titulo: "Primera Instancia - Nivel IC",
+    descripcion: "Problemas para estudiantes de primaria",
     problemas: [
       {
         key: "nivel-IC-2018",
@@ -84,13 +84,13 @@ export const NIVELES_PRIMERA: Record<string, NivelProblemas> = {
         key: "nivel-IC-2015",
         title: "Nivel IC 2015",
         pdf: "https://drive.google.com/file/d/10sAA0gmwJAgE0zI15Nzof5ZiHHqStshS/view",
-      }
-    ]
+      },
+    ],
   },
-  'II': {
-    nivel: 'II',
-    titulo: 'Primera Instancia - Nivel II',
-    descripcion: 'Problemas para estudiantes de secundaria',
+  II: {
+    nivel: "II",
+    titulo: "Primera Instancia - Nivel II",
+    descripcion: "Problemas para estudiantes de secundaria",
     problemas: [
       {
         key: "nivel-II-2018",
@@ -106,13 +106,13 @@ export const NIVELES_PRIMERA: Record<string, NivelProblemas> = {
         key: "nivel-II-2015",
         title: "Nivel II 2015",
         pdf: "https://drive.google.com/file/d/1hBWcKF7XQE7kwD7QlkrV4V_Xy8j7il-0/view",
-      }
-    ]
+      },
+    ],
   },
-  'III': {
-    nivel: 'III',
-    titulo: 'Primera Instancia - Nivel III',
-    descripcion: 'Problemas para estudiantes de secundaria',
+  III: {
+    nivel: "III",
+    titulo: "Primera Instancia - Nivel III",
+    descripcion: "Problemas para estudiantes de secundaria",
     problemas: [
       {
         key: "nivel-III-2018",
@@ -128,13 +128,13 @@ export const NIVELES_PRIMERA: Record<string, NivelProblemas> = {
         key: "nivel-III-2015",
         title: "Nivel III 2015",
         pdf: "https://drive.google.com/file/d/1RQ7bmeq49Gui3psC4M4bAfEgjs7v10QP/view",
-      }
-    ]
+      },
+    ],
   },
-  'IV': {
-    nivel: 'IV',
-    titulo: 'Primera Instancia - Nivel IV',
-    descripcion: 'Problemas para estudiantes de secundaria',
+  IV: {
+    nivel: "IV",
+    titulo: "Primera Instancia - Nivel IV",
+    descripcion: "Problemas para estudiantes de secundaria",
     problemas: [
       {
         key: "nivel-IV-2018",
@@ -150,13 +150,13 @@ export const NIVELES_PRIMERA: Record<string, NivelProblemas> = {
         key: "nivel-IV-2015",
         title: "Nivel IV 2015",
         pdf: "https://drive.google.com/file/d/1MbCaxya88CpeSKfLgKAY2FFTB-5NK-7q/view",
-      }
-    ]
+      },
+    ],
   },
-  'V': {
-    nivel: 'V',
-    titulo: 'Primera Instancia - Nivel V',
-    descripcion: 'Problemas para estudiantes de secundaria',
+  V: {
+    nivel: "V",
+    titulo: "Primera Instancia - Nivel V",
+    descripcion: "Problemas para estudiantes de secundaria",
     problemas: [
       {
         key: "nivel-V-2018",
@@ -172,7 +172,7 @@ export const NIVELES_PRIMERA: Record<string, NivelProblemas> = {
         key: "nivel-V-2015",
         title: "Nivel V 2015",
         pdf: "https://drive.google.com/file/d/1tO3L6yYTUrqCYhK0kixdjggypQtrVrAI/view",
-      }
-    ]
-  }
-}; 
+      },
+    ],
+  },
+};

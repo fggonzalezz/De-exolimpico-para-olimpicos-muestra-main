@@ -21,9 +21,14 @@ export default function ClientPDFSection({ niveles }: Props) {
           className="bg-white rounded-2xl shadow-lg p-8 flex flex-col md:flex-row items-center gap-10 min-h-[400px]"
         >
           <div className="flex-1 flex flex-col items-center w-full">
-            <h2 className="text-2xl font-bold text-sky-700 mb-4">{nivel.title}</h2>
+            <h2 className="text-2xl font-bold text-sky-700 mb-4">
+              {nivel.title}
+            </h2>
             <div className="w-full flex flex-col items-center">
-              <GoogleDrivePDFViewer pdfUrl={nivel.pdf} title={`Enunciado ${nivel.title}`} />
+              <GoogleDrivePDFViewer
+                pdfUrl={nivel.pdf}
+                title={`Enunciado ${nivel.title}`}
+              />
             </div>
           </div>
           <div className="flex-1 flex flex-col items-center w-full">
@@ -43,4 +48,4 @@ export default function ClientPDFSection({ niveles }: Props) {
       ))}
     </div>
   );
-} 
+}

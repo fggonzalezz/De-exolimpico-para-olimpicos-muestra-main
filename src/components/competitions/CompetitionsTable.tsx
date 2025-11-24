@@ -1,12 +1,12 @@
-"use client"
-import React, { useEffect, useState } from 'react';
-import Link from 'next/link';
+"use client";
+import Link from "next/link";
+import React, { useEffect, useState } from "react";
 
 // Tipos de datos para las competencias
 export interface Competition {
   date: string;
   event: string;
-  status?: 'finished' | 'finished-recent' | 'upcoming-next' | 'upcoming';
+  status?: "finished" | "finished-recent" | "upcoming-next" | "upcoming";
   highlight?: boolean;
   targetDate?: Date;
   daysLeft?: number | null;
@@ -19,7 +19,7 @@ interface CompetitionsTableProps {
   title?: string;
   showCountdown?: boolean;
   maxItems?: number;
-  variant?: 'compact' | 'full';
+  variant?: "compact" | "full";
   showLegend?: boolean;
   footerLink?: {
     href: string;
@@ -28,8 +28,16 @@ interface CompetitionsTableProps {
 }
 
 // Componente contador en tiempo real
-function Countdown({ targetDate, onExpired }: { targetDate: Date; onExpired?: () => void }) {
-  const [timeLeft, setTimeLeft] = useState<{days:number, hours:number, minutes:number, seconds:number}>({days:0, hours:0, minutes:0, seconds:0});
+function Countdown({
+  targetDate,
+  onExpired,
+}: { targetDate: Date; onExpired?: () => void }) {
+  const [timeLeft, setTimeLeft] = useState<{
+    days: number;
+    hours: number;
+    minutes: number;
+    seconds: number;
+  }>({ days: 0, hours: 0, minutes: 0, seconds: 0 });
   const [hasExpired, setHasExpired] = useState(false);
 
   useEffect(() => {
@@ -58,13 +66,18 @@ function Countdown({ targetDate, onExpired }: { targetDate: Date; onExpired?: ()
 
   return (
     <span className="text-yellow-700 font-medium text-xs sm:text-sm break-words">
-      {hasExpired ? '¡Evento finalizado!' : `Faltan ${timeLeft.days} días, ${timeLeft.hours}h ${timeLeft.minutes}m ${timeLeft.seconds}s`}
+      {hasExpired
+        ? "¡Evento finalizado!"
+        : `Faltan ${timeLeft.days} días, ${timeLeft.hours}h ${timeLeft.minutes}m ${timeLeft.seconds}s`}
     </span>
   );
 }
 
 // Componente contador solo de días
-function CountdownDays({ targetDate, onExpired }: { targetDate: Date; onExpired?: () => void }) {
+function CountdownDays({
+  targetDate,
+  onExpired,
+}: { targetDate: Date; onExpired?: () => void }) {
   const [days, setDays] = useState<number>(0);
   const [hasExpired, setHasExpired] = useState(false);
 
@@ -91,7 +104,7 @@ function CountdownDays({ targetDate, onExpired }: { targetDate: Date; onExpired?
 
   return (
     <span className="block text-xs sm:text-sm text-yellow-600 mt-1">
-      {hasExpired ? '¡Evento finalizado!' : `Faltan ${days} días`}
+      {hasExpired ? "¡Evento finalizado!" : `Faltan ${days} días`}
     </span>
   );
 }
@@ -99,18 +112,42 @@ function CountdownDays({ targetDate, onExpired }: { targetDate: Date; onExpired?
 // Función para obtener el badge de estado
 const getStatusBadge = (status: string) => {
   switch (status) {
-    case 'finished':
-      return <span className="px-2 py-1 text-xs font-medium bg-gray-200 text-gray-600 rounded">Finalizado</span>;
-    case 'finished-recent':
-      return <span className="px-2 py-1 text-xs font-medium bg-green-100 text-green-700 rounded">Finalizado Reciente</span>;
-    case 'upcoming-next':
-      return <span className="px-2 py-1 text-xs font-medium bg-yellow-100 text-yellow-700 rounded">¡Próximo!</span>;
-    case 'upcoming':
-      return <span className="px-2 py-1 text-xs font-medium bg-sky-100 text-sky-700 rounded">Próximamente</span>;
-    case 'default':
-      return <span className="px-2 py-1 text-xs font-medium bg-gray-100 text-gray-500 rounded">Sin estado</span>;
+    case "finished":
+      return (
+        <span className="px-2 py-1 text-xs font-medium bg-gray-200 text-gray-600 rounded">
+          Finalizado
+        </span>
+      );
+    case "finished-recent":
+      return (
+        <span className="px-2 py-1 text-xs font-medium bg-green-100 text-green-700 rounded">
+          Finalizado Reciente
+        </span>
+      );
+    case "upcoming-next":
+      return (
+        <span className="px-2 py-1 text-xs font-medium bg-yellow-100 text-yellow-700 rounded">
+          ¡Próximo!
+        </span>
+      );
+    case "upcoming":
+      return (
+        <span className="px-2 py-1 text-xs font-medium bg-sky-100 text-sky-700 rounded">
+          Próximamente
+        </span>
+      );
+    case "default":
+      return (
+        <span className="px-2 py-1 text-xs font-medium bg-gray-100 text-gray-500 rounded">
+          Sin estado
+        </span>
+      );
     default:
-      return <span className="px-2 py-1 text-xs font-medium bg-gray-100 text-gray-500 rounded">Sin estado</span>;
+      return (
+        <span className="px-2 py-1 text-xs font-medium bg-gray-100 text-gray-500 rounded">
+          Sin estado
+        </span>
+      );
   }
 };
 
@@ -118,7 +155,9 @@ const getStatusBadge = (status: string) => {
 const getCompetitionId = (competition: Competition) => {
   if (competition.id) return competition.id;
   // Generar un ID basado en fecha y evento para evitar colisiones cuando cambia el orden
-  return `${competition.date}-${competition.event}`.replace(/[^a-z0-9]/gi, '-').toLowerCase();
+  return `${competition.date}-${competition.event}`
+    .replace(/[^a-z0-9]/gi, "-")
+    .toLowerCase();
 };
 
 export default function CompetitionsTable({
@@ -126,23 +165,29 @@ export default function CompetitionsTable({
   title = "Competencias",
   showCountdown = true,
   maxItems,
-  variant = 'full',
+  variant = "full",
   showLegend = false,
-  footerLink
+  footerLink,
 }: CompetitionsTableProps) {
   // Estado para manejar los status dinámicos de las competencias
-  const [dynamicStatuses, setDynamicStatuses] = useState<Record<string, Competition['status']>>({});
+  const [dynamicStatuses, setDynamicStatuses] = useState<
+    Record<string, Competition["status"]>
+  >({});
 
   // Función para manejar cuando una competencia expira
   const handleCompetitionExpired = (competitionId: string) => {
     // Solo cambiar a 'finished' si la competencia originalmente tenía status 'upcoming' o 'upcoming-next'
     // No cambiar competencias que ya están marcadas como 'finished' en los datos estáticos
-    setDynamicStatuses(prev => {
+    setDynamicStatuses((prev) => {
       const currentStatus = prev[competitionId];
-      if (currentStatus === 'upcoming' || currentStatus === 'upcoming-next' || !currentStatus) {
+      if (
+        currentStatus === "upcoming" ||
+        currentStatus === "upcoming-next" ||
+        !currentStatus
+      ) {
         return {
           ...prev,
-          [competitionId]: 'finished'
+          [competitionId]: "finished",
         };
       }
       return prev;
@@ -150,7 +195,9 @@ export default function CompetitionsTable({
   };
 
   // Función para obtener el status actual (dinámico o estático)
-  const getCurrentStatus = (competition: Competition): Competition['status'] => {
+  const getCurrentStatus = (
+    competition: Competition,
+  ): Competition["status"] => {
     const id = getCompetitionId(competition);
     const dynamicStatus = dynamicStatuses[id];
     const staticStatus = competition.status;
@@ -162,10 +209,10 @@ export default function CompetitionsTable({
   // Función para ordenar competencias por estado y fecha
   const sortCompetitionsByStatus = (comps: Competition[]) => {
     const statusOrder = {
-      'upcoming-next': 1, // "Próximo" tiene prioridad máxima
-      'upcoming': 2, // "Próximamente" segundo
-      'finished-recent': 3, // "Finalizado Reciente" tercero
-      'finished': 4 // "Finalizado" último
+      "upcoming-next": 1, // "Próximo" tiene prioridad máxima
+      upcoming: 2, // "Próximamente" segundo
+      "finished-recent": 3, // "Finalizado Reciente" tercero
+      finished: 4, // "Finalizado" último
     };
 
     return [...comps].sort((a, b) => {
@@ -173,8 +220,8 @@ export default function CompetitionsTable({
       const statusB = getCurrentStatus(b);
 
       // Primero ordenar por status según la jerarquía especificada
-      const orderA = statusOrder[statusA || 'finished'] || 5;
-      const orderB = statusOrder[statusB || 'finished'] || 5;
+      const orderA = statusOrder[statusA || "finished"] || 5;
+      const orderB = statusOrder[statusB || "finished"] || 5;
 
       if (orderA !== orderB) {
         return orderA - orderB;
@@ -183,8 +230,10 @@ export default function CompetitionsTable({
       // Dentro del mismo status, ordenar por fecha (más cercana primero para upcoming, más reciente primero para finished)
       if (a.targetDate && b.targetDate) {
         // Para upcoming, más cercana primero; para finished, más reciente primero
-        const isUpcomingA = statusA === 'upcoming' || statusA === 'upcoming-next';
-        const isUpcomingB = statusB === 'upcoming' || statusB === 'upcoming-next';
+        const isUpcomingA =
+          statusA === "upcoming" || statusA === "upcoming-next";
+        const isUpcomingB =
+          statusB === "upcoming" || statusB === "upcoming-next";
 
         if (isUpcomingA && isUpcomingB) {
           return a.targetDate.getTime() - b.targetDate.getTime(); // más cercana primero
@@ -205,7 +254,7 @@ export default function CompetitionsTable({
     : sortedCompetitions;
 
   // Variante compacta para la página principal
-  if (variant === 'compact') {
+  if (variant === "compact") {
     return (
       <section className="py-8 md:py-12 bg-gray-50">
         <div className="container mx-auto px-3 sm:px-4">
@@ -218,8 +267,12 @@ export default function CompetitionsTable({
                 <table className="w-full text-sm sm:text-base">
                   <thead className="bg-sky-600 text-white">
                     <tr>
-                      <th className="py-2 sm:py-3 px-2 sm:px-4 text-left font-medium text-xs sm:text-base w-24 sm:w-auto">Fecha</th>
-                      <th className="py-2 sm:py-3 px-2 sm:px-4 text-left font-medium text-xs sm:text-base">Evento</th>
+                      <th className="py-2 sm:py-3 px-2 sm:px-4 text-left font-medium text-xs sm:text-base w-24 sm:w-auto">
+                        Fecha
+                      </th>
+                      <th className="py-2 sm:py-3 px-2 sm:px-4 text-left font-medium text-xs sm:text-base">
+                        Evento
+                      </th>
                     </tr>
                   </thead>
                   <tbody className="divide-y divide-gray-200">
@@ -229,15 +282,21 @@ export default function CompetitionsTable({
                       return (
                         <tr key={competitionId} className="hover:bg-sky-50">
                           <td className="py-2 sm:py-3 px-2 sm:px-4 font-medium text-xs sm:text-base align-top w-24 sm:w-auto">
-                            <span className="block whitespace-nowrap">{competition.date}</span>
+                            <span className="block whitespace-nowrap">
+                              {competition.date}
+                            </span>
                           </td>
                           <td className="py-2 sm:py-3 px-2 sm:px-4">
                             <div className="flex flex-col gap-1">
-                              <span className="text-xs sm:text-base break-words">{competition.event}</span>
+                              <span className="text-xs sm:text-base break-words">
+                                {competition.event}
+                              </span>
                               {showCountdown && competition.targetDate && (
                                 <CountdownDays
                                   targetDate={competition.targetDate}
-                                  onExpired={() => handleCompetitionExpired(competitionId)}
+                                  onExpired={() =>
+                                    handleCompetitionExpired(competitionId)
+                                  }
                                 />
                               )}
                             </div>
@@ -250,7 +309,10 @@ export default function CompetitionsTable({
               </div>
               {footerLink && (
                 <div className="text-center py-3 sm:py-4">
-                  <Link href={footerLink.href} className="text-sm sm:text-base text-sky-600 hover:text-sky-800 font-medium">
+                  <Link
+                    href={footerLink.href}
+                    className="text-sm sm:text-base text-sky-600 hover:text-sky-800 font-medium"
+                  >
                     {footerLink.text} →
                   </Link>
                 </div>
@@ -273,12 +335,26 @@ export default function CompetitionsTable({
 
       {showLegend && (
         <div className="mb-6 md:mb-10 bg-gradient-to-br from-sky-50 to-white p-4 sm:p-6 md:p-7 rounded-xl md:rounded-2xl border border-sky-100 shadow flex flex-col gap-3 md:gap-4">
-          <h2 className="text-lg sm:text-xl font-semibold mb-1 md:mb-2 text-sky-800">Leyenda</h2>
+          <h2 className="text-lg sm:text-xl font-semibold mb-1 md:mb-2 text-sky-800">
+            Leyenda
+          </h2>
           <div className="flex flex-wrap gap-2 sm:gap-3 md:gap-4 text-xs sm:text-sm md:text-base">
-            <div className="flex items-center gap-2">{getStatusBadge('finished')}<span className="text-gray-700">Eventos ya realizados</span></div>
-            <div className="flex items-center gap-2">{getStatusBadge('finished-recent')}<span className="text-gray-700">Eventos recientes</span></div>
-            <div className="flex items-center gap-2">{getStatusBadge('upcoming-next')}<span className="text-gray-700">Próximo evento</span></div>
-            <div className="flex items-center gap-2">{getStatusBadge('upcoming')}<span className="text-gray-700">Eventos futuros</span></div>
+            <div className="flex items-center gap-2">
+              {getStatusBadge("finished")}
+              <span className="text-gray-700">Eventos ya realizados</span>
+            </div>
+            <div className="flex items-center gap-2">
+              {getStatusBadge("finished-recent")}
+              <span className="text-gray-700">Eventos recientes</span>
+            </div>
+            <div className="flex items-center gap-2">
+              {getStatusBadge("upcoming-next")}
+              <span className="text-gray-700">Próximo evento</span>
+            </div>
+            <div className="flex items-center gap-2">
+              {getStatusBadge("upcoming")}
+              <span className="text-gray-700">Eventos futuros</span>
+            </div>
           </div>
         </div>
       )}
@@ -288,10 +364,16 @@ export default function CompetitionsTable({
           <table className="w-full text-sm sm:text-base">
             <thead className="bg-gradient-to-r from-sky-700 to-sky-500 text-white">
               <tr>
-                <th className="py-3 sm:py-4 px-2 sm:px-4 text-left font-semibold tracking-wide text-xs sm:text-base w-24 sm:w-auto">Fecha</th>
-                <th className="py-3 sm:py-4 px-2 sm:px-4 text-left font-semibold tracking-wide text-xs sm:text-base">Evento</th>
-                {variant === 'full' && (
-                  <th className="py-3 sm:py-4 px-2 sm:px-4 text-left font-semibold tracking-wide text-xs sm:text-base hidden sm:table-cell">Estado</th>
+                <th className="py-3 sm:py-4 px-2 sm:px-4 text-left font-semibold tracking-wide text-xs sm:text-base w-24 sm:w-auto">
+                  Fecha
+                </th>
+                <th className="py-3 sm:py-4 px-2 sm:px-4 text-left font-semibold tracking-wide text-xs sm:text-base">
+                  Evento
+                </th>
+                {variant === "full" && (
+                  <th className="py-3 sm:py-4 px-2 sm:px-4 text-left font-semibold tracking-wide text-xs sm:text-base hidden sm:table-cell">
+                    Estado
+                  </th>
                 )}
               </tr>
             </thead>
@@ -303,34 +385,46 @@ export default function CompetitionsTable({
                   <tr
                     key={competitionId}
                     className={`transition-all duration-200 hover:bg-sky-50/70 ${
-                      currentStatus === 'finished' ? 'opacity-60' : ''
+                      currentStatus === "finished" ? "opacity-60" : ""
                     } ${
-                      currentStatus === 'upcoming-next' || competition.highlight ? 'bg-yellow-50/80' : ''
+                      currentStatus === "upcoming-next" || competition.highlight
+                        ? "bg-yellow-50/80"
+                        : ""
                     }`}
                   >
                     <td className="py-3 sm:py-4 px-2 sm:px-4 font-semibold text-xs sm:text-base align-top w-24 sm:w-auto">
-                      <span className="block whitespace-nowrap">{competition.date}</span>
+                      <span className="block whitespace-nowrap">
+                        {competition.date}
+                      </span>
                     </td>
                     <td className="py-3 sm:py-4 px-2 sm:px-4">
                       <div className="flex flex-col gap-1">
-                        <span className="text-xs sm:text-base break-words">{competition.event}</span>
+                        <span className="text-xs sm:text-base break-words">
+                          {competition.event}
+                        </span>
                         {showCountdown && competition.targetDate && (
                           <Countdown
                             targetDate={competition.targetDate}
-                            onExpired={() => handleCompetitionExpired(competitionId)}
+                            onExpired={() =>
+                              handleCompetitionExpired(competitionId)
+                            }
                           />
                         )}
                         {/* Mostrar estado en móvil inline */}
-                        {variant === 'full' && (
+                        {variant === "full" && (
                           <span className="sm:hidden mt-1">
-                            {currentStatus ? getStatusBadge(currentStatus) : getStatusBadge('default')}
+                            {currentStatus
+                              ? getStatusBadge(currentStatus)
+                              : getStatusBadge("default")}
                           </span>
                         )}
                       </div>
                     </td>
-                    {variant === 'full' && (
+                    {variant === "full" && (
                       <td className="py-3 sm:py-4 px-2 sm:px-4 hidden sm:table-cell align-top">
-                        {currentStatus ? getStatusBadge(currentStatus) : getStatusBadge('default')}
+                        {currentStatus
+                          ? getStatusBadge(currentStatus)
+                          : getStatusBadge("default")}
                       </td>
                     )}
                   </tr>
@@ -343,7 +437,10 @@ export default function CompetitionsTable({
 
       {footerLink && (
         <div className="mt-10 text-center">
-          <Link href={footerLink.href} className="text-sky-600 hover:text-sky-800 font-medium">
+          <Link
+            href={footerLink.href}
+            className="text-sky-600 hover:text-sky-800 font-medium"
+          >
             {footerLink.text} →
           </Link>
         </div>

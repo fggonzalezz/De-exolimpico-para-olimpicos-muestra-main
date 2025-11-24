@@ -1,7 +1,7 @@
-import { buildStaticPageMetadata } from '@/lib/seo';
-import PruebasSemanalesClient from './ClientPage';
+import { buildStaticPageMetadata } from "@/lib/seo";
+import PruebasSemanalesClient from "./ClientPage";
 
-export const metadata = buildStaticPageMetadata('/nacional/PruebasSemanales');
+export const metadata = buildStaticPageMetadata("/nacional/PruebasSemanales");
 
 export default function PruebasSemanalesPage() {
   return <PruebasSemanalesClient />;

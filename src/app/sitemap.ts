@@ -1,10 +1,10 @@
-import type { MetadataRoute } from "next";
 import {
   NATIONAL_LEVELS,
   NATIONAL_YEARS,
   buildSitemapEntries,
   canonicalUrl,
 } from "@/lib/seo";
+import type { MetadataRoute } from "next";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const staticEntries = buildSitemapEntries();
@@ -33,13 +33,14 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ];
   });
 
-  const levelEntries: MetadataRoute.Sitemap = ["primera", "final"].flatMap((stage) =>
-    NATIONAL_LEVELS.map((level) => ({
-      url: canonicalUrl(`/nacional/${stage}/${level}`),
-      lastModified: new Date(),
-      changeFrequency: "yearly" as const,
-      priority: 0.6,
-    }))
+  const levelEntries: MetadataRoute.Sitemap = ["primera", "final"].flatMap(
+    (stage) =>
+      NATIONAL_LEVELS.map((level) => ({
+        url: canonicalUrl(`/nacional/${stage}/${level}`),
+        lastModified: new Date(),
+        changeFrequency: "yearly" as const,
+        priority: 0.6,
+      })),
   );
 
   const combined = [...staticEntries, ...yearEntries, ...levelEntries];

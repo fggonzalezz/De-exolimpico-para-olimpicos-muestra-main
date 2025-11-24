@@ -1,11 +1,11 @@
-import Image from 'next/image';
-import Link from 'next/link';
-import Header from '@/components/layout/Header';
-import Footer from '@/components/layout/Footer';
-import { Card, CardContent } from '@/components/ui/card';
-import { buildStaticPageMetadata } from '@/lib/seo';
+import Footer from "@/components/layout/Footer";
+import Header from "@/components/layout/Header";
+import { Card, CardContent } from "@/components/ui/card";
+import { buildStaticPageMetadata } from "@/lib/seo";
+import Image from "next/image";
+import Link from "next/link";
 
-export const metadata = buildStaticPageMetadata('/about');
+export const metadata = buildStaticPageMetadata("/about");
 
 export default function AboutPage() {
   return (
@@ -35,20 +35,26 @@ export default function AboutPage() {
               {/* Right Side - Text */}
               <div>
                 <p className="mb-4">
-                  Com-Partida Matemática Uruguay es una comunidad de entrenadores, exolímpicos y estudiantes
-                  que busca acompañar y potenciar a quienes se preparan para olimpiadas de matemática en Uruguay
-                  y la región.
+                  Com-Partida Matemática Uruguay es una comunidad de
+                  entrenadores, exolímpicos y estudiantes que busca acompañar y
+                  potenciar a quienes se preparan para olimpiadas de matemática
+                  en Uruguay y la región.
                 </p>
                 <p className="mb-4">
-                  Nuestros entrenamientos están orientados a estudiantes que participan o quieren participar en
-                  competencias como la Olimpiada Nacional de Matemática del Uruguay (ONMU), la Olimpiada Matemática
-                  Rioplatense, la Olimpiada de Mayo, la Olimpiada de Matemática de Países del Cono Sur, la Olimpiada
-                  Iberoamericana de Matemática (OIM), la Olimpiada Internacional de Matemática (IMO), entre otras.
+                  Nuestros entrenamientos están orientados a estudiantes que
+                  participan o quieren participar en competencias como la
+                  Olimpiada Nacional de Matemática del Uruguay (ONMU), la
+                  Olimpiada Matemática Rioplatense, la Olimpiada de Mayo, la
+                  Olimpiada de Matemática de Países del Cono Sur, la Olimpiada
+                  Iberoamericana de Matemática (OIM), la Olimpiada Internacional
+                  de Matemática (IMO), entre otras.
                 </p>
                 <p className="mb-4">
-                  Trabajamos con sesiones virtuales, simulacros de prueba, correcciones detalladas y espacios de
-                  comunidad, donde se comparte solución por solución. También realizamos actividades presenciales
-                  puntuales en Montevideo y otras ciudades del país, e invitamos a entrenadores de otros países de
+                  Trabajamos con sesiones virtuales, simulacros de prueba,
+                  correcciones detalladas y espacios de comunidad, donde se
+                  comparte solución por solución. También realizamos actividades
+                  presenciales puntuales en Montevideo y otras ciudades del
+                  país, e invitamos a entrenadores de otros países de
                   Latinoamérica para enriquecer la experiencia.
                 </p>
               </div>
@@ -85,10 +91,13 @@ export default function AboutPage() {
                     ¿Cómo puedo participar?
                   </h3>
                   <p className="text-sm text-gray-700">
-                    Si sos estudiante de los últimos años de primaria o de secundaria (ciclo básico o bachillerato),
-                    y te gustan los problemas desafiantes de matemática, podés sumarte a nuestros entrenamientos.
-                    Si sos madre, padre o docente y querés que tus estudiantes desarrollen pensamiento crítico y
-                    creatividad a través de las olimpiadas, también estás invitado a conocer nuestros programas.
+                    Si sos estudiante de los últimos años de primaria o de
+                    secundaria (ciclo básico o bachillerato), y te gustan los
+                    problemas desafiantes de matemática, podés sumarte a
+                    nuestros entrenamientos. Si sos madre, padre o docente y
+                    querés que tus estudiantes desarrollen pensamiento crítico y
+                    creatividad a través de las olimpiadas, también estás
+                    invitado a conocer nuestros programas.
                   </p>
                   <div className="mt-4 flex justify-center">
                     <Link
@@ -126,8 +135,10 @@ export default function AboutPage() {
                     Equipo de coordinación
                   </h3>
                   <p className="text-sm text-center">
-                    Diseño de entrenamientos y simulacros<br />
-                    Experiencia en ONMU, Rioplatense, Cono Sur y OIM<br />
+                    Diseño de entrenamientos y simulacros
+                    <br />
+                    Experiencia en ONMU, Rioplatense, Cono Sur y OIM
+                    <br />
                     Trabajo voluntario en la comunidad olímpica uruguaya
                   </p>
                 </div>
@@ -147,8 +158,10 @@ export default function AboutPage() {
                     Entrenadores de Uruguay
                   </h3>
                   <p className="text-sm text-center">
-                    Ex participantes de olimpiadas nacionales e internacionales<br />
-                    Experiencia en enseñanza a distintos niveles<br />
+                    Ex participantes de olimpiadas nacionales e internacionales
+                    <br />
+                    Experiencia en enseñanza a distintos niveles
+                    <br />
                     Acompañamiento cercano y correcciones detalladas
                   </p>
                 </div>
@@ -168,8 +181,10 @@ export default function AboutPage() {
                     Entrenadores internacionales
                   </h3>
                   <p className="text-sm text-center">
-                    Colaboraciones con entrenadores de la región<br />
-                    Visión amplia del circuito olímpico latinoamericano<br />
+                    Colaboraciones con entrenadores de la región
+                    <br />
+                    Visión amplia del circuito olímpico latinoamericano
+                    <br />
                     Talleres y sesiones especiales temáticas
                   </p>
                 </div>

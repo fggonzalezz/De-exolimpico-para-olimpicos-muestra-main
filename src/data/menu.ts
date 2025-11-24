@@ -31,28 +31,28 @@ export const materialesItems: MenuItem[] = [
 
 export const sobreNosotrosItems: MenuItem[] = [
   { title: "Sobre Nosotros", href: "/sobre-nosotros" },
-  { title: "Mascota", href: "/mascota" }
+  { title: "Mascota", href: "/mascota" },
 ];
 
 export const menuSections: MenuSection[] = [
   {
     id: "sobre-nosotros",
     label: "Sobre Nosotros",
-    items: sobreNosotrosItems
+    items: sobreNosotrosItems,
   },
   {
     id: "calendario",
     label: "Calendario 2025",
-    items: calendarioItems
+    items: calendarioItems,
   },
   {
     id: "equipos",
     label: "Equipos",
-    items: equiposItems
+    items: equiposItems,
   },
   {
     id: "materiales",
     label: "Materiales",
-    items: materialesItems
-  }
+    items: materialesItems,
+  },
 ];

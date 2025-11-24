@@ -1,10 +1,10 @@
-import React from 'react';
-import Header from '@/components/layout/Header';
-import Footer from '@/components/layout/Footer';
-import Image from 'next/image';
-import { buildNationalYearMetadata } from '@/lib/seo';
+import Footer from "@/components/layout/Footer";
+import Header from "@/components/layout/Header";
+import { buildNationalYearMetadata } from "@/lib/seo";
+import Image from "next/image";
+import React from "react";
 
-export const metadata = buildNationalYearMetadata('2020');
+export const metadata = buildNationalYearMetadata("2020");
 
 export default function Page2020() {
   return (
@@ -14,30 +14,30 @@ export default function Page2020() {
         {/* Hero Section */}
         <section className="bg-sky-700 py-12 text-white">
           <div className="container mx-auto px-4">
-            <div className="max-w-3xl mx-auto text-center">   
+            <div className="max-w-3xl mx-auto text-center">
               <div className="flex justify-center mt-4">
-                <Image 
-                  src="https://ext.same-assets.com/1728315765/3350069791.png" 
-                  alt="2020" 
-                  width={240} 
-                  height={80} 
-                  className="object-contain rounded-lg shadow-md" 
+                <Image
+                  src="https://ext.same-assets.com/1728315765/3350069791.png"
+                  alt="2020"
+                  width={240}
+                  height={80}
+                  className="object-contain rounded-lg shadow-md"
                 />
               </div>
             </div>
           </div>
         </section>
-        
+
         {/* YouTube Video */}
         <section className="py-8 bg-gray-50">
           <div className="container mx-auto px-4">
             <div className="max-w-7xl mx-auto">
               <div className="rounded-lg overflow-hidden shadow-lg">
-                <iframe 
+                <iframe
                   src="https://www.youtube.com/embed/LCe8kFif4LQ"
                   title="Olimpiada 2020 video"
-                  className="w-full h-[650px]" 
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                  className="w-full h-[650px]"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                   allowFullScreen
                 ></iframe>
               </div>
@@ -48,26 +48,38 @@ export default function Page2020() {
         <div className="container mx-auto px-4 py-12">
           {/* Final Escolar */}
           <section className="mb-16">
-            <h2 className="text-3xl font-bold text-center text-sky-700 mb-10 pb-2 border-b-2 border-sky-200">FINAL ESCOLAR</h2>
+            <h2 className="text-3xl font-bold text-center text-sky-700 mb-10 pb-2 border-b-2 border-sky-200">
+              FINAL ESCOLAR
+            </h2>
 
             {/* Nivel IA */}
             <div className="mb-12 bg-white rounded-lg shadow-lg p-6 border border-sky-100">
-              <h3 className="text-2xl font-bold text-sky-800 mb-6 pb-2 border-b border-sky-200">NIVEL IA (4° DE PRIMARIA)</h3>
+              <h3 className="text-2xl font-bold text-sky-800 mb-6 pb-2 border-b border-sky-200">
+                NIVEL IA (4° DE PRIMARIA)
+              </h3>
 
               <div className="mb-8">
-                <h4 className="text-xl font-semibold text-sky-700 mb-3 bg-sky-50 p-2 rounded">Primer Puesto:</h4>
+                <h4 className="text-xl font-semibold text-sky-700 mb-3 bg-sky-50 p-2 rounded">
+                  Primer Puesto:
+                </h4>
                 <ul className="grid grid-cols-1 md:grid-cols-2 gap-2 pl-0">
                   <li className="flex items-center bg-gradient-to-r from-amber-50 to-yellow-50 p-3 rounded-lg border-l-4 border-amber-400 shadow-sm hover:shadow-md transition-all">
                     <span className="text-amber-500 mr-2">🏆</span>
-                    <span>Facundo Reina - Nuestra Señora del Carmen, Salto</span>
+                    <span>
+                      Facundo Reina - Nuestra Señora del Carmen, Salto
+                    </span>
                   </li>
                   <li className="flex items-center bg-gradient-to-r from-amber-50 to-yellow-50 p-3 rounded-lg border-l-4 border-amber-400 shadow-sm hover:shadow-md transition-all">
                     <span className="text-amber-500 mr-2">🏆</span>
-                    <span>Federico Stempelet - Escuela n° 92 Placido Laguna, Colonia</span>
+                    <span>
+                      Federico Stempelet - Escuela n° 92 Placido Laguna, Colonia
+                    </span>
                   </li>
                   <li className="flex items-center bg-gradient-to-r from-amber-50 to-yellow-50 p-3 rounded-lg border-l-4 border-amber-400 shadow-sm hover:shadow-md transition-all">
                     <span className="text-amber-500 mr-2">🏆</span>
-                    <span>David Vareika - Saint Brendan's School, Montevideo</span>
+                    <span>
+                      David Vareika - Saint Brendan's School, Montevideo
+                    </span>
                   </li>
                   <li className="flex items-center bg-gradient-to-r from-amber-50 to-yellow-50 p-3 rounded-lg border-l-4 border-amber-400 shadow-sm hover:shadow-md transition-all">
                     <span className="text-amber-500 mr-2">🏆</span>
@@ -75,13 +87,17 @@ export default function Page2020() {
                   </li>
                   <li className="flex items-center bg-gradient-to-r from-amber-50 to-yellow-50 p-3 rounded-lg border-l-4 border-amber-400 shadow-sm hover:shadow-md transition-all">
                     <span className="text-amber-500 mr-2">🏆</span>
-                    <span>Hernán Cousillas - Christian Andersen, Montevideo</span>
+                    <span>
+                      Hernán Cousillas - Christian Andersen, Montevideo
+                    </span>
                   </li>
                 </ul>
               </div>
 
               <div className="mb-8">
-                <h4 className="text-xl font-semibold text-sky-700 mb-3 bg-sky-50 p-2 rounded">Segundo Puesto:</h4>
+                <h4 className="text-xl font-semibold text-sky-700 mb-3 bg-sky-50 p-2 rounded">
+                  Segundo Puesto:
+                </h4>
                 <ul className="grid grid-cols-1 md:grid-cols-2 gap-2 pl-0">
                   <li className="flex items-center bg-gradient-to-r from-sky-50 to-blue-50 p-3 rounded-lg border-l-4 border-sky-400 shadow-sm hover:shadow-md transition-all">
                     <span className="text-sky-500 mr-2">🥈</span>
@@ -89,19 +105,30 @@ export default function Page2020() {
                   </li>
                   <li className="flex items-center bg-gradient-to-r from-sky-50 to-blue-50 p-3 rounded-lg border-l-4 border-sky-400 shadow-sm hover:shadow-md transition-all">
                     <span className="text-sky-500 mr-2">🥈</span>
-                    <span>Nicolás Bronstein - Escuela Integral Hebreo Uruguaya, Montevideo</span>
+                    <span>
+                      Nicolás Bronstein - Escuela Integral Hebreo Uruguaya,
+                      Montevideo
+                    </span>
                   </li>
                   <li className="flex items-center bg-gradient-to-r from-sky-50 to-blue-50 p-3 rounded-lg border-l-4 border-sky-400 shadow-sm hover:shadow-md transition-all">
                     <span className="text-sky-500 mr-2">🥈</span>
-                    <span>Dana Barnett - Escuela Integral Hebreo Uruguaya, Montevideo</span>
+                    <span>
+                      Dana Barnett - Escuela Integral Hebreo Uruguaya,
+                      Montevideo
+                    </span>
                   </li>
                   <li className="flex items-center bg-gradient-to-r from-sky-50 to-blue-50 p-3 rounded-lg border-l-4 border-sky-400 shadow-sm hover:shadow-md transition-all">
                     <span className="text-sky-500 mr-2">🥈</span>
-                    <span>María Joaquina Preve Flores - Dr. Carlos Paz Ferreira, Salto</span>
+                    <span>
+                      María Joaquina Preve Flores - Dr. Carlos Paz Ferreira,
+                      Salto
+                    </span>
                   </li>
                   <li className="flex items-center bg-gradient-to-r from-sky-50 to-blue-50 p-3 rounded-lg border-l-4 border-sky-400 shadow-sm hover:shadow-md transition-all">
                     <span className="text-sky-500 mr-2">🥈</span>
-                    <span>Valentín María Barros - Colegio Monte VI, Montevideo</span>
+                    <span>
+                      Valentín María Barros - Colegio Monte VI, Montevideo
+                    </span>
                   </li>
                   <li className="flex items-center bg-gradient-to-r from-sky-50 to-blue-50 p-3 rounded-lg border-l-4 border-sky-400 shadow-sm hover:shadow-md transition-all">
                     <span className="text-sky-500 mr-2">🥈</span>
@@ -109,15 +136,22 @@ export default function Page2020() {
                   </li>
                   <li className="flex items-center bg-gradient-to-r from-sky-50 to-blue-50 p-3 rounded-lg border-l-4 border-sky-400 shadow-sm hover:shadow-md transition-all">
                     <span className="text-sky-500 mr-2">🥈</span>
-                    <span>Juan Cruz Dowling - Colegio Monte VI, Montevideo</span>
+                    <span>
+                      Juan Cruz Dowling - Colegio Monte VI, Montevideo
+                    </span>
                   </li>
                   <li className="flex items-center bg-gradient-to-r from-sky-50 to-blue-50 p-3 rounded-lg border-l-4 border-sky-400 shadow-sm hover:shadow-md transition-all">
                     <span className="text-sky-500 mr-2">🥈</span>
-                    <span>Benjamín Goldman - Escuela Integral Hebreo Uruguaya, Montevideo</span>
+                    <span>
+                      Benjamín Goldman - Escuela Integral Hebreo Uruguaya,
+                      Montevideo
+                    </span>
                   </li>
                   <li className="flex items-center bg-gradient-to-r from-sky-50 to-blue-50 p-3 rounded-lg border-l-4 border-sky-400 shadow-sm hover:shadow-md transition-all">
                     <span className="text-sky-500 mr-2">🥈</span>
-                    <span>Sofía Belén Lorenzo Fungi - Christian Andersen, Montevideo</span>
+                    <span>
+                      Sofía Belén Lorenzo Fungi - Christian Andersen, Montevideo
+                    </span>
                   </li>
                   <li className="flex items-center bg-gradient-to-r from-sky-50 to-blue-50 p-3 rounded-lg border-l-4 border-sky-400 shadow-sm hover:shadow-md transition-all">
                     <span className="text-sky-500 mr-2">🥈</span>
@@ -125,7 +159,9 @@ export default function Page2020() {
                   </li>
                   <li className="flex items-center bg-gradient-to-r from-sky-50 to-blue-50 p-3 rounded-lg border-l-4 border-sky-400 shadow-sm hover:shadow-md transition-all">
                     <span className="text-sky-500 mr-2">🥈</span>
-                    <span>José Ignacio Folle - Colegio Monte VI, Montevideo</span>
+                    <span>
+                      José Ignacio Folle - Colegio Monte VI, Montevideo
+                    </span>
                   </li>
                   <li className="flex items-center bg-gradient-to-r from-sky-50 to-blue-50 p-3 rounded-lg border-l-4 border-sky-400 shadow-sm hover:shadow-md transition-all">
                     <span className="text-sky-500 mr-2">🥈</span>
@@ -135,15 +171,23 @@ export default function Page2020() {
               </div>
 
               <div>
-                <h4 className="text-xl font-semibold text-sky-700 mb-3 bg-sky-50 p-2 rounded">Tercer Puesto:</h4>
+                <h4 className="text-xl font-semibold text-sky-700 mb-3 bg-sky-50 p-2 rounded">
+                  Tercer Puesto:
+                </h4>
                 <ul className="grid grid-cols-1 md:grid-cols-2 gap-2 pl-0">
                   <li className="flex items-center bg-gradient-to-r from-orange-50 to-rose-50 p-3 rounded-lg border-l-4 border-orange-300 shadow-sm hover:shadow-md transition-all">
                     <span className="text-orange-500 mr-2">🥉</span>
-                    <span>Pilar Luzardo - Centro Integral Armenio Nubarian, Montevideo</span>
+                    <span>
+                      Pilar Luzardo - Centro Integral Armenio Nubarian,
+                      Montevideo
+                    </span>
                   </li>
                   <li className="flex items-center bg-gradient-to-r from-orange-50 to-rose-50 p-3 rounded-lg border-l-4 border-orange-300 shadow-sm hover:shadow-md transition-all">
                     <span className="text-orange-500 mr-2">🥉</span>
-                    <span>Juan Martín Duarte Martínez - José Pedro Varela, Montevideo</span>
+                    <span>
+                      Juan Martín Duarte Martínez - José Pedro Varela,
+                      Montevideo
+                    </span>
                   </li>
                   <li className="flex items-center bg-gradient-to-r from-orange-50 to-rose-50 p-3 rounded-lg border-l-4 border-orange-300 shadow-sm hover:shadow-md transition-all">
                     <span className="text-orange-500 mr-2">🥉</span>
@@ -163,15 +207,22 @@ export default function Page2020() {
                   </li>
                   <li className="flex items-center bg-gradient-to-r from-orange-50 to-rose-50 p-3 rounded-lg border-l-4 border-orange-300 shadow-sm hover:shadow-md transition-all">
                     <span className="text-orange-500 mr-2">🥉</span>
-                    <span>Lautaro Sandin Padilla - N° 20 Grupo Escolar Felipe Sanguinetti</span>
+                    <span>
+                      Lautaro Sandin Padilla - N° 20 Grupo Escolar Felipe
+                      Sanguinetti
+                    </span>
                   </li>
                   <li className="flex items-center bg-gradient-to-r from-orange-50 to-rose-50 p-3 rounded-lg border-l-4 border-orange-300 shadow-sm hover:shadow-md transition-all">
                     <span className="text-orange-500 mr-2">🥉</span>
-                    <span>Enzo García Da Rosa - N° 2 José G. Artigas, Paysandú</span>
+                    <span>
+                      Enzo García Da Rosa - N° 2 José G. Artigas, Paysandú
+                    </span>
                   </li>
                   <li className="flex items-center bg-gradient-to-r from-orange-50 to-rose-50 p-3 rounded-lg border-l-4 border-orange-300 shadow-sm hover:shadow-md transition-all">
                     <span className="text-orange-500 mr-2">🥉</span>
-                    <span>Juan Manuel Rava - Saleciano de la Costa, Canelones</span>
+                    <span>
+                      Juan Manuel Rava - Saleciano de la Costa, Canelones
+                    </span>
                   </li>
                 </ul>
               </div>
@@ -179,10 +230,14 @@ export default function Page2020() {
 
             {/* Nivel IB */}
             <div className="mb-12 bg-white rounded-lg shadow-lg p-6 border border-sky-100">
-              <h3 className="text-2xl font-bold text-sky-800 mb-6 pb-2 border-b border-sky-200">NIVEL IB (5° DE PRIMARIA)</h3>
+              <h3 className="text-2xl font-bold text-sky-800 mb-6 pb-2 border-b border-sky-200">
+                NIVEL IB (5° DE PRIMARIA)
+              </h3>
 
               <div className="mb-8">
-                <h4 className="text-xl font-semibold text-sky-700 mb-3 bg-sky-50 p-2 rounded">Primer Puesto:</h4>
+                <h4 className="text-xl font-semibold text-sky-700 mb-3 bg-sky-50 p-2 rounded">
+                  Primer Puesto:
+                </h4>
                 <ul className="grid grid-cols-1 md:grid-cols-2 gap-2 pl-0">
                   <li className="flex items-center bg-gradient-to-r from-amber-50 to-yellow-50 p-3 rounded-lg border-l-4 border-amber-400 shadow-sm hover:shadow-md transition-all">
                     <span className="text-amber-500 mr-2">🏆</span>
@@ -190,11 +245,15 @@ export default function Page2020() {
                   </li>
                   <li className="flex items-center bg-gradient-to-r from-amber-50 to-yellow-50 p-3 rounded-lg border-l-4 border-amber-400 shadow-sm hover:shadow-md transition-all">
                     <span className="text-amber-500 mr-2">🏆</span>
-                    <span>Fabrizio Nardone - Escuela Logosófica, Montevideo</span>
+                    <span>
+                      Fabrizio Nardone - Escuela Logosófica, Montevideo
+                    </span>
                   </li>
                   <li className="flex items-center bg-gradient-to-r from-amber-50 to-yellow-50 p-3 rounded-lg border-l-4 border-amber-400 shadow-sm hover:shadow-md transition-all">
                     <span className="text-amber-500 mr-2">🏆</span>
-                    <span>Juan Diego Delgado - José Pedro Varela, Montevideo</span>
+                    <span>
+                      Juan Diego Delgado - José Pedro Varela, Montevideo
+                    </span>
                   </li>
                   <li className="flex items-center bg-gradient-to-r from-amber-50 to-yellow-50 p-3 rounded-lg border-l-4 border-amber-400 shadow-sm hover:shadow-md transition-all">
                     <span className="text-amber-500 mr-2">🏆</span>
@@ -208,19 +267,28 @@ export default function Page2020() {
               </div>
 
               <div className="mb-8">
-                <h4 className="text-xl font-semibold text-sky-700 mb-3 bg-sky-50 p-2 rounded">Segundo Puesto:</h4>
+                <h4 className="text-xl font-semibold text-sky-700 mb-3 bg-sky-50 p-2 rounded">
+                  Segundo Puesto:
+                </h4>
                 <ul className="grid grid-cols-1 md:grid-cols-2 gap-2 pl-0">
                   <li className="flex items-center bg-gradient-to-r from-sky-50 to-blue-50 p-3 rounded-lg border-l-4 border-sky-400 shadow-sm hover:shadow-md transition-all">
                     <span className="text-sky-500 mr-2">🥈</span>
-                    <span>Juan Brito del Pino - Colegio Monte VI, Montevideo</span>
+                    <span>
+                      Juan Brito del Pino - Colegio Monte VI, Montevideo
+                    </span>
                   </li>
                   <li className="flex items-center bg-gradient-to-r from-sky-50 to-blue-50 p-3 rounded-lg border-l-4 border-sky-400 shadow-sm hover:shadow-md transition-all">
                     <span className="text-sky-500 mr-2">🥈</span>
-                    <span>Inés Martinelli - Saint George's School, Montevideo</span>
+                    <span>
+                      Inés Martinelli - Saint George's School, Montevideo
+                    </span>
                   </li>
                   <li className="flex items-center bg-gradient-to-r from-sky-50 to-blue-50 p-3 rounded-lg border-l-4 border-sky-400 shadow-sm hover:shadow-md transition-all">
                     <span className="text-sky-500 mr-2">🥈</span>
-                    <span>Mateo Veiroj - Escuela Integral Hebreo Uruguaya, Montevideo</span>
+                    <span>
+                      Mateo Veiroj - Escuela Integral Hebreo Uruguaya,
+                      Montevideo
+                    </span>
                   </li>
                   <li className="flex items-center bg-gradient-to-r from-sky-50 to-blue-50 p-3 rounded-lg border-l-4 border-sky-400 shadow-sm hover:shadow-md transition-all">
                     <span className="text-sky-500 mr-2">🥈</span>
@@ -236,11 +304,16 @@ export default function Page2020() {
                   </li>
                   <li className="flex items-center bg-gradient-to-r from-sky-50 to-blue-50 p-3 rounded-lg border-l-4 border-sky-400 shadow-sm hover:shadow-md transition-all">
                     <span className="text-sky-500 mr-2">🥈</span>
-                    <span>Pedro Invernizzi - Nuestra Señora del Carmen, Salto</span>
+                    <span>
+                      Pedro Invernizzi - Nuestra Señora del Carmen, Salto
+                    </span>
                   </li>
                   <li className="flex items-center bg-gradient-to-r from-sky-50 to-blue-50 p-3 rounded-lg border-l-4 border-sky-400 shadow-sm hover:shadow-md transition-all">
                     <span className="text-sky-500 mr-2">🥈</span>
-                    <span>Lusín Guekdjian - Centro Integral Armenio Nubarian, Montevideo</span>
+                    <span>
+                      Lusín Guekdjian - Centro Integral Armenio Nubarian,
+                      Montevideo
+                    </span>
                   </li>
                   <li className="flex items-center bg-gradient-to-r from-sky-50 to-blue-50 p-3 rounded-lg border-l-4 border-sky-400 shadow-sm hover:shadow-md transition-all">
                     <span className="text-sky-500 mr-2">🥈</span>
@@ -248,13 +321,18 @@ export default function Page2020() {
                   </li>
                   <li className="flex items-center bg-gradient-to-r from-sky-50 to-blue-50 p-3 rounded-lg border-l-4 border-sky-400 shadow-sm hover:shadow-md transition-all">
                     <span className="text-sky-500 mr-2">🥈</span>
-                    <span>Catalina Dellature Podestá - Saleciano de la Costa, Canelones</span>
+                    <span>
+                      Catalina Dellature Podestá - Saleciano de la Costa,
+                      Canelones
+                    </span>
                   </li>
                 </ul>
               </div>
 
               <div>
-                <h4 className="text-xl font-semibold text-sky-700 mb-3 bg-sky-50 p-2 rounded">Tercer Puesto:</h4>
+                <h4 className="text-xl font-semibold text-sky-700 mb-3 bg-sky-50 p-2 rounded">
+                  Tercer Puesto:
+                </h4>
                 <ul className="grid grid-cols-1 md:grid-cols-2 gap-2 pl-0">
                   <li className="flex items-center bg-gradient-to-r from-orange-50 to-rose-50 p-3 rounded-lg border-l-4 border-orange-300 shadow-sm hover:shadow-md transition-all">
                     <span className="text-orange-500 mr-2">🥉</span>
@@ -266,11 +344,16 @@ export default function Page2020() {
                   </li>
                   <li className="flex items-center bg-gradient-to-r from-orange-50 to-rose-50 p-3 rounded-lg border-l-4 border-orange-300 shadow-sm hover:shadow-md transition-all">
                     <span className="text-orange-500 mr-2">🥉</span>
-                    <span>Mateo Rodríguez - Jardín y Colegio Maldonado, Maldonado</span>
+                    <span>
+                      Mateo Rodríguez - Jardín y Colegio Maldonado, Maldonado
+                    </span>
                   </li>
                   <li className="flex items-center bg-gradient-to-r from-orange-50 to-rose-50 p-3 rounded-lg border-l-4 border-orange-300 shadow-sm hover:shadow-md transition-all">
                     <span className="text-orange-500 mr-2">🥉</span>
-                    <span>Martina Fernández - Centro Integral Armenio Nubarian, Montevideo</span>
+                    <span>
+                      Martina Fernández - Centro Integral Armenio Nubarian,
+                      Montevideo
+                    </span>
                   </li>
                   <li className="flex items-center bg-gradient-to-r from-orange-50 to-rose-50 p-3 rounded-lg border-l-4 border-orange-300 shadow-sm hover:shadow-md transition-all">
                     <span className="text-orange-500 mr-2">🥉</span>
@@ -286,11 +369,15 @@ export default function Page2020() {
                   </li>
                   <li className="flex items-center bg-gradient-to-r from-orange-50 to-rose-50 p-3 rounded-lg border-l-4 border-orange-300 shadow-sm hover:shadow-md transition-all">
                     <span className="text-orange-500 mr-2">🥉</span>
-                    <span>Juan Bautista Santurio - Colegio Monte VI, Montevideo</span>
+                    <span>
+                      Juan Bautista Santurio - Colegio Monte VI, Montevideo
+                    </span>
                   </li>
                   <li className="flex items-center bg-gradient-to-r from-orange-50 to-rose-50 p-3 rounded-lg border-l-4 border-orange-300 shadow-sm hover:shadow-md transition-all">
                     <span className="text-orange-500 mr-2">🥉</span>
-                    <span>Guzmán Zorrilla de San Martín - Harwood School, Montevideo</span>
+                    <span>
+                      Guzmán Zorrilla de San Martín - Harwood School, Montevideo
+                    </span>
                   </li>
                   <li className="flex items-center bg-gradient-to-r from-orange-50 to-rose-50 p-3 rounded-lg border-l-4 border-orange-300 shadow-sm hover:shadow-md transition-all">
                     <span className="text-orange-500 mr-2">🥉</span>
@@ -306,10 +393,14 @@ export default function Page2020() {
 
             {/* Nivel IC */}
             <div className="mb-12 bg-white rounded-lg shadow-lg p-6 border border-sky-100">
-              <h3 className="text-2xl font-bold text-sky-800 mb-6 pb-2 border-b border-sky-200">NIVEL IC (6° DE PRIMARIA)</h3>
+              <h3 className="text-2xl font-bold text-sky-800 mb-6 pb-2 border-b border-sky-200">
+                NIVEL IC (6° DE PRIMARIA)
+              </h3>
 
               <div className="mb-8">
-                <h4 className="text-xl font-semibold text-sky-700 mb-3 bg-sky-50 p-2 rounded">Primer Puesto:</h4>
+                <h4 className="text-xl font-semibold text-sky-700 mb-3 bg-sky-50 p-2 rounded">
+                  Primer Puesto:
+                </h4>
                 <ul className="grid grid-cols-1 md:grid-cols-2 gap-2 pl-0">
                   <li className="flex items-center bg-gradient-to-r from-amber-50 to-yellow-50 p-3 rounded-lg border-l-4 border-amber-400 shadow-sm hover:shadow-md transition-all">
                     <span className="text-amber-500 mr-2">🏆</span>
@@ -317,39 +408,62 @@ export default function Page2020() {
                   </li>
                   <li className="flex items-center bg-gradient-to-r from-amber-50 to-yellow-50 p-3 rounded-lg border-l-4 border-amber-400 shadow-sm hover:shadow-md transition-all">
                     <span className="text-amber-500 mr-2">🏆</span>
-                    <span>Sophia Rockwell - Uruguayan American School, Montevideo</span>
+                    <span>
+                      Sophia Rockwell - Uruguayan American School, Montevideo
+                    </span>
                   </li>
                   <li className="flex items-center bg-gradient-to-r from-amber-50 to-yellow-50 p-3 rounded-lg border-l-4 border-amber-400 shadow-sm hover:shadow-md transition-all">
                     <span className="text-amber-500 mr-2">🏆</span>
-                    <span>Riho Natsume - Uruguayan American School, Montevideo</span>
+                    <span>
+                      Riho Natsume - Uruguayan American School, Montevideo
+                    </span>
                   </li>
                   <li className="flex items-center bg-gradient-to-r from-amber-50 to-yellow-50 p-3 rounded-lg border-l-4 border-amber-400 shadow-sm hover:shadow-md transition-all">
                     <span className="text-amber-500 mr-2">🏆</span>
-                    <span>Francesca Shaw - Uruguayan American School, Montevideo</span>
+                    <span>
+                      Francesca Shaw - Uruguayan American School, Montevideo
+                    </span>
                   </li>
                   <li className="flex items-center bg-gradient-to-r from-amber-50 to-yellow-50 p-3 rounded-lg border-l-4 border-amber-400 shadow-sm hover:shadow-md transition-all">
                     <span className="text-amber-500 mr-2">🏆</span>
-                    <span>Eial Boruchovas - Instituto Hebreo Uruguayo YAVNE, Montevideo</span>
+                    <span>
+                      Eial Boruchovas - Instituto Hebreo Uruguayo YAVNE,
+                      Montevideo
+                    </span>
                   </li>
                   <li className="flex items-center bg-gradient-to-r from-amber-50 to-yellow-50 p-3 rounded-lg border-l-4 border-amber-400 shadow-sm hover:shadow-md transition-all">
                     <span className="text-amber-500 mr-2">🏆</span>
-                    <span>Joaquín Catan - Instituto Hebreo Uruguayo YAVNE, Montevideo</span>
+                    <span>
+                      Joaquín Catan - Instituto Hebreo Uruguayo YAVNE,
+                      Montevideo
+                    </span>
                   </li>
                   <li className="flex items-center bg-gradient-to-r from-amber-50 to-yellow-50 p-3 rounded-lg border-l-4 border-amber-400 shadow-sm hover:shadow-md transition-all">
                     <span className="text-amber-500 mr-2">🏆</span>
-                    <span>Maian Bincovich - Instituto Hebreo Uruguayo YAVNE, Montevideo</span>
+                    <span>
+                      Maian Bincovich - Instituto Hebreo Uruguayo YAVNE,
+                      Montevideo
+                    </span>
                   </li>
                   <li className="flex items-center bg-gradient-to-r from-amber-50 to-yellow-50 p-3 rounded-lg border-l-4 border-amber-400 shadow-sm hover:shadow-md transition-all">
                     <span className="text-amber-500 mr-2">🏆</span>
-                    <span>Matías Liberman - Instituto Hebreo Uruguayo YAVNE, Montevideo</span>
+                    <span>
+                      Matías Liberman - Instituto Hebreo Uruguayo YAVNE,
+                      Montevideo
+                    </span>
                   </li>
                   <li className="flex items-center bg-gradient-to-r from-amber-50 to-yellow-50 p-3 rounded-lg border-l-4 border-amber-400 shadow-sm hover:shadow-md transition-all">
                     <span className="text-amber-500 mr-2">🏆</span>
-                    <span>Dafna Buszkaniec - Instituto Hebreo Uruguayo YAVNE, Montevideo</span>
+                    <span>
+                      Dafna Buszkaniec - Instituto Hebreo Uruguayo YAVNE,
+                      Montevideo
+                    </span>
                   </li>
                   <li className="flex items-center bg-gradient-to-r from-amber-50 to-yellow-50 p-3 rounded-lg border-l-4 border-amber-400 shadow-sm hover:shadow-md transition-all">
                     <span className="text-amber-500 mr-2">🏆</span>
-                    <span>Joaquín Schmidt - Saint George's School, Montevideo</span>
+                    <span>
+                      Joaquín Schmidt - Saint George's School, Montevideo
+                    </span>
                   </li>
                   <li className="flex items-center bg-gradient-to-r from-amber-50 to-yellow-50 p-3 rounded-lg border-l-4 border-amber-400 shadow-sm hover:shadow-md transition-all">
                     <span className="text-amber-500 mr-2">🏆</span>
@@ -357,7 +471,9 @@ export default function Page2020() {
                   </li>
                   <li className="flex items-center bg-gradient-to-r from-amber-50 to-yellow-50 p-3 rounded-lg border-l-4 border-amber-400 shadow-sm hover:shadow-md transition-all">
                     <span className="text-amber-500 mr-2">🏆</span>
-                    <span>Ari Dominitz - Instituto Hebreo Uruguayo YAVNE, Montevideo</span>
+                    <span>
+                      Ari Dominitz - Instituto Hebreo Uruguayo YAVNE, Montevideo
+                    </span>
                   </li>
                   <li className="flex items-center bg-gradient-to-r from-amber-50 to-yellow-50 p-3 rounded-lg border-l-4 border-amber-400 shadow-sm hover:shadow-md transition-all">
                     <span className="text-amber-500 mr-2">🏆</span>
@@ -371,19 +487,28 @@ export default function Page2020() {
               </div>
 
               <div className="mb-8">
-                <h4 className="text-xl font-semibold text-sky-700 mb-3 bg-sky-50 p-2 rounded">Segundo Puesto:</h4>
+                <h4 className="text-xl font-semibold text-sky-700 mb-3 bg-sky-50 p-2 rounded">
+                  Segundo Puesto:
+                </h4>
                 <ul className="grid grid-cols-1 md:grid-cols-2 gap-2 pl-0">
                   <li className="flex items-center bg-gradient-to-r from-sky-50 to-blue-50 p-3 rounded-lg border-l-4 border-sky-400 shadow-sm hover:shadow-md transition-all">
                     <span className="text-sky-500 mr-2">🥈</span>
-                    <span>Mikaela Angres - Uruguayan American School, Montevideo</span>
+                    <span>
+                      Mikaela Angres - Uruguayan American School, Montevideo
+                    </span>
                   </li>
                   <li className="flex items-center bg-gradient-to-r from-sky-50 to-blue-50 p-3 rounded-lg border-l-4 border-sky-400 shadow-sm hover:shadow-md transition-all">
                     <span className="text-sky-500 mr-2">🥈</span>
-                    <span>Lucas Abel Battocletti Bisio - Nuestra Señora del Carmen, Salto</span>
+                    <span>
+                      Lucas Abel Battocletti Bisio - Nuestra Señora del Carmen,
+                      Salto
+                    </span>
                   </li>
                   <li className="flex items-center bg-gradient-to-r from-sky-50 to-blue-50 p-3 rounded-lg border-l-4 border-sky-400 shadow-sm hover:shadow-md transition-all">
                     <span className="text-sky-500 mr-2">🥈</span>
-                    <span>Rafael Morales - Saint Patrick's School, Montevideo</span>
+                    <span>
+                      Rafael Morales - Saint Patrick's School, Montevideo
+                    </span>
                   </li>
                   <li className="flex items-center bg-gradient-to-r from-sky-50 to-blue-50 p-3 rounded-lg border-l-4 border-sky-400 shadow-sm hover:shadow-md transition-all">
                     <span className="text-sky-500 mr-2">🥈</span>
@@ -391,7 +516,9 @@ export default function Page2020() {
                   </li>
                   <li className="flex items-center bg-gradient-to-r from-sky-50 to-blue-50 p-3 rounded-lg border-l-4 border-sky-400 shadow-sm hover:shadow-md transition-all">
                     <span className="text-sky-500 mr-2">🥈</span>
-                    <span>Gonzalo Macellaro - José Pedro Varela, Montevideo</span>
+                    <span>
+                      Gonzalo Macellaro - José Pedro Varela, Montevideo
+                    </span>
                   </li>
                   <li className="flex items-center bg-gradient-to-r from-sky-50 to-blue-50 p-3 rounded-lg border-l-4 border-sky-400 shadow-sm hover:shadow-md transition-all">
                     <span className="text-sky-500 mr-2">🥈</span>
@@ -399,7 +526,9 @@ export default function Page2020() {
                   </li>
                   <li className="flex items-center bg-gradient-to-r from-sky-50 to-blue-50 p-3 rounded-lg border-l-4 border-sky-400 shadow-sm hover:shadow-md transition-all">
                     <span className="text-sky-500 mr-2">🥈</span>
-                    <span>Eugenia Azpiroz - Christian Andersen, Montevideo</span>
+                    <span>
+                      Eugenia Azpiroz - Christian Andersen, Montevideo
+                    </span>
                   </li>
                   <li className="flex items-center bg-gradient-to-r from-sky-50 to-blue-50 p-3 rounded-lg border-l-4 border-sky-400 shadow-sm hover:shadow-md transition-all">
                     <span className="text-sky-500 mr-2">🥈</span>
@@ -419,17 +548,24 @@ export default function Page2020() {
                   </li>
                   <li className="flex items-center bg-gradient-to-r from-sky-50 to-blue-50 p-3 rounded-lg border-l-4 border-sky-400 shadow-sm hover:shadow-md transition-all">
                     <span className="text-sky-500 mr-2">🥈</span>
-                    <span>Ezequiel Skorka - Escuela Integral Hebreo Uruguaya, Montevideo</span>
+                    <span>
+                      Ezequiel Skorka - Escuela Integral Hebreo Uruguaya,
+                      Montevideo
+                    </span>
                   </li>
                   <li className="flex items-center bg-gradient-to-r from-sky-50 to-blue-50 p-3 rounded-lg border-l-4 border-sky-400 shadow-sm hover:shadow-md transition-all">
                     <span className="text-sky-500 mr-2">🥈</span>
-                    <span>Santiago Giménez - Christian Andersen, Montevideo</span>
+                    <span>
+                      Santiago Giménez - Christian Andersen, Montevideo
+                    </span>
                   </li>
                 </ul>
               </div>
 
               <div>
-                <h4 className="text-xl font-semibold text-sky-700 mb-3 bg-sky-50 p-2 rounded">Tercer Puesto:</h4>
+                <h4 className="text-xl font-semibold text-sky-700 mb-3 bg-sky-50 p-2 rounded">
+                  Tercer Puesto:
+                </h4>
                 <ul className="grid grid-cols-1 md:grid-cols-2 gap-2 pl-0">
                   <li className="flex items-center bg-gradient-to-r from-orange-50 to-rose-50 p-3 rounded-lg border-l-4 border-orange-300 shadow-sm hover:shadow-md transition-all">
                     <span className="text-orange-500 mr-2">🥉</span>
@@ -437,11 +573,16 @@ export default function Page2020() {
                   </li>
                   <li className="flex items-center bg-gradient-to-r from-orange-50 to-rose-50 p-3 rounded-lg border-l-4 border-orange-300 shadow-sm hover:shadow-md transition-all">
                     <span className="text-orange-500 mr-2">🥉</span>
-                    <span>Shai Elenter - Escuela Integral Hebreo Uruguaya, Montevideo</span>
+                    <span>
+                      Shai Elenter - Escuela Integral Hebreo Uruguaya,
+                      Montevideo
+                    </span>
                   </li>
                   <li className="flex items-center bg-gradient-to-r from-orange-50 to-rose-50 p-3 rounded-lg border-l-4 border-orange-300 shadow-sm hover:shadow-md transition-all">
                     <span className="text-orange-500 mr-2">🥉</span>
-                    <span>Manuela Mangino - Saint Patrick's College, Montevideo</span>
+                    <span>
+                      Manuela Mangino - Saint Patrick's College, Montevideo
+                    </span>
                   </li>
                   <li className="flex items-center bg-gradient-to-r from-orange-50 to-rose-50 p-3 rounded-lg border-l-4 border-orange-300 shadow-sm hover:shadow-md transition-all">
                     <span className="text-orange-500 mr-2">🥉</span>
@@ -453,11 +594,16 @@ export default function Page2020() {
                   </li>
                   <li className="flex items-center bg-gradient-to-r from-orange-50 to-rose-50 p-3 rounded-lg border-l-4 border-orange-300 shadow-sm hover:shadow-md transition-all">
                     <span className="text-orange-500 mr-2">🥉</span>
-                    <span>Fabricio Machado Costante - José Pedro Varela, Montevideo</span>
+                    <span>
+                      Fabricio Machado Costante - José Pedro Varela, Montevideo
+                    </span>
                   </li>
                   <li className="flex items-center bg-gradient-to-r from-orange-50 to-rose-50 p-3 rounded-lg border-l-4 border-orange-300 shadow-sm hover:shadow-md transition-all">
                     <span className="text-orange-500 mr-2">🥉</span>
-                    <span>Roni Barilas - Escuela Integral Hebreo Uruguaya, Montevideo</span>
+                    <span>
+                      Roni Barilas - Escuela Integral Hebreo Uruguaya,
+                      Montevideo
+                    </span>
                   </li>
                   <li className="flex items-center bg-gradient-to-r from-orange-50 to-rose-50 p-3 rounded-lg border-l-4 border-orange-300 shadow-sm hover:shadow-md transition-all">
                     <span className="text-orange-500 mr-2">🥉</span>
@@ -470,14 +616,20 @@ export default function Page2020() {
 
           {/* Final Liceal */}
           <section>
-            <h2 className="text-3xl font-bold text-center text-sky-700 mb-10 pb-2 border-b-2 border-sky-200">FINAL LICEAL</h2>
+            <h2 className="text-3xl font-bold text-center text-sky-700 mb-10 pb-2 border-b-2 border-sky-200">
+              FINAL LICEAL
+            </h2>
 
             {/* Nivel II */}
             <div className="mb-12 bg-white rounded-lg shadow-lg p-6 border border-sky-100">
-              <h3 className="text-2xl font-bold text-sky-800 mb-6 pb-2 border-b border-sky-200">NIVEL II (PRIMERO DE SECUNDARIA)</h3>
+              <h3 className="text-2xl font-bold text-sky-800 mb-6 pb-2 border-b border-sky-200">
+                NIVEL II (PRIMERO DE SECUNDARIA)
+              </h3>
 
               <div className="mb-8">
-                <h4 className="text-xl font-semibold text-sky-700 mb-3 bg-sky-50 p-2 rounded">Primer Puesto:</h4>
+                <h4 className="text-xl font-semibold text-sky-700 mb-3 bg-sky-50 p-2 rounded">
+                  Primer Puesto:
+                </h4>
                 <ul className="grid grid-cols-1 md:grid-cols-2 gap-2 pl-0">
                   <li className="flex items-center bg-gradient-to-r from-amber-50 to-yellow-50 p-3 rounded-lg border-l-4 border-amber-400 shadow-sm hover:shadow-md transition-all">
                     <span className="text-amber-500 mr-2">🏆</span>
@@ -491,7 +643,9 @@ export default function Page2020() {
               </div>
 
               <div className="mb-8">
-                <h4 className="text-xl font-semibold text-sky-700 mb-3 bg-sky-50 p-2 rounded">Tercer Puesto:</h4>
+                <h4 className="text-xl font-semibold text-sky-700 mb-3 bg-sky-50 p-2 rounded">
+                  Tercer Puesto:
+                </h4>
                 <ul className="grid grid-cols-1 md:grid-cols-2 gap-2 pl-0">
                   <li className="flex items-center bg-gradient-to-r from-orange-50 to-rose-50 p-3 rounded-lg border-l-4 border-orange-300 shadow-sm hover:shadow-md transition-all">
                     <span className="text-orange-500 mr-2">🥉</span>
@@ -501,11 +655,15 @@ export default function Page2020() {
               </div>
 
               <div>
-                <h4 className="text-xl font-semibold text-sky-700 mb-3 bg-sky-50 p-2 rounded">Menciones de Honor:</h4>
+                <h4 className="text-xl font-semibold text-sky-700 mb-3 bg-sky-50 p-2 rounded">
+                  Menciones de Honor:
+                </h4>
                 <ul className="grid grid-cols-1 md:grid-cols-2 gap-2 pl-0">
                   <li className="flex items-center bg-gradient-to-r from-purple-50 to-indigo-50 p-3 rounded-lg border-l-4 border-purple-300 shadow-sm hover:shadow-md transition-all">
                     <span className="text-purple-500 mr-2">🏅</span>
-                    <span>Facundo Reina - Nuestra Señora del Carmen, Salto</span>
+                    <span>
+                      Facundo Reina - Nuestra Señora del Carmen, Salto
+                    </span>
                   </li>
                   <li className="flex items-center bg-gradient-to-r from-purple-50 to-indigo-50 p-3 rounded-lg border-l-4 border-purple-300 shadow-sm hover:shadow-md transition-all">
                     <span className="text-purple-500 mr-2">🏅</span>
@@ -533,11 +691,16 @@ export default function Page2020() {
                   </li>
                   <li className="flex items-center bg-gradient-to-r from-purple-50 to-indigo-50 p-3 rounded-lg border-l-4 border-purple-300 shadow-sm hover:shadow-md transition-all">
                     <span className="text-purple-500 mr-2">🏅</span>
-                    <span>José Pedro Urquiola - Colegio y Liceo Hans Christian Anderson</span>
+                    <span>
+                      José Pedro Urquiola - Colegio y Liceo Hans Christian
+                      Anderson
+                    </span>
                   </li>
                   <li className="flex items-center bg-gradient-to-r from-purple-50 to-indigo-50 p-3 rounded-lg border-l-4 border-purple-300 shadow-sm hover:shadow-md transition-all">
                     <span className="text-purple-500 mr-2">🏅</span>
-                    <span>Juan Manuel Frugoni - Liceo Elbio Fernandez, Montevideo</span>
+                    <span>
+                      Juan Manuel Frugoni - Liceo Elbio Fernandez, Montevideo
+                    </span>
                   </li>
                   <li className="flex items-center bg-gradient-to-r from-purple-50 to-indigo-50 p-3 rounded-lg border-l-4 border-purple-300 shadow-sm hover:shadow-md transition-all">
                     <span className="text-purple-500 mr-2">🏅</span>
@@ -549,10 +712,14 @@ export default function Page2020() {
 
             {/* Nivel III */}
             <div className="mb-12 bg-white rounded-lg shadow-lg p-6 border border-sky-100">
-              <h3 className="text-2xl font-bold text-sky-800 mb-6 pb-2 border-b border-sky-200">NIVEL III (SEGUNDO Y TERCERO DE SECUNDARIA)</h3>
+              <h3 className="text-2xl font-bold text-sky-800 mb-6 pb-2 border-b border-sky-200">
+                NIVEL III (SEGUNDO Y TERCERO DE SECUNDARIA)
+              </h3>
 
               <div className="mb-8">
-                <h4 className="text-xl font-semibold text-sky-700 mb-3 bg-sky-50 p-2 rounded">Primer Puesto:</h4>
+                <h4 className="text-xl font-semibold text-sky-700 mb-3 bg-sky-50 p-2 rounded">
+                  Primer Puesto:
+                </h4>
                 <ul className="grid grid-cols-1 md:grid-cols-2 gap-2 pl-0">
                   <li className="flex items-center bg-gradient-to-r from-amber-50 to-yellow-50 p-3 rounded-lg border-l-4 border-amber-400 shadow-sm hover:shadow-md transition-all">
                     <span className="text-amber-500 mr-2">🏆</span>
@@ -562,7 +729,9 @@ export default function Page2020() {
               </div>
 
               <div className="mb-8">
-                <h4 className="text-xl font-semibold text-sky-700 mb-3 bg-sky-50 p-2 rounded">Segundo Puesto:</h4>
+                <h4 className="text-xl font-semibold text-sky-700 mb-3 bg-sky-50 p-2 rounded">
+                  Segundo Puesto:
+                </h4>
                 <ul className="grid grid-cols-1 md:grid-cols-2 gap-2 pl-0">
                   <li className="flex items-center bg-gradient-to-r from-sky-50 to-blue-50 p-3 rounded-lg border-l-4 border-sky-400 shadow-sm hover:shadow-md transition-all">
                     <span className="text-sky-500 mr-2">🥈</span>
@@ -572,21 +741,30 @@ export default function Page2020() {
               </div>
 
               <div className="mb-8">
-                <h4 className="text-xl font-semibold text-sky-700 mb-3 bg-sky-50 p-2 rounded">Tercer Puesto:</h4>
+                <h4 className="text-xl font-semibold text-sky-700 mb-3 bg-sky-50 p-2 rounded">
+                  Tercer Puesto:
+                </h4>
                 <ul className="grid grid-cols-1 md:grid-cols-2 gap-2 pl-0">
                   <li className="flex items-center bg-gradient-to-r from-orange-50 to-rose-50 p-3 rounded-lg border-l-4 border-orange-300 shadow-sm hover:shadow-md transition-all">
                     <span className="text-orange-500 mr-2">🥉</span>
-                    <span>Ada Blustein - Escuela Integral Hebreo Uruguaya, Montevideo</span>
+                    <span>
+                      Ada Blustein - Escuela Integral Hebreo Uruguaya,
+                      Montevideo
+                    </span>
                   </li>
                   <li className="flex items-center bg-gradient-to-r from-orange-50 to-rose-50 p-3 rounded-lg border-l-4 border-orange-300 shadow-sm hover:shadow-md transition-all">
                     <span className="text-orange-500 mr-2">🥉</span>
-                    <span>Guillermo Wajner - Saint George's School, Montevideo</span>
+                    <span>
+                      Guillermo Wajner - Saint George's School, Montevideo
+                    </span>
                   </li>
                 </ul>
               </div>
 
               <div>
-                <h4 className="text-xl font-semibold text-sky-700 mb-3 bg-sky-50 p-2 rounded">Menciones de Honor:</h4>
+                <h4 className="text-xl font-semibold text-sky-700 mb-3 bg-sky-50 p-2 rounded">
+                  Menciones de Honor:
+                </h4>
                 <ul className="grid grid-cols-1 md:grid-cols-2 gap-2 pl-0">
                   <li className="flex items-center bg-gradient-to-r from-purple-50 to-indigo-50 p-3 rounded-lg border-l-4 border-purple-300 shadow-sm hover:shadow-md transition-all">
                     <span className="text-purple-500 mr-2">🏅</span>
@@ -618,10 +796,14 @@ export default function Page2020() {
 
             {/* Nivel IV */}
             <div className="mb-12 bg-white rounded-lg shadow-lg p-6 border border-sky-100">
-              <h3 className="text-2xl font-bold text-sky-800 mb-6 pb-2 border-b border-sky-200">NIVEL IV (CUARTO Y QUINTO DE SECUNDARIA)</h3>
+              <h3 className="text-2xl font-bold text-sky-800 mb-6 pb-2 border-b border-sky-200">
+                NIVEL IV (CUARTO Y QUINTO DE SECUNDARIA)
+              </h3>
 
               <div className="mb-8">
-                <h4 className="text-xl font-semibold text-sky-700 mb-3 bg-sky-50 p-2 rounded">Primer Puesto (Puntaje Perfecto):</h4>
+                <h4 className="text-xl font-semibold text-sky-700 mb-3 bg-sky-50 p-2 rounded">
+                  Primer Puesto (Puntaje Perfecto):
+                </h4>
                 <ul className="grid grid-cols-1 md:grid-cols-2 gap-2 pl-0">
                   <li className="flex items-center bg-gradient-to-r from-amber-50 to-yellow-50 p-3 rounded-lg border-l-4 border-amber-400 shadow-sm hover:shadow-md transition-all">
                     <span className="text-amber-500 mr-2">🏆</span>
@@ -631,17 +813,24 @@ export default function Page2020() {
               </div>
 
               <div className="mb-8">
-                <h4 className="text-xl font-semibold text-sky-700 mb-3 bg-sky-50 p-2 rounded">Segundo Puesto:</h4>
+                <h4 className="text-xl font-semibold text-sky-700 mb-3 bg-sky-50 p-2 rounded">
+                  Segundo Puesto:
+                </h4>
                 <ul className="grid grid-cols-1 md:grid-cols-2 gap-2 pl-0">
                   <li className="flex items-center bg-gradient-to-r from-sky-50 to-blue-50 p-3 rounded-lg border-l-4 border-sky-400 shadow-sm hover:shadow-md transition-all">
                     <span className="text-sky-500 mr-2">🥈</span>
-                    <span>Nicolás Hirschfeld - Escuela Integral Hebreo Uruguaya, Montevideo</span>
+                    <span>
+                      Nicolás Hirschfeld - Escuela Integral Hebreo Uruguaya,
+                      Montevideo
+                    </span>
                   </li>
                 </ul>
               </div>
 
               <div className="mb-8">
-                <h4 className="text-xl font-semibold text-sky-700 mb-3 bg-sky-50 p-2 rounded">Tercer Puesto:</h4>
+                <h4 className="text-xl font-semibold text-sky-700 mb-3 bg-sky-50 p-2 rounded">
+                  Tercer Puesto:
+                </h4>
                 <ul className="grid grid-cols-1 md:grid-cols-2 gap-2 pl-0">
                   <li className="flex items-center bg-gradient-to-r from-orange-50 to-rose-50 p-3 rounded-lg border-l-4 border-orange-300 shadow-sm hover:shadow-md transition-all">
                     <span className="text-orange-500 mr-2">🥉</span>
@@ -651,7 +840,9 @@ export default function Page2020() {
               </div>
 
               <div>
-                <h4 className="text-xl font-semibold text-sky-700 mb-3 bg-sky-50 p-2 rounded">Menciones de Honor:</h4>
+                <h4 className="text-xl font-semibold text-sky-700 mb-3 bg-sky-50 p-2 rounded">
+                  Menciones de Honor:
+                </h4>
                 <ul className="grid grid-cols-1 md:grid-cols-2 gap-2 pl-0">
                   <li className="flex items-center bg-gradient-to-r from-purple-50 to-indigo-50 p-3 rounded-lg border-l-4 border-purple-300 shadow-sm hover:shadow-md transition-all">
                     <span className="text-purple-500 mr-2">🏅</span>
@@ -659,7 +850,9 @@ export default function Page2020() {
                   </li>
                   <li className="flex items-center bg-gradient-to-r from-purple-50 to-indigo-50 p-3 rounded-lg border-l-4 border-purple-300 shadow-sm hover:shadow-md transition-all">
                     <span className="text-purple-500 mr-2">🏅</span>
-                    <span>Camila Bassetti - Saint George's School, Montevideo</span>
+                    <span>
+                      Camila Bassetti - Saint George's School, Montevideo
+                    </span>
                   </li>
                   <li className="flex items-center bg-gradient-to-r from-purple-50 to-indigo-50 p-3 rounded-lg border-l-4 border-purple-300 shadow-sm hover:shadow-md transition-all">
                     <span className="text-purple-500 mr-2">🏅</span>
@@ -679,10 +872,14 @@ export default function Page2020() {
 
             {/* Nivel V */}
             <div className="bg-white rounded-lg shadow-lg p-6 border border-sky-100">
-              <h3 className="text-2xl font-bold text-sky-800 mb-6 pb-2 border-b border-sky-200">NIVEL V (SEXTO DE SECUNDARIA)</h3>
+              <h3 className="text-2xl font-bold text-sky-800 mb-6 pb-2 border-b border-sky-200">
+                NIVEL V (SEXTO DE SECUNDARIA)
+              </h3>
 
               <div className="mb-8">
-                <h4 className="text-xl font-semibold text-sky-700 mb-3 bg-sky-50 p-2 rounded">Primer Puesto (Puntaje Perfecto):</h4>
+                <h4 className="text-xl font-semibold text-sky-700 mb-3 bg-sky-50 p-2 rounded">
+                  Primer Puesto (Puntaje Perfecto):
+                </h4>
                 <ul className="grid grid-cols-1 md:grid-cols-2 gap-2 pl-0">
                   <li className="flex items-center bg-gradient-to-r from-amber-50 to-yellow-50 p-3 rounded-lg border-l-4 border-amber-400 shadow-sm hover:shadow-md transition-all">
                     <span className="text-amber-500 mr-2">🏆</span>
@@ -692,7 +889,9 @@ export default function Page2020() {
               </div>
 
               <div className="mb-8">
-                <h4 className="text-xl font-semibold text-sky-700 mb-3 bg-sky-50 p-2 rounded">Segundo Puesto:</h4>
+                <h4 className="text-xl font-semibold text-sky-700 mb-3 bg-sky-50 p-2 rounded">
+                  Segundo Puesto:
+                </h4>
                 <ul className="grid grid-cols-1 md:grid-cols-2 gap-2 pl-0">
                   <li className="flex items-center bg-gradient-to-r from-sky-50 to-blue-50 p-3 rounded-lg border-l-4 border-sky-400 shadow-sm hover:shadow-md transition-all">
                     <span className="text-sky-500 mr-2">🥈</span>
@@ -702,7 +901,9 @@ export default function Page2020() {
               </div>
 
               <div className="mb-8">
-                <h4 className="text-xl font-semibold text-sky-700 mb-3 bg-sky-50 p-2 rounded">Tercer Puesto:</h4>
+                <h4 className="text-xl font-semibold text-sky-700 mb-3 bg-sky-50 p-2 rounded">
+                  Tercer Puesto:
+                </h4>
                 <ul className="grid grid-cols-1 md:grid-cols-2 gap-2 pl-0">
                   <li className="flex items-center bg-gradient-to-r from-orange-50 to-rose-50 p-3 rounded-lg border-l-4 border-orange-300 shadow-sm hover:shadow-md transition-all">
                     <span className="text-orange-500 mr-2">🥉</span>
@@ -712,7 +913,9 @@ export default function Page2020() {
               </div>
 
               <div>
-                <h4 className="text-xl font-semibold text-sky-700 mb-3 bg-sky-50 p-2 rounded">Mención de Honor:</h4>
+                <h4 className="text-xl font-semibold text-sky-700 mb-3 bg-sky-50 p-2 rounded">
+                  Mención de Honor:
+                </h4>
                 <ul className="grid grid-cols-1 md:grid-cols-2 gap-2 pl-0">
                   <li className="flex items-center bg-gradient-to-r from-purple-50 to-indigo-50 p-3 rounded-lg border-l-4 border-purple-300 shadow-sm hover:shadow-md transition-all">
                     <span className="text-purple-500 mr-2">🏅</span>
@@ -727,4 +930,4 @@ export default function Page2020() {
       <Footer />
     </div>
   );
-} 
+}

@@ -1,10 +1,11 @@
 "use client";
 
-import React, { useRef, useState, useEffect } from "react";
-import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
-import Image from "next/image";
+import Header from "@/components/layout/Header";
 import { ChevronLeft, ChevronRight, X, ZoomIn } from "lucide-react";
+import Image from "next/image";
+import type React from "react";
+import { useEffect, useRef, useState } from "react";
 
 interface MascotaCardProps {
   imageSrc: string;
@@ -78,9 +79,8 @@ function ImageModal({
     };
 
     const htmlElement = document.documentElement;
-    const previousScrollbarGutter = htmlElement.style.getPropertyValue(
-      "scrollbar-gutter"
-    );
+    const previousScrollbarGutter =
+      htmlElement.style.getPropertyValue("scrollbar-gutter");
 
     if (isOpen) {
       document.addEventListener("keydown", handleKeyDown);
@@ -100,7 +100,7 @@ function ImageModal({
       if (previousScrollbarGutter) {
         htmlElement.style.setProperty(
           "scrollbar-gutter",
-          previousScrollbarGutter
+          previousScrollbarGutter,
         );
       } else {
         htmlElement.style.removeProperty("scrollbar-gutter");
@@ -198,9 +198,18 @@ export default function MascotaPageClient() {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   const galleryImages = [
-    { src: "/images/Momento_Gauchito_Segundo_000.jpg", alt: "Momento con Gauchito II" },
-    { src: "/images/Momento_Gauchito_Segundo_001.jpg", alt: "Gauchito I en acción" },
-    { src: "/images/Momento_Gauchito_Segundo_002.jpg", alt: "Competencia matemática" },
+    {
+      src: "/images/Momento_Gauchito_Segundo_000.jpg",
+      alt: "Momento con Gauchito II",
+    },
+    {
+      src: "/images/Momento_Gauchito_Segundo_001.jpg",
+      alt: "Gauchito I en acción",
+    },
+    {
+      src: "/images/Momento_Gauchito_Segundo_002.jpg",
+      alt: "Competencia matemática",
+    },
     { src: "/images/Momento_Gauchito_Segundo_003.jpg", alt: "Delegación IMO" },
     { src: "/images/Momento_Gauchito_Segundo_004.jpg", alt: "Fuffy histórico" },
     { src: "/images/Momento_Gauchito_Segundo_005.jpg", alt: "Momentos únicos" },
@@ -314,7 +323,7 @@ export default function MascotaPageClient() {
 
   const nextImage = () => {
     setCurrentImageIndex((prev) =>
-      prev < galleryImages.length - 1 ? prev + 1 : prev
+      prev < galleryImages.length - 1 ? prev + 1 : prev,
     );
   };
 
@@ -337,7 +346,8 @@ export default function MascotaPageClient() {
               Nuestras Mascotas
             </h1>
             <p className="text-center text-gray-600 text-lg max-w-2xl mx-auto">
-              Conoce a los compañeros que han acompañado a nuestras delegaciones a lo largo de los años
+              Conoce a los compañeros que han acompañado a nuestras delegaciones
+              a lo largo de los años
             </p>
           </div>
         </section>

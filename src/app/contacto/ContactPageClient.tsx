@@ -1,9 +1,10 @@
 "use client";
 
-import React, { useState } from "react";
-import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
+import Header from "@/components/layout/Header";
 import { Card, CardContent } from "@/components/ui/card";
+import type React from "react";
+import { useState } from "react";
 
 function ContactPageClient() {
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -100,7 +101,9 @@ function ContactPageClient() {
                             d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
                           />
                         </svg>
-                        <span className="break-all">lacompartida@gmail.com</span>
+                        <span className="break-all">
+                          lacompartida@gmail.com
+                        </span>
                       </a>
                     </div>
 
@@ -128,7 +131,8 @@ function ContactPageClient() {
                         Para Participantes
                       </h3>
                       <p className="text-gray-600 mb-4">
-                        Si eres estudiante interesado en participar en las olimpiadas
+                        Si eres estudiante interesado en participar en las
+                        olimpiadas
                       </p>
                       <span className="inline-flex items-center text-yellow-600 font-medium text-base">
                         Próximamente
@@ -151,8 +155,9 @@ function ContactPageClient() {
                   </h3>
                   <p className="mt-2 text-gray-600">
                     Para participar en nuestras olimpiadas debes acercarte a un
-                    coordinador de tu centro educativo o contactarnos directamente.
-                    Las convocatorias se suelen publicar al comienzo del año lectivo.
+                    coordinador de tu centro educativo o contactarnos
+                    directamente. Las convocatorias se suelen publicar al
+                    comienzo del año lectivo.
                   </p>
                 </div>
                 <div className="bg-white p-4 rounded-lg shadow-sm">
@@ -160,9 +165,9 @@ function ContactPageClient() {
                     ¿Qué materiales de estudio ofrecen?
                   </h3>
                   <p className="mt-2 text-gray-600">
-                    Contamos con una amplia biblioteca de problemas, seminarios de
-                    ex-olímpicos y material de preparación. Puedes acceder a ellos
-                    desde la sección de Materiales en nuestra web.
+                    Contamos con una amplia biblioteca de problemas, seminarios
+                    de ex-olímpicos y material de preparación. Puedes acceder a
+                    ellos desde la sección de Materiales en nuestra web.
                   </p>
                 </div>
               </div>
@@ -177,8 +182,8 @@ function ContactPageClient() {
                       ¿Tienes sugerencias de mejora?
                     </h2>
                     <p className="text-gray-600">
-                      Tu opinión es muy importante para nosotros. Cuéntanos qué te
-                      gustaría ver en la web o qué podríamos mejorar.
+                      Tu opinión es muy importante para nosotros. Cuéntanos qué
+                      te gustaría ver en la web o qué podríamos mejorar.
                     </p>
                   </div>
 
@@ -230,7 +235,10 @@ function ContactPageClient() {
 
                       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                         <div className="space-y-2">
-                          <label htmlFor="name" className="text-sm font-medium text-gray-700">
+                          <label
+                            htmlFor="name"
+                            className="text-sm font-medium text-gray-700"
+                          >
                             Nombre <span className="text-red-500">*</span>
                           </label>
                           <input
@@ -243,7 +251,10 @@ function ContactPageClient() {
                           />
                         </div>
                         <div className="space-y-2">
-                          <label htmlFor="email" className="text-sm font-medium text-gray-700">
+                          <label
+                            htmlFor="email"
+                            className="text-sm font-medium text-gray-700"
+                          >
                             Email <span className="text-red-500">*</span>
                           </label>
                           <input
@@ -258,8 +269,12 @@ function ContactPageClient() {
                       </div>
 
                       <div className="space-y-2">
-                        <label htmlFor="suggestion" className="text-sm font-medium text-gray-700">
-                          ¿Qué sugerencia tienes? <span className="text-red-500">*</span>
+                        <label
+                          htmlFor="suggestion"
+                          className="text-sm font-medium text-gray-700"
+                        >
+                          ¿Qué sugerencia tienes?{" "}
+                          <span className="text-red-500">*</span>
                         </label>
                         <textarea
                           id="suggestion"

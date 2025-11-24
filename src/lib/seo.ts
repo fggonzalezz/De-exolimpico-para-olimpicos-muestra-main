@@ -1,6 +1,7 @@
 import type { Metadata, MetadataRoute } from "next";
 
-export const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://exolimpicos-lacompartida.com";
+export const SITE_URL =
+  process.env.NEXT_PUBLIC_SITE_URL || "https://exolimpicos-lacompartida.com";
 export const BRAND_NAME = "Com-Partida de Matemática del Uruguay";
 export const BRAND_SHORT = "Olimpiada Matemática Uruguay";
 const DEFAULT_IMAGE = {
@@ -48,7 +49,9 @@ export type PageSeoEntry = {
 
 const toAbsoluteUrl = (value: string) => {
   if (!value) return SITE_URL;
-  return value.startsWith("http") ? value : `${SITE_URL}${value.startsWith("/") ? "" : "/"}${value}`;
+  return value.startsWith("http")
+    ? value
+    : `${SITE_URL}${value.startsWith("/") ? "" : "/"}${value}`;
 };
 
 export const canonicalUrl = (path: string) => {
@@ -64,7 +67,9 @@ export const buildPageMetadata = (entry: PageSeoEntry): Metadata => {
   const metaImage = entry.image || DEFAULT_IMAGE;
   const absoluteImageUrl = toAbsoluteUrl(metaImage.url);
   const canonical = canonicalUrl(entry.path);
-  const titleValue = entry.useAbsoluteTitle ? { absolute: entry.title } : entry.title;
+  const titleValue = entry.useAbsoluteTitle
+    ? { absolute: entry.title }
+    : entry.title;
 
   return {
     title: titleValue,
@@ -75,7 +80,9 @@ export const buildPageMetadata = (entry: PageSeoEntry): Metadata => {
       type: "website",
       url: canonical,
       siteName: BRAND_SHORT,
-      title: entry.useAbsoluteTitle ? entry.title : `${entry.title} | ${BRAND_SHORT}`,
+      title: entry.useAbsoluteTitle
+        ? entry.title
+        : `${entry.title} | ${BRAND_SHORT}`,
       description: entry.description,
       locale: "es_UY",
       images: [
@@ -150,7 +157,10 @@ export const seoStaticPages: PageSeoEntry[] = [
     title: "Equipos Uruguayos 2025",
     description:
       "Resultados y reconocimientos de los equipos uruguayos en olimpiadas matemáticas internacionales 2024-2025.",
-    keywords: ["resultados IMO Uruguay", "medallas olimpiada matemática uruguay"],
+    keywords: [
+      "resultados IMO Uruguay",
+      "medallas olimpiada matemática uruguay",
+    ],
     priority: 0.8,
     changeFrequency: "monthly",
   },
@@ -222,7 +232,11 @@ export const seoStaticPages: PageSeoEntry[] = [
     title: "Mascota Gauchito",
     description:
       "Conoce a Gauchito, la mascota oficial de la Olimpiada Matemática Uruguay que representa la curiosidad, perseverancia y diversión de aprender matemáticas.",
-    keywords: ["mascota olimpiada matemática", "gauchito matemática", "gauchito com-partida"],
+    keywords: [
+      "mascota olimpiada matemática",
+      "gauchito matemática",
+      "gauchito com-partida",
+    ],
     priority: 0.6,
     changeFrequency: "yearly",
   },
@@ -240,7 +254,10 @@ export const seoStaticPages: PageSeoEntry[] = [
     title: "Pruebas Anteriores",
     description:
       "Archivo de pruebas oficiales, simulacros y resoluciones de la Olimpiada Nacional para practicar por nivel.",
-    keywords: ["pruebas olimpiada nacional pdf", "simulacros matemática uruguay"],
+    keywords: [
+      "pruebas olimpiada nacional pdf",
+      "simulacros matemática uruguay",
+    ],
     priority: 0.85,
     changeFrequency: "monthly",
   },
@@ -249,7 +266,10 @@ export const seoStaticPages: PageSeoEntry[] = [
     title: "Entrenamiento Online",
     description:
       "Sesiones virtuales, foros y tutorías organizadas por la comunidad Com-Partida para competir desde todo el país.",
-    keywords: ["entrenamiento online matemática", "clases virtuales olimpiadas"],
+    keywords: [
+      "entrenamiento online matemática",
+      "clases virtuales olimpiadas",
+    ],
     priority: 0.6,
     changeFrequency: "monthly",
   },
@@ -267,7 +287,10 @@ export const seoStaticPages: PageSeoEntry[] = [
     title: "Primera Instancia",
     description:
       "Acceso a problemas y soluciones por nivel para la primera instancia de la Olimpiada Nacional de Matemática.",
-    keywords: ["primera instancia olimpiada", "soluciones nivel primaria uruguay"],
+    keywords: [
+      "primera instancia olimpiada",
+      "soluciones nivel primaria uruguay",
+    ],
     priority: 0.9,
     changeFrequency: "monthly",
   },
@@ -300,7 +323,8 @@ export const seoStaticPages: PageSeoEntry[] = [
   },
 ];
 
-export const getStaticSeoEntry = (path: string) => seoStaticPages.find((entry) => entry.path === path);
+export const getStaticSeoEntry = (path: string) =>
+  seoStaticPages.find((entry) => entry.path === path);
 
 export const buildStaticPageMetadata = (path: string): Metadata => {
   const entry = getStaticSeoEntry(path);
@@ -311,7 +335,15 @@ export const buildStaticPageMetadata = (path: string): Metadata => {
 };
 
 export const NATIONAL_YEARS = ["2021", "2020", "2019", "anteriores"] as const;
-export const NATIONAL_LEVELS = ["nivel-IA", "nivel-IB", "nivel-IC", "nivel-II", "nivel-III", "nivel-IV", "nivel-V"] as const;
+export const NATIONAL_LEVELS = [
+  "nivel-IA",
+  "nivel-IB",
+  "nivel-IC",
+  "nivel-II",
+  "nivel-III",
+  "nivel-IV",
+  "nivel-V",
+] as const;
 
 type NationalStage = "primera" | "final" | "segunda";
 
@@ -326,18 +358,23 @@ export const buildNationalYearMetadata = (year: string): Metadata => {
     path: `/nacional/${year}`,
     title: `Material ${readableYear}`,
     description: `Resoluciones y recursos de la Olimpiada Nacional ${readableYear}: enlaces a primera y segunda instancia con PDFs y videos por nivel.`,
-    keywords: [
-      `olimpiada nacional ${year}`,
-      `material ${readableYear}`,
-    ],
+    keywords: [`olimpiada nacional ${year}`, `material ${readableYear}`],
     priority: 0.8,
     changeFrequency: "yearly",
   });
 };
 
-export const buildNationalYearStageMetadata = (year: string, stage: NationalStage): Metadata => {
+export const buildNationalYearStageMetadata = (
+  year: string,
+  stage: NationalStage,
+): Metadata => {
   const readableYear = year === "anteriores" ? "Años anteriores" : year;
-  const stageLabel = stage === "primera" ? "Primera Instancia" : stage === "segunda" ? "Segunda Instancia" : "Final";
+  const stageLabel =
+    stage === "primera"
+      ? "Primera Instancia"
+      : stage === "segunda"
+        ? "Segunda Instancia"
+        : "Final";
   return buildPageMetadata({
     path: `/nacional/${year}/${stage}`,
     title: `${stageLabel} ${readableYear}`,
@@ -351,7 +388,10 @@ export const buildNationalYearStageMetadata = (year: string, stage: NationalStag
   });
 };
 
-export const buildNationalLevelMetadata = (stage: "primera" | "final", level: string): Metadata => {
+export const buildNationalLevelMetadata = (
+  stage: "primera" | "final",
+  level: string,
+): Metadata => {
   const levelLabel = formatLevelLabel(level);
   const stageLabel = stage === "primera" ? "Primera Instancia" : "Final";
   return buildPageMetadata({

@@ -1,14 +1,15 @@
-import React from 'react';
-import Header from '@/components/layout/Header';
-import Footer from '@/components/layout/Footer';
-import Image from 'next/image';
-import Link from 'next/link';
-import { buildNationalYearMetadata } from '@/lib/seo';
+import Footer from "@/components/layout/Footer";
+import Header from "@/components/layout/Header";
+import { buildNationalYearMetadata } from "@/lib/seo";
+import Image from "next/image";
+import Link from "next/link";
+import React from "react";
 
-export const metadata = buildNationalYearMetadata('anteriores');
+export const metadata = buildNationalYearMetadata("anteriores");
 
-const TEACHER_ICON = 'https://ext.same-assets.com/4168015766/3169824431.png';
-const YEARS_ANTERIORES_IMG = 'https://ext.same-assets.com/1728315765/2391142948.png';
+const TEACHER_ICON = "https://ext.same-assets.com/4168015766/3169824431.png";
+const YEARS_ANTERIORES_IMG =
+  "https://ext.same-assets.com/1728315765/2391142948.png";
 
 export default function AnterioresPage() {
   return (
@@ -20,7 +21,13 @@ export default function AnterioresPage() {
           <div className="container mx-auto px-4">
             <div className="max-w-3xl mx-auto text-center">
               <div className="flex justify-center mt-4">
-                <Image src={YEARS_ANTERIORES_IMG} alt="Años anteriores" width={240} height={80} className="object-contain rounded-lg shadow-md" />
+                <Image
+                  src={YEARS_ANTERIORES_IMG}
+                  alt="Años anteriores"
+                  width={240}
+                  height={80}
+                  className="object-contain rounded-lg shadow-md"
+                />
               </div>
             </div>
           </div>
@@ -34,28 +41,26 @@ export default function AnterioresPage() {
               className="link-button text-lg md:text-xl py-4 px-8 flex items-center justify-center gap-2 group"
             >
               <span className="relative z-10">Primera Instancia</span>
-              <svg 
-                xmlns="http://www.w3.org/2000/svg" 
-                className="h-5 w-5 transform transition-transform group-hover:translate-x-1" 
-                fill="none" 
-                viewBox="0 0 24 24" 
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                className="h-5 w-5 transform transition-transform group-hover:translate-x-1"
+                fill="none"
+                viewBox="0 0 24 24"
                 stroke="currentColor"
-              >
-                  </svg>
+              ></svg>
             </Link>
             <Link
               href="/nacional/final"
               className="link-button text-lg md:text-xl py-4 px-8 flex items-center justify-center gap-2 group"
             >
               <span className="relative z-10">Final Nacional</span>
-              <svg 
-                xmlns="http://www.w3.org/2000/svg" 
-                className="h-5 w-5 transform transition-transform group-hover:translate-x-1" 
-                fill="none" 
-                viewBox="0 0 24 24" 
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                className="h-5 w-5 transform transition-transform group-hover:translate-x-1"
+                fill="none"
+                viewBox="0 0 24 24"
                 stroke="currentColor"
-              >
-              </svg>
+              ></svg>
             </Link>
           </div>
           <div className="mt-8">
@@ -64,14 +69,13 @@ export default function AnterioresPage() {
               className="link-button text-lg md:text-xl py-4 px-8 bg-yellow-500 hover:bg-yellow-600 flex items-center justify-center gap-2 group w-full max-w-md mx-auto"
             >
               <span className="relative z-10">Problemas Semanales 2020</span>
-              <svg 
-                xmlns="http://www.w3.org/2000/svg" 
-                className="h-5 w-5 transform transition-transform group-hover:translate-x-1" 
-                fill="none" 
-                viewBox="0 0 24 24" 
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                className="h-5 w-5 transform transition-transform group-hover:translate-x-1"
+                fill="none"
+                viewBox="0 0 24 24"
                 stroke="currentColor"
-              >
-                              </svg>
+              ></svg>
             </Link>
           </div>
         </div>
@@ -79,4 +83,4 @@ export default function AnterioresPage() {
       <Footer />
     </div>
   );
-} 
+}

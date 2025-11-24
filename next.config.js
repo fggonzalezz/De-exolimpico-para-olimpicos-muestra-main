@@ -9,11 +9,12 @@ const nextConfig = {
       },
     ],
   },
+  // TypeScript y ESLint ahora habilitados para mejor calidad de código
   typescript: {
-    ignoreBuildErrors: true,
+    ignoreBuildErrors: false,
   },
   eslint: {
-    ignoreDuringBuilds: true,
+    ignoreDuringBuilds: false,
   },
 };
 

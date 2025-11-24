@@ -1,10 +1,10 @@
-import React from 'react';
-import Header from '@/components/layout/Header';
-import Footer from '@/components/layout/Footer';
-import { Card, CardContent } from '@/components/ui/card';
-import { buildStaticPageMetadata } from '@/lib/seo';
+import Footer from "@/components/layout/Footer";
+import Header from "@/components/layout/Header";
+import { Card, CardContent } from "@/components/ui/card";
+import { buildStaticPageMetadata } from "@/lib/seo";
+import React from "react";
 
-export const metadata = buildStaticPageMetadata('/online');
+export const metadata = buildStaticPageMetadata("/online");
 
 // FAQ Data actualizado
 const faqItems = [
@@ -16,7 +16,7 @@ const faqItems = [
 ➤ Hojas A4 (preferentemente)
 ➤ Agua y snacks (recomendado)
 ➤ Computadora con cámara web y micrófono
-➤ Celular con CamScanner instalado para escanear la prueba`
+➤ Celular con CamScanner instalado para escanear la prueba`,
   },
   {
     question: "¿Cómo debo preparar las hojas para la prueba?",
@@ -28,7 +28,7 @@ const faqItems = [
 ➤ Teléfono
 ➤ Número de página
 
-Se recomienda preparar las hojas con estos datos antes de comenzar la prueba para optimizar el tiempo.`
+Se recomienda preparar las hojas con estos datos antes de comenzar la prueba para optimizar el tiempo.`,
   },
   {
     question: "¿Cuáles son los requisitos durante la prueba?",
@@ -37,7 +37,7 @@ Se recomienda preparar las hojas con estos datos antes de comenzar la prueba par
 ➤ Usar lápiz oscuro o lapicera para garantizar la legibilidad
 ➤ No hablar con nadie
 ➤ No usar calculadora ni material de consulta
-➤ Ser ordenado y enumerar todas las hojas`
+➤ Ser ordenado y enumerar todas las hojas`,
   },
   {
     question: "¿Cómo debo entregar la prueba?",
@@ -47,7 +47,7 @@ Se recomienda preparar las hojas con estos datos antes de comenzar la prueba par
 ➤ Llenar el formulario de entrega en la página oficial
 ➤ Subir el archivo PDF en el orden correcto
 
-Se recomienda practicar este proceso antes de la prueba.`
+Se recomienda practicar este proceso antes de la prueba.`,
   },
   {
     question: "¿Qué niveles de participación existen?",
@@ -55,7 +55,7 @@ Se recomienda practicar este proceso antes de la prueba.`
 Nivel 2: 1º año secundaria
 Nivel 3: 2º y 3º año secundaria
 Nivel 4: 4º y 5º año secundaria
-Nivel 5: 6º año secundaria`
+Nivel 5: 6º año secundaria`,
   },
   {
     question: "¿Qué debo verificar antes de la prueba?",
@@ -63,8 +63,8 @@ Nivel 5: 6º año secundaria`
 ➤ Posición adecuada de la cámara para que capture tanto la hoja como a ti
 ➤ Tener instalado CamScanner y practicar su uso
 ➤ Tener todos los materiales necesarios
-➤ Tener las hojas preparadas con los datos requeridos`
-  }
+➤ Tener las hojas preparadas con los datos requeridos`,
+  },
 ];
 
 export default function OnlinePage() {
@@ -84,14 +84,18 @@ export default function OnlinePage() {
                 <div className="h-1 w-24 bg-yellow-500 rounded mb-6"></div>
               </div>
               <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-                Descubre recursos y guías para participar en nuestras competencias matemáticas desde tu casa
+                Descubre recursos y guías para participar en nuestras
+                competencias matemáticas desde tu casa
               </p>
             </div>
 
             {/* Video Section */}
             <Card className="overflow-hidden shadow-lg mb-16">
               <CardContent className="p-0">
-                <div className="relative w-full" style={{ paddingBottom: '56.25%' }}>
+                <div
+                  className="relative w-full"
+                  style={{ paddingBottom: "56.25%" }}
+                >
                   <iframe
                     src="https://www.youtube.com/embed/QtQdZB0MBjA"
                     title="Recursos Online para Olimpíada Conosur"
@@ -116,7 +120,10 @@ export default function OnlinePage() {
 
               <div className="grid gap-6">
                 {faqItems.map((item, index) => (
-                  <Card key={index} className="overflow-hidden hover:shadow-lg transition-shadow duration-300">
+                  <Card
+                    key={index}
+                    className="overflow-hidden hover:shadow-lg transition-shadow duration-300"
+                  >
                     <CardContent className="p-6">
                       <h3 className="text-lg font-bold text-sky-800 mb-2">
                         {item.question}

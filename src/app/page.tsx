@@ -1,32 +1,37 @@
-import Image from 'next/image';
-import Link from 'next/link';
-import Script from 'next/script';
-import Header from '@/components/layout/Header';
-import Footer from '@/components/layout/Footer';
-import { Card, CardContent } from '@/components/ui/card';
-import CompetitionsTable from '@/components/competitions/CompetitionsTable';
-import { nextSixCompetitions } from '@/data/competitions';
-import React from 'react';
-import { buildStaticPageMetadata, createEventItemListJsonLd, createFaqJsonLd, SITE_URL } from '@/lib/seo';
+import CompetitionsTable from "@/components/competitions/CompetitionsTable";
+import Footer from "@/components/layout/Footer";
+import Header from "@/components/layout/Header";
+import { Card, CardContent } from "@/components/ui/card";
+import { nextSixCompetitions } from "@/data/competitions";
+import {
+  SITE_URL,
+  buildStaticPageMetadata,
+  createEventItemListJsonLd,
+  createFaqJsonLd,
+} from "@/lib/seo";
+import Image from "next/image";
+import Link from "next/link";
+import Script from "next/script";
+import React from "react";
 
-export const metadata = buildStaticPageMetadata('/');
+export const metadata = buildStaticPageMetadata("/");
 
 export default function Home() {
   const faqItems = [
     {
-      question: '¿Cómo empiezo a participar en la Olimpiada Nacional?',
+      question: "¿Cómo empiezo a participar en la Olimpiada Nacional?",
       answer:
-        'Contacta a la organización o a tu centro educativo para inscribirte en la próxima instancia y recibir los materiales de práctica.',
+        "Contacta a la organización o a tu centro educativo para inscribirte en la próxima instancia y recibir los materiales de práctica.",
     },
     {
-      question: '¿Qué materiales recomiendan para entrenar cada nivel?',
+      question: "¿Qué materiales recomiendan para entrenar cada nivel?",
       answer:
-        'En la sección Material de Estudio encontrarás libros, videos y guías clasificados por nivel para primaria y secundaria.',
+        "En la sección Material de Estudio encontrarás libros, videos y guías clasificados por nivel para primaria y secundaria.",
     },
     {
-      question: '¿Dónde consulto el calendario completo de competencias 2025?',
+      question: "¿Dónde consulto el calendario completo de competencias 2025?",
       answer:
-        'El calendario actualizado con fechas y sedes está disponible en la página Calendario 2025 y se actualiza semanalmente.',
+        "El calendario actualizado con fechas y sedes está disponible en la página Calendario 2025 y se actualiza semanalmente.",
     },
   ];
 
@@ -35,14 +40,18 @@ export default function Home() {
     .map((competition) => ({
       name: competition.event,
       startDate: competition.targetDate!.toISOString(),
-      location: 'Uruguay',
+      location: "Uruguay",
       description: competition.date,
-      url: competition.id ? `${SITE_URL}/calendario-2025#${competition.id}` : `${SITE_URL}/calendario-2025`,
+      url: competition.id
+        ? `${SITE_URL}/calendario-2025#${competition.id}`
+        : `${SITE_URL}/calendario-2025`,
     }));
 
-  const eventsJsonLd = eventItems.length ? createEventItemListJsonLd(eventItems) : null;
+  const eventsJsonLd = eventItems.length
+    ? createEventItemListJsonLd(eventItems)
+    : null;
   const faqJsonLd = createFaqJsonLd(faqItems);
-  
+
   return (
     <div className="flex min-h-screen flex-col">
       {eventsJsonLd ? (
@@ -92,17 +101,25 @@ export default function Home() {
                 </span>
               </h1>
               <h2 className="text-lg sm:text-xl md:text-2xl font-medium mb-8 text-shadow-outline text-gray-100 max-w-2xl mx-auto">
-                Material de estudio y entrenamiento para olimpiadas matemáticas desde 1992
+                Material de estudio y entrenamiento para olimpiadas matemáticas
+                desde 1992
               </h2>
               <p className="text-base sm:text-lg font-medium mb-10 text-shadow-outline max-w-3xl mx-auto text-gray-200">
-                Preparación para IMO, Olimpiada Iberoamericana, Cono Sur y Olimpiada Nacional de Uruguay. 
-                Recursos, problemas y material de estudio creado por ex-olímpicos uruguayos.
+                Preparación para IMO, Olimpiada Iberoamericana, Cono Sur y
+                Olimpiada Nacional de Uruguay. Recursos, problemas y material de
+                estudio creado por ex-olímpicos uruguayos.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Link href="/sobre-nosotros" className="bg-sky-600 text-white hover:bg-sky-700 px-8 py-4 rounded-lg font-bold text-lg transition-all shadow-lg hover:shadow-xl hover:-translate-y-1">
+                <Link
+                  href="/sobre-nosotros"
+                  className="bg-sky-600 text-white hover:bg-sky-700 px-8 py-4 rounded-lg font-bold text-lg transition-all shadow-lg hover:shadow-xl hover:-translate-y-1"
+                >
                   Conoce más
                 </Link>
-                <Link href="/calendario-2025" className="bg-yellow-500 hover:bg-yellow-600 text-white px-8 py-4 rounded-lg font-bold text-lg transition-all shadow-lg hover:shadow-xl hover:-translate-y-1">
+                <Link
+                  href="/calendario-2025"
+                  className="bg-yellow-500 hover:bg-yellow-600 text-white px-8 py-4 rounded-lg font-bold text-lg transition-all shadow-lg hover:shadow-xl hover:-translate-y-1"
+                >
                   Calendario 2025
                 </Link>
               </div>
@@ -118,19 +135,25 @@ export default function Home() {
             </h2>
             <div className="max-w-3xl mx-auto text-center">
               <p className="mb-4">
-                Con enorme satisfacción ponemos a vuestra disposición una nueva forma de acercarse a nuestras actividades.
+                Con enorme satisfacción ponemos a vuestra disposición una nueva
+                forma de acercarse a nuestras actividades.
               </p>
               <p className="mb-4">
-                Satisfacción que surge por ser una página creada por ex-olímpicos de la Com-Partida de Matemática del Uruguay, 
-                quienes sintieron la necesidad de retribuir las oportunidades de desarrollo que se les han brindado durante su 
-                trayecto por ella y decidieron trasmitir a quienes siguen su camino sus experiencias y conocimientos.
+                Satisfacción que surge por ser una página creada por
+                ex-olímpicos de la Com-Partida de Matemática del Uruguay,
+                quienes sintieron la necesidad de retribuir las oportunidades de
+                desarrollo que se les han brindado durante su trayecto por ella
+                y decidieron trasmitir a quienes siguen su camino sus
+                experiencias y conocimientos.
               </p>
               <p className="mb-4">
-                Todos los contenidos son decisión y creación de ellos; mediante esta herramienta buscan facilitar y enriquecer 
-                el camino de los actuales y futuros participantes en nuestras actividades.
+                Todos los contenidos son decisión y creación de ellos; mediante
+                esta herramienta buscan facilitar y enriquecer el camino de los
+                actuales y futuros participantes en nuestras actividades.
               </p>
               <p className="font-medium text-sky-700">
-                Valoramos y agradecemos el trabajo de estos jóvenes, en cuyas manos estará la continuidad y el futuro de esta experiencia.
+                Valoramos y agradecemos el trabajo de estos jóvenes, en cuyas
+                manos estará la continuidad y el futuro de esta experiencia.
               </p>
             </div>
           </div>
@@ -146,22 +169,37 @@ export default function Home() {
               <div className="grid gap-6 md:grid-cols-3">
                 <div className="bg-gradient-to-br from-yellow-400 to-yellow-500 rounded-xl p-6 text-center shadow-lg">
                   <div className="text-4xl font-bold text-white mb-2">3</div>
-                  <div className="text-white font-medium">Menciones de Honor</div>
-                  <div className="text-yellow-100 text-sm mt-1">IMO 2024 - Reino Unido</div>
+                  <div className="text-white font-medium">
+                    Menciones de Honor
+                  </div>
+                  <div className="text-yellow-100 text-sm mt-1">
+                    IMO 2024 - Reino Unido
+                  </div>
                 </div>
                 <div className="bg-gradient-to-br from-sky-500 to-sky-600 rounded-xl p-6 text-center shadow-lg">
-                  <div className="text-4xl font-bold text-white mb-2">Mejor</div>
-                  <div className="text-white font-medium">Puntaje desde 1987</div>
-                  <div className="text-sky-100 text-sm mt-1">Récord histórico</div>
+                  <div className="text-4xl font-bold text-white mb-2">
+                    Mejor
+                  </div>
+                  <div className="text-white font-medium">
+                    Puntaje desde 1987
+                  </div>
+                  <div className="text-sky-100 text-sm mt-1">
+                    Récord histórico
+                  </div>
                 </div>
                 <div className="bg-gradient-to-br from-green-500 to-green-600 rounded-xl p-6 text-center shadow-lg">
                   <div className="text-4xl font-bold text-white mb-2">6</div>
-                  <div className="text-white font-medium">Participantes IMO</div>
-                  <div className="text-green-100 text-sm mt-1">Delegación completa</div>
+                  <div className="text-white font-medium">
+                    Participantes IMO
+                  </div>
+                  <div className="text-green-100 text-sm mt-1">
+                    Delegación completa
+                  </div>
                 </div>
               </div>
               <p className="text-center text-gray-600 mt-6">
-                La delegación uruguaya logró el mejor resultado histórico en la Olimpíada Internacional de Matemática 2024.
+                La delegación uruguaya logró el mejor resultado histórico en la
+                Olimpíada Internacional de Matemática 2024.
               </p>
             </div>
           </div>
@@ -173,7 +211,7 @@ export default function Home() {
             <h2 className="text-2xl md:text-3xl font-inter font-semibold text-center mb-8">
               En los Medios: Reconocimiento Nacional
             </h2>
-            
+
             {/* Hero Images */}
             <div className="max-w-6xl mx-auto mb-12">
               <div className="grid gap-8 md:grid-cols-2">
@@ -188,7 +226,7 @@ export default function Home() {
                   />
                   <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-4">
                     <p className="text-white text-sm font-medium">
-                    ¡Felicitaciones! - Olimpíada Mundial de Matemática 2024 
+                      ¡Felicitaciones! - Olimpíada Mundial de Matemática 2024
                     </p>
                   </div>
                 </div>
@@ -203,7 +241,7 @@ export default function Home() {
                   />
                   <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-4">
                     <p className="text-white text-sm font-medium">
-                    Delegación uruguaya con sus certificados de participación
+                      Delegación uruguaya con sus certificados de participación
                     </p>
                   </div>
                 </div>
@@ -212,11 +250,13 @@ export default function Home() {
 
             <div className="max-w-4xl mx-auto">
               <p className="text-center text-gray-700 mb-8">
-                Los logros de nuestros estudiantes en competencias internacionales han sido destacados por diferentes medios de comunicación nacional:
+                Los logros de nuestros estudiantes en competencias
+                internacionales han sido destacados por diferentes medios de
+                comunicación nacional:
               </p>
               <div className="grid gap-6 md:grid-cols-3">
                 {/* La Diaria */}
-                <Link 
+                <Link
                   href="https://ladiaria.com.uy/educacion/articulo/2024/5/luego-de-superar-distintas-instancias-nacionales-una-delegacion-de-estudiantes-se-prepara-para-las-olimpiadas-internacionales-de-matematica/"
                   target="_blank"
                   rel="noopener noreferrer"
@@ -231,10 +271,13 @@ export default function Home() {
                     </div>
                     <div className="p-6 flex flex-col flex-grow">
                       <h3 className="font-semibold text-lg mb-3 text-sky-700 group-hover:text-sky-800 transition-colors">
-                        Delegación uruguaya se prepara para Olimpíadas Internacionales
+                        Delegación uruguaya se prepara para Olimpíadas
+                        Internacionales
                       </h3>
                       <p className="text-gray-600 text-sm mb-4 flex-grow">
-                        Luego de superar distintas instancias nacionales, una delegación de estudiantes se prepara para las Olimpíadas Internacionales de Matemática.
+                        Luego de superar distintas instancias nacionales, una
+                        delegación de estudiantes se prepara para las Olimpíadas
+                        Internacionales de Matemática.
                       </p>
                       <span className="text-sky-600 group-hover:text-sky-800 font-medium text-sm inline-flex items-center transition-colors mt-auto">
                         Leer artículo completo →
@@ -244,7 +287,7 @@ export default function Home() {
                 </Link>
 
                 {/* Montevideo Portal */}
-                <Link 
+                <Link
                   href="https://www.montevideo.com.uy/Noticias/Estudiantes-uruguayos-participaron-de-Olimpiada-de-Matematica-y-ANEP-resalto-su-puntaje-uc895014"
                   target="_blank"
                   rel="noopener noreferrer"
@@ -253,7 +296,9 @@ export default function Home() {
                   <div className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-all duration-200 group-hover:scale-[1.02] cursor-pointer h-full flex flex-col">
                     <div className="h-32 bg-gradient-to-br from-red-500 to-red-700 flex items-center justify-center flex-shrink-0">
                       <div className="text-white text-center">
-                        <div className="text-lg font-bold">Montevideo Portal</div>
+                        <div className="text-lg font-bold">
+                          Montevideo Portal
+                        </div>
                         <div className="text-sm opacity-90">Noticias</div>
                       </div>
                     </div>
@@ -262,7 +307,9 @@ export default function Home() {
                         ANEP resaltó el puntaje de estudiantes uruguayos
                       </h3>
                       <p className="text-gray-600 text-sm mb-4 flex-grow">
-                        Seis liceales destacaron "en un contexto de altísima exigencia y competencia global", afirmó el organismo tras la participación en la Olimpíada de Matemática.
+                        Seis liceales destacaron "en un contexto de altísima
+                        exigencia y competencia global", afirmó el organismo
+                        tras la participación en la Olimpíada de Matemática.
                       </p>
                       <span className="text-sky-600 group-hover:text-sky-800 font-medium text-sm inline-flex items-center transition-colors mt-auto">
                         Leer artículo completo →
@@ -272,7 +319,7 @@ export default function Home() {
                 </Link>
 
                 {/* Telenoche */}
-                <Link 
+                <Link
                   href="https://www.telenoche.com.uy/nacionales/uruguayos-reconocidos-olimpiada-internacional-matematica-n5370859"
                   target="_blank"
                   rel="noopener noreferrer"
@@ -290,7 +337,9 @@ export default function Home() {
                         Uruguayos reconocidos en Olimpíada Internacional
                       </h3>
                       <p className="text-gray-600 text-sm mb-4 flex-grow">
-                        La competencia fue en Reino Unido y tres estudiantes tuvieron una mención de honor, logrando el mejor puntaje para Uruguay desde 1987.
+                        La competencia fue en Reino Unido y tres estudiantes
+                        tuvieron una mención de honor, logrando el mejor puntaje
+                        para Uruguay desde 1987.
                       </p>
                       <span className="text-sky-600 group-hover:text-sky-800 font-medium text-sm inline-flex items-center transition-colors mt-auto">
                         Leer artículo completo →
@@ -311,7 +360,7 @@ export default function Home() {
           maxItems={6}
           footerLink={{
             href: "/calendario-2025",
-            text: "Ver calendario completo"
+            text: "Ver calendario completo",
           }}
         />
         {/* Mascot Section */}
@@ -335,12 +384,14 @@ export default function Home() {
                   ¡Saluda a Nuestra Mascota Matemática!
                 </h2>
                 <p className="mb-4">
-                  Te presentamos a nuestra alegre compañero que nos inspira en cada desafío matemático. 
-                  ¡El representa la curiosidad, la perseverancia y la diversión de aprender matemáticas en Uruguay!
+                  Te presentamos a nuestra alegre compañero que nos inspira en
+                  cada desafío matemático. ¡El representa la curiosidad, la
+                  perseverancia y la diversión de aprender matemáticas en
+                  Uruguay!
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4 mt-6">
-                  <Link 
-                    href="/mascota" 
+                  <Link
+                    href="/mascota"
                     className="inline-flex items-center justify-center px-6 py-3 bg-sky-600 text-white font-medium rounded-lg hover:bg-sky-700 transition-colors shadow-md hover:shadow-lg"
                   >
                     Conoce a Gauchito
@@ -365,8 +416,13 @@ export default function Home() {
               </h2>
               <div className="grid gap-6 md:grid-cols-3">
                 {faqItems.map((faq) => (
-                  <article key={faq.question} className="bg-sky-50 border border-sky-100 rounded-xl p-6 shadow-sm">
-                    <h3 className="text-lg font-semibold text-sky-700 mb-3">{faq.question}</h3>
+                  <article
+                    key={faq.question}
+                    className="bg-sky-50 border border-sky-100 rounded-xl p-6 shadow-sm"
+                  >
+                    <h3 className="text-lg font-semibold text-sky-700 mb-3">
+                      {faq.question}
+                    </h3>
                     <p className="text-sm text-gray-700 leading-relaxed">
                       {faq.answer}
                     </p>

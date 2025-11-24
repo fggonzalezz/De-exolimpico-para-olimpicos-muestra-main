@@ -1,14 +1,14 @@
-import React from 'react';
-import Header from '@/components/layout/Header';
-import Footer from '@/components/layout/Footer';
 import GoogleDrivePDFViewer from "@/components/GoogleDrivePDFViewer";
-import { NIVELES_PRIMERA } from '../nivelesData';
-import { buildNationalLevelMetadata } from '@/lib/seo';
+import Footer from "@/components/layout/Footer";
+import Header from "@/components/layout/Header";
+import { buildNationalLevelMetadata } from "@/lib/seo";
+import React from "react";
+import { NIVELES_PRIMERA } from "../nivelesData";
 
-export const metadata = buildNationalLevelMetadata('primera', 'nivel-IB');
+export const metadata = buildNationalLevelMetadata("primera", "nivel-IB");
 
 export default function NivelIBPage() {
-  const nivelData = NIVELES_PRIMERA['IB'];
+  const nivelData = NIVELES_PRIMERA["IB"];
 
   return (
     <div className="flex min-h-screen flex-col">
@@ -22,18 +22,28 @@ export default function NivelIBPage() {
             </div>
           </div>
         </section>
-        
+
         <div className="container mx-auto px-4 py-8">
           <div className="max-w-7xl mx-auto">
-            <h2 className="text-2xl font-semibold mb-8 text-center">Problemas y Soluciones</h2>
-            
+            <h2 className="text-2xl font-semibold mb-8 text-center">
+              Problemas y Soluciones
+            </h2>
+
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               {nivelData.problemas.map((problema) => (
-                <div key={problema.key} className="bg-white rounded-lg shadow-md p-6">
-                  <h3 className="text-xl font-bold text-sky-700 mb-4 text-center">{problema.title}</h3>
+                <div
+                  key={problema.key}
+                  className="bg-white rounded-lg shadow-md p-6"
+                >
+                  <h3 className="text-xl font-bold text-sky-700 mb-4 text-center">
+                    {problema.title}
+                  </h3>
                   <div className="w-full flex flex-col items-center">
                     <div className="w-full relative overflow-hidden rounded-md">
-                      <GoogleDrivePDFViewer pdfUrl={problema.pdf} title={problema.title} />
+                      <GoogleDrivePDFViewer
+                        pdfUrl={problema.pdf}
+                        title={problema.title}
+                      />
                     </div>
                   </div>
                 </div>
@@ -46,4 +56,4 @@ export default function NivelIBPage() {
       <Footer />
     </div>
   );
-} 
+}

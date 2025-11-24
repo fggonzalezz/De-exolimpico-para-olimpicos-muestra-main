@@ -1,6 +1,7 @@
 "use client";
 
-import React, { useState, useEffect, useCallback, useMemo } from "react";
+import type React from "react";
+import { useCallback, useEffect, useMemo, useState } from "react";
 
 interface GoogleDrivePDFViewerProps {
   pdfUrl: string;
@@ -16,7 +17,7 @@ function extractIdFromUrl(url: string): string | null {
     // Formato: https://drive.google.com/file/d/FILE_ID/preview
     /^https:\/\/drive\.google\.com\/file\/d\/([\w-]+)\/preview(?:\?.*)?$/,
     // Formato: https://drive.google.com/file/d/FILE_ID (sin sufijo)
-    /^https:\/\/drive\.google\.com\/file\/d\/([\w-]+)(?:\/.*)?$/
+    /^https:\/\/drive\.google\.com\/file\/d\/([\w-]+)(?:\/.*)?$/,
   ];
 
   for (const pattern of patterns) {
@@ -25,16 +26,18 @@ function extractIdFromUrl(url: string): string | null {
       return match[1];
     }
   }
-  
+
   return null;
 }
 
 function validateGoogleDriveUrl(url: string): boolean {
   try {
     const parsedUrl = new URL(url);
-    return parsedUrl.hostname === 'drive.google.com' && 
-           parsedUrl.pathname.includes('/file/d/') &&
-           extractIdFromUrl(url) !== null;
+    return (
+      parsedUrl.hostname === "drive.google.com" &&
+      parsedUrl.pathname.includes("/file/d/") &&
+      extractIdFromUrl(url) !== null
+    );
   } catch {
     return false;
   }
@@ -43,14 +46,14 @@ function validateGoogleDriveUrl(url: string): boolean {
 const GoogleDrivePDFViewer: React.FC<GoogleDrivePDFViewerProps> = ({
   pdfUrl,
   title = "Vista previa PDF",
-  onError
+  onError,
 }) => {
   const [isLoading, setIsLoading] = useState(true);
   const [hasError, setHasError] = useState(false);
 
   // Memoizar la validación de URL
   const isValidUrl = useMemo(() => validateGoogleDriveUrl(pdfUrl), [pdfUrl]);
-  
+
   // Memoizar el fileId para evitar re-cálculos innecesarios
   const fileId = useMemo(() => {
     return isValidUrl ? extractIdFromUrl(pdfUrl) : null;
@@ -94,7 +97,8 @@ const GoogleDrivePDFViewer: React.FC<GoogleDrivePDFViewerProps> = ({
           URL recibida: {pdfUrl}
         </p>
         <p className="text-red-500 text-sm text-center mt-2">
-          Por favor, verifica que la URL sea de Google Drive en formato correcto.
+          Por favor, verifica que la URL sea de Google Drive en formato
+          correcto.
         </p>
       </div>
     );
@@ -129,7 +133,7 @@ const GoogleDrivePDFViewer: React.FC<GoogleDrivePDFViewerProps> = ({
           </div>
         </div>
       )}
-      
+
       <iframe
         src={embedUrl}
         width="100%"
@@ -150,11 +154,11 @@ const GoogleDrivePDFViewer: React.FC<GoogleDrivePDFViewerProps> = ({
           background: "#fafafa",
           border: "1px solid #e5e7eb",
           borderRadius: "12px",
-          display: isLoading ? "none" : "block"
+          display: isLoading ? "none" : "block",
         }}
         className="mb-4 w-full rounded-lg shadow-sm"
       />
-      
+
       <a
         href={pdfUrl}
         target="_blank"
