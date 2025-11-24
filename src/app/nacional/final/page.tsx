@@ -21,45 +21,42 @@ export default function FinalNacionalPage() {
           <div className="max-w-6xl mx-auto">
             <h2 className="text-2xl font-semibold mb-8 text-center">Información de Final Nacional</h2>
             
-            {/* Single grid layout for all levels in 3x2 format with 7th item */}
-            <div className="bg-white rounded-lg shadow-md p-8 border-t-4 border-sky-600">
-              <div className="text-2xl font-bold text-sky-800 mb-8 text-center">
-                Todos los Niveles
+            <div className="grid md:grid-cols-2 gap-10 mb-10">
+              {/* Niveles de Primaria */}
+              <div className="bg-white rounded-lg shadow-md p-6 border-t-4 border-sky-600">
+                <div className="text-xl font-bold text-sky-800 mb-6 text-center">
+                  Niveles<br />de<br />Primaria
+                </div>
+                <div className="grid grid-cols-3 gap-4">
+                  <Link href="/nacional/final/nivel-IA" className="bg-white border-2 border-sky-500 text-sky-700 rounded-lg py-4 px-2 text-center font-medium hover:bg-sky-50 transition-colors">
+                    Nivel<br />IA
+                  </Link>
+                  <Link href="/nacional/final/nivel-IB" className="bg-white border-2 border-sky-500 text-sky-700 rounded-lg py-4 px-2 text-center font-medium hover:bg-sky-50 transition-colors">
+                    Nivel<br />IB
+                  </Link>
+                  <Link href="/nacional/final/nivel-IC" className="bg-white border-2 border-sky-500 text-sky-700 rounded-lg py-4 px-2 text-center font-medium hover:bg-sky-50 transition-colors">
+                    Nivel<br />IC
+                  </Link>
+                </div>
               </div>
-              <div className="grid grid-cols-3 gap-6 max-w-4xl mx-auto">
-                {/* First row - 3 items */}
-                <Link href="/nacional/final/nivel-IA" className="bg-white border-2 border-sky-500 text-sky-700 rounded-lg py-6 px-4 text-center font-medium hover:bg-sky-50 transition-colors shadow-sm">
-                  <div className="text-lg font-semibold">Nivel IA</div>
-                  <div className="text-sm text-gray-600 mt-1">Primaria</div>
-                </Link>
-                <Link href="/nacional/final/nivel-IB" className="bg-white border-2 border-sky-500 text-sky-700 rounded-lg py-6 px-4 text-center font-medium hover:bg-sky-50 transition-colors shadow-sm">
-                  <div className="text-lg font-semibold">Nivel IB</div>
-                  <div className="text-sm text-gray-600 mt-1">Primaria</div>
-                </Link>
-                <Link href="/nacional/final/nivel-IC" className="bg-white border-2 border-sky-500 text-sky-700 rounded-lg py-6 px-4 text-center font-medium hover:bg-sky-50 transition-colors shadow-sm">
-                  <div className="text-lg font-semibold">Nivel IC</div>
-                  <div className="text-sm text-gray-600 mt-1">Primaria</div>
-                </Link>
-                
-                {/* Second row - 3 items */}
-                <Link href="/nacional/final/nivel-II" className="bg-white border-2 border-yellow-500 text-sky-700 rounded-lg py-6 px-4 text-center font-medium hover:bg-yellow-50 transition-colors shadow-sm">
-                  <div className="text-lg font-semibold">Nivel II</div>
-                  <div className="text-sm text-gray-600 mt-1">Secundaria</div>
-                </Link>
-                <Link href="/nacional/final/nivel-III" className="bg-white border-2 border-yellow-500 text-sky-700 rounded-lg py-6 px-4 text-center font-medium hover:bg-yellow-50 transition-colors shadow-sm">
-                  <div className="text-lg font-semibold">Nivel III</div>
-                  <div className="text-sm text-gray-600 mt-1">Secundaria</div>
-                </Link>
-                <Link href="/nacional/final/nivel-IV" className="bg-white border-2 border-yellow-500 text-sky-700 rounded-lg py-6 px-4 text-center font-medium hover:bg-yellow-50 transition-colors shadow-sm">
-                  <div className="text-lg font-semibold">Nivel IV</div>
-                  <div className="text-sm text-gray-600 mt-1">Secundaria</div>
-                </Link>
-                
-                {/* Third row - 1 item centered */}
-                <div className="col-start-2">
-                  <Link href="/nacional/final/nivel-V" className="bg-white border-2 border-yellow-500 text-sky-700 rounded-lg py-6 px-4 text-center font-medium hover:bg-yellow-50 transition-colors shadow-sm block">
-                    <div className="text-lg font-semibold">Nivel V</div>
-                    <div className="text-sm text-gray-600 mt-1">Secundaria</div>
+
+              {/* Niveles de Secundaria */}
+              <div className="bg-white rounded-lg shadow-md p-6 border-t-4 border-yellow-500">
+                <div className="text-xl font-bold text-sky-800 mb-6 text-center">
+                  Niveles<br />de<br />Secundaria
+                </div>
+                <div className="grid grid-cols-2 gap-4">
+                  <Link href="/nacional/final/nivel-II" className="bg-white border-2 border-yellow-500 text-sky-700 rounded-lg py-4 px-2 text-center font-medium hover:bg-yellow-50 transition-colors">
+                    Nivel<br />II
+                  </Link>
+                  <Link href="/nacional/final/nivel-III" className="bg-white border-2 border-yellow-500 text-sky-700 rounded-lg py-4 px-2 text-center font-medium hover:bg-yellow-50 transition-colors">
+                    Nivel<br />III
+                  </Link>
+                  <Link href="/nacional/final/nivel-IV" className="bg-white border-2 border-yellow-500 text-sky-700 rounded-lg py-4 px-2 text-center font-medium hover:bg-yellow-50 transition-colors">
+                    Nivel<br />IV
+                  </Link>
+                  <Link href="/nacional/final/nivel-V" className="bg-white border-2 border-yellow-500 text-sky-700 rounded-lg py-4 px-2 text-center font-medium hover:bg-yellow-50 transition-colors">
+                    Nivel<br />V
                   </Link>
                 </div>
               </div>

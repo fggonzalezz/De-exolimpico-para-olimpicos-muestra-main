@@ -162,11 +162,6 @@ const NIVELES_DATA: Record<string, NivelProblemas> = {
     descripcion: 'Problemas de la etapa final para estudiantes de secundaria',
     problemas: [
       {
-        key: "nivel-II-final-2011",
-        title: "Nivel II 2011",
-        pdf: "https://drive.google.com/file/d/1I6t69Z4tHG8QjD_tKOM1jAnBUayNIvcM/view"
-      },
-      {
         key: "nivel-II-final-2017",
         title: "Nivel II 2017",
         pdf: "https://drive.google.com/file/d/1OnUR5n8hinEH521tN0xQMnu3tHFMlhzm/view"
@@ -190,6 +185,11 @@ const NIVELES_DATA: Record<string, NivelProblemas> = {
         key: "nivel-II-final-2012",
         title: "Nivel II 2012",
         pdf: "https://drive.google.com/file/d/1OLuf2xZV-vc_pN22u2lhDxc1ecAtKP9o/view"
+      },
+      {
+        key: "nivel-II-final-2011",
+        title: "Nivel II 2011",
+        pdf: "https://drive.google.com/file/d/1I6t69Z4tHG8QjD_tKOM1jAnBUayNIvcM/view"
       }
     ]
   },
