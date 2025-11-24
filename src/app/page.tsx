@@ -1,17 +1,64 @@
-"use client"
 import Image from 'next/image';
 import Link from 'next/link';
+import Script from 'next/script';
 import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
 import { Card, CardContent } from '@/components/ui/card';
 import CompetitionsTable from '@/components/competitions/CompetitionsTable';
 import { nextSixCompetitions } from '@/data/competitions';
 import React from 'react';
+import { buildStaticPageMetadata, createEventItemListJsonLd, createFaqJsonLd, SITE_URL } from '@/lib/seo';
+
+export const metadata = buildStaticPageMetadata('/');
 
 export default function Home() {
+  const faqItems = [
+    {
+      question: '¿Cómo empiezo a participar en la Olimpiada Nacional?',
+      answer:
+        'Contacta a la organización o a tu centro educativo para inscribirte en la próxima instancia y recibir los materiales de práctica.',
+    },
+    {
+      question: '¿Qué materiales recomiendan para entrenar cada nivel?',
+      answer:
+        'En la sección Material de Estudio encontrarás libros, videos y guías clasificados por nivel para primaria y secundaria.',
+    },
+    {
+      question: '¿Dónde consulto el calendario completo de competencias 2025?',
+      answer:
+        'El calendario actualizado con fechas y sedes está disponible en la página Calendario 2025 y se actualiza semanalmente.',
+    },
+  ];
+
+  const eventItems = nextSixCompetitions
+    .filter((competition) => competition.targetDate instanceof Date)
+    .map((competition) => ({
+      name: competition.event,
+      startDate: competition.targetDate!.toISOString(),
+      location: 'Uruguay',
+      description: competition.date,
+      url: competition.id ? `${SITE_URL}/calendario-2025#${competition.id}` : `${SITE_URL}/calendario-2025`,
+    }));
+
+  const eventsJsonLd = eventItems.length ? createEventItemListJsonLd(eventItems) : null;
+  const faqJsonLd = createFaqJsonLd(faqItems);
   
   return (
     <div className="flex min-h-screen flex-col">
+      {eventsJsonLd ? (
+        <Script
+          id="home-events-jsonld"
+          type="application/ld+json"
+          strategy="afterInteractive"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(eventsJsonLd) }}
+        />
+      ) : null}
+      <Script
+        id="home-faq-jsonld"
+        type="application/ld+json"
+        strategy="afterInteractive"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
+      />
       <Header />
 
       <main className="flex-1">
@@ -25,6 +72,7 @@ export default function Home() {
               fill
               className="object-cover object-center"
               priority
+              sizes="100vw"
             />
             {/* Mobile Gradient: Fade to blue at bottom */}
             <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-transparent to-sky-900 md:hidden"></div>
@@ -115,6 +163,7 @@ export default function Home() {
                     width={600}
                     height={400}
                     className="object-cover w-full h-64 md:h-80"
+                    sizes="(max-width: 768px) 100vw, 50vw"
                   />
                   <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-4">
                     <p className="text-white text-sm font-medium">
@@ -129,6 +178,7 @@ export default function Home() {
                     width={600}
                     height={400}
                     className="object-cover w-full h-64 md:h-80"
+                    sizes="(max-width: 768px) 100vw, 50vw"
                   />
                   <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-4">
                     <p className="text-white text-sm font-medium">
@@ -280,6 +330,27 @@ export default function Home() {
                     </div>
                   </div>
                 </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* FAQ Section */}
+        <section className="py-12 bg-white">
+          <div className="container mx-auto px-4">
+            <div className="max-w-5xl mx-auto">
+              <h2 className="text-2xl md:text-3xl font-inter font-semibold text-center mb-8">
+                Preguntas frecuentes
+              </h2>
+              <div className="grid gap-6 md:grid-cols-3">
+                {faqItems.map((faq) => (
+                  <article key={faq.question} className="bg-sky-50 border border-sky-100 rounded-xl p-6 shadow-sm">
+                    <h3 className="text-lg font-semibold text-sky-700 mb-3">{faq.question}</h3>
+                    <p className="text-sm text-gray-700 leading-relaxed">
+                      {faq.answer}
+                    </p>
+                  </article>
+                ))}
               </div>
             </div>
           </div>

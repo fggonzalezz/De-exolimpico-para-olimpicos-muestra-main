@@ -4,6 +4,9 @@ import React from 'react';
 import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
 import Image from 'next/image';
+import { buildNationalYearMetadata } from '@/lib/seo';
+
+export const metadata = buildNationalYearMetadata('2020');
 
 export default function Page2020() {
   return (

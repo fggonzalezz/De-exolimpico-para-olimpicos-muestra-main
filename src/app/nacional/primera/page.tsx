@@ -1,8 +1,9 @@
-'use client';
-
 import React from 'react';
 import Header from '@/components/layout/Header';
 import Link from 'next/link';
+import { buildStaticPageMetadata } from '@/lib/seo';
+
+export const metadata = buildStaticPageMetadata('/nacional/primera');
 
 export default function PrimeraInstanciaPage() {
   return (

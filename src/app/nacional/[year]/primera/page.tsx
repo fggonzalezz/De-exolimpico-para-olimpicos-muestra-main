@@ -5,6 +5,7 @@ import Image from 'next/image';
 import GoogleDrivePDFViewer from '@/components/GoogleDrivePDFViewer';
 import dynamic from "next/dynamic";
 import ClientPDFSection from './ClientPDFSection';
+import { NATIONAL_YEARS, buildNationalYearStageMetadata } from '@/lib/seo';
 
 interface Nivel {
   key: string;
@@ -58,8 +59,14 @@ const DATA: Record<string, { primera: Nivel[]; segunda: Nivel[] }> = {
   },
 };
 
-export default async function PrimeraInstanciaPage({ params }: { params: Promise<Params> }) {
-  const { year } = await params;
+type PrimeraPageProps = { params: Params };
+
+export function generateMetadata({ params }: PrimeraPageProps) {
+  return buildNationalYearStageMetadata(params.year, 'primera');
+}
+
+export default function PrimeraInstanciaPage({ params }: PrimeraPageProps) {
+  const { year } = params;
   const niveles: Nivel[] = DATA[year]?.primera || [];
   return (
     <div className="flex min-h-screen flex-col">
@@ -76,10 +83,5 @@ export default async function PrimeraInstanciaPage({ params }: { params: Promise
 }
 
 export async function generateStaticParams() {
-  return [
-    { year: '2021' },
-    { year: '2020' },
-    { year: '2019' },
-    { year: 'anteriores' },
-  ];
+  return NATIONAL_YEARS.map((year) => ({ year }));
 } 

@@ -4,18 +4,19 @@ import { Analytics } from '@vercel/analytics/next';
 import { SpeedInsights } from '@vercel/speed-insights/next';
 import { Inter, Montserrat, Roboto, Oswald } from "next/font/google";
 import StagewiseDevToolbar from "@/components/StagewiseDevToolbar";
+import { BRAND_NAME, BRAND_SHORT, SITE_URL, defaultKeywords } from "@/lib/seo";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter", display: 'swap' });
 const montserrat = Montserrat({ subsets: ["latin"], variable: "--font-montserrat", display: 'swap' });
 const roboto = Roboto({ subsets: ["latin"], variable: "--font-roboto", weight: ["300", "400", "500", "700"], display: 'swap' });
 const oswald = Oswald({ subsets: ["latin"], variable: "--font-oswald", display: 'swap' });
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://exolimpicos-lacompartida.com";
+const siteUrl = SITE_URL;
 
 const organizationJsonLd = {
   "@context": "https://schema.org",
   "@type": "EducationalOrganization",
-  name: "Com-Partida de Matemática del Uruguay",
+  name: BRAND_NAME,
   alternateName: ["De Exolímpicos para Olímpicos", "Olimpiada Matemática Uruguay", "Compartida Matemática Uruguay"],
   description: "Organización educativa dedicada a las olimpiadas matemáticas en Uruguay. Ofrece material de estudio, entrenamiento y preparación para competencias nacionales e internacionales desde 1992.",
   url: siteUrl,
@@ -46,7 +47,7 @@ const organizationJsonLd = {
 const websiteJsonLd = {
   "@context": "https://schema.org",
   "@type": "WebSite",
-  name: "Olimpiada Matemática Uruguay | Com-Partida de Matemática",
+  name: `${BRAND_SHORT} | Com-Partida de Matemática`,
   url: siteUrl,
   description: "Portal oficial de la Com-Partida de Matemática del Uruguay con material de estudio, recursos y preparación para olimpiadas matemáticas",
   inLanguage: "es-UY",
@@ -67,33 +68,13 @@ export const metadata: Metadata = {
     template: "%s | Olimpiada Matemática Uruguay"
   },
   description: "Com-Partida de Matemática del Uruguay: recursos y entrenamiento para olimpiadas matemáticas. Preparación para IMO, Cono Sur y Nacional desde 1992.",
-  keywords: [
-    "olimpiada matemática uruguay",
-    "compartida matemática",
-    "compartida matemática uruguay",
-    "olimpiadas matemáticas uruguay",
-    "material olimpiada matemática",
-    "olimpiada nacional matemática uruguay",
-    "preparación olimpiadas matemáticas",
-    "IMO uruguay",
-    "olimpiada iberoamericana matemática",
-    "olimpiada cono sur matemática",
-    "com-partida matemática",
-    "exolimpicos para olimpicos",
-    "entrenamiento olimpiadas matemáticas",
-    "problemas olimpiadas matemáticas uruguay",
-    "recursos matemática uruguay",
-    "competencias matemáticas uruguay",
-    "olimpiada matemática nacional",
-    "selectivos olimpiadas matemáticas",
-    "material estudio matemática olimpiada"
-  ],
+  keywords: defaultKeywords,
   openGraph: {
     type: "website",
     url: siteUrl,
-    title: "Olimpiada Matemática Uruguay | Com-Partida de Matemática",
+    title: `${BRAND_SHORT} | Com-Partida de Matemática`,
     description: "Material de estudio, entrenamiento y recursos para olimpiadas matemáticas en Uruguay. Com-Partida de Matemática - preparación IMO, Iberoamericana y Cono Sur.",
-    siteName: "Olimpiada Matemática Uruguay - Com-Partida",
+    siteName: BRAND_SHORT,
     locale: "es_UY",
     images: [
       {
@@ -111,15 +92,12 @@ export const metadata: Metadata = {
     site: "@olim_mat_uy",
     creator: "@olim_mat_uy"
   },
-  alternates: {
-    canonical: siteUrl
-  },
   icons: {
-    icon: "/favicon.ico",
-    apple: "/apple-touch-icon.png"
+    icon: "/images/CPM.png",
+    apple: "/images/CPM.png"
   },
   authors: [
-    { name: "Com-Partida de Matemática del Uruguay" }
+    { name: BRAND_NAME }
   ],
   category: "Education",
   classification: "Mathematics Education, Math Olympiads Uruguay"

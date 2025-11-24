@@ -1,38 +1,53 @@
 import type { MetadataRoute } from "next";
-
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://exolimpicos-lacompartida.com";
+import {
+  NATIONAL_LEVELS,
+  NATIONAL_YEARS,
+  buildSitemapEntries,
+  canonicalUrl,
+} from "@/lib/seo";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const routes = [
-    "",
-    "/sobre-nosotros",
-    "/mascota",
-    "/calendario-2025",
-    "/proximas-competencias",
-    "/equipos-2025",
-    "/equipo-imo-2025",
-    "/equipo-conosur-2025",
-    "/resultados-olimpiadas",
-    "/como-son-los-selectivos",
-    "/libro-nacional-2018-2019",
-    "/material-de-estudio",
-    "/nacional",
-    "/nacional/2021",
-    "/nacional/2020",
-    "/nacional/2019",
-    "/nacional/anteriores",
-    "/nacional/primera",
-    "/nacional/final",
-    "/paginas-recomendadas",
-    "/seminarios-exolimpicos",
-    "/online",
-    "/contacto"
-  ];
+  const staticEntries = buildSitemapEntries();
 
-  return routes.map((route) => ({
-    url: `${siteUrl}${route}`,
-    lastModified: new Date(),
-    changeFrequency: route === "" ? 'weekly' : 'monthly',
-    priority: route === "" ? 1.0 : 0.8,
-  }));
+  const yearEntries: MetadataRoute.Sitemap = NATIONAL_YEARS.flatMap((year) => {
+    const baseDate = new Date();
+    return [
+      {
+        url: canonicalUrl(`/nacional/${year}`),
+        lastModified: baseDate,
+        changeFrequency: "yearly" as const,
+        priority: 0.75,
+      },
+      {
+        url: canonicalUrl(`/nacional/${year}/primera`),
+        lastModified: baseDate,
+        changeFrequency: "yearly" as const,
+        priority: 0.7,
+      },
+      {
+        url: canonicalUrl(`/nacional/${year}/segunda`),
+        lastModified: baseDate,
+        changeFrequency: "yearly" as const,
+        priority: 0.65,
+      },
+    ];
+  });
+
+  const levelEntries: MetadataRoute.Sitemap = ["primera", "final"].flatMap((stage) =>
+    NATIONAL_LEVELS.map((level) => ({
+      url: canonicalUrl(`/nacional/${stage}/${level}`),
+      lastModified: new Date(),
+      changeFrequency: "yearly" as const,
+      priority: 0.6,
+    }))
+  );
+
+  const combined = [...staticEntries, ...yearEntries, ...levelEntries];
+  const uniqueMap = new Map<string, MetadataRoute.Sitemap[number]>();
+
+  combined.forEach((entry) => {
+    uniqueMap.set(entry.url, entry);
+  });
+
+  return Array.from(uniqueMap.values());
 }

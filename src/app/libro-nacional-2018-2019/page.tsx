@@ -4,6 +4,9 @@ import Footer from '@/components/layout/Footer';
 import { Card, CardContent } from '@/components/ui/card';
 import Link from 'next/link';
 import InstagramEmbed from '@/components/InstagramEmbed';
+import { buildStaticPageMetadata } from '@/lib/seo';
+
+export const metadata = buildStaticPageMetadata('/libro-nacional-2018-2019');
 
 export default function LibroNacionalPage() {
   return (

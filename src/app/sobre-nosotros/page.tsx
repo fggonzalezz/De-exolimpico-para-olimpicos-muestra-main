@@ -1,24 +1,11 @@
 import React from 'react';
-import type { Metadata } from 'next';
 import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
 import Image from 'next/image';
 import Link from 'next/link';
+import { buildStaticPageMetadata } from '@/lib/seo';
 
-export const metadata: Metadata = {
-  title: 'Sobre Nosotros | Com-Partida de Matemática del Uruguay',
-  description: 'Com-Partida de Matemática del Uruguay: organización educativa dedicada a olimpiadas matemáticas desde 1992. Conoce nuestra historia, misión y valores en la promoción del talento matemático uruguayo.',
-  keywords: [
-    'compartida matemática uruguay',
-    'com-partida matemática',
-    'olimpiada matemática uruguay historia',
-    'organización matemática uruguay',
-    'olimpiadas matemáticas uruguay equipo'
-  ],
-  alternates: {
-    canonical: '/sobre-nosotros'
-  }
-};
+export const metadata = buildStaticPageMetadata('/sobre-nosotros');
 
 export default function AboutPage() {
   return (

@@ -5,6 +5,9 @@ import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
 import Image from 'next/image';
 import { ChevronLeft, ChevronRight, X, ZoomIn } from 'lucide-react';
+import { buildStaticPageMetadata } from '@/lib/seo';
+
+export const metadata = buildStaticPageMetadata('/mascota');
 
 interface MascotaCardProps {
   imageSrc: string;

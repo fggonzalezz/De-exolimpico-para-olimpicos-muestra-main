@@ -4,6 +4,9 @@ import React from 'react';
 import Header from '@/components/layout/Header';
 import GoogleDrivePDFViewer from "@/components/GoogleDrivePDFViewer";
 import { NIVELES_FINAL } from '../nivelesData';
+import { buildNationalLevelMetadata } from '@/lib/seo';
+
+export const metadata = buildNationalLevelMetadata('final', 'nivel-III');
 
 export default function NivelIIIFinalPage() {
   const nivelData = NIVELES_FINAL['III'];

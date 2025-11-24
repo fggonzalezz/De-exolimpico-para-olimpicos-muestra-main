@@ -2,6 +2,9 @@ import React from 'react';
 import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
 import Link from 'next/link';
+import { buildStaticPageMetadata } from '@/lib/seo';
+
+export const metadata = buildStaticPageMetadata('/paginas-recomendadas');
 
 export default function PaginasRecomendadasPage() {
   return (

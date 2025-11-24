@@ -4,6 +4,9 @@ import Footer from '@/components/layout/Footer';
 import { Card, CardContent } from '@/components/ui/card';
 import Link from 'next/link';
 import Image from 'next/image';
+import { buildStaticPageMetadata } from '@/lib/seo';
+
+export const metadata = buildStaticPageMetadata('/equipo-imo-2025');
 
 export default function IMOTeamPage() {
   // Team members data

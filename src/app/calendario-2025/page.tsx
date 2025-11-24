@@ -1,4 +1,3 @@
-"use client"
 import React from 'react';
 import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
@@ -6,6 +5,9 @@ import { Button } from '@/components/ui/button';
 import CompetitionsTable from '@/components/competitions/CompetitionsTable';
 import { allCompetitions } from '@/data/competitions';
 import Link from 'next/link';
+import { buildStaticPageMetadata } from '@/lib/seo';
+
+export const metadata = buildStaticPageMetadata('/calendario-2025');
 
 export default function CalendarPage() {
 

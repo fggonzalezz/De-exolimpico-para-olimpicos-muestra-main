@@ -2,6 +2,9 @@
 
 import Header from '@/components/layout/Header';
 import Image from 'next/image';
+import { buildNationalYearMetadata } from '@/lib/seo';
+
+export const metadata = buildNationalYearMetadata('2019');
 
 export default function Page2019() {
   return (

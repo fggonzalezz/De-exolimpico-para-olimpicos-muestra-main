@@ -3,6 +3,7 @@ import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
 import Image from 'next/image';
 import Link from 'next/link';
+import { NATIONAL_YEARS, buildNationalYearMetadata } from '@/lib/seo';
 
 const assets = {
   '2021': {
@@ -24,8 +25,16 @@ const assets = {
 };
 const TEACHER_ICON = 'https://ext.same-assets.com/4168015766/3169824431.png';
 
-export default async function YearPage({ params }) {
-  const year = params.year;
+type YearPageProps = {
+  params: { year: string };
+};
+
+export function generateMetadata({ params }: YearPageProps) {
+  return buildNationalYearMetadata(params.year);
+}
+
+export default function YearPage({ params }: YearPageProps) {
+  const { year } = params;
   const asset = assets[year] || assets['2021'];
   return (
     <div className="flex min-h-screen flex-col">
@@ -75,9 +84,5 @@ export default async function YearPage({ params }) {
 }
 
 export async function generateStaticParams() {
-  return [
-    { year: '2021' },
-    { year: '2020' },
-    { year: '2019' },
-  ];
+  return NATIONAL_YEARS.map((year) => ({ year }));
 } 

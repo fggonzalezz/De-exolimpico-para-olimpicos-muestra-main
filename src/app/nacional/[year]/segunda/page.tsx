@@ -2,6 +2,7 @@ import React from 'react';
 import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
 import ClientPDFSection from './ClientPDFSection';
+import { NATIONAL_YEARS, buildNationalYearStageMetadata } from '@/lib/seo';
 
 interface Nivel {
   key: string;
@@ -32,8 +33,14 @@ const DATA: Record<string, Nivel[]> = {
   'anteriores': [], // TODO: Add anteriores data
 };
 
-export default async function SegundaInstanciaPage({ params }: { params: Promise<Params> }) {
-  const { year } = await params;
+type SegundaPageProps = { params: Params };
+
+export function generateMetadata({ params }: SegundaPageProps) {
+  return buildNationalYearStageMetadata(params.year, 'segunda');
+}
+
+export default function SegundaInstanciaPage({ params }: SegundaPageProps) {
+  const { year } = params;
   const niveles = DATA[year] || [];
 
   return (
@@ -57,10 +64,5 @@ export default async function SegundaInstanciaPage({ params }: { params: Promise
 }
 
 export async function generateStaticParams() {
-  return [
-    { year: '2021' },
-    { year: '2020' },
-    { year: '2019' },
-    { year: 'anteriores' },
-  ];
+  return NATIONAL_YEARS.map((year) => ({ year }));
 } 

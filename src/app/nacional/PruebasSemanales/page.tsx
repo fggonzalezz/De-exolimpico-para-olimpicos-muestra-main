@@ -4,6 +4,9 @@ import React, { useState, useEffect } from 'react';
 import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
 import Image from 'next/image';
+import { buildStaticPageMetadata } from '@/lib/seo';
+
+export const metadata = buildStaticPageMetadata('/nacional/PruebasSemanales');
 
 const ProblemasSemanales = () => {
   const [isLoaded, setIsLoaded] = useState(false);

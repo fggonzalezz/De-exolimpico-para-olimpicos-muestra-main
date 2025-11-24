@@ -3,6 +3,9 @@ import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
 import Image from 'next/image';
 import Link from 'next/link';
+import { buildNationalYearMetadata } from '@/lib/seo';
+
+export const metadata = buildNationalYearMetadata('anteriores');
 
 const TEACHER_ICON = 'https://ext.same-assets.com/4168015766/3169824431.png';
 const YEARS_ANTERIORES_IMG = 'https://ext.same-assets.com/1728315765/2391142948.png';

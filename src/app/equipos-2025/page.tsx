@@ -3,6 +3,9 @@ import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
 import { Card, CardContent } from '@/components/ui/card';
 import Link from 'next/link';
+import { buildStaticPageMetadata } from '@/lib/seo';
+
+export const metadata = buildStaticPageMetadata('/equipos-2025');
 
 export default function ResultadosPage() {
   // Results data for past competitions (2024-2025)

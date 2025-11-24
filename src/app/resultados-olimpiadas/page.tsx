@@ -1,9 +1,9 @@
 import React from 'react';
-import type { Metadata } from 'next';
 import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
 import { Card, CardContent } from '@/components/ui/card';
 import Link from 'next/link';
+import { buildStaticPageMetadata } from '@/lib/seo';
 
 export default function ResultadosPage() {
   // Recent results data for past competitions (2024-2025)
@@ -332,23 +332,4 @@ export default function ResultadosPage() {
   );
 }
 
-export const metadata: Metadata = {
-  title: 'Resultados de Olimpiadas Internacionales | Uruguay',
-  description:
-    'Resultados recientes de los equipos uruguayos en competencias matemáticas internacionales como IMO, Iberoamericana y Cono Sur (2024-2025).',
-  keywords: ['Uruguay', 'Olimpíada de Matemática', 'IMO', 'Iberoamericana', 'Cono Sur', 'resultados', 'olimpiadas'],
-  alternates: { canonical: '/resultados-olimpiadas' },
-  openGraph: {
-    title: 'Resultados de Olimpiadas Internacionales | Uruguay',
-    description:
-      'Resultados de Uruguay en IMO, Iberoamericana y Cono Sur. Medallas y menciones honoríficas de 2024 y 2025.',
-    url: '/resultados-olimpiadas',
-    siteName: 'De Exolímpicos para Olímpicos',
-    locale: 'es_UY',
-    type: 'website',
-  },
-  robots: {
-    index: true,
-    follow: true,
-  },
-};
+export const metadata = buildStaticPageMetadata('/resultados-olimpiadas');

@@ -1,9 +1,11 @@
-"use client"
 import React from 'react';
 import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
 import { Card, CardContent } from '@/components/ui/card';
 import Image from 'next/image';
+import { buildStaticPageMetadata } from '@/lib/seo';
+
+export const metadata = buildStaticPageMetadata('/equipo-conosur-2025');
 
 // Datos del equipo
 const teamMembers = [

@@ -4,6 +4,9 @@ import React, { useState } from 'react';
 import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
 import { Card, CardContent } from '@/components/ui/card';
+import { buildStaticPageMetadata } from '@/lib/seo';
+
+export const metadata = buildStaticPageMetadata('/contacto');
 
 export default function ContactPage() {
   const [isSubmitting, setIsSubmitting] = useState(false);

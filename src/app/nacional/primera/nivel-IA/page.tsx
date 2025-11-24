@@ -4,6 +4,9 @@ import React from 'react';
 import Header from '@/components/layout/Header';
 import GoogleDrivePDFViewer from "@/components/GoogleDrivePDFViewer";
 import { NIVELES_PRIMERA } from '../nivelesData';
+import { buildNationalLevelMetadata } from '@/lib/seo';
+
+export const metadata = buildNationalLevelMetadata('primera', 'nivel-IA');
 
 export default function NivelIAPage() {
   const nivelData = NIVELES_PRIMERA['IA'];
