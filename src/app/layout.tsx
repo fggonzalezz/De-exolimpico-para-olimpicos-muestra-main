@@ -66,7 +66,7 @@ export const metadata: Metadata = {
     default: "Olimpiada Matemática Uruguay | Com-Partida de Matemática",
     template: "%s | Olimpiada Matemática Uruguay"
   },
-  description: "Com-Partida de Matemática del Uruguay: material de estudio, entrenamiento y recursos para olimpiadas matemáticas. Preparación IMO, Iberoamericana, Cono Sur y olimpiada nacional uruguaya desde 1992.",
+  description: "Com-Partida de Matemática del Uruguay: recursos y entrenamiento para olimpiadas matemáticas. Preparación para IMO, Cono Sur y Nacional desde 1992.",
   keywords: [
     "olimpiada matemática uruguay",
     "compartida matemática",
