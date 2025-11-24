@@ -29,7 +29,7 @@ const nextConfig = {
               "img-src 'self' data: blob: https: http:",
               "font-src 'self' https://fonts.gstatic.com",
               "connect-src 'self' https://va.vercel-scripts.com https://vitals.vercel-insights.com https://www.instagram.com https://graph.instagram.com",
-              "frame-src 'self' https://www.instagram.com https://drive.google.com https://docs.google.com",
+              "frame-src 'self' https://www.instagram.com https://drive.google.com https://docs.google.com https://www.youtube.com https://youtube.com",
               "media-src 'self' https:",
               "object-src 'none'",
               "base-uri 'self'",

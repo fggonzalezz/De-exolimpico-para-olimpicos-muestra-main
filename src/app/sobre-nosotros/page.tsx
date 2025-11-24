@@ -26,26 +26,6 @@ const aboutPageJsonLd = {
   }
 };
 
-// JSON-LD Schema para Breadcrumbs
-const breadcrumbJsonLd = {
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  itemListElement: [
-    {
-      "@type": "ListItem",
-      position: 1,
-      name: "Inicio",
-      item: SITE_URL
-    },
-    {
-      "@type": "ListItem",
-      position: 2,
-      name: "Sobre Nosotros",
-      item: `${SITE_URL}/sobre-nosotros`
-    }
-  ]
-};
-
 export default function AboutPage() {
   return (
     <div className="flex min-h-screen flex-col">
@@ -53,36 +33,9 @@ export default function AboutPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(aboutPageJsonLd) }}
       />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
-      />
       <Header />
 
       <main id="main-content" className="flex-1">
-        {/* Breadcrumb Navigation */}
-        <nav aria-label="Breadcrumb" className="bg-gray-100 py-3">
-          <div className="container mx-auto px-4">
-            <ol className="flex items-center space-x-2 text-sm text-gray-600">
-              <li>
-                <Link href="/" className="hover:text-sky-600 transition-colors focus:outline-none focus:ring-2 focus:ring-sky-500 focus:ring-offset-2 rounded">
-                  Inicio
-                </Link>
-              </li>
-              <li aria-hidden="true">
-                <svg className="h-4 w-4 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                </svg>
-              </li>
-              <li>
-                <span aria-current="page" className="text-sky-700 font-medium">
-                  Sobre Nosotros
-                </span>
-              </li>
-            </ol>
-          </div>
-        </nav>
-
         {/* Hero section */}
         <section aria-labelledby="hero-title" className="bg-sky-700 py-12 text-white">
           <div className="container mx-auto px-4">
