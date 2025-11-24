@@ -50,6 +50,7 @@ const GoogleDrivePDFViewer: React.FC<GoogleDrivePDFViewerProps> = ({
 }) => {
   const [isLoading, setIsLoading] = useState(true);
   const [hasError, setHasError] = useState(false);
+  const [useAlternativeViewer, setUseAlternativeViewer] = useState(false);
 
   // Memoizar la validación de URL
   const isValidUrl = useMemo(() => validateGoogleDriveUrl(pdfUrl), [pdfUrl]);
@@ -59,18 +60,32 @@ const GoogleDrivePDFViewer: React.FC<GoogleDrivePDFViewerProps> = ({
     return isValidUrl ? extractIdFromUrl(pdfUrl) : null;
   }, [pdfUrl, isValidUrl]);
 
-  // URL de embed segura con validación
+  // URL de embed - primero intenta preview directo, luego Google Docs Viewer como fallback
   const embedUrl = useMemo(() => {
     if (!fileId) return null;
+    
+    if (useAlternativeViewer) {
+      // Google Docs Viewer como fallback - funciona mejor con archivos que requieren auth
+      const exportUrl = `https://drive.google.com/uc?export=download&id=${fileId}`;
+      return `https://docs.google.com/viewer?url=${encodeURIComponent(exportUrl)}&embedded=true`;
+    }
+    
+    // URL de preview directo de Google Drive
     return `https://drive.google.com/file/d/${fileId}/preview`;
-  }, [fileId]);
+  }, [fileId, useAlternativeViewer]);
 
   // Callback para manejo de errores del iframe
   const handleIframeError = useCallback(() => {
-    setHasError(true);
-    setIsLoading(false);
-    onError?.("Error al cargar el PDF desde Google Drive");
-  }, [onError]);
+    if (!useAlternativeViewer) {
+      // Intentar con el visor alternativo antes de mostrar error
+      setUseAlternativeViewer(true);
+      setIsLoading(true);
+    } else {
+      setHasError(true);
+      setIsLoading(false);
+      onError?.("Error al cargar el PDF desde Google Drive");
+    }
+  }, [onError, useAlternativeViewer]);
 
   // Callback para cuando el iframe se carga exitosamente
   const handleIframeLoad = useCallback(() => {
@@ -83,23 +98,31 @@ const GoogleDrivePDFViewer: React.FC<GoogleDrivePDFViewerProps> = ({
     if (pdfUrl) {
       setIsLoading(true);
       setHasError(false);
+      setUseAlternativeViewer(false);
     }
   }, [pdfUrl]);
 
-  // Validación temprana
+  // Validación temprana - mostrar enlace directo si no hay URL válida
   if (!isValidUrl || !fileId || !embedUrl) {
     return (
-      <div className="w-full flex flex-col items-center p-4 border border-red-200 rounded-lg bg-red-50">
-        <p className="text-red-600 text-center mb-2">
-          URL de Google Drive inválida.
+      <div className="w-full flex flex-col items-center p-4 border border-amber-200 rounded-lg bg-amber-50">
+        <p className="text-amber-700 text-center mb-4">
+          No se pudo cargar la vista previa del PDF.
         </p>
-        <p className="text-red-500 text-sm text-center">
-          URL recibida: {pdfUrl}
-        </p>
-        <p className="text-red-500 text-sm text-center mt-2">
-          Por favor, verifica que la URL sea de Google Drive en formato
-          correcto.
-        </p>
+        <a
+          href={pdfUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-flex items-center gap-2 bg-blue-600 text-white font-semibold py-2 px-6 rounded-full hover:bg-blue-700 transition-colors"
+          aria-label={`Abrir PDF "${title}" en una nueva pestaña`}
+        >
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+            <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
+            <polyline points="15 3 21 3 21 9" />
+            <line x1="10" y1="14" x2="21" y2="3" />
+          </svg>
+          Abrir PDF en Google Drive
+        </a>
       </div>
     );
   }
@@ -114,10 +137,15 @@ const GoogleDrivePDFViewer: React.FC<GoogleDrivePDFViewerProps> = ({
           href={pdfUrl}
           target="_blank"
           rel="noopener noreferrer"
-          className="text-blue-600 underline hover:text-blue-800 transition-colors"
+          className="inline-flex items-center gap-2 bg-blue-600 text-white font-semibold py-2 px-6 rounded-full hover:bg-blue-700 transition-colors"
           aria-label={`Abrir PDF "${title}" en una nueva pestaña`}
         >
-          Abrir PDF en nueva pestaña
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+            <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
+            <polyline points="15 3 21 3 21 9" />
+            <line x1="10" y1="14" x2="21" y2="3" />
+          </svg>
+          Abrir PDF en Google Drive
         </a>
       </div>
     );
@@ -141,14 +169,8 @@ const GoogleDrivePDFViewer: React.FC<GoogleDrivePDFViewerProps> = ({
         loading="lazy"
         onLoad={handleIframeLoad}
         onError={handleIframeError}
-        // Configuración de seguridad para Google Drive
-        // Google Drive requiere allow-scripts, allow-same-origin, allow-popups, 
-        // allow-popups-to-escape-sandbox y allow-presentation para funcionar correctamente
-        sandbox="allow-scripts allow-same-origin allow-popups allow-popups-to-escape-sandbox allow-forms allow-presentation"
-        // Políticas de permisos para funcionalidad completa de Google Drive
-        allow="fullscreen"
-        // Prevenir ciertos comportamientos
-        referrerPolicy="strict-origin-when-cross-origin"
+        allow="autoplay; fullscreen"
+        referrerPolicy="no-referrer-when-downgrade"
         title={title}
         aria-label={`Vista previa del PDF: ${title}`}
         style={{
@@ -165,9 +187,14 @@ const GoogleDrivePDFViewer: React.FC<GoogleDrivePDFViewerProps> = ({
         href={pdfUrl}
         target="_blank"
         rel="noopener noreferrer"
-        className="text-blue-600 underline hover:text-blue-800 mb-6 text-lg transition-colors focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 rounded"
+        className="inline-flex items-center gap-2 text-blue-600 hover:text-blue-800 mb-6 text-lg transition-colors focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 rounded"
         aria-label={`Abrir PDF "${title}" en una nueva pestaña`}
       >
+        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+          <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
+          <polyline points="15 3 21 3 21 9" />
+          <line x1="10" y1="14" x2="21" y2="3" />
+        </svg>
         Abrir PDF en nueva pestaña
       </a>
     </div>
