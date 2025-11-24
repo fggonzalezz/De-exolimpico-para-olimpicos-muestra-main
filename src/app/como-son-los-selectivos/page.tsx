@@ -199,6 +199,38 @@ export default function SelectivosPage() {
               </CardContent>
             </Card>
 
+            {/* Condiciones de Participación */}
+            <Card className="mb-8 border-t-4 border-red-500 shadow-lg">
+              <CardContent className="p-8">
+                <h2 className="text-2xl font-bold text-red-700 mb-4 flex items-center">
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-7 w-7 mr-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
+                  </svg>
+                  Condiciones de Participación
+                </h2>
+                <p className="text-gray-700 mb-4">
+                  Para participar en los selectivos, existen ciertas condiciones y requisitos que deben cumplirse. 
+                  Estas normativas son establecidas y publicadas oficialmente por la Com-Partida de Matemática del Uruguay.
+                </p>
+                <div className="bg-red-50 p-4 rounded-lg border border-red-200 flex flex-col sm:flex-row items-center justify-between gap-4">
+                  <p className="text-red-800 font-medium">
+                    Te recomendamos consultar los requisitos en el sitio oficial.
+                  </p>
+                  <a 
+                    href="https://com-partidauruguay.weebly.com/" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center px-4 py-2 bg-red-600 text-white rounded-lg hover:bg-red-700 transition-colors font-bold whitespace-nowrap"
+                  >
+                    Ir al Sitio Oficial
+                    <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                    </svg>
+                  </a>
+                </div>
+              </CardContent>
+            </Card>
+
             {/* Calendario Info */}
             <div className="bg-gradient-to-r from-sky-50 to-blue-50 p-8 rounded-lg shadow-sm border border-sky-200">
               <div className="flex flex-col md:flex-row items-center gap-6">

@@ -112,7 +112,7 @@ export default function PaginasRecomendadasPage() {
                       </Link>
                     </div>
                     <p className="text-gray-700 mb-3">
-                      El foro oficial de la Olimpiada Matemática Argentina (OMA). Aquí encontrarás 
+                      El foro de la Olimpiada Matemática Argentina (OMA). Aquí encontrarás 
                       discusiones sobre problemas, un extenso archivo de enunciados de competencias 
                       anteriores, y una comunidad activa de estudiantes y entrenadores de habla hispana. 
                       Incluye problemas del día y recursos específicos para olimpiadas regionales.
