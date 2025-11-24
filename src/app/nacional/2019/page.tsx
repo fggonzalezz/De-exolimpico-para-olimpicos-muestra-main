@@ -1,5 +1,3 @@
-'use client';
-
 import Header from '@/components/layout/Header';
 import Image from 'next/image';
 import { buildNationalYearMetadata } from '@/lib/seo';
