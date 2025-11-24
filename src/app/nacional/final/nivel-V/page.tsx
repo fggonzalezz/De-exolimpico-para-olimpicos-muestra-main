@@ -12,7 +12,7 @@ export default function NivelVFinalPage() {
   return (
     <>
       <Header />
-      <main className="flex-1">
+      <main id="main-content" className="flex-1">
         <section className="bg-sky-700 py-12 text-white">
           <div className="container mx-auto px-4">
             <div className="max-w-3xl mx-auto text-center">

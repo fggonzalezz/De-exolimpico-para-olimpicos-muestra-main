@@ -40,7 +40,7 @@ export default function EquipoConosurPage() {
     <div className="flex min-h-screen flex-col">
       <Header />
 
-      <main className="flex-1 py-12">
+      <main id="main-content" className="flex-1 py-12">
         <div className="container mx-auto px-4">
           <div className="max-w-5xl mx-auto">
             {/* Hero Section */}

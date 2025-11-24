@@ -12,7 +12,7 @@ export default function AboutPage() {
     <div className="flex min-h-screen flex-col">
       <Header />
 
-      <main className="flex-1">
+      <main id="main-content" className="flex-1">
         {/* Hero Section */}
         <section className="py-10">
           <div className="container-mate">

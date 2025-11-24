@@ -71,7 +71,7 @@ export default function PrimeraInstanciaPage({ params }: PrimeraPageProps) {
   return (
     <div className="flex min-h-screen flex-col">
       <Header />
-      <main className="flex-1 bg-gray-50 py-12">
+      <main id="main-content" className="flex-1 bg-gray-50 py-12">
         <div className="container mx-auto px-4">
           <h1 className="text-3xl md:text-4xl font-bold text-center text-sky-700 mb-10">{year} - Primera Instancia</h1>
           <ClientPDFSection niveles={niveles} />

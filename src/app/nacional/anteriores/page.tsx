@@ -14,7 +14,7 @@ export default function AnterioresPage() {
   return (
     <div className="flex min-h-screen flex-col">
       <Header />
-      <main className="flex-1">
+      <main id="main-content" className="flex-1">
         {/* Hero Section */}
         <section className="bg-sky-700 py-12 text-white">
           <div className="container mx-auto px-4">

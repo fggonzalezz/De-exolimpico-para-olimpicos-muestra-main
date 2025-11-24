@@ -13,7 +13,7 @@ export default function MaterialEstudioPage() {
     <div className="flex min-h-screen flex-col">
       <Header />
 
-      <main className="flex-1 py-6 md:py-12">
+      <main id="main-content" className="flex-1 py-6 md:py-12">
         <div className="container mx-auto px-3 sm:px-4">
           <div className="max-w-4xl mx-auto">
             {/* Header Section */}

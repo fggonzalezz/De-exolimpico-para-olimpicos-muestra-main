@@ -330,7 +330,7 @@ export default function MascotaPageClient() {
   return (
     <div className="flex min-h-screen flex-col">
       <Header />
-      <main className="flex-1">
+      <main id="main-content" className="flex-1">
         <section className="hero-mascota-surface force-light-surface py-8">
           <div className="container mx-auto px-4">
             <h1 className="text-4xl md:text-5xl font-bold text-center text-sky-700 mb-4">

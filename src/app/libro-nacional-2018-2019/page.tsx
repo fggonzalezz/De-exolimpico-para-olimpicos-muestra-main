@@ -13,7 +13,7 @@ export default function LibroNacionalPage() {
     <div className="flex min-h-screen flex-col">
       <Header />
 
-      <main className="flex-1 py-6 md:py-12">
+      <main id="main-content" className="flex-1 py-6 md:py-12">
         <div className="container mx-auto px-3 sm:px-4">
           <div className="max-w-4xl mx-auto">
             <h1 className="text-2xl sm:text-3xl md:text-4xl font-inter font-bold text-center mb-3 md:mb-4 px-2">
