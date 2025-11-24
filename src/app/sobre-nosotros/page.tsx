@@ -34,7 +34,7 @@ export default function AboutPage() {
               <h2 className="text-2xl md:text-3xl font-inter font-semibold mb-6 text-center">
                 Nuestra Historia
               </h2>
-              <div className="relative w-full h-64 mb-8 rounded-lg overflow-hidden">
+              <div className="relative w-full h-64 mb-8 rounded-xl overflow-hidden">
                 <Image 
                   src="/images/Historia.jpg" 
                   alt="Historia de Com-Partida de Matemática" 
@@ -43,7 +43,7 @@ export default function AboutPage() {
                   priority
                 />
               </div>
-              <div className="prose prose-lg mx-auto">
+              <div className="prose prose-lg mx-auto text-gray-700">
                 <p>
                   La Com-Partida de Matemática del Uruguay nació en 1992 por iniciativa de profesores de matemática 
                   apasionados por la disciplina, que consideran a la resolución de problemas como la herramienta más 
@@ -79,12 +79,13 @@ export default function AboutPage() {
                     width={160}
                     height={160}
                     className="object-cover w-full h-full"
+                    loading="lazy"
                   />
                 </div>
               </div>
               <div>
                 <h2 className="text-2xl font-bold font-inter mb-2 text-sky-700">Gauchito</h2>
-                <p className="text-gray-600 mb-2 font-medium">Mascota oficial desde 2024</p>
+                <p className="text-gray-700 mb-2 font-medium">Mascota oficial desde 2024</p>
                 <p className="text-gray-700 text-base mb-4">
                   Gauchito ha acompañado a la Com-Partida desde 2024, inspirando a estudiantes con su simpatía y amor por las matemáticas. Siempre presente en eventos y competencias, se ha convertido en un símbolo de alegría, compañerismo y pasión por el aprendizaje.
                 </p>
@@ -93,7 +94,7 @@ export default function AboutPage() {
                   className="inline-flex items-center text-sky-600 font-medium hover:text-sky-800 transition-colors group"
                 >
                   Ver galería de fotos
-                  <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 ml-1 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 ml-1 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
                   </svg>
                 </Link>
@@ -107,16 +108,16 @@ export default function AboutPage() {
           <div className="container mx-auto px-4">
             <div className="max-w-3xl mx-auto">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <div className="bg-white p-6 rounded-lg shadow-md">
+                <div className="bg-white p-6 rounded-xl shadow-md">
                   <div className="flex items-center mb-4">
                     <div className="bg-sky-600 rounded-full p-2 mr-3">
-                      <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
                       </svg>
                     </div>
                     <h2 className="text-xl font-semibold">Nuestra Misión</h2>
                   </div>
-                  <p className="text-gray-600">
+                  <p className="text-gray-700">
                     Fomentar el pensamiento matemático a través de la resolución de problemas, 
                     brindando a los estudiantes uruguayos oportunidades para desarrollar sus habilidades, 
                     representar al país en competencias internacionales y crear una comunidad de aprendizaje 
@@ -124,16 +125,16 @@ export default function AboutPage() {
                   </p>
                 </div>
 
-                <div className="bg-white p-6 rounded-lg shadow-md">
+                <div className="bg-white p-6 rounded-xl shadow-md">
                   <div className="flex items-center mb-4">
                     <div className="bg-yellow-500 rounded-full p-2 mr-3">
-                      <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                       </svg>
                     </div>
                     <h2 className="text-xl font-semibold">Nuestra Visión</h2>
                   </div>
-                  <p className="text-gray-600">
+                  <p className="text-gray-700">
                     Ser una organización reconocida por su excelencia en la formación matemática, 
                     que inspire a las nuevas generaciones a descubrir la belleza de las matemáticas, 
                     contribuyendo al desarrollo educativo del país y posicionando a Uruguay en el 
@@ -155,12 +156,12 @@ export default function AboutPage() {
               <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                 <div className="text-center">
                   <div className="bg-sky-100 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
-                    <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 text-sky-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 text-sky-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
                     </svg>
                   </div>
                   <h3 className="text-lg font-semibold mb-2">Excelencia</h3>
-                  <p className="text-gray-600 text-sm">
+                  <p className="text-gray-700 text-sm">
                     Promovemos el rigor y la calidad en todo lo que hacemos, 
                     buscando siempre el máximo desarrollo del potencial de cada estudiante.
                   </p>
@@ -168,12 +169,12 @@ export default function AboutPage() {
 
                 <div className="text-center">
                   <div className="bg-sky-100 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
-                    <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 text-sky-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 text-sky-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z" />
                     </svg>
                   </div>
                   <h3 className="text-lg font-semibold mb-2">Comunidad</h3>
-                  <p className="text-gray-600 text-sm">
+                  <p className="text-gray-700 text-sm">
                     Creemos en la construcción colectiva del conocimiento, donde cada integrante 
                     aporta desde su experiencia para el crecimiento de todos.
                   </p>
@@ -181,12 +182,12 @@ export default function AboutPage() {
 
                 <div className="text-center">
                   <div className="bg-sky-100 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
-                    <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 text-sky-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 text-sky-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
                     </svg>
                   </div>
                   <h3 className="text-lg font-semibold mb-2">Pasión</h3>
-                  <p className="text-gray-600 text-sm">
+                  <p className="text-gray-700 text-sm">
                     Trabajamos con entusiasmo y dedicación, transmitiendo el amor por las matemáticas 
                     y el placer de resolver problemas desafiantes.
                   </p>
@@ -223,7 +224,7 @@ export default function AboutPage() {
                   </div>
                   
                   {/* Efecto de resplandor */}
-                  <div className="absolute inset-0 bg-gradient-to-r from-blue-400/20 to-indigo-400/20 rounded-2xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 -z-10"></div>
+                  <div className="absolute inset-0 bg-gradient-to-r from-blue-400/20 to-indigo-400/20 rounded-2xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 -z-10" aria-hidden="true"></div>
                 </div>
                 
                 {/* Gastón Correa */}
@@ -241,7 +242,7 @@ export default function AboutPage() {
                   </div>
                   
                   {/* Efecto de resplandor */}
-                  <div className="absolute inset-0 bg-gradient-to-r from-emerald-400/20 to-teal-400/20 rounded-2xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 -z-10"></div>
+                  <div className="absolute inset-0 bg-gradient-to-r from-emerald-400/20 to-teal-400/20 rounded-2xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 -z-10" aria-hidden="true"></div>
                 </div>
                 
                 {/* Ismael Medina */}
@@ -259,14 +260,14 @@ export default function AboutPage() {
                   </div>
                   
                   {/* Efecto de resplandor */}
-                  <div className="absolute inset-0 bg-gradient-to-r from-purple-400/20 to-pink-400/20 rounded-2xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 -z-10"></div>
+                  <div className="absolute inset-0 bg-gradient-to-r from-purple-400/20 to-pink-400/20 rounded-2xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 -z-10" aria-hidden="true"></div>
                 </div>
               </div>
             </div>
           </div>
           
           {/* Elementos decorativos de fondo */}
-          <div className="absolute inset-0 overflow-hidden pointer-events-none">
+          <div className="absolute inset-0 overflow-hidden pointer-events-none" aria-hidden="true">
             <div className="absolute top-1/4 left-1/4 w-32 h-32 bg-blue-200/30 rounded-full blur-3xl"></div>
             <div className="absolute bottom-1/4 right-1/4 w-40 h-40 bg-indigo-200/20 rounded-full blur-3xl"></div>
             <div className="absolute top-3/4 left-1/3 w-24 h-24 bg-purple-200/25 rounded-full blur-2xl"></div>
