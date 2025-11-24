@@ -79,6 +79,5 @@ export async function generateStaticParams() {
     { year: '2021' },
     { year: '2020' },
     { year: '2019' },
-    { year: 'anteriores' },
   ];
 } 
