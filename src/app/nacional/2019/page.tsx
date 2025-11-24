@@ -1,17 +1,9 @@
 'use client';
 
-import { useRouter } from 'next/navigation';
-import { useEffect } from 'react';
 import Header from '@/components/layout/Header';
 import Image from 'next/image';
 
-export default function Redirect2019() {
-  const router = useRouter();
-  
-  useEffect(() => {
-    router.push('/nacional/2019');
-  }, [router]);
-  
+export default function Page2019() {
   return (
     <>
       <Header />

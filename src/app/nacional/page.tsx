@@ -4,7 +4,14 @@ import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
 import Image from 'next/image';
 
-function CardItem({ href, img, alt, title }) {
+interface CardItemProps {
+  href: string;
+  img: string;
+  alt: string;
+  title: string;
+}
+
+function CardItem({ href, img, alt, title }: CardItemProps) {
   return (
     <Link href={href} className="group block rounded-2xl shadow-lg border border-sky-100 bg-white hover:shadow-2xl hover:-translate-y-1 transition-all duration-200 overflow-hidden">
       <div className="flex flex-col items-center justify-center p-6 h-full">
@@ -44,7 +51,7 @@ export default function Nacional() {
             </div>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
               <CardItem href="/nacional/2021" img="https://ext.same-assets.com/1728315765/512160776.png" alt="2021" title="2021" />
-              <CardItem href="/nacional/2020" img="https://ext.same-assets.com/1728315765/3350069791.png" alt="2020" title="2020" />
+              <CardItem href="/nacional/2020/" img="https://ext.same-assets.com/1728315765/3350069791.png" alt="2020" title="2020" />
 
               <CardItem href="/nacional/anteriores" img="https://ext.same-assets.com/1728315765/2391142948.png" alt="Años anteriores" title="Años anteriores" />
             </div>
