@@ -141,9 +141,11 @@ const GoogleDrivePDFViewer: React.FC<GoogleDrivePDFViewerProps> = ({
         loading="lazy"
         onLoad={handleIframeLoad}
         onError={handleIframeError}
-        // Configuración de seguridad robusta
-        sandbox="allow-scripts allow-same-origin allow-popups allow-forms"
-        // Políticas de permisos restrictivas
+        // Configuración de seguridad para Google Drive
+        // Google Drive requiere allow-scripts, allow-same-origin, allow-popups, 
+        // allow-popups-to-escape-sandbox y allow-presentation para funcionar correctamente
+        sandbox="allow-scripts allow-same-origin allow-popups allow-popups-to-escape-sandbox allow-forms allow-presentation"
+        // Políticas de permisos para funcionalidad completa de Google Drive
         allow="fullscreen"
         // Prevenir ciertos comportamientos
         referrerPolicy="strict-origin-when-cross-origin"

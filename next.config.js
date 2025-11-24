@@ -16,6 +16,20 @@ const nextConfig = {
   eslint: {
     ignoreDuringBuilds: false,
   },
+  // Headers de seguridad que permiten embeds de Google Drive y YouTube
+  async headers() {
+    return [
+      {
+        source: '/:path*',
+        headers: [
+          {
+            key: 'Content-Security-Policy',
+            value: "frame-src 'self' https://drive.google.com https://www.youtube.com https://youtube.com; frame-ancestors 'self';"
+          },
+        ],
+      },
+    ];
+  },
 };
 
 module.exports = nextConfig;
