@@ -356,7 +356,7 @@ export default function AboutPage() {
                 />
               </div>
 
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12 max-w-3xl mx-auto">
                 {/* Francisco González */}
                 <article className="group relative">
                   <div className="bg-white/80 backdrop-blur-sm p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 border border-white/20 motion-safe:hover:scale-105 motion-safe:hover:-translate-y-2">
@@ -419,36 +419,7 @@ export default function AboutPage() {
                   />
                 </article>
 
-                {/* Ismael Medina */}
-                <article className="group relative">
-                  <div className="bg-white/80 backdrop-blur-sm p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 border border-white/20 motion-safe:hover:scale-105 motion-safe:hover:-translate-y-2">
-                    <div
-                      className="w-28 h-28 bg-gradient-to-br from-purple-100 to-pink-200 rounded-full mx-auto mb-6 flex items-center justify-center shadow-inner"
-                      role="img"
-                      aria-label="Avatar de Ismael Medina"
-                    >
-                      <div
-                        className="w-20 h-20 bg-gradient-to-br from-purple-400 to-pink-500 rounded-full flex items-center justify-center text-white font-bold text-xl"
-                        aria-hidden="true"
-                      >
-                        IM
-                      </div>
-                    </div>
-                    <h3 className="text-xl font-bold mb-2 text-gray-800 group-hover:text-purple-600 transition-colors text-center">
-                      Ismael Medina
-                    </h3>
-                    <div
-                      className="w-16 h-0.5 bg-gradient-to-r from-purple-400 to-transparent mx-auto opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-                      aria-hidden="true"
-                    />
-                  </div>
 
-                  {/* Efecto de resplandor */}
-                  <div
-                    className="absolute inset-0 bg-gradient-to-r from-purple-400/20 to-pink-400/20 rounded-2xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 -z-10"
-                    aria-hidden="true"
-                  />
-                </article>
               </div>
             </div>
           </div>
